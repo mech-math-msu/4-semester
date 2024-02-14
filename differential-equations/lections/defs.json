@@ -1,0 +1,37 @@
+[
+    {
+        "keyword": "линейное диффернциальное уравнение 2-го порядка",
+        "html": "<p><a\nhref=\"лекция-1.-линейные-уравнения-2-го-порядка.html#definition-0\"><strong>Перейти\nк определению:</strong></a> <span class=\"math inline\">\\(a_0(x)y\n&#39;&#39; + a_1(x)y &#39; + a_2(x)y = f(x), \\,\\,\\,\\, x \\in (\\alpha,\n\\beta), \\,\\,\\,\\, a_i, f \\in C(\\alpha, \\beta), \\,\\,\\,\\, a_0(x) \\ne\n0\\)</span> – <em>линейное диффернциальное уравнение <span\nclass=\"math inline\">\\(2\\)</span>-го порядка</em>.</p>",
+        "url": "лекция-1.-линейные-уравнения-2-го-порядка.html#definition-0"
+    },
+    {
+        "keyword": "однородное линейное дифференциальное уравнение 2-го порядка",
+        "html": "<p><a\nhref=\"лекция-1.-линейные-уравнения-2-го-порядка.html#definition-1\"><strong>Перейти\nк определению:</strong></a> <span class=\"math inline\">\\(a_0(x)y\n&#39;&#39; + a_1(x)y &#39; + a_2(x)y = 0, \\,\\,\\,\\, x \\in (\\alpha,\n\\beta), \\,\\,\\,\\, a_i, f \\in C(\\alpha, \\beta), \\,\\,\\,\\, a_0(x) \\ne\n0\\)</span> – <em>однородное линейное дифференциальное уравнение <span\nclass=\"math inline\">\\(2\\)</span>-го порядка</em>.</p>",
+        "url": "лекция-1.-линейные-уравнения-2-го-порядка.html#definition-1"
+    },
+    {
+        "keyword": "точка накопления нулей",
+        "html": "<p><a\nhref=\"лекция-1.-линейные-уравнения-2-го-порядка.html#definition-2\"><strong>Перейти\nк определению:</strong></a> <em>Точка накопления нулей</em> – это <span\nclass=\"math inline\">\\(x_0 \\in (\\alpha, \\beta): \\,\\,\\,\\, \\forall\nU_{\\varepsilon}(x_0) \\,\\,\\,\\, \\exists x \\in\nU_{\\varepsilon}(x_0):\\,\\,\\,\\, y(x) = 0\\)</span>.</p>",
+        "url": "лекция-1.-линейные-уравнения-2-го-порядка.html#definition-2"
+    },
+    {
+        "keyword": "колеблющееся",
+        "html": "<p><a\nhref=\"лекция-1.-линейные-уравнения-2-го-порядка.html#definition-3\"><strong>Перейти\nк определению:</strong></a> Решение <a href=\"definition-0\">уравнения</a>\n<em>колеблющееся</em> на <span class=\"math inline\">\\([\\alpha,\n\\beta]\\)</span>, если оно имеет на этом отрезке более одного нуля.</p>",
+        "url": "лекция-1.-линейные-уравнения-2-го-порядка.html#definition-3"
+    },
+    {
+        "keyword": "колеблющееся на полуоси",
+        "html": "<p><a\nhref=\"лекция-1.-линейные-уравнения-2-го-порядка.html#definition-4\"><strong>Перейти\nк определению:</strong></a> Решение <a href=\"definition-0\">уравнения</a>\n<em>колеблющееся на полуоси</em> <span class=\"math inline\">\\([x_0,\n\\infty)\\)</span>, если <span class=\"math inline\">\\(\\forall x_1: y(x_1) =\n0 \\,\\,\\,\\, \\exists x_2 &gt; x_1: \\,\\,\\,\\, y(x_2) = 0\\)</span>. <a\nhref=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a></p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>То есть уравнение имеет сколь угодно далекие нули.<a\nhref=\"#fnref1\" class=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "лекция-1.-линейные-уравнения-2-го-порядка.html#definition-4"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"лекция-1.-линейные-уравнения-2-го-порядка.html#definition-5\"><strong>Перейти\nк определению:</strong></a> <span class=\"math inline\">\\(y&#39;&#39; +\np(x)y = 0, \\,\\,\\,\\, p \\in C(\\alpha, \\beta), \\,\\,\\,\\, -\\infty \\leqslant\n\\alpha &lt; \\beta \\leqslant +\\infty\\)</span></p>",
+        "url": "лекция-1.-линейные-уравнения-2-го-порядка.html#definition-5"
+    },
+    {
+        "keyword": "краевая задача условие дирихле условие неймана условие робена",
+        "html": "<p><a href=\"лекция-2.html#definition-6\"><strong>Перейти к\nопределению:</strong></a> Пусть <span\nclass=\"math inline\">\\(a_0(x)y&#39;&#39; + a_1(x)y&#39; + a_2(x)y = f(x),\n\\,\\,\\,\\, a_0, a_1, a_2, f \\in C[a, b]\\)</span> и на концах отрезка\nзаданы краевые условия: <span class=\"math inline\">\\(\\alpha y&#39;(a) +\n\\beta y(a) = 0, \\,\\,\\,\\, \\gamma y&#39;(b) + \\delta y(b) = 0\\)</span>,\nтакие что <span class=\"math inline\">\\(\\left|\\begin{array}{cc} \\alpha\n&amp; \\beta \\\\ \\gamma &amp; \\delta \\end{array}\\right|\\ne 0\\)</span> –\nэто <em>краевая задача</em>.</p>\n<p>Если <span class=\"math inline\">\\(\\alpha = 0\\)</span> или <span\nclass=\"math inline\">\\(\\gamma = 0\\)</span>, то соответствующее краевое\nусловие – <em>условие Дирихле</em>,</p>\n<p>Если <span class=\"math inline\">\\(\\beta = 0\\)</span> или <span\nclass=\"math inline\">\\(\\delta = 0\\)</span>, то соответствующее краевое\nусловие – <em>условие Неймана</em>,</p>\n<p>В общем случае краевые условия – <em>условие Робена</em>.</p>",
+        "url": "лекция-2.html#definition-6"
+    }
+]
