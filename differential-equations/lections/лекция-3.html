@@ -9,7 +9,7 @@
     
     
     
-    <title>Поиск</title>
+    <title>Лекция 3</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -248,12 +248,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="лекция-4.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="лекция-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -261,64 +262,120 @@
 
 
 
-<h1 class="unnumbered unlisted" id="search">Поиск</h1>
-<style>
-    h1#search {
-        display: none;
-    }
-    input#searchbar {
-        fontsize: 2rem;
-        width: 16rem;
-        height: 2.5rem;
-        border-radius: 25px;
-        padding-left: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-</style>
-<script type="module">
-    import data from "./defs.json" assert {type: 'json'};
-
-    let ans_div = document.getElementById('answer');
-
-    function search() {
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-
-        if (input.length < 3) {
-            return;
-        }
-
-        let ans = "";
-
-        data.forEach((item, i) => {
-            if (item.keyword.includes(input)) {
-                ans += item.html;
-            }
-        });
-
-        ans_div.innerHTML = ans;
-        MathJax.typeset();
-    }
-    window.search = search;
-</script>
-<center>
-<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Поиск...">
-</center>
-<div id="answer">
-
+<h1 data-number="3" id="лекция-3">Лекция 3</h1>
+<h2 data-number="3.1" id="краевые-задачи-продолжение">Краевые задачи:
+продолжение</h2>
+<div id="note-0">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Далее для
+линейного уравнения <span class="math inline">\(n\)</span>-го порядка:
+<span class="math inline">\(Ly = a_0(x)y^{(n)} + \ldots + a_n(x)y =
+f(x), \,\,\,\, f, a_i \in C(\alpha, \beta)\)</span> задано <span
+class="math inline">\(n\)</span> краевых условий в различных точках
+отрезка.</p>
+</div>
+<div id="definition-7">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если в
+краевых условиях связаны значения условия в краейвых точках, то задача
+<em>нелокальная</em>.</p>
+<p>Если условия заданы в нескольких точках, то задача
+<em>многоточечная</em>. (<strong>?</strong>)</p>
+</div>
+<div id="definition-8">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если
+<span class="math inline">\(f(x)\)</span> и правые части краевых
+уравнений равны нулю, то соответствующая краевая задача –
+<em>однородная</em>. (Да, изначально нам дали определение однородной
+краевой задачи.)</p>
+</div>
+<div id="theorem-5">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>об
+альтернативе</em>) Пусть задано уравнение <span class="math inline">\(Ly
+= a_0(x)y^{(n)} + \ldots + a_n(x)y = f(x), \,\,\,\, f, a_i \in C(\alpha,
+\beta), \,\,\,\, n \geqslant 2\)</span> с <span
+class="math inline">\(n\)</span> краевыми условиями. Тогда</p>
+<ol type="1">
+<li>Либо эта задача имеет <span class="math inline">\(1\)</span> решение
+при любой непрерывной правой части,</li>
+<li>Либо однородная краевая задача при некоторых <span
+class="math inline">\(f\)</span> имеет бесконечное множество решений, а
+при других не имеет решений.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li><p>Пусть <span class="math inline">\(y_1, \ldots, y_n\)</span>
+линейно независимые решения <span class="math inline">\(Ly = 0\)</span>.
+Общее решение – это их линейная комбинация, то есть <span
+class="math inline">\(y = C_1y_1 + \ldots + C_n y_n +
+\tilde{y}(x)\)</span>, где <span
+class="math inline">\(\tilde{y}(x)\)</span> – частное решение
+неоднородного.</p></li>
+<li><p>Подставим <span class="math inline">\(n\)</span> краевых условий
+и, перенося <span class="math inline">\(\tilde{y}(x)\)</span> в правую
+часть, получим линейную неоднороднуб систему.</p></li>
+<li><p>Если <span class="math inline">\(\det \ne 0\)</span>, то система
+имеет <span class="math inline">\(1\)</span> решение <span
+class="math inline">\(\implies\)</span> определены <span
+class="math inline">\(c_1 = c_1^0, \ldots c_n = c_n^0\)</span></p></li>
+<li><p>Если <span class="math inline">\(\det = 0\)</span>, то однородная
+система имеет бесконечное число решений.</p></li>
+</ol>
+</div>
+<div id="example-0">
+<p><span class="margin-lft"><strong>Пример: </strong></span>Найти
+наименьшее <span class="math inline">\(b &gt; 0\)</span>, такое, что
+уравнение <span class="math inline">\(y&#39;&#39; + b^2y = 0, \,\,\,\,
+y(0) = 5, \,\,\,\, y(1) = -5\)</span> не имеет решений.</p>
+<p>Сначала решаем однородную систему <span
+class="math inline">\(\begin{cases}
+y&#39;&#39; + b^2y = 0\\
+y(0) = 0\\
+y(1) = 0
+\end{cases}\)</span>:</p>
+<p>Есть линейно независимые решения <span
+class="math inline">\(\sin(bx)\)</span> и <span
+class="math inline">\(\cos(bx)\)</span>. Запишем общее решение: <span
+class="math inline">\(y = с_1 \cos(bx) + c_2\sin(bx)\)</span>.</p>
+<p><span class="math inline">\(y(0) = 0 = c_1, \,\,\,\, y(1) = 0 = c_2
+\sin(bx) \implies bx = \pi k, \,\,\,\, k \in \mathbb{Z}\)</span></p>
+</div>
+<div id="definition-9">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Функция Грина</em> – это <span
+class="math inline">\(G: \{(x, \xi)|\,\,\,\, x \in [a, b], \,\,\,\, \xi
+\in [a, b]\}\)</span>, таккая что</p>
+<ol type="1">
+<li><span class="math inline">\(\forall \xi \in [a, b] \,\,\,\, y(x) =
+G(x, \xi), \,\,\,\, x \ne \xi\)</span> удовлетворяет однородному
+уравнению <span class="math inline">\(LG(x, \xi) = 0\)</span>.</li>
+<li><span class="math inline">\(G(x, \xi)_{|x = a}\)</span> и <span
+class="math inline">\(G(x, \xi)_{|x = b}\)</span> удовлетворяют краевым
+условиям из <a href="лекция-2.html#definition-6">определения</a></li>
+<li><span class="math inline">\(G(x, \xi)\)</span> непрерывна и <span
+class="math inline">\(\forall \xi \,\,\,\, G&#39;_x(x, \xi)\)</span>
+имеет в точке <span class="math inline">\(x = \xi\)</span> скачок <span
+class="math inline">\(\frac1{a_0(x)}\)</span></li>
+</ol>
+</div>
+<div id="theorem-6">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если <span
+class="math inline">\(G(x, \xi)\)</span> – функция Грина <a
+href="лекция-2.html#definition-6">краевой задачи</a>, то решение этой
+задачи <span class="math inline">\(\displaystyle\int\limits_a^b G(x,
+\xi)f(\xi)d\xi\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="лекция-4.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="лекция-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

@@ -11,6 +11,7 @@
     
     <title>Лекция 1. Линейные уравнения 2-го порядка</title>
     <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
         div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
         div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
@@ -85,7 +86,7 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
@@ -100,6 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
@@ -218,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,6 +236,8 @@
     </head>
 <body>
 
+
+<img src="ico.png" alt="" class="logo">
 
 <nav id="sitenav">
     <div class="sitenav">
@@ -258,18 +266,19 @@
 id="лекция-1.-линейные-уравнения-2-го-порядка">Лекция 1. Линейные
 уравнения <span class="math inline">\(2\)</span>-го порядка</h1>
 <div id="definition-0">
-<p><strong>Определение: </strong><span class="math inline">\(a_0(x)y
-&#39;&#39; + a_1(x)y &#39; + a_2(x)y = f(x), \,\,\,\, x \in (\alpha,
-\beta), \,\,\,\, a_i, f \in C(\alpha, \beta), \,\,\,\, a_0(x) \ne
-0\)</span> – <em>линейное диффернциальное уравнение <span
-class="math inline">\(2\)</span>-го порядка</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(a_0(x)y &#39;&#39; + a_1(x)y &#39; + a_2(x)y =
+f(x), \,\,\,\, x \in (\alpha, \beta), \,\,\,\, a_i, f \in C(\alpha,
+\beta), \,\,\,\, a_0(x) \ne 0\)</span> – <em>линейное диффернциальное
+уравнение <span class="math inline">\(2\)</span>-го порядка</em>.</p>
 </div>
 <div id="definition-1">
-<p><strong>Определение: </strong><span class="math inline">\(a_0(x)y
-&#39;&#39; + a_1(x)y &#39; + a_2(x)y = 0, \,\,\,\, x \in (\alpha,
-\beta), \,\,\,\, a_i, f \in C(\alpha, \beta), \,\,\,\, a_0(x) \ne
-0\)</span> – <em>однородное линейное дифференциальное уравнение <span
-class="math inline">\(2\)</span>-го порядка</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(a_0(x)y &#39;&#39; + a_1(x)y &#39; + a_2(x)y = 0,
+\,\,\,\, x \in (\alpha, \beta), \,\,\,\, a_i, f \in C(\alpha, \beta),
+\,\,\,\, a_0(x) \ne 0\)</span> – <em>однородное линейное
+дифференциальное уравнение <span class="math inline">\(2\)</span>-го
+порядка</em>.</p>
 </div>
 <p>Если <span class="math inline">\(x_0 \in (\alpha, \beta)\)</span>, то
 задача Коши <span class="math inline">\(\begin{cases}
@@ -327,21 +336,24 @@ Ce^{\displaystyle\int\limits\frac{a_1(x)-a_0&#39;(x)}{a_0(x)}dx}\)</span>.</p>
 <p>Такая форма называется <em>самосопряженная форма</em>. Удобна, если
 <span class="math inline">\(a_2(x) = 0\)</span>.</p>
 <div id="definition-2">
-<p><strong>Определение: </strong><em>Точка накопления нулей</em> – это
-<span class="math inline">\(x_0 \in (\alpha, \beta): \,\,\,\, \forall
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Точка накопления нулей</em> – это <span
+class="math inline">\(x_0 \in (\alpha, \beta): \,\,\,\, \forall
 U_{\varepsilon}(x_0) \,\,\,\, \exists x \in
 U_{\varepsilon}(x_0):\,\,\,\, y(x) = 0\)</span>.</p>
 </div>
 <div id="theorem-0">
-<p><strong>Теорема: </strong>Ненулевое решение <a
-href="definition-0">уравнения</a> с <span class="math inline">\(f(x) =
-0\)</span> не может иметь точек накопления нулей.</p>
-<p><em>Доказательство:</em> (от противного) Пусть существует <span
-class="math inline">\(x_0: \,\,\,\, \displaystyle \lim_{n\to \infty}x_n
-= x_0\)</span> и <span class="math inline">\(y(x_n) = 0\)</span>. Тогда
-<span class="math inline">\(y(x_0) = 0\)</span> в силу непрерывности и
-<span class="math inline">\(\forall [x_{n - 1}, x_n]\,\,\,\, \exists
-\xi_n: \,\,\,\,y(\xi_n) = 0\)</span> (по т.Ролля). Имеем <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Ненулевое
+решение <a href="definition-0">уравнения</a> с <span
+class="math inline">\(f(x) = 0\)</span> не может иметь точек накопления
+нулей.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> (от
+противного) Пусть существует <span class="math inline">\(x_0: \,\,\,\,
+\displaystyle \lim_{n\to \infty}x_n = x_0\)</span> и <span
+class="math inline">\(y(x_n) = 0\)</span>. Тогда <span
+class="math inline">\(y(x_0) = 0\)</span> в силу непрерывности и <span
+class="math inline">\(\forall [x_{n - 1}, x_n]\,\,\,\, \exists \xi_n:
+\,\,\,\,y(\xi_n) = 0\)</span> (по т.Ролля). Имеем <span
 class="math inline">\(\displaystyle \lim_{n\to \infty}\xi_n = x_0,
 \,\,\,\, y&#39;(x_0) = \displaystyle \lim_{n\to \infty}y&#39;(\xi_n) =
 0\)</span>. Тогда имеем задачу Коши <span
@@ -353,29 +365,30 @@ y&#39;(x_0) = 0
 ноль. Противоречие.</p>
 </div>
 <div id="corollary-0">
-<p><strong>Следствие: </strong><a href="definition-0">Уравнение</a> при
-<span class="math inline">\(f(x) = 0\)</span> может иметь только
-конечное число нулей на отрезке.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Следствие: </strong></span><a
+href="definition-0">Уравнение</a> при <span class="math inline">\(f(x) =
+0\)</span> может иметь только конечное число нулей на отрезке.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="definition-3">
-<p><strong>Определение: </strong>Решение <a
-href="definition-0">уравнения</a> <em>колеблющееся</em> на <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Решение
+<a href="definition-0">уравнения</a> <em>колеблющееся</em> на <span
 class="math inline">\([\alpha, \beta]\)</span>, если оно имеет на этом
 отрезке более одного нуля.</p>
 </div>
 <div id="definition-4">
-<p><strong>Определение: </strong>Решение <a
-href="definition-0">уравнения</a> <em>колеблющееся на полуоси</em> <span
-class="math inline">\([x_0, \infty)\)</span>, если <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Решение
+<a href="definition-0">уравнения</a> <em>колеблющееся на полуоси</em>
+<span class="math inline">\([x_0, \infty)\)</span>, если <span
 class="math inline">\(\forall x_1: y(x_1) = 0 \,\,\,\, \exists x_2 &gt;
 x_1: \,\,\,\, y(x_2) = 0\)</span>. <a href="#fn2" class="footnote-ref"
 id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </div>
 <div id="definition-5">
-<p><strong>Определение: </strong><span class="math inline">\(y&#39;&#39;
-+ p(x)y = 0, \,\,\,\, p \in C(\alpha, \beta), \,\,\,\, -\infty \leqslant
-\alpha &lt; \beta \leqslant +\infty\)</span></p>
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(y&#39;&#39; + p(x)y = 0, \,\,\,\, p \in C(\alpha,
+\beta), \,\,\,\, -\infty \leqslant \alpha &lt; \beta \leqslant
++\infty\)</span></p>
 </div>
 <h3 data-number="1.1.1" id="примеры">Примеры</h3>
 <p>Уравнение колебаний <span class="math inline">\(\ddot{x}+ w^2 x =
@@ -385,18 +398,19 @@ C_1\cos(wt) + C_2\sin(wt)\)</span>.</p>
 не является колеблющимся, так как <span class="math inline">\(y =
 C_1e^{kx} + C_2e^{-kx}\)</span>.</p>
 <div id="theorem-1">
-<p><strong>Теорема: </strong>Если в <a href="definition-5">уравнении</a>
-<span class="math inline">\(p(x)&lt;0\)</span>, то все решения не
-являются колеблющимися.</p>
-<p><em>Доказательство:</em> (от противного) Пусть существует <span
-class="math inline">\(y(x)\)</span> – решение <a
-href="definition-5">уравнения</a> и <span class="math inline">\(x_1 &lt;
-x_2: \,\,\,\, y(x_1) = y(x_2) = 0: \,\,\,\, y(x)\ne 0, \,\,\,\, x \in
-(x_1, x_2)\)</span>. Без ограничения общности <span
-class="math inline">\(y(x) &gt; 0, \,\,\,\, x \in (x_1, x_2)\)</span>.
-Заметим, что <span class="math inline">\(y&#39;(x_1) \ne 0\)</span>
-(иначе <span class="math inline">\(y \equiv 0\)</span>) значит <span
-class="math inline">\(y&#39;(x_1) &gt; 0\)</span>.</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если в <a
+href="definition-5">уравнении</a> <span
+class="math inline">\(p(x)&lt;0\)</span>, то все решения не являются
+колеблющимися.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> (от
+противного) Пусть существует <span class="math inline">\(y(x)\)</span> –
+решение <a href="definition-5">уравнения</a> и <span
+class="math inline">\(x_1 &lt; x_2: \,\,\,\, y(x_1) = y(x_2) = 0:
+\,\,\,\, y(x)\ne 0, \,\,\,\, x \in (x_1, x_2)\)</span>. Без ограничения
+общности <span class="math inline">\(y(x) &gt; 0, \,\,\,\, x \in (x_1,
+x_2)\)</span>. Заметим, что <span class="math inline">\(y&#39;(x_1) \ne
+0\)</span> (иначе <span class="math inline">\(y \equiv 0\)</span>)
+значит <span class="math inline">\(y&#39;(x_1) &gt; 0\)</span>.</p>
 <p><span class="math inline">\(y&#39;&#39; = -p(x)y &gt; 0\)</span> на
 <span class="math inline">\([x_1, x_2] \implies y&#39;(x)\)</span>
 возрастает, а значит, так как <span class="math inline">\(y(x_1) = 0

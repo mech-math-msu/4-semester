@@ -9,7 +9,7 @@
     
     
     
-    <title>Действительный анализ</title>
+    <title>Лекция 4</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -248,98 +248,89 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
+                                <a href="лекция-3.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="лекция-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
 </nav>
 
-<header id="title-block-header">
-
-    <h1 class="title">Действительный анализ</h1>
-
-    
-    
-    
-    </header>
-
-<nav id="TOC" role="doc-toc">
-        <h2 id="toc-title" class="toc-title">Содержание</h2>
-        <ul>
-        <li><a href="лекция-1.html" id="toc-лекция-1">Лекция 1</a>
-        <ul>
-        <li><a href="лекция-1.html#системы-множеств"
-        id="toc-системы-множеств">Системы множеств</a>
-        <ul>
-        <li><a href="лекция-1.html#примеры" id="toc-примеры">Примеры</a></li>
-        </ul></li>
-        <li><a href="лекция-1.html#меры-на-системах-множеств"
-        id="toc-меры-на-системах-множеств">Меры на системах множеств</a>
-        <ul>
-        <li><a href="лекция-1.html#примеры-1"
-        id="toc-примеры-1">Примеры</a></li>
-        <li><a
-        href="лекция-1.html#единственность-продолжения-меры-на-порожденное-кольцо"
-        id="toc-единственность-продолжения-меры-на-порожденное-кольцо">Единственность
-        продолжения меры на порожденное кольцо</a></li>
-        </ul></li>
-        </ul></li>
-        <li><a href="лекция-2.html" id="toc-лекция-2">Лекция 2</a>
-        <ul>
-        <li><a href="лекция-2.html#свойства-мер" id="toc-свойства-мер">Свойства
-        мер</a>
-        <ul>
-        <li><a href="лекция-2.html#непрерывность-меры-сверху-и-снизу"
-        id="toc-непрерывность-меры-сверху-и-снизу">Непрерывность меры сверху и
-        снизу</a></li>
-        </ul></li>
-        <li><a href="лекция-2.html#стандартная-мера-в-n-мерном-пространстве"
-        id="toc-стандартная-мера-в-n-мерном-пространстве">Стандартная мера в
-        <span class="math inline">\(n\)</span>-мерном пространстве</a></li>
-        <li><a href="лекция-2.html#продолжение-меры-по-лебегу"
-        id="toc-продолжение-меры-по-лебегу">Продолжение меры по Лебегу</a>
-        <ul>
-        <li><a href="лекция-2.html#внешняя-мера-лебега"
-        id="toc-внешняя-мера-лебега">Внешняя мера Лебега</a></li>
-        <li><a href="лекция-2.html#измеримые-множества"
-        id="toc-измеримые-множества">Измеримые множества</a></li>
-        </ul></li>
-        </ul></li>
-        <li><a href="лекция-3.html" id="toc-лекция-3">Лекция 3</a>
-        <ul>
-        <li><a href="лекция-3.html#продолжение-меры-по-лебегу-1"
-        id="toc-продолжение-меры-по-лебегу-1">Продолжение меры по
-        Лебегу</a></li>
-        <li><a href="лекция-3.html#sigma-конечные-меры"
-        id="toc-sigma-конечные-меры"><span
-        class="math inline">\(\sigma\)</span>-конечные меры</a>
-        <ul>
-        <li><a
-        href="лекция-3.html#измеримость-множества-по-лебегу-в-случае-сигма-конечной-меры"
-        id="toc-измеримость-множества-по-лебегу-в-случае-сигма-конечной-меры">Измеримость
-        множества по Лебегу в случае сигма-конечной меры</a></li>
-        </ul></li>
-        <li><a href="лекция-3.html#борелевская-алгебра"
-        id="toc-борелевская-алгебра">Борелевская алгебра</a></li>
-        </ul></li>
-        </ul>
-</nav>
 
 
+<h1 data-number="4" id="лекция-4">Лекция 4</h1>
+<h2 data-number="4.1" id="краевые-задачи-продолжение-1">Краевые задачи
+(продолжение)</h2>
+<div id="theorem-7">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Решение
+задачи имеет вид <span class="math inline">\(y(x) =
+\displaystyle\int\limits_a^b G(x, s)f(x)ds\)</span>, где <span
+class="math inline">\(G(x, s) = \begin{cases}
+a(x)y_1(x), a \leqslant x \leqslant s\\
+b(s)y_2(x), s \leqslant x \leqslant b
+\end{cases}\)</span>, <span class="math inline">\(y_1(x),
+y_2(x)\)</span> – линейно независимые решения <span
+class="math inline">\((45)\)</span>, удовлетворяющие <span
+class="math inline">\((50)\)</span> и <span
+class="math inline">\((51)\)</span> соответственно.</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(a(s)y_1(s) = b(s)y_2(s)\)</span></li>
+<li><span class="math inline">\(b(s)y_2&#39;(s)-a(s)y_1&#39;(s) =
+\frac{1}{a_0(s)}\)</span></li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Подставим <span class="math inline">\(G(x, s)\)</span> в уравнение.
+<span class="math inline">\(y(x) = \displaystyle\int\limits_x^b
+a(s)y_1(x)f(s)ds + \displaystyle\int\limits_a^x
+b(s)y_2(x)f(s)ds\)</span>. Ищем производную. Напоминание (формула
+Лейбница): <span class="math inline">\(\frac{d}{dx}
+\displaystyle\int\limits_a(\alpha)^b(\alpha) F(x, \alpha)dx =
+\displaystyle\int\limits_a(\alpha)^b(\alpha) F_{\alpha}&#39;(x,
+\alpha)dx + F(b(\alpha), \alpha)b&#39;(\alpha) - F(a(\alpha),
+\alpha)a&#39;(\alpha)\)</span>.</p>
+<p>Получаем: <span class="math inline">\(y(x) =
+y_2(x)\displaystyle\int\limits_a^x b(s)f(s)ds +
+y_1(x)\displaystyle\int\limits_x^b a(s)f(s)ds\)</span></p>
+<p><span class="math inline">\(y&#39;(x) =
+y_2&#39;(x)\displaystyle\int\limits_a^x b(s)f(s)ds + y_2(x)b(x)f(x) +
+y_1&#39;(x)\displaystyle\int\limits_x^b a(s)f(s)ds-
+y_1(x)a(x)f(x)\)</span></p>
+</div>
+<h2 data-number="4.2" id="задача-штурма-лиувилля">Задача
+Штурма-Лиувилля</h2>
+<div id="definition-10">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(Ly = a_0(x)y&#39;&#39; + a_1(x)y&#39; + a_2(x)y=
+\lambda y (54)\)</span></p>
+<p><span class="math display">\[\begin{cases}
+\alpha y&#39;(a) + \beta y(a) = 0, \,\,\,\, |\alpha| + |\beta|\ne
+0(50)\\
+\gamma y&#39;(b) + \delta y(b) = 0, \,\,\,\, |\gamma| + |\delta|\ne
+0(51)
+\end{cases}\]</span></p>
+<p>Задача <span class="math inline">\((54)-(50)-(51)\)</span> –
+<em>задача Штурма-Лиувилля</em>,</p>
+<p><em>Решить задачу Штурма-Лиувилля</em> значит найти <span
+class="math inline">\(\lambda\)</span> при которых существует
+нетривиальное решение и найти эти решения при каждом таком <span
+class="math inline">\(\lambda\)</span>.</p>
+</div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
+                        <a href="лекция-3.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="лекция-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

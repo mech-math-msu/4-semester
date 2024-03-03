@@ -9,7 +9,7 @@
     
     
     
-    <title>Действительный анализ</title>
+    <title>Лекция 1</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -248,98 +248,91 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
+                                <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="лекция-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-2.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
 </nav>
 
-<header id="title-block-header">
-
-    <h1 class="title">Действительный анализ</h1>
-
-    
-    
-    
-    </header>
-
-<nav id="TOC" role="doc-toc">
-        <h2 id="toc-title" class="toc-title">Содержание</h2>
-        <ul>
-        <li><a href="лекция-1.html" id="toc-лекция-1">Лекция 1</a>
-        <ul>
-        <li><a href="лекция-1.html#системы-множеств"
-        id="toc-системы-множеств">Системы множеств</a>
-        <ul>
-        <li><a href="лекция-1.html#примеры" id="toc-примеры">Примеры</a></li>
-        </ul></li>
-        <li><a href="лекция-1.html#меры-на-системах-множеств"
-        id="toc-меры-на-системах-множеств">Меры на системах множеств</a>
-        <ul>
-        <li><a href="лекция-1.html#примеры-1"
-        id="toc-примеры-1">Примеры</a></li>
-        <li><a
-        href="лекция-1.html#единственность-продолжения-меры-на-порожденное-кольцо"
-        id="toc-единственность-продолжения-меры-на-порожденное-кольцо">Единственность
-        продолжения меры на порожденное кольцо</a></li>
-        </ul></li>
-        </ul></li>
-        <li><a href="лекция-2.html" id="toc-лекция-2">Лекция 2</a>
-        <ul>
-        <li><a href="лекция-2.html#свойства-мер" id="toc-свойства-мер">Свойства
-        мер</a>
-        <ul>
-        <li><a href="лекция-2.html#непрерывность-меры-сверху-и-снизу"
-        id="toc-непрерывность-меры-сверху-и-снизу">Непрерывность меры сверху и
-        снизу</a></li>
-        </ul></li>
-        <li><a href="лекция-2.html#стандартная-мера-в-n-мерном-пространстве"
-        id="toc-стандартная-мера-в-n-мерном-пространстве">Стандартная мера в
-        <span class="math inline">\(n\)</span>-мерном пространстве</a></li>
-        <li><a href="лекция-2.html#продолжение-меры-по-лебегу"
-        id="toc-продолжение-меры-по-лебегу">Продолжение меры по Лебегу</a>
-        <ul>
-        <li><a href="лекция-2.html#внешняя-мера-лебега"
-        id="toc-внешняя-мера-лебега">Внешняя мера Лебега</a></li>
-        <li><a href="лекция-2.html#измеримые-множества"
-        id="toc-измеримые-множества">Измеримые множества</a></li>
-        </ul></li>
-        </ul></li>
-        <li><a href="лекция-3.html" id="toc-лекция-3">Лекция 3</a>
-        <ul>
-        <li><a href="лекция-3.html#продолжение-меры-по-лебегу-1"
-        id="toc-продолжение-меры-по-лебегу-1">Продолжение меры по
-        Лебегу</a></li>
-        <li><a href="лекция-3.html#sigma-конечные-меры"
-        id="toc-sigma-конечные-меры"><span
-        class="math inline">\(\sigma\)</span>-конечные меры</a>
-        <ul>
-        <li><a
-        href="лекция-3.html#измеримость-множества-по-лебегу-в-случае-сигма-конечной-меры"
-        id="toc-измеримость-множества-по-лебегу-в-случае-сигма-конечной-меры">Измеримость
-        множества по Лебегу в случае сигма-конечной меры</a></li>
-        </ul></li>
-        <li><a href="лекция-3.html#борелевская-алгебра"
-        id="toc-борелевская-алгебра">Борелевская алгебра</a></li>
-        </ul></li>
-        </ul>
-</nav>
 
 
+<h1 data-number="1" id="лекция-1">Лекция 1</h1>
+<h2 data-number="1.1"
+id="дискретное-вероятностное-пространство">Дискретное вероятностное
+пространство</h2>
+<div id="definition-0">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\Omega\)</span> – произвольное
+множество.</p>
+<p>Элементы <span class="math inline">\(w \in \Omega\)</span> –
+<em>элементарные события</em> или <em>исходы</em>,</p>
+<p><span class="math inline">\(\Omega\)</span> – <em>пространство
+элементарных событий</em> или <em>множество исходов</em>,</p>
+<p><span class="math inline">\(p: 2^\Omega \to [0, 1]\)</span> –
+<em>вероятностная мера</em>, если <span class="math inline">\(p(\Omega)
+= 1\)</span> и <span class="math inline">\(p(A\sqcup B) = p(A)+p(B),
+\,\,\,\, \forall A, B \in 2^{\Omega}\)</span>
+(<em>аддитивность</em>).</p>
+<p>Будем рассматривать не более чем счетное пространство событий <span
+class="math inline">\(\Omega = \{w_1, \ldots, w_n, \ldots\}\)</span>.
+Такое пространство <em>дискретное</em>.</p>
+<p><span class="math inline">\(A \subset \Omega\)</span> –
+<em>событие</em>. <em>Вероятность события</em> <span
+class="math inline">\(A\)</span> – это <span
+class="math inline">\(p(A)\)</span>.</p>
+<p>В классическом определении вероятности рассматривается <span
+class="math inline">\(p\)</span>, такое что <span
+class="math inline">\(p(w_1) = \ldots = p(w_n)\)</span>. Тогда <span
+class="math inline">\(p(A) = \frac{|A|}{|\Omega|}\)</span>.</p>
+<p>Это очень важно уметь разбивать на равновероятные исходы.</p>
+</div>
+<h3 data-number="1.1.1" id="свойства-вероятностей-событий">Свойства
+вероятностей событий</h3>
+<div id="statement-0">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>свойсвта вероятностей</em>)</p>
+<ol type="1">
+<li><span class="math inline">\(P(\varnothing) = 0\)</span>,</li>
+<li><span class="math inline">\(P(\Omega\setminus A) = 1 -
+p(A)\)</span>,</li>
+<li>(<em>формула включений и исключений</em>) <span
+class="math inline">\(P(A\cup B) = P(A) + P(B) - P(A\cap B)\)</span> и в
+общем случае <span class="math inline">\(P(A_1\cup \ldots\cup A_n) =
+\displaystyle \sum_{i = 1}^{n}P(A_i) - \displaystyle \sum_{i_1 &lt;
+i_2}^{n}P(A_{i_1}\cap A_{i_2}) + \displaystyle \sum_{i_1 &lt; i_2 &lt;
+i_3}^{n}P(A_{i_1}\cap A_{i_2}\cap A_{i_3}) + \ldots + (-1)^{n -
+1}P(A_1\cap\ldots\cap A_n)\)</span>,</li>
+<li>(<em>монотонность</em>) <span class="math inline">\(A \subset B
+\implies P(A) \leqslant P(B)\)</span></li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li><span class="math inline">\(P(\varnothing\sqcup \Omega) = P(\Omega)
++ P(\varnothing) = 1 \implies p(\varnothing) = 0\)</span>,</li>
+<li><span class="math inline">\(P(A\sqcup B\setminus A) = P(A) +
+P(B\setminus A) = P(A) + P(B) - P(A\cap B)\)</span></li>
+<li>Следует из <span class="math inline">\(3
+\,\,\,\,\blacksquare\)</span></li>
+</ol>
+</div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
+                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="лекция-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-2.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

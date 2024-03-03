@@ -11,6 +11,7 @@
     
     <title>Математический анализ</title>
     <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
         div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
         div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
@@ -85,7 +86,7 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
@@ -100,6 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
@@ -218,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,6 +236,8 @@
     </head>
 <body>
 
+
+<img src="ico.png" alt="" class="logo">
 
 <nav id="sitenav">
     <div class="sitenav">
@@ -244,13 +252,14 @@
             <span class="navlink">
                             </span>
             <span class="navlink">
-                                <a href="кратные-интегралы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
 </nav>
 
 <header id="title-block-header">
+
     <h1 class="title">Математический анализ</h1>
 
     
@@ -261,8 +270,42 @@
 <nav id="TOC" role="doc-toc">
         <h2 id="toc-title" class="toc-title">Содержание</h2>
         <ul>
-        <li><a href="кратные-интегралы.html" id="toc-кратные-интегралы">Кратные
-        интегралы</a></li>
+        <li><a href="лекция-1.html" id="toc-лекция-1">Лекция 1</a>
+        <ul>
+        <li><a href="лекция-1.html#кратные-интегралы"
+        id="toc-кратные-интегралы">Кратные интегралы</a></li>
+        </ul></li>
+        <li><a href="лекция-2.html" id="toc-лекция-2">Лекция 2</a>
+        <ul>
+        <li><a href="лекция-2.html#необходимый-критерий-интегрируемости"
+        id="toc-необходимый-критерий-интегрируемости">Необходимый критерий
+        интегрируемости</a></li>
+        <li><a href="лекция-2.html#суммы-дарбу" id="toc-суммы-дарбу">Суммы
+        Дарбу</a>
+        <ul>
+        <li><a href="лекция-2.html#свойства-сумм-дарбу"
+        id="toc-свойства-сумм-дарбу">Свойства сумм Дарбу</a></li>
+        <li><a href="лекция-2.html#свойства-интеграла-римана"
+        id="toc-свойства-интеграла-римана">Свойства интеграла Римана</a></li>
+        </ul></li>
+        </ul></li>
+        <li><a href="лекция-3.html" id="toc-лекция-3">Лекция 3</a>
+        <ul>
+        <li><a href="лекция-3.html#схема-построения-n-кратного-интеграла"
+        id="toc-схема-построения-n-кратного-интеграла">Схема построения <span
+        class="math inline">\(n\)</span>-кратного интеграла</a></li>
+        <li><a href="лекция-3.html#повторный-интеграл"
+        id="toc-повторный-интеграл">Повторный интеграл</a></li>
+        </ul></li>
+        <li><a href="лекция-4.html" id="toc-лекция-4">Лекция 4</a>
+        <ul>
+        <li><a href="лекция-4.html#общее-определение-кратного-интеграла"
+        id="toc-общее-определение-кратного-интеграла">Общее определение кратного
+        интеграла</a></li>
+        <li><a href="лекция-4.html#замена-переменной-в-кратном-интеграле"
+        id="toc-замена-переменной-в-кратном-интеграле">Замена переменной в
+        кратном интеграле</a></li>
+        </ul></li>
         </ul>
 </nav>
 
@@ -276,7 +319,7 @@
         <span class="navlink">
                     </span>
         <span class="navlink">
-                        <a href="кратные-интегралы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

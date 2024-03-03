@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 2</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-3.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="2" id="лекция-2">Лекция 2</h1>
+<h2 data-number="2.1" id="условные-вероятности">Условные
+вероятности</h2>
+<div id="definition-1">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Условная вероятность события</em> <span
+class="math inline">\(B\)</span> при условии события <span
+class="math inline">\(A\)</span> – это <span
+class="math inline">\(P(B|A) = \frac{P(AB)}{P(A)}\)</span>.</p>
+<p><span class="math inline">\(P(B)\)</span> – <em>априорная
+вероятность</em>, то есть до опыта,</p>
+<p><span class="math inline">\(P(B|A)\)</span> – <em>апостериорная
+вероятность</em>, то есть после опыта.</p>
+</div>
+<h3 data-number="2.1.1"
+id="простейшие-свойства-условной-вероятности">Простейшие свойства
+условной вероятности</h3>
+<div id="statement-1">
+<span class="margin-lft"><strong>Утверждение: </strong></span>
+<ol type="1">
+<li><span class="math inline">\(P(A|A) = 1\)</span>,</li>
+<li><span class="math inline">\(P(\varnothing|A) = 0\)</span>,</li>
+<li>Если <span class="math inline">\(A \subset B\)</span>, то <span
+class="math inline">\(P(B|A) = 1\)</span>,</li>
+<li>Если <span class="math inline">\(B_1B_2 = \varnothing\)</span>, то
+<span class="math inline">\(P(B_1+B_2|A) =
+P(B_1|A)+P(B_2|A)\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="2.1.2" id="формула-произведения-вероятностей">Формула
+произведения вероятностей</h3>
+<div id="statement-2">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(A_1, \ldots, A_n\)</span> события, такие,
+что <span class="math inline">\(\forall i, j \,\,\,\, A_i\cap A_j \ne
+\varnothing\)</span>.</p>
+<p>Тогда <span class="math inline">\(P(A_1\ldots A_n) = P(A_1|A_2\ldots
+A_n)\cdot P(A_2|A_3\ldots A_n)\cdot \ldots \cdot P(A_{n - 1}|A_n)\cdot
+P(A_n)\)</span> или</p>
+<p><span class="math inline">\(P(A_1\ldots A_n) = P(A_n|A_{n - 1}\ldots
+A_1)\cdot P(A_{n - 1}|A_{n - 2}\ldots A_1)\cdot \ldots \cdot
+P(A_2|A_1)\cdot P(A_1)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Собираем множители, начиная с хвоста, пользуясь формулой из
+определения условной вероятности <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="2.1.3" id="формула-полной-вероятности">Формула полной
+вероятности</h3>
+<div id="definition-2">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Набор
+событий <span class="math inline">\(A_1, \ldots, A_n\)</span> –
+<em>разбиение пространства событий</em> <span
+class="math inline">\(\Omega\)</span>, если <span
+class="math inline">\(\forall i, j \,\,\,\, A_iA_j =
+\varnothing\)</span> и <span class="math inline">\(A_1 + \ldots + A_n =
+\Omega\)</span>.</p>
+</div>
+<div id="theorem-0">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>формула полной вероятности</em>) Пусть <span
+class="math inline">\(A_1, \ldots, A_n\)</span> – разбиение пространства
+событий <span class="math inline">\(\Omega\)</span>.</p>
+<p>Тогда <span class="math inline">\(\forall B \subset \Omega:\)</span>
+<span class="math display">\[P(B) = P(B|A_1)\cdot P(A_1)+ \ldots +
+P(B|A_n)\cdot A_n = \displaystyle \sum_{i = 1}^{n}P(B|A_i)\cdot
+P(A_i)\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(B = BA_1 + \ldots BA_n\)</span> и <span
+class="math inline">\(\forall i, j \,\,\,\, (BA_i)\cap(BA_j) =
+\varnothing\)</span> (дизъюнктное объединение), а значит <span
+class="math inline">\(p(B) = \displaystyle \sum_{i = 1}^{n}p(BA_i) =
+\displaystyle \sum_{i = 1}^{n}P(B|A_i)\cdot P(A_i)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="2.1.4" id="теорема-байеса">Теорема Байеса</h3>
+<div id="statement-3">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>формула Байеса</em>) Пусть <span
+class="math inline">\(P(A) &gt; 0\)</span> и <span
+class="math inline">\(P(B) &gt; 0\)</span>. Тогда <span
+class="math inline">\(P(A|B) = \frac{P(B|A)\cdot
+P(A)}{P(B)}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(P(AB) = P(BA) = P(B|A)\cdot P(A) =
+P(A|B)\cdot P(B) \implies P(A|B) = \frac{P(B|A)\cdot P(A)}{P(B)}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-1">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>теорема Байеса</em>) Пусть <span
+class="math inline">\(A_1, \ldots, A_n\)</span> – разбиение пространства
+событий <span class="math inline">\(\Omega\)</span>.</p>
+<p>Тогда <span class="math inline">\(p(A_i|B) =  \frac{P(B|A_i)\cdot
+P(A_i)}{\displaystyle \sum_{i = 1}^{n}P(B|A_i)\cdot
+P(A_i)}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><a href="лекция-2.html#statement-1">По формуле Байеса</a> имеем:
+<span class="math inline">\(P(A_i|B) = \frac{P(B|A_i)\cdot
+P(A_i)}{P(B)}\)</span>, а <a href="лекция-2.html#theorem-0">из формулы
+полной вероятности</a> следует, что <span class="math inline">\(P(B) =
+\displaystyle \sum_{i = 1}^{n}P(B|A_i)\cdot P(A_i)\)</span>, то есть
+<span class="math inline">\(P(A_i|B) = \frac{P(B|A_i)\cdot
+P(A_i)}{\displaystyle \sum_{i = 1}^{n}P(B|A_i)\cdot P(A_i)}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="2.1.5" id="независимые-события">Независимые
+события</h3>
+<div id="definition-3">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Событие
+<span class="math inline">\(B\)</span> <em>независимо</em> от события
+<span class="math inline">\(A\)</span>, если <span
+class="math inline">\(P(B|A) = P(B)\)</span> или <span
+class="math inline">\(P(AB) = P(A)P(B)\)</span>.</p>
+</div>
+<div id="definition-4">
+<p><span class="margin-lft"><strong>Определение: </strong></span>События
+<span class="math inline">\(A_1, \ldots, A_n\)</span>
+<em>независимы</em>, если <span class="math inline">\(\forall k \,\,\,\,
+\forall 1 \leqslant i_1 &lt; \ldots &lt; i_k \leqslant n \,\,\,\,
+P(A_{i_1}\ldots A_{i_k}) = P(A_{i_1})\cdot \ldots \cdot
+P(A_{i_k})\)</span>.</p>
+</div>
+<div id="lemma-0">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Если события
+независимы, то они попарно независимы.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-3.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

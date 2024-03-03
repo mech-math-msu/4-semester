@@ -1,2 +1,102 @@
-
+[
+    {
+        "keyword": "симметрическая разность",
+        "html": "<p><a href=\"лекция-1.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>симметрическая разность</em>) <span\nclass=\"math inline\">\\(A\\triangle B = (A\\cup B)\\setminus (A\\cap B) =\n(A\\setminus B)\\cup (B\\setminus A)\\)</span>.</p>",
+        "url": "лекция-1.html#definition-2"
+    },
+    {
+        "keyword": "полукольцо",
+        "html": "<p><a href=\"лекция-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСистема множеств <span class=\"math inline\">\\(S\\)</span> –\n<em>полукольцо</em>, если</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\varnothing \\in S\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall A, B \\in S \\,\\,\\,\\, A\\cap B \\in\nS\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall A, A_1 \\in S: \\,\\,\\,\\, A_1\n\\subset A \\,\\,\\,\\, \\exists n \\in \\mathbb{N} \\,\\,\\,\\, \\exists A_2, \\ldots\nA_n \\in S: \\,\\,\\,\\, A = \\bigsqcup_{i = 1}^n A_n\\)</span>.</li>\n</ol>",
+        "url": "лекция-1.html#definition-0"
+    },
+    {
+        "keyword": "кольцо",
+        "html": "<p><a href=\"лекция-1.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСистема множеств <span class=\"math inline\">\\(R\\)</span> –\n<em>кольцо</em>, если</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\varnothing \\in S\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall A, B \\in S \\,\\,\\,\\, A\\cap B \\in\nS\\)</span> и <span class=\"math inline\">\\(A\\triangle B \\in\nS\\)</span>.</li>\n</ol>",
+        "url": "лекция-1.html#definition-1"
+    },
+    {
+        "keyword": "единица алгебра",
+        "html": "<p><a href=\"лекция-1.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(S\\)</span> – система множеств. Если\n<span class=\"math inline\">\\(\\exists E \\in S: \\,\\,\\,\\, \\forall A \\in S\n\\,\\,\\,\\, A \\subset E\\)</span>, то <span class=\"math inline\">\\(E\\)</span>\n– <em>единица</em>.</p>\n<p>Кольцо с единицей – <em>алгебра</em>.</p>",
+        "url": "лекция-1.html#definition-3"
+    },
+    {
+        "keyword": "сигма-кольцо и сигма-алгебра кольцом алгебра",
+        "html": "<p><a href=\"лекция-1.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>сигма-кольцо и сигма-алгебра</em>)</p>\n<p>Кольцо <span class=\"math inline\">\\(R\\)</span> является <span\nclass=\"math inline\">\\(\\sigma\\)</span>-<em>кольцом</em>, если <span\nclass=\"math inline\">\\(\\forall \\{A_n\\}_{n = 1}^{\\infty}, \\,\\,\\,\\, A_n \\in\nR \\,\\,\\,\\, \\bigcup_{i = 1}^{\\infty}A_n \\in R\\)</span>.</p>\n<p>Если <span class=\"math inline\">\\(R\\)</span> также алгебра, то <span\nclass=\"math inline\">\\(R\\)</span> – <span\nclass=\"math inline\">\\(\\sigma\\)</span>-<em>алгебра</em>.</p>\n<div id=\"note-1\">\n<p>В действительном анализе все, что с бесконечным объединением, –\nсигма, все, что с бесконечным пересечением, – <span\nclass=\"math inline\">\\(\\delta\\)</span>.</p>\n</div>",
+        "url": "лекция-1.html#definition-4"
+    },
+    {
+        "keyword": "порожденное кольцо",
+        "html": "<p><a href=\"лекция-1.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(R(S)\\)</span> – <em>порожденное\nкольцо</em>.</p>",
+        "url": "лекция-1.html#definition-7"
+    },
+    {
+        "keyword": "мера",
+        "html": "<p><a href=\"лекция-1.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(S\\)</span> – полукольцо. Отображение\n<span class=\"math inline\">\\(m: S \\to [0, +\\infty)\\)</span> –\n<em>мера</em> (<span class=\"math inline\">\\(m(A)\\)</span> обозначается\n<span class=\"math inline\">\\(mA\\)</span>), если <span\nclass=\"math inline\">\\(\\forall A \\in S: \\,\\,\\,\\, A = \\bigsqcup_{k = 1}^n\nA_k \\,\\,\\,\\, mA = \\displaystyle \\sum_{k = 1}^{n}mA_k\\)</span>.</p>",
+        "url": "лекция-1.html#definition-5"
+    },
+    {
+        "keyword": "аддитивна",
+        "html": "<p><a href=\"лекция-1.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМера <span class=\"math inline\">\\(m\\)</span> на полукольце <span\nclass=\"math inline\">\\(S\\)</span> <span\nclass=\"math inline\">\\(\\sigma\\)</span>-<em>аддитивна</em>, если <span\nclass=\"math inline\">\\(\\forall A \\in S, \\{A_k \\in S\\}_{k = 1}^{\\infty}:\n\\,\\,\\,\\, A = \\bigsqcup_{k = 1}^{\\infty}A_k \\,\\,\\,\\, mA = \\displaystyle\n\\sum_{k = 1}^{\\infty}mA_k\\)</span>.</p>",
+        "url": "лекция-1.html#definition-6"
+    },
+    {
+        "keyword": "непрерывна снизу непрерывна сверху",
+        "html": "<p><a href=\"лекция-2.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМера <span class=\"math inline\">\\(m\\)</span> на полукольце <span\nclass=\"math inline\">\\(S\\)</span> <em>непрерывна снизу</em>, если <span\nclass=\"math inline\">\\(\\forall A, A_n \\in S: \\,\\,\\,\\, A_n \\subset A_{n +\n1} \\,\\,\\,\\,\\forall n\\)</span> и <span class=\"math inline\">\\(A =\n\\bigcup_{i = 1}^{\\infty}A_n\\)</span> выполнено <span\nclass=\"math inline\">\\(m A = \\displaystyle \\lim_{n\\to\n\\infty}mA_n\\)</span>.</p>\n<p>Мера <span class=\"math inline\">\\(m\\)</span> на полукольце <span\nclass=\"math inline\">\\(S\\)</span> <em>непрерывна сверху</em>, если <span\nclass=\"math inline\">\\(\\forall A, A_n \\in S: \\,\\,\\,\\, A_n \\supset A_{n +\n1} \\,\\,\\,\\,\\forall n\\)</span> и <span class=\"math inline\">\\(A =\n\\bigcap_{i = 1}^{\\infty}A_n\\)</span> выполнено <span\nclass=\"math inline\">\\(m A = \\displaystyle \\lim_{n\\to\n\\infty}mA_n\\)</span>.</p>",
+        "url": "лекция-2.html#definition-8"
+    },
+    {
+        "keyword": "кольцо промежутков стандартная мера",
+        "html": "<p><a href=\"лекция-2.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>кольцо промежутков</em>) Пусть <span\nclass=\"math inline\">\\(S\\)</span> – полукольцо всех промежутков в <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span> (параллелепипедов с ребрами,\nпараллельными координатным осям). В качестве меры (<em>стандартная\nмера</em>) <span class=\"math inline\">\\(m_n\\)</span> возьмем <span\nclass=\"math inline\">\\(n\\)</span>-мерный объем, то есть за меру\nпромежутка возьмем произведение длин его непараллельных ребер.\nАддитивность функции <span class=\"math inline\">\\(m_n\\)</span> в\nодномерном случае уже обсуждалась, а в многомерном случае будет\nследовать из общего утверждения о произведении мер, которое мы докажем\nпозднее.</p>",
+        "url": "лекция-2.html#definition-9"
+    },
+    {
+        "keyword": "внешняя мера лебега",
+        "html": "<p><a href=\"лекция-2.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m\\)</span> мера на полукольце <span\nclass=\"math inline\">\\(S\\)</span> с единицей <span\nclass=\"math inline\">\\(X\\)</span> и <span class=\"math inline\">\\(A \\subset\nX\\)</span>. Тогда <em>внешняя мера Лебега</em> множества <span\nclass=\"math inline\">\\(A\\)</span> <a href=\"#fn1\" class=\"footnote-ref\"\nid=\"fnref1\" role=\"doc-noteref\"><sup>1</sup></a> – это <span\nclass=\"math inline\">\\(\\mu^{*}(A) = \\displaystyle\\inf\\left\\{\\displaystyle\n\\sum_{k = 1}^{\\infty}mA_k|\\,\\,\\,\\, A_k \\in S, \\,\\,\\,\\, A \\subset\n\\displaystyle\\bigcup_{k = 1}^{\\infty}A_k\\right\\}\\)</span>.</p>\n<p>Внешняя мера Лебега, несмотря на свое название, не является, вообще\nговоря, мерой.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Оно не обязательно элемент кольца, видимо.<a\nhref=\"#fnref1\" class=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "лекция-2.html#definition-10"
+    },
+    {
+        "keyword": "счетно-субаддитивна",
+        "html": "<p><a href=\"лекция-2.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФункция <span class=\"math inline\">\\(\\mu^{*}\\)</span> со свойством <span\nclass=\"math inline\">\\(\\mu^{*}\\left(\\bigcup_k A_k\\right) \\leqslant\n\\displaystyle \\sum_{k = 1}^{\\infty}\\mu^{*}A_k\\)</span> –\n<em>счетно-субаддитивна</em>.</p>",
+        "url": "лекция-2.html#definition-19"
+    },
+    {
+        "keyword": "измеримо (по лебегу)",
+        "html": "<p><a href=\"лекция-2.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть задана сигма-аддитивная мера <span\nclass=\"math inline\">\\(m\\)</span> на полукольце <span\nclass=\"math inline\">\\(S\\)</span> с единицей <span\nclass=\"math inline\">\\(X\\)</span>. Множество <span\nclass=\"math inline\">\\(A \\subset X\\)</span> <em>измеримо (по\nЛебегу)</em>, если <span class=\"math inline\">\\(\\forall \\varepsilon &gt;\n0 \\,\\,\\,\\, \\exists A_{\\varepsilon} \\in R(S): \\,\\,\\,\\, \\mu^{*}(A\n\\triangle A_{\\varepsilon}) &lt; \\varepsilon\\)</span>. Система всех\nизмеримых множеств обозначается через <span\nclass=\"math inline\">\\(\\mathfrak{M}\\)</span>.</p>",
+        "url": "лекция-2.html#definition-11"
+    },
+    {
+        "keyword": "мера лебега",
+        "html": "<p><a href=\"лекция-2.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Мера Лебега</em> измеримого множества <span\nclass=\"math inline\">\\(A\\)</span> – это его внешняя мера Лебега: <span\nclass=\"math inline\">\\(\\mu A = \\mu^{*}A\\)</span>.</p>\n<p>Пока корректность этого определения не показана. Но далее мы докажем,\nчто <span class=\"math inline\">\\(\\mathfrak{M}\\)</span> – алгебра, и <span\nclass=\"math inline\">\\(\\mu\\)</span> действительно является мерой на\nнем.</p>",
+        "url": "лекция-2.html#definition-12"
+    },
+    {
+        "keyword": "полная",
+        "html": "<p><a href=\"лекция-2.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМера <span class=\"math inline\">\\(m\\)</span> на полукольце <span\nclass=\"math inline\">\\(S\\)</span> <em>полная</em>, если для любого <span\nclass=\"math inline\">\\(A \\in S: \\,\\,\\,\\, mA = 0\\)</span>, любое его\nподмножество <span class=\"math inline\">\\(B \\subset A\\)</span>\nпринадлежит <span class=\"math inline\">\\(S\\)</span> <a href=\"#fn1\"\nclass=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p><span class=\"math inline\">\\(mB\\)</span> при это тоже\n<span class=\"math inline\">\\(0\\)</span><a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "лекция-2.html#definition-13"
+    },
+    {
+        "keyword": "классическая мера лебега на отрезке",
+        "html": "<p><a href=\"лекция-3.html#definition-14\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Классическая мера Лебега на отрезке</em> – это продолжение по Лебегу\nстандартной меры на полукольце промежутков <span\nclass=\"math inline\">\\(m[a, b] = \\ldots = m(a, b) = b - a\\)</span>.</p>",
+        "url": "лекция-3.html#definition-14"
+    },
+    {
+        "keyword": "сигма-конечна",
+        "html": "<p><a href=\"лекция-3.html#definition-15\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m\\)</span> – <span\nclass=\"math inline\">\\(\\sigma\\)</span>-аддитивная мера на полукольце\n<span class=\"math inline\">\\(S\\)</span> с единицей <span\nclass=\"math inline\">\\(X\\)</span>. <span class=\"math inline\">\\(m\\)</span>\n– <em>сигма-конечна</em>, если <span\nclass=\"math inline\">\\(\\exists\\{X_k\\} \\,\\,\\,\\, X_k \\in S: \\,\\,\\,\\, mX_k\n&lt; \\infty,\\,\\,\\,\\, X = \\bigsqcup_{k = 1}^{\\infty}X_k, \\,\\,\\,\\, mX =\n+\\infty\\)</span>.</p>",
+        "url": "лекция-3.html#definition-15"
+    },
+    {
+        "keyword": "ограничение полукольца на элемент",
+        "html": "<p><a href=\"лекция-3.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>ограничение полукольца на элемент</em>) Пусть <span\nclass=\"math inline\">\\(S\\)</span> – система множеств. <span\nclass=\"math inline\">\\(A \\in S\\)</span>. Тогда <span\nclass=\"math inline\">\\(S\\cap A := S_{|A} := \\{B \\in S|\\,\\,\\,\\, B \\subset\nA\\} = \\{B\\cap A|\\,\\,\\,\\, B \\in S\\}\\)</span>.</p>",
+        "url": "лекция-3.html#definition-16"
+    },
+    {
+        "keyword": "измеримо по лебегу мера лебега",
+        "html": "<p><a href=\"лекция-3.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m\\)</span> – сигма-конечная мера на\nполукольце <span class=\"math inline\">\\(S\\)</span> с единицей <span\nclass=\"math inline\">\\(X\\)</span>, <span class=\"math inline\">\\(X =\n\\bigsqcup_{n = 1}^{\\infty}X_n, \\,\\,\\,\\, X_n \\in S, \\,\\,\\,\\, m X_n &lt;\n+\\infty\\)</span>.</p>\n<p>Множество <span class=\"math inline\">\\(A \\subset X\\)</span> –\n<em>измеримо по Лебегу</em>, если <span class=\"math inline\">\\(\\forall n\n\\,\\,\\,\\,A\\cap X_n\\)</span> измеримо по Лебегу относительно сужения <span\nclass=\"math inline\">\\(\\mu_n\\)</span> меры <span\nclass=\"math inline\">\\(m\\)</span> на <span\nclass=\"math inline\">\\(S_{|X_n}\\)</span>.</p>\n<p><em>Мера Лебега</em> измеримого множества <span\nclass=\"math inline\">\\(A\\)</span> – это <span class=\"math inline\">\\(\\mu A\n= \\displaystyle \\sum_{n = 1}^{\\infty}\\mu_n (A\\cap X_n)\\)</span>.</p>",
+        "url": "лекция-3.html#definition-17"
+    },
+    {
+        "keyword": "борелевская алгебра",
+        "html": "<p><a href=\"лекция-3.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНаименьшая <span class=\"math inline\">\\(\\sigma\\)</span>-алгебра на\nтопологическом пространстве, содержащая все открытые множества –\n<em>борелевская алгебра</em>. <strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(\\mathcal{B}\\)</span>.</p>",
+        "url": "лекция-3.html#definition-18"
+    }
 ]

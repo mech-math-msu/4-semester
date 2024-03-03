@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 1</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-2.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="1" id="лекция-1">Лекция 1</h1>
+<p>Действительный анализ – это про изучение ‘’плохих’’ функций, то есть
+не дифференцируемых и т.д.</p>
+<p>Есть интеграл Римана – это когда разбивается область определения
+функции (<span class="math inline">\(I_k = [x_{k - 1}, x_k], \,\,\,\,
+\xi_k \in I_k\)</span> и интегральная сумма <span
+class="math inline">\(S = \displaystyle
+\sum_{k}^{}f(\xi_k)|I_k|\)</span>). А Лебег предложил разбивать область
+значений, то есть в качестве <span class="math inline">\(I_k\)</span>
+берем <span class="math inline">\(\{x|\,\,\,\,y_{k - 1}\leqslant f(x)
+&lt;  y_k\}\)</span>. Ну и возникла проблема: что такое длина (мера)
+такого <span class="math inline">\(I_k\)</span>?</p>
+<h2 data-number="1.1" id="системы-множеств">Системы множеств</h2>
+<div id="definition-2">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>симметрическая разность</em>) <span
+class="math inline">\(A\triangle B = (A\cup B)\setminus (A\cap B) =
+(A\setminus B)\cup (B\setminus A)\)</span>.</p>
+</div>
+<div id="definition-0">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Система
+множеств <span class="math inline">\(S\)</span> – <em>полукольцо</em>,
+если</p>
+<ol type="1">
+<li><span class="math inline">\(\varnothing \in S\)</span>,</li>
+<li><span class="math inline">\(\forall A, B \in S \,\,\,\, A\cap B \in
+S\)</span>,</li>
+<li><span class="math inline">\(\forall A, A_1 \in S: \,\,\,\, A_1
+\subset A \,\,\,\, \exists n \in \mathbb{N} \,\,\,\, \exists A_2, \ldots
+A_n \in S: \,\,\,\, A = \bigsqcup_{i = 1}^n A_n\)</span>.</li>
+</ol>
+</div>
+<div id="lemma-1">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(\{A_n\}_{n = 1}^{\infty}\)</span> –
+последовательность множеств. Тогда существует система множеств <span
+class="math inline">\(\{B_n\}_{n = 1}^{\infty}\)</span>, такая что <span
+class="math inline">\(\forall N \in \mathbb{N}\,\,\,\, \bigcup_{n = 1}^N
+A_n = \bigsqcup_{n = 1}^N B_n\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(B_1 = A_1\)</span></p>
+<p><span class="math inline">\(B_2 = A_2\setminus A_1\)</span></p>
+<p><span class="math inline">\(\vdots\)</span></p>
+<p><span class="math inline">\(B_n = A_n\setminus \bigcup_{k = 1}^{n -
+1}A_k \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-1">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Система
+множеств <span class="math inline">\(R\)</span> – <em>кольцо</em>,
+если</p>
+<ol type="1">
+<li><span class="math inline">\(\varnothing \in S\)</span>,</li>
+<li><span class="math inline">\(\forall A, B \in S \,\,\,\, A\cap B \in
+S\)</span> и <span class="math inline">\(A\triangle B \in
+S\)</span>.</li>
+</ol>
+</div>
+<div id="lemma-0">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Если <span
+class="math inline">\(R\)</span> – кольцо, то <span
+class="math inline">\(\forall A, B \in S \,\,\,\, A\setminus B \in
+S\)</span> и <span class="math inline">\(A\cup B \in S\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(A\setminus B = (A\triangle B)\cap
+A\)</span></p>
+<p><span class="math inline">\(A\cup B = (A\triangle B)\triangle (A\cap
+B) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-0">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Если
+<span class="math inline">\(R\)</span> – кольцо, то <span
+class="math inline">\(R\)</span> – полукольцо.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\varnothing \in R\)</span> и <span
+class="math inline">\(\forall A, B \in S \,\,\,\, A\cap B \in S\)</span>
+по определению.</p>
+<p><span class="math inline">\(\forall A, A_1 \in S: \,\,\,\, A_1
+\subset A\)</span> возьмем <span class="math inline">\(n = 2\)</span> и
+<span class="math inline">\(A_2 = A \setminus A_1
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="note-0">
+<p><span class="margin-lft"><strong>Замечание: </strong></span><span
+class="math inline">\(R\)</span>, потому что <code>ring</code>, <span
+class="math inline">\(S\)</span>, потому что <code>semiring</code>.</p>
+</div>
+<div id="definition-3">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(S\)</span> – система множеств. Если <span
+class="math inline">\(\exists E \in S: \,\,\,\, \forall A \in S \,\,\,\,
+A \subset E\)</span>, то <span class="math inline">\(E\)</span> –
+<em>единица</em>.</p>
+<p>Кольцо с единицей – <em>алгебра</em>.</p>
+</div>
+<div id="definition-4">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>сигма-кольцо и сигма-алгебра</em>)</p>
+<p>Кольцо <span class="math inline">\(R\)</span> является <span
+class="math inline">\(\sigma\)</span>-<em>кольцом</em>, если <span
+class="math inline">\(\forall \{A_n\}_{n = 1}^{\infty}, \,\,\,\, A_n \in
+R \,\,\,\, \bigcup_{i = 1}^{\infty}A_n \in R\)</span>.</p>
+<p>Если <span class="math inline">\(R\)</span> также алгебра, то <span
+class="math inline">\(R\)</span> – <span
+class="math inline">\(\sigma\)</span>-<em>алгебра</em>.</p>
+<div id="note-1">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>В
+действительном анализе все, что с бесконечным объединением, – сигма,
+все, что с бесконечным пересечением, – <span
+class="math inline">\(\delta\)</span>.</p>
+</div>
+</div>
+<h3 data-number="1.1.1" id="примеры">Примеры</h3>
+<ol type="1">
+<li>Пусть <span class="math inline">\(X\)</span> – множество. Тогда
+<span class="math inline">\(S_1 = \{\varnothing, X\}\)</span> и система
+<span class="math inline">\(S_2\)</span>, состоящая из множества всех
+подмножеств <span class="math inline">\(X\)</span>, являются <span
+class="math inline">\(\sigma\)</span>-алгебрами с единицей <span
+class="math inline">\(X\)</span>.</li>
+<li>(Полукольцо промежутков) <span class="math inline">\(S = \{[a, b],
+[a, b), (a, b], (a, b)|\,\,\,\, a_0 \leqslant a \leqslant b \leqslant
+b_0\}\)</span> является полукольцом с единицей <span
+class="math inline">\([a_0, b_0]\)</span>.</li>
+</ol>
+<div id="lemma-2">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(S\)</span> – полукольцо и <span
+class="math inline">\(A \in S\)</span>. Пусть <span
+class="math inline">\(\exists n \in \mathbb{N} \,\,\,\, \exists A_1,
+\ldots, A_n \in S: \,\,\,\, A \subset \bigsqcup_{k = 1}^n
+A_k\)</span>.</p>
+<p>Тогда <span class="math inline">\(\exists l \geqslant n \,\,\,\,
+\exists A_{n + 1}, \ldots, A_l \in S: \,\,\,\, \bigsqcup_{k = 1}^l =
+A\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> (индукция по
+<span class="math inline">\(n\)</span>)</p>
+<p><strong>База:</strong> При <span class="math inline">\(n = 1\)</span>
+утверждение – это третья аксиома полукольца.</p>
+<p><strong>Шаг:</strong> Пусть при <span class="math inline">\(n -
+1\)</span> утверждение верно, то есть <span class="math inline">\(A =
+\bigsqcup_{k = 1}^{n - 1}A_k \sqcup \bigsqcup_{k = n}^{l}
+B_k\)</span>.</p>
+<p><span class="math inline">\(A_n \subset \bigsqcup_{k = n}^{l}
+B_k\)</span> и, следовательно, <span class="math inline">\(A_n =
+\bigsqcup_{k = n}^l (B_k \cap A_n)\)</span>.</p>
+<p><span class="math inline">\(\forall k \in \{n, \ldots, l\} \,\,\,\,
+A_n \cap B_k \subset A_n\)</span> и <span class="math inline">\(A_n \cap
+B_k \in S\)</span> по второй аксиоме полукольца, а значит по третьей
+аксиоме <span class="math inline">\(\exists i_k \in \mathbb{N} \,\,\,\,
+\exists C_{k1}, \ldots, C_{ki_k}: \,\,\,\, A_n = (A_n \cap B_k)\sqcup
+\bigsqcup_{i = 1}^{i_k}C_{ki}\)</span>.</p>
+<p>В итоге: <span class="math inline">\(A = \bigsqcup_{k = 1}^{n - 1}A_k
+\sqcup \bigsqcup_{k = n}^{l}((A_n \cap B_k)\sqcup \bigsqcup_{i =
+1}^{i_k}C_{ki})=\)</span></p>
+<p><span class="math inline">\(= \bigsqcup_{k = 1}^{n - 1}A_k \sqcup
+\bigsqcup_{k = n}^{l}(A_n \cap B_k)\sqcup \bigsqcup_{k =
+n}^{l}\bigsqcup_{i = 1}^{i_k}C_{ki}=\)</span></p>
+<p><span class="math inline">\(= \bigsqcup_{k = 1}^{n - 1}A_k \sqcup A_n
+\sqcup \bigsqcup_{k = n}^{l}\bigsqcup_{i = 1}^{i_k}C_{ki}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="lemma-3">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(S\)</span> – полукольцо и <span
+class="math inline">\(\{A_k\}_{k = 1}^n\)</span> – конечный набор его
+элементов.</p>
+<p>Тогда <span class="math inline">\(\exists l \in \mathbb{N} \,\,\,\,
+\exists \{B_k\}_{k = 1}^l, \,\,\,\, B_k \in S\)</span>, причем <span
+class="math inline">\(B_k\)</span> попарно непересекаются, такие, что
+каждое из <span class="math inline">\(A_k\)</span> представляется в виде
+объединения <span class="math inline">\(B_k\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> (индукция по
+<span class="math inline">\(n\)</span>)</p>
+<p><strong>База:</strong> <span class="math inline">\(n = 1\)</span>
+возмем <span class="math inline">\(A_1 = B_1\)</span></p>
+<p><strong>Шаг:</strong> Пусть для <span class="math inline">\(n -
+1\)</span> верно, то есть существует набор <span
+class="math inline">\(\{B_k\}_{k = 1}^l\)</span> попарно
+непересекающихся подмножеств, таких, что каждое <span
+class="math inline">\(A_k, \,\,\,\, k \in \{1, \ldots, n - 1\}\)</span>
+представимо в виде объединения <span
+class="math inline">\(B_k\)</span>.</p>
+<p>Построим новый набор множеств: <span class="math inline">\(\forall k
+\in \{1, \ldots, n - 1\}\)</span> если <span
+class="math inline">\(A_n\cap B_k = \varnothing\)</span>, то <span
+class="math inline">\(i_k = 1\)</span> и <span
+class="math inline">\(C_{k1} = C_{ki_k} = B_k\)</span>, иначе по третьей
+аксиоме полукольца <span class="math inline">\(\exists i_k \in N
+\,\,\,\, \exists C_{k2}, \ldots, C_{ki_k} \in S: \,\,\,\, B_k = (A_n\cap
+B_k)\sqcup\bigsqcup_{i = 2}^{i_k}C_{ki} = C_{k1}\sqcup\bigsqcup_{i =
+2}^{i_k}C_{ki}\)</span>.</p>
+<p>По предположению индукции каждое <span
+class="math inline">\(A_k\)</span> представимо в виде объединения <span
+class="math inline">\(C_{ki}\)</span> и <span class="math inline">\(A_n
+\supseteq \bigsqcup_{k = 1}^{n - 1}C_{k1}\)</span>. Далее применяем
+предыдущую <a href="лекция-1.html#lemma-2">лемму</a> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-0">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(S\)</span> – полукольцо. <span
+class="math inline">\(R(S)\)</span> – система, состоящая из <span
+class="math inline">\(\bigsqcup_{k = 1}^n A_k, \,\,\,\, n \in
+\mathbb{N},\,\,\,\, A_k \in S\)</span>. Тогда <span
+class="math inline">\(R(S)\)</span> – минимальное кольцо, содержащее
+<span class="math inline">\(S\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="definition-7">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(R(S)\)</span> – <em>порожденное кольцо</em>.</p>
+</div>
+<h2 data-number="1.2" id="меры-на-системах-множеств">Меры на системах
+множеств</h2>
+<div id="definition-5">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(S\)</span> – полукольцо. Отображение <span
+class="math inline">\(m: S \to [0, +\infty)\)</span> – <em>мера</em>
+(<span class="math inline">\(m(A)\)</span> обозначается <span
+class="math inline">\(mA\)</span>), если <span
+class="math inline">\(\forall A \in S: \,\,\,\, A = \bigsqcup_{k = 1}^n
+A_k \,\,\,\, mA = \displaystyle \sum_{k = 1}^{n}mA_k\)</span>.</p>
+</div>
+<div id="definition-6">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Мера
+<span class="math inline">\(m\)</span> на полукольце <span
+class="math inline">\(S\)</span> <span
+class="math inline">\(\sigma\)</span>-<em>аддитивна</em>, если <span
+class="math inline">\(\forall A \in S, \{A_k \in S\}_{k = 1}^{\infty}:
+\,\,\,\, A = \bigsqcup_{k = 1}^{\infty}A_k \,\,\,\, mA = \displaystyle
+\sum_{k = 1}^{\infty}mA_k\)</span>.</p>
+</div>
+<h3 data-number="1.2.1" id="примеры-1">Примеры</h3>
+<ol type="1">
+<li>(<em>Дискретные меры</em>) Пусть <span
+class="math inline">\(X\)</span> множество, <span
+class="math inline">\(w: X \to \mathbb{R}_{+}\)</span> и <span
+class="math inline">\(S\)</span> – <span
+class="math inline">\(\sigma\)</span>-алгебра всех его подмножеств.
+Определим меру на <span class="math inline">\(A \subset X: mA =
+\displaystyle \sum_{x \in A}w(x)\)</span>.</li>
+<li>Мера <span class="math inline">\(b - a\)</span> на кольце
+промежутков.</li>
+</ol>
+<h3 data-number="1.2.2"
+id="единственность-продолжения-меры-на-порожденное-кольцо">Единственность
+продолжения меры на порожденное кольцо</h3>
+<div id="theorem-1">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(m\)</span> мера на полукольце <span
+class="math inline">\(S\)</span>. Тогда <span
+class="math inline">\(m\)</span> единственным образом продолжается до
+меры на кольце <span class="math inline">\(R(S)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Доопределим меру <span class="math inline">\(m\bigsqcup_{k = 1}^n A_k
+= \displaystyle \sum_{k = 1}^{n}mA_k\)</span>.</p>
+<p>Докажем, что это отображение. Пусть <span class="math inline">\(A =
+\bigsqcup_{k = 1}^n A_k = \bigsqcup_{k = 1}^l B_k\)</span>. Пусть <span
+class="math inline">\(C_{kj} = A_k \cap B_k\)</span>. Имеем <span
+class="math inline">\(A = \bigsqcup_{k = 1}^n \bigsqcup_{j = 1}^lC_{kj}
+= \bigsqcup_{j = 1}^l \bigsqcup_{k = 1}^n C_{kj} \implies \displaystyle
+\sum_{k = 1}^{n}m A_k = \displaystyle \sum_{k = 1}^{l}m B_k
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-2.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

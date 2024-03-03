@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 3</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="3" id="лекция-3">Лекция 3</h1>
+<h2 data-number="3.1" id="продолжение-меры-по-лебегу-1">Продолжение меры
+по Лебегу</h2>
+<div id="theorem-8">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть
+задана сигма-аддитивная мера <span class="math inline">\(m\)</span> на
+полукольце <span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>. Система <span
+class="math inline">\(\mathfrak{M}\)</span> измеримых множеств является
+алгеброй с единицей <span class="math inline">\(X\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(A, B \in \mathfrak{M}\)</span>.</p>
+<p><span class="math inline">\(X\setminus A\)</span> измеримо, так как,
+в силу измеримости <span class="math inline">\(A\)</span> имеем <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists
+A_{\varepsilon}: \,\,\,\, \mu^{*}(A\triangle A_{\varepsilon}) &lt;
+\varepsilon\)</span>, а также <span class="math inline">\((X\setminus
+A)\cup (X\setminus A_{\varepsilon}) = A\triangle
+A_{\varepsilon}\)</span>.</p>
+<p><span class="math inline">\(A\cup B\)</span> измеримо, так как можем
+выбрать <span class="math inline">\(A_{\varepsilon}\)</span> и <span
+class="math inline">\(B_{\varepsilon}\)</span>, такие, что <span
+class="math inline">\(\mu^{*}(A\triangle A_{\varepsilon}) &lt;
+\frac{\varepsilon}2\)</span> и <span
+class="math inline">\(\mu^{*}(B\triangle B_{\varepsilon}) &lt;
+\frac{\varepsilon}2\)</span>. Имеем: <span class="math inline">\((A\cup
+B)\triangle (A_{\varepsilon}\cup B_{\varepsilon}) \subset (A\triangle
+A_{\varepsilon})\cup (B\triangle B_{\varepsilon})\)</span>. Далее из
+суббаддитивности меры Лебега получаем <span
+class="math inline">\(\mu^{*}((A\cup B)\triangle (A_{\varepsilon}\cup
+B_{\varepsilon})) \leqslant \mu^{*}((A\triangle A_{\varepsilon})\cup
+(B\triangle B_{\varepsilon})) \leqslant \varepsilon\)</span></p>
+<p><span class="math inline">\(A\cap B\)</span> измеримо, так как <span
+class="math inline">\(A\cap B = X \setminus ((X\setminus A)\cup (X
+\setminus B))\)</span></p>
+<p><span class="math inline">\(A\triangle B\)</span> измеримо, так как
+<span class="math inline">\(A\triangle B = (A\setminus B)\cup (B
+\setminus A) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-12">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть
+задана сигма-аддитивная мера <span class="math inline">\(m\)</span> на
+полукольце <span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>. Тогда мера Лебега является корректно
+определенной мерой на <span
+class="math inline">\(\mathfrak{M}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(A, B \in \mathfrak{M}\)</span> и
+<span class="math inline">\(A\cap B = \varnothing\)</span>.</p>
+<ol start="0" type="1">
+<li><p>Выберем <span class="math inline">\(A_{\varepsilon}\)</span> и
+<span class="math inline">\(B_{\varepsilon}\)</span>, такие, что <span
+class="math inline">\(\mu^{*}(A\triangle A_{\varepsilon}) &lt;
+\frac{\varepsilon}2\)</span> и <span
+class="math inline">\(\mu^{*}(B\triangle B_{\varepsilon}) &lt;
+\frac{\varepsilon}2\)</span>.</p></li>
+<li><p><span class="math inline">\((A\cup B)\triangle
+(A_{\varepsilon}\cup B_{\varepsilon}) \subset (A\triangle
+A_{\varepsilon})\cup (B\triangle B_{\varepsilon})\)</span>. Из
+суббаддитивности меры Лебега получаем <span
+class="math inline">\(\mu^{*}((A\cup B)\triangle (A_{\varepsilon}\cup
+B_{\varepsilon})) \leqslant \mu^{*}((A\triangle A_{\varepsilon})\cup
+(B\triangle B_{\varepsilon})) \leqslant \varepsilon\)</span>.</p></li>
+<li><p><span class="math inline">\(A_{\varepsilon}\cup B_{\varepsilon}
+\subset (A \cup B)\cup ((A\cup B)\triangle (A_{\varepsilon}\cup
+B_{\varepsilon})) \implies \mu^{*}(A_{\varepsilon}\cup B_{\varepsilon})
+\leqslant \mu^{*}(A \cup B) + \mu^{*}((A\cup B)\triangle
+(A_{\varepsilon}\cup B_{\varepsilon}))\)</span></p></li>
+<li><p><span class="math inline">\(A \subset A_{\varepsilon} \cup
+(A\triangle A_{\varepsilon}) \implies \mu^{*}(A) \leqslant
+\mu^{*}(A_{\varepsilon}) + \mu^{*}(A\triangle A_{\varepsilon}) &lt;
+\mu^{*}(A_{\varepsilon}) + \frac{\varepsilon}2 \implies
+m(A_{\varepsilon}) = \mu^{*}(A_{\varepsilon}) \geqslant \mu^{*}(A) -
+\frac{\varepsilon}2\)</span> и <span
+class="math inline">\(m(B_{\varepsilon}) = \mu^{*}(B_{\varepsilon})
+\geqslant \mu^{*}(B) - \frac{\varepsilon}2\)</span></p></li>
+<li><p><span class="math inline">\(A\cap B = \varnothing \implies
+(A_{\varepsilon}\cap B_{\varepsilon}) \subset (A\triangle
+A_{\varepsilon})\cup (B\triangle B_{\varepsilon}) \implies
+m(A_{\varepsilon} \cap B_{\varepsilon}) = \mu^{*}(A_{\varepsilon} \cap
+B_{\varepsilon}) \leqslant \mu^{*}(A\triangle A_{\varepsilon})+
+\mu^{*}(B\triangle B_{\varepsilon}) &lt; \varepsilon\)</span></p></li>
+</ol>
+<p>Имеем из 3 и 4:</p>
+<ol start="5" type="1">
+<li><span class="math inline">\(\mu^{*}(A_{\varepsilon}\cup
+B_{\varepsilon}) = \mu^{*}(A_{\varepsilon})+ \mu^{*}(B_{\varepsilon}) -
+\mu^{*}(A_{\varepsilon}\cap B_{\varepsilon}) \geqslant \mu^{*}(A) +
+\mu^{*}(B) - 2 \varepsilon\)</span></li>
+</ol>
+<p>Имеем из 1, 2 и 5:</p>
+<p><span class="math inline">\(\mu^{*}(A \cup B) \geqslant
+\mu^{*}(A_{\varepsilon}\cup B_{\varepsilon}) - \mu^{*}((A\cup
+B)\triangle (A_{\varepsilon}\cup B_{\varepsilon})) \geqslant \mu^{*}(A)
++ \mu^{*}(B) - 3 \varepsilon\)</span></p>
+<p>В силу произвольности <span
+class="math inline">\(\varepsilon\)</span>: <span
+class="math inline">\(\mu^{*}(A \cup B) \geqslant \mu^{*}(A) +
+\mu^{*}(B)\)</span>, а также в силу субаддитивности <span
+class="math inline">\(\mu^{*}(A \cup B) \leqslant \mu^{*}(A) +
+\mu^{*}(B) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-9">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть
+задана сигма-аддитивная мера <span class="math inline">\(m\)</span> на
+полукольце <span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>. Тогда система измеримых множеств <span
+class="math inline">\(\mathfrak{M}\)</span> является <span
+class="math inline">\(\sigma\)</span>-алгеброй.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(A = \cup_{k =
+1}^{\infty}A_k\)</span>. Достаточно доказать для непересекающихся <span
+class="math inline">\(A_k\)</span>, так как иначе воспользуемся <a
+href="лекция-1.html#lemma-1">леммой</a>.</p>
+<p>Из аддитивности меры имеем: <span class="math inline">\(\displaystyle
+\sum_{k = 1}^{N}\mu A_k = \mu^{*}\displaystyle \bigsqcup_{k = 1}^{N}A_k
+\leqslant \mu^{*}A\)</span>, а значит ряд сходится.</p>
+<p>Имеем <span class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\,
+\exists N \in \mathbb{N}: \,\,\,\, D = \mu^{*}\left(\bigsqcup_{N =
+1}^{\infty}A_k\right) \leqslant^{(1)} \displaystyle \sum_{k =
+N}^{\infty}\mu A_k &lt; \frac{\varepsilon}2\)</span>. <span
+class="math inline">\((1)\)</span> из субаддитивности меры Лебега.</p>
+<p>Из аддитивности: <span class="math inline">\(C = \displaystyle
+\sum_{k = 1}^{N}\mu A_k\)</span> измеримо, а значит <span
+class="math inline">\(\exists C_{\varepsilon}: \,\,\,\,
+\mu^{*}(C\triangle C_{\varepsilon}) &lt; \varepsilon\)</span>.</p>
+<p><span class="math inline">\(A\triangle C_{\varepsilon} = (C \sqcup
+D)\triangle C_{\varepsilon} = (C\triangle C_{\varepsilon})\sqcup
+(D\triangle C_{\varepsilon}) \subset (C\triangle C_{\varepsilon})\sqcup
+D \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-10">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть
+задана сигма-аддитивная мера <span class="math inline">\(m\)</span> на
+полукольце <span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>. Тогда мера Лебега сигма-аддитивна на
+сигма-алгебре измеримых множеств <span
+class="math inline">\(\mathfrak{M}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Согласно <a
+href="лекция-2.html#theorem-4">теореме</a>, мера Лебега сигма-аддитивна,
+если для любых <span class="math inline">\(A\)</span> и <span
+class="math inline">\(A_k\)</span> из <span
+class="math inline">\(\mathfrak{M}\)</span>, удовлетворяющих условию
+<span class="math inline">\(A = \displaystyle\bigsqcup_{k =
+1}^{\infty}\)</span>, выполнено неравенство <span
+class="math inline">\(\mu A \leqslant \displaystyle \sum_{k =
+1}^{\infty}\mu A_k\)</span>. А неравенство выполнено, так как <a
+href="лекция-2.html#theorem-7">мера Лебега субаддитивна</a> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-14">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Классическая мера Лебега на отрезке</em> – это
+продолжение по Лебегу стандартной меры на полукольце промежутков <span
+class="math inline">\(m[a, b] = \ldots = m(a, b) = b - a\)</span>.</p>
+</div>
+<h2 data-number="3.2" id="sigma-конечные-меры"><span
+class="math inline">\(\sigma\)</span>-конечные меры</h2>
+<div id="definition-15">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(m\)</span> – <span
+class="math inline">\(\sigma\)</span>-аддитивная мера на полукольце
+<span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>. <span class="math inline">\(m\)</span>
+– <em>сигма-конечна</em>, если <span
+class="math inline">\(\exists\{X_k\} \,\,\,\, X_k \in S: \,\,\,\, mX_k
+&lt; \infty,\,\,\,\, X = \bigsqcup_{k = 1}^{\infty}X_k, \,\,\,\, mX =
++\infty\)</span>.</p>
+</div>
+<div id="example-0">
+<p><span class="margin-lft"><strong>Пример: </strong></span><span
+class="math inline">\(\mathbb{R} = \bigsqcup_{n = \mathbb{Z}}[n, n +
+1)\)</span>, <span class="math inline">\(m\)</span> – стандартная
+мера.</p>
+</div>
+<div id="definition-16">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>ограничение полукольца на элемент</em>) Пусть <span
+class="math inline">\(S\)</span> – система множеств. <span
+class="math inline">\(A \in S\)</span>. Тогда <span
+class="math inline">\(S\cap A := S_{|A} := \{B \in S|\,\,\,\, B \subset
+A\} = \{B\cap A|\,\,\,\, B \in S\}\)</span>.</p>
+</div>
+<div id="lemma-5">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Если <span
+class="math inline">\(S\)</span> полукольцо(кольцо, сигма-кольцо), <span
+class="math inline">\(A \in S\)</span>. Тогда <span
+class="math inline">\(S_{|A}\)</span> – полукольцо (кольцо,
+сигма-алгебра) с единицей <span class="math inline">\(A\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Если <span class="math inline">\(B_1, B_2 \in S, \,\,\,\, B_1 \subset
+A, \,\,\,\, B_2 \subset A\)</span>, то <span class="math inline">\(B_1
+\cap B_2 \subset A\)</span> и <span class="math inline">\(B_1 \cap B_2
+\in S\)</span> и дополняющие множества тоже вложены <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="3.2.1"
+id="измеримость-множества-по-лебегу-в-случае-сигма-конечной-меры">Измеримость
+множества по Лебегу в случае сигма-конечной меры</h3>
+<div id="definition-17">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(m\)</span> – сигма-конечная мера на
+полукольце <span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>, <span class="math inline">\(X =
+\bigsqcup_{n = 1}^{\infty}X_n, \,\,\,\, X_n \in S, \,\,\,\, m X_n &lt;
++\infty\)</span>.</p>
+<p>Множество <span class="math inline">\(A \subset X\)</span> –
+<em>измеримо по Лебегу</em>, если <span class="math inline">\(\forall n
+\,\,\,\,A\cap X_n\)</span> измеримо по Лебегу относительно сужения <span
+class="math inline">\(\mu_n\)</span> меры <span
+class="math inline">\(m\)</span> на <span
+class="math inline">\(S_{|X_n}\)</span>.</p>
+<p><em>Мера Лебега</em> измеримого множества <span
+class="math inline">\(A\)</span> – это <span class="math inline">\(\mu A
+= \displaystyle \sum_{n = 1}^{\infty}\mu_n (A\cap X_n)\)</span>.</p>
+</div>
+<div id="theorem-11">
+<span class="margin-lft"><strong>Теорема: </strong></span>
+<ol type="1">
+<li>Определение измеримого по Лебегу множества корректно в случае
+сигма-конечной меры, то есть не зависит от <span
+class="math inline">\(\{X_n\}\)</span></li>
+<li><span class="math inline">\(\mathfrak{M}\)</span> – <span
+class="math inline">\(\sigma\)</span>-алгебра, а <span
+class="math inline">\(\mu\)</span> – сигма-аддитивная мера на ней.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>без доказательства <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-13">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>структура измеримых по Лебегу множеств</em>) Пусть
+<span class="math inline">\(\mu\)</span> продолжение по Лебегу конечной
+или сигма-конечной меры <span class="math inline">\(m\)</span>, <span
+class="math inline">\(\mathfrak{M}\)</span> система измеримых множеств.
+<span class="math inline">\(\forall A \in \mathfrak{M}: \,\,\,\, \mu A
+&lt; +\infty \,\,\,\, \exists B^k_n \in R(S)\)</span>, такие, что:</p>
+<ol type="1">
+<li><span class="math inline">\(B^k_n \subset B^{k +1}_n \,\,\,\,
+\forall n, k \in \mathbb{N}\)</span></li>
+<li>Пусть <span class="math inline">\(B_n = \displaystyle\bigcup_{k =
+1}^{\infty}B^k_n\)</span>. Тогда <span class="math inline">\(B_n \supset
+B_{n + 1} \forall n\)</span></li>
+<li>Пусть <span class="math inline">\(B = \displaystyle\bigcap_{n =
+1}^{\infty}B_n\)</span>. Тогда <span class="math inline">\(B \supset A
+\forall n\)</span> и <span class="math inline">\(\mu(B\setminus A) =
+0\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\forall n \,\,\,\, \exists C_n =
+\displaystyle\bigcup_k \Delta^k_n \supset A: \,\,\,\, \mu(C_n) \leqslant
+\displaystyle \sum_{k}^{\infty}\mu(\Delta^k_n) &lt; \mu(A) +
+\frac1n\)</span>.</p>
+<p><span class="math inline">\(B_n = \displaystyle\bigcap_{k =
+1}C_k\)</span>. <span class="math inline">\(\exists D^k_n \in S:
+\,\,\,\, B_n = \displaystyle\bigcup_{k}D^k_n\)</span>. Пусть <span
+class="math inline">\(B^k_n = \displaystyle\bigcup_{i = 1}^kD^i_n
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="3.3" id="борелевская-алгебра">Борелевская алгебра</h2>
+<div id="definition-18">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Наименьшая <span
+class="math inline">\(\sigma\)</span>-алгебра на топологическом
+пространстве, содержащая все открытые множества – <em>борелевская
+алгебра</em>. <strong>Обозначается:</strong> <span
+class="math inline">\(\mathcal{B}\)</span>.</p>
+</div>
+<div id="lemma-6">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Если <span
+class="math inline">\(\{M_{\alpha}\}\)</span> – семейство сигма-алгебр
+каждая с единицей <span class="math inline">\(X\)</span>, то <span
+class="math inline">\(\cap_{\alpha}M_{\alpha} = M\)</span> –
+сигма-алгебра с единицей <span class="math inline">\(X\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="note-2">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Пересекая
+все сигма-алгебры, содержащие открытые множества получим
+борелевскую.</p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 2</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-3.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="2" id="лекция-2">Лекция 2</h1>
+<div id="theorem-2">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если мера
+на полукольце <span class="math inline">\(S\)</span> <span
+class="math inline">\(\sigma\)</span>-аддитивна, то доопределенная мера
+на порожденном кольце <span class="math inline">\(R(S)\)</span> также
+<span class="math inline">\(\sigma\)</span>-аддитивна.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Все
+разбиваем на кусочки и как в предыдущей примерно <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="2.1" id="свойства-мер">Свойства мер</h2>
+<div id="theorem-3">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(m\)</span> мера на полукольце <span
+class="math inline">\(S\)</span>. Тогда</p>
+<ol type="1">
+<li><span class="math inline">\(\forall \{A_k\}_{k = 1}^n \,\,\,\, A_i
+\cap A_j = \varnothing \,\,\,\, S \ni A_k \subset A \in S \,\,\,\,
+\displaystyle \sum_{k = 1}^n mA_k \leqslant mA\)</span></li>
+<li>Если <span class="math inline">\(A \subset \bigcup_{k = 1}^n
+A_k\)</span>, то <span class="math inline">\(mA \leqslant \displaystyle
+\sum_{k = 1}^nmA_k\)</span></li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li>Дополняем по <a href="лекция-1.html#lemma-2">лемме</a> <span
+class="math inline">\(A_k\)</span> до <span
+class="math inline">\(A\)</span>. Получаем <span class="math inline">\(m
+A = m \sqcup_{k = 1}^l A_k = \displaystyle \sum_{k = 1}^l mA_k \geqslant
+m \sqcup_{k = 1}^n A_k\)</span>. Пункт 1) верен и для счетного числа
+множеств, что можно получить предельным переходом.</li>
+<li>Крошим по <a href="лекция-1.html#lemma-3">лемме</a> <span
+class="math inline">\(A_k\)</span>, так чтобы они не пересекались, а
+дальше магичим с суммами <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></li>
+</ol>
+</div>
+<div id="theorem-4">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(m\)</span> мера на полукольце <span
+class="math inline">\(S\)</span>. Тогда</p>
+<ol type="1">
+<li>Если для любого разбиения <span class="math inline">\(S \ni A =
+\bigsqcup_{k = 1}^{\infty}A_k, \,\,\,\, A_k \in S \,\,\,\, m A \leqslant
+\displaystyle \sum_{k = 1}^{\infty}m A_k\)</span>, то мера
+сигма-аддитивна.</li>
+<li>Если мера сигма-аддитивна, то для любых <span
+class="math inline">\(A, A_k \in S:\,\,\,\, A \subset \bigcup_{k = 1}^n
+A_k \,\,\,\, m A \leqslant \displaystyle \sum_{k = 1}^{\infty}m
+A_k\)</span></li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li>Условие вместе с пунктом 1 <a
+href="лекция-2.html#theorem-3">предыдущей теоремы</a> дают
+утверждение,</li>
+<li></li>
+</ol>
+</div>
+<h3 data-number="2.1.1"
+id="непрерывность-меры-сверху-и-снизу">Непрерывность меры сверху и
+снизу</h3>
+<div id="definition-8">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Мера
+<span class="math inline">\(m\)</span> на полукольце <span
+class="math inline">\(S\)</span> <em>непрерывна снизу</em>, если <span
+class="math inline">\(\forall A, A_n \in S: \,\,\,\, A_n \subset A_{n +
+1} \,\,\,\,\forall n\)</span> и <span class="math inline">\(A =
+\bigcup_{i = 1}^{\infty}A_n\)</span> выполнено <span
+class="math inline">\(m A = \displaystyle \lim_{n\to
+\infty}mA_n\)</span>.</p>
+<p>Мера <span class="math inline">\(m\)</span> на полукольце <span
+class="math inline">\(S\)</span> <em>непрерывна сверху</em>, если <span
+class="math inline">\(\forall A, A_n \in S: \,\,\,\, A_n \supset A_{n +
+1} \,\,\,\,\forall n\)</span> и <span class="math inline">\(A =
+\bigcap_{i = 1}^{\infty}A_n\)</span> выполнено <span
+class="math inline">\(m A = \displaystyle \lim_{n\to
+\infty}mA_n\)</span>.</p>
+</div>
+<div id="theorem-5">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Мера <span
+class="math inline">\(m\)</span> на кольце <span
+class="math inline">\(R\)</span> сигма-аддитивна <span
+class="math inline">\(\iff m\)</span> непрерывна снизу.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть дана последовательнось расширяющихся элементов системы <span
+class="math inline">\(\{A_n\}\)</span> и <span class="math inline">\(A =
+\bigcup_{i = 1}^{\infty}A_n\)</span>. Воспользуемся <a
+href="лекция-1.html#lemma-1">леммой</a> <span class="math inline">\(A_n
+= \bigsqcup_{k = 1}^nB_k\)</span> и <span class="math inline">\(A =
+\bigsqcup_{k = 1}^{\infty}B_k\)</span>.</p>
+<p><span class="math display">\[mA = \displaystyle \sum_{k =
+1}^{\infty}B_k = \displaystyle \lim_{n\to \infty}S_n = \displaystyle
+\lim_{n\to \infty}\displaystyle \sum_{k = 1}^{n}mB_k = \displaystyle
+\lim_{n\to \infty}mA_n\]</span></p>
+<p>Воспользуемся равенством выше в обе стороны <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-1">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Пусть
+мера <span class="math inline">\(m\)</span> сигма-аддитивна на кольце
+<span class="math inline">\(R\)</span>, <span class="math inline">\(A,
+A_k \in R, \,\,\,\, A_k \subset A_{k + 1} \,\,\,\, A = \bigcap_{k =
+1}^{\infty} A_k, \,\,\,\, mA_1 &lt; +\infty\)</span>. Тогда <span
+class="math inline">\(\displaystyle \lim_{k\to \infty}mA_k =
+mA\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(B_n = A_1 \setminus A_n \implies A_1
+\setminus A = \bigcup_{k = 1}^{\infty}B_n\)</span> далее предыдущая
+теорема <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-2">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Если
+сигма-аддитивная мера на кольце пинимает только конечные значения, то
+она непрерывна сверху.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span>
+переформулировка предыдущего <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="2.2"
+id="стандартная-мера-в-n-мерном-пространстве">Стандартная мера в <span
+class="math inline">\(n\)</span>-мерном пространстве</h2>
+<div id="definition-9">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>кольцо промежутков</em>) Пусть <span
+class="math inline">\(S\)</span> – полукольцо всех промежутков в <span
+class="math inline">\(\mathbb{R}^n\)</span> (параллелепипедов с ребрами,
+параллельными координатным осям). В качестве меры (<em>стандартная
+мера</em>) <span class="math inline">\(m_n\)</span> возьмем <span
+class="math inline">\(n\)</span>-мерный объем, то есть за меру
+промежутка возьмем произведение длин его непараллельных ребер.
+Аддитивность функции <span class="math inline">\(m_n\)</span> в
+одномерном случае уже обсуждалась, а в многомерном случае будет
+следовать из общего утверждения о произведении мер, которое мы докажем
+позднее.</p>
+</div>
+<div id="theorem-6">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Стандартная
+мера в <span class="math inline">\(\mathbb{R}^n\)</span>
+сигма-аддитивна.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> все
+доказательства про <span class="math inline">\(\mathbb{R}^n\)</span>
+какие-то люто неприятные <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="2.3" id="продолжение-меры-по-лебегу">Продолжение меры
+по Лебегу</h2>
+<p>Рассмотрим вначале случай, когда исходная мера определена на
+полукольце с единицей. Можно считать ее автоматически продолженной <a
+href="лекция-1.html#theorem-1">по теореме</a> на порожденную минимальную
+алгебру.</p>
+<h3 data-number="2.3.1" id="внешняя-мера-лебега">Внешняя мера
+Лебега</h3>
+<div id="definition-10">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(m\)</span> мера на полукольце <span
+class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span> и <span class="math inline">\(A \subset
+X\)</span>. Тогда <em>внешняя мера Лебега</em> множества <span
+class="math inline">\(A\)</span> <a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a> – это <span
+class="math inline">\(\mu^{*}(A) = \displaystyle\inf\left\{\displaystyle
+\sum_{k = 1}^{\infty}mA_k|\,\,\,\, A_k \in S, \,\,\,\, A \subset
+\displaystyle\bigcup_{k = 1}^{\infty}A_k\right\}\)</span>.</p>
+<p>Внешняя мера Лебега, несмотря на свое название, не является, вообще
+говоря, мерой.</p>
+</div>
+<div id="theorem-7">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть даны
+множества <span class="math inline">\(A_k \subset X\)</span> (конечный
+или счетный набор, <span class="math inline">\(X\)</span> – единица
+полукольца). Тогда</p>
+<p><span class="math display">\[\mu^{*}\left(\bigcup_k A_k\right)
+\leqslant \displaystyle \sum_{k = 1}^{\infty}\mu^{*}A_k\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Выберем
+произвольное <span class="math inline">\(\varepsilon &gt; 0\)</span>.
+Рассмотрим такие покрытия множеств <span
+class="math inline">\(A_k\)</span> элементами <span
+class="math inline">\(I_{kj}\)</span> полукольца, что</p>
+<p><span class="math display">\[A_k \subset \bigcup_{j}I_{kj}, \,\,\,\,
+\displaystyle \sum_{j = 1}^{\infty}mI_{kj} \leqslant \mu^{*}A_k +
+\frac{\varepsilon}{2^k}\]</span></p>
+<p>Тогда <span class="math inline">\(\bigcup_k A_k \subset
+\bigcup_{j}I_{kj} \implies \mu^{*}\left(\bigcup_k A_k\right) \leqslant
+\displaystyle \sum_k\displaystyle \sum_jm I_{kj} \leqslant \displaystyle
+\sum_k\mu^{*}A_k + \displaystyle \sum_k\frac{\varepsilon}{2^k} \leqslant
+\displaystyle \sum_{k = 1}^{\infty}\mu^{*}A_k + \varepsilon
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-19">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Функция
+<span class="math inline">\(\mu^{*}\)</span> со свойством <span
+class="math inline">\(\mu^{*}\left(\bigcup_k A_k\right) \leqslant
+\displaystyle \sum_{k = 1}^{\infty}\mu^{*}A_k\)</span> –
+<em>счетно-субаддитивна</em>.</p>
+</div>
+<div id="corollary-3">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Если даны
+два множества <span class="math inline">\(A, B \subset X\)</span>, то
+<span class="math display">\[|\mu^{*}A - \mu^{*}B| \leqslant
+\mu^{*}(A\triangle B)\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Достаточно
+заметить, что <span class="math inline">\(A \subset (A \triangle B)\cup
+B\)</span> и <span class="math inline">\(B \subset (A \triangle B)\cup A
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="2.3.2" id="измеримые-множества">Измеримые
+множества</h3>
+<div id="definition-11">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+задана сигма-аддитивная мера <span class="math inline">\(m\)</span> на
+полукольце <span class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>. Множество <span
+class="math inline">\(A \subset X\)</span> <em>измеримо (по
+Лебегу)</em>, если <span class="math inline">\(\forall \varepsilon &gt;
+0 \,\,\,\, \exists A_{\varepsilon} \in R(S): \,\,\,\, \mu^{*}(A
+\triangle A_{\varepsilon}) &lt; \varepsilon\)</span>. Система всех
+измеримых множеств обозначается через <span
+class="math inline">\(\mathfrak{M}\)</span>.</p>
+</div>
+<div id="definition-12">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Мера Лебега</em> измеримого множества <span
+class="math inline">\(A\)</span> – это его внешняя мера Лебега: <span
+class="math inline">\(\mu A = \mu^{*}A\)</span>.</p>
+<p>Пока корректность этого определения не показана. Но далее мы докажем,
+что <span class="math inline">\(\mathfrak{M}\)</span> – алгебра, и <span
+class="math inline">\(\mu\)</span> действительно является мерой на
+нем.</p>
+</div>
+<div id="lemma-4">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть задана
+сигма-аддитивная мера на полукольце <span
+class="math inline">\(S\)</span> с единицей <span
+class="math inline">\(X\)</span>, продолженная до меры <span
+class="math inline">\(m\)</span> на порожденной алгебре <span
+class="math inline">\(R(S)\)</span>.</p>
+<ol type="1">
+<li>Если <span class="math inline">\(\mu^{*}A = 0\)</span>, то <span
+class="math inline">\(A \in \mathfrak{M}\)</span>.</li>
+<li>Если <span class="math inline">\(A \in R(S)\)</span>, то <span
+class="math inline">\(A \in \mathfrak{M}\)</span> и <span
+class="math inline">\(mA = \mu^{*}A = \mu A\)</span> (то есть измеримых
+множеств ‘’больше’’, чем множеств в порожденном кольце).</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li>Взять <span class="math inline">\(B_{\varepsilon} =
+\varnothing\)</span></li>
+<li>Взять <span class="math inline">\(B_{\varepsilon} = A\)</span> и
+определения и теоремы про меры <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></li>
+</ol>
+</div>
+<p>Второе утверждение леммы, в частности, означает, что мера Лебега
+будет продолжением исходной меры.</p>
+<div id="definition-13">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Мера
+<span class="math inline">\(m\)</span> на полукольце <span
+class="math inline">\(S\)</span> <em>полная</em>, если для любого <span
+class="math inline">\(A \in S: \,\,\,\, mA = 0\)</span>, любое его
+подмножество <span class="math inline">\(B \subset A\)</span>
+принадлежит <span class="math inline">\(S\)</span> <a href="#fn2"
+class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>.</p>
+</div>
+<div id="corollary-4">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Мера
+Лебега полна.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Следует из <a href="лекция-2.html#lemma-4">леммы</a> и <a
+href="лекция-2.html#theorem-7">теоремы</a> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Оно не обязательно элемент кольца, видимо.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><span class="math inline">\(mB\)</span> при это тоже
+<span class="math inline">\(0\)</span><a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-3.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

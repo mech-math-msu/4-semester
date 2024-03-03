@@ -11,6 +11,7 @@
     
     <title>Лекция 2</title>
     <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
         div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
         div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
@@ -85,7 +86,7 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
@@ -100,6 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
@@ -218,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,6 +236,8 @@
     </head>
 <body>
 
+
+<img src="ico.png" alt="" class="logo">
 
 <nav id="sitenav">
     <div class="sitenav">
@@ -246,7 +254,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-3.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -257,8 +265,8 @@
 <h1 data-number="2" id="лекция-2">Лекция 2</h1>
 <h2 data-number="2.1" id="теорема-штурма">Теорема Штурма</h2>
 <div id="theorem-3">
-<p><strong>Теорема: </strong>(<em>Штурма о чередовании нулей линейно
-независимых решений</em>) Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>Штурма
+о чередовании нулей линейно независимых решений</em>) Пусть <span
 class="math inline">\(y_1(x)\)</span> и <span
 class="math inline">\(y_2(x)\)</span> – линейно независимые решения <a
 href="definition-5">уравнения</a>, <span class="math inline">\(x_1, x_2
@@ -268,7 +276,7 @@ href="definition-5">уравнения</a>, <span class="math inline">\(x_1, x_2
 x_2)\)</span>)</p>
 <p>Тогда существует <span class="math inline">\(x_3 \in (x_1, x_2):
 \,\,\,\, y_2(x_3) = 0\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(y_2(x) \ne 0, \,\,\,\, \forall x
 \in (x_1, x_2)\)</span> и пусть <span class="math inline">\(y_2(x) &gt;
 0, \,\,\,\, \forall x \in (x_1, x_2)\)</span>.</p>
@@ -308,7 +316,8 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="2.2" id="теорема-сравнения">Теорема сравнения</h2>
 <div id="theorem-4">
-<p><strong>Теорема: </strong>(<em>Теорема сравнения</em>) <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Теорема сравнения</em>) <span
 class="math inline">\(y&#39;&#39; + p(x)y = 0\)</span> и <span
 class="math inline">\(z&#39;&#39; + q(x)z = 0, \,\,\,\, p(x), q(x) \in
 C(\alpha, \beta), \,\,\,\, q(x) \geqslant p(x)\)</span>.</p>
@@ -318,7 +327,7 @@ class="math inline">\(\exists \,\,\,\,(x_3, x_4) \subset (x_1, x_2):
 \,\,\,\, q(x)&gt;p(x), \,\,\,\, x \in (x_3, x_4)\)</span>.</p>
 <p>Тогда <span class="math inline">\(\exists x_5 \in (x_1, x_2): z(x_5)
 = 0\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Умножим уравнения <span class="math inline">\(y&#39;&#39; + p(x)y =
 0\)</span> и <span class="math inline">\(z&#39;&#39; + q(x)z =
 0\)</span> на <span class="math inline">\(z(x)\)</span> и <span
@@ -355,11 +364,12 @@ class="math inline">\(z(x_1) \geqslant 0\)</span>. Противоречие, т�
 </div>
 <h2 data-number="2.3" id="теорема-кнезера">Теорема Кнезера</h2>
 <div id="theorem-2">
-<p><strong>Теорема: </strong>(<em>Кнезера</em>)</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Кнезера</em>)</p>
 <p>Если в <a href="definition-5">уравнении</a> <span
 class="math inline">\(p(x)\leqslant \frac1{4x^2}\)</span>, то все
 решения не являются колеблющимися.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Рассмотрим <span class="math inline">\(y&#39;&#39; + \frac{a}{x^2}y =
 0\)</span>.</p>
 <p>Домножим на <span class="math inline">\(x_2\)</span> и получим
@@ -416,11 +426,11 @@ d_{p(x)} \leqslant d_m\)</span></p>
 <p>Получили формулу для оценки числа нулей:</p>
 <p><span class="math display">\[\frac{\pi}{\sqrt{M}} \leqslant d
 \leqslant \frac{\pi}{\sqrt{m}}\]</span></p>
-<h3 data-number="2.3.2" id="краевые-задачи">Краевые задачи</h3>
+<h2 data-number="2.4" id="краевые-задачи">Краевые задачи</h2>
 <div id="definition-6">
-<p><strong>Определение: </strong>Пусть <span
-class="math inline">\(a_0(x)y&#39;&#39; + a_1(x)y&#39; + a_2(x)y = f(x),
-\,\,\,\, a_0, a_1, a_2, f \in C[a, b]\)</span> и на концах отрезка
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(a_0(x)y&#39;&#39; + a_1(x)y&#39; + a_2(x)y =
+f(x), \,\,\,\, a_0, a_1, a_2, f \in C[a, b]\)</span> и на концах отрезка
 заданы краевые условия: <span class="math inline">\(\alpha y&#39;(a) +
 \beta y(a) = 0, \,\,\,\, \gamma y&#39;(b) + \delta y(b) = 0\)</span>,
 такие что <span class="math inline">\(\left|\begin{array}{cc} \alpha
@@ -437,7 +447,7 @@ class="math inline">\(\delta = 0\)</span>, то соответствующее �
 <p>Решение краевой задачи при условии непрерывности коэффицентов не
 обязательно существует, а если существует, то не обязательно
 единственно.</p>
-<h4 data-number="2.3.2.1" id="примеры-1">Примеры</h4>
+<h3 data-number="2.4.1" id="примеры-1">Примеры</h3>
 <ol type="1">
 <li><span class="math display">\[\begin{cases}
 y&#39;&#39; + y = 0\\
@@ -473,7 +483,7 @@ y(\pi) = 0 \implies y =c_2\sin(x) \forall c_2
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-3.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

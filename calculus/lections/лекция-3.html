@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 3</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="3" id="лекция-3">Лекция 3</h1>
+<div id="theorem-7">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(G \subset \mathbb{R}^2\)</span> – замкнутая и
+ограниченная, <span class="math inline">\(\mu(\partial G) = 0\)</span>.
+Тогда <span class="math inline">\(\mu(G) =
+\displaystyle\iint\limits_{G}1dx dy\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Заключаем оласть в прямоугольник. Рубим разбиением на квадратики.
+<span class="math inline">\(I = \{(i, j)|\,\,\,\, \Pi_{i j} \subset
+G\}\)</span> и <span class="math inline">\(J = \{(i, j)|\,\,\,\,
+\Pi_{ij}\cap G \ne \varnothing\}\)</span>. (Имеем <span
+class="math inline">\(I \subset J\)</span>)</p>
+<p><span class="math inline">\(\bigcap_{J}\Pi_{ij} = P\)</span> –
+описанная фигура,</p>
+<p><span class="math inline">\(\bigcap_{I}\Pi_{ij} = Q\)</span> –
+вписанная фигура.</p>
+<p><span class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\,
+\exists \mathcal{T}: \,\,\,\, \mu(P) - \mu(Q) &lt; \varepsilon\)</span>,
+так как существует площадь.</p>
+<p><span class="math inline">\(\displaystyle \sum_{I}^{}\mu(\Pi_{ij}) =
+s(\mathcal{T})\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{J}^{}\mu(\Pi_{ij}) =
+S(\mathcal{T})\)</span></p>
+<p><span class="math inline">\(\Downarrow\)</span></p>
+<p><span class="math inline">\(S(\mathcal{T}) - s(\mathcal{T}) &lt;
+\varepsilon\)</span> пределы совпадают <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="3.1" id="схема-построения-n-кратного-интеграла">Схема
+построения <span class="math inline">\(n\)</span>-кратного
+интеграла</h2>
+<div id="definition-4">
+<ol type="1">
+<li><span class="margin-lft"><strong>Определение: </strong></span></li>
+<li><em>Объем параллепипеда</em> (<span
+class="math inline">\(n\)</span>-мерного) – это произведение длин
+сторон.</li>
+<li>Объем симплексов,</li>
+<li>Вписанные и описанные многогранники,</li>
+<li>Верхние и нижние объемы <span class="math inline">\(\mu^{*}\)</span>
+и <span class="math inline">\(\mu_{*}\)</span> и если <span
+class="math inline">\(\mu^{*} = \mu_{*}\)</span>, то это объем,</li>
+<li>Интеграл <span
+class="math inline">\(\underbrace{\displaystyle\int\ldots\int}_{\Pi}
+fdx_1dx_2\ldots dx_n\)</span> на <span
+class="math inline">\(\Pi\)</span>,</li>
+<li>Интегрируемая функция ограничена, свойства интегрируемых
+функций,</li>
+<li>Интеграл функции доопределенной нулем на дополнении области до
+паралеллипипеда,</li>
+<li>Теорема (<span class="math inline">\(f\)</span> неотрицательна):
+<span class="math inline">\(\underbrace{\displaystyle\int\ldots\int}_{G}
+f(x_1, \ldots, x_n)dx_1 \ldots dx_n =(n + 1)\)</span>-мерный объем
+фигуры ‘под’ графиком <span class="math inline">\(f\)</span>.</li>
+</ol>
+</div>
+<h2 data-number="3.2" id="повторный-интеграл">Повторный интеграл</h2>
+<div id="definition-5">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пока
+все на параллепипеде. Пусть <span class="math inline">\(f(x_1, \ldots,
+x_n)\)</span> определена и ограничена на <span class="math inline">\(\Pi
+= \displaystyle\bigtimes_{i = 1}^n[a_i, b_i]\)</span>. Пусть существует
+интеграл <span
+class="math inline">\(\displaystyle\int\limits_{a_i}^{b_i} f(x_1,
+\ldots, x_i, x_{i + 1}, \ldots, x_n)dx_i\)</span>,</p>
+<p>Если существует <span
+class="math inline">\(\underbrace{\displaystyle\int\ldots\int}_{\displaystyle\bigtimes_{i
+= 1, i \ne j}[a_i, a_i]}\left(\displaystyle\int\limits_{a_i}^{b_i}
+f(x_1, \ldots, x_{i - 1}, x_i, \ldots, x_n)dx_i\right)dx_1\ldots dx_{i -
+1}dx_{i + 1}\ldots dx_n\)</span>, то это <em>повторный
+интеграл</em>.</p>
+<p><!-- интегрируема по Риману на $n$-мерном параллепипеде. --></p>
+</div>
+<div id="theorem-8">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>равенство повторного и кратного интегралов для
+двумерного случая</em>) Пусть <span class="math inline">\(f \in
+R(\Pi)\)</span> и <span class="math inline">\(\exists
+\displaystyle\int\limits_{a_i}^{b_i} f(x_1, \ldots, x_i, x_{i + 1},
+\ldots, x_n)dx_i\)</span>. Тогда <span
+class="math inline">\(\underbrace{\displaystyle\int\ldots\int}_{\displaystyle\bigtimes_{i
+= 1}[a_i, a_i]}\left(f(x_1, \ldots, x_{i - 1}, x_i, \ldots,
+x_n\right)dx_1\ldots dx_{i - 1}dx_i\ldots dx_n =
+\underbrace{\displaystyle\int\ldots\int}_{\displaystyle\bigtimes_{i = 1,
+i \ne j}[a_i, a_i]}\left(\displaystyle\int\limits_{a_i}^{b_i} f(x_1,
+\ldots, x_{i - 1}, x_i, \ldots, x_n)dx_i\right)dx_1\ldots dx_{i -
+1}dx_{i + 1}\ldots dx_n\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\exists
+\displaystyle\iint\limits_{\Pi}f(x, y)dxdy\)</span> и <span
+class="math inline">\(\exists \displaystyle\int\limits_a^b f(x,
+y)dx\)</span>. Пусть <span class="math inline">\(\mathcal{T}\)</span>
+разбиение отрезка <span class="math inline">\([c, d]\)</span> на <span
+class="math inline">\(\mathbf{y}\)</span></p>
+<p><span class="math display">\[\forall \Delta y_j \,\,\,\,m_{ij}\Delta
+x_i \leqslant \displaystyle\int\limits_{x_{i - 1}}^{x_i} f(x, \xi_{j})dx
+\leqslant M_{ij}\Delta x_i\]</span></p>
+<p>Суммируем по <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[\displaystyle \sum_{i = 1}m_{ij}\Delta
+x_i \leqslant \displaystyle\int\limits_a^b f(x, \xi_{j})dx \leqslant
+\displaystyle \sum_{i = 1}M_{ij}\Delta x_i\]</span></p>
+<p>Складываем по <span class="math inline">\(j\)</span> домножив на
+<span class="math inline">\(\Delta y_j\)</span>:</p>
+<p><span class="math display">\[\displaystyle \sum_{j = 1}\displaystyle
+\sum_{i = 1}m_{ij}\Delta x_i\Delta y_j \leqslant \displaystyle \sum_{j =
+1}\displaystyle\int\limits_a^b f(x, \xi_{j})dx\cdot \Delta y_j \leqslant
+\displaystyle \sum_{j = 1}\displaystyle \sum_{i = 1}M_{ij}\Delta
+x_i\Delta y_j\]</span></p>
+<p>Переходим к пределу:</p>
+<p><span class="math display">\[\displaystyle\iint\limits_{\Pi}fdx dy
+\leqslant \displaystyle
+\int\limits_c^d\left(\displaystyle\int\limits_a^b f(x, y)dx\right)dy
+\leqslant \displaystyle\iint\limits_{\Pi}fdx dy\]</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

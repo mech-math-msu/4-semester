@@ -1,2 +1,67 @@
-
+[
+    {
+        "keyword": "элементарные события исходы пространство элементарных событий множество исходов вероятностная мера аддитивность дискретное событие вероятность события",
+        "html": "<p><a href=\"лекция-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\Omega\\)</span> – произвольное\nмножество.</p>\n<p>Элементы <span class=\"math inline\">\\(w \\in \\Omega\\)</span> –\n<em>элементарные события</em> или <em>исходы</em>,</p>\n<p><span class=\"math inline\">\\(\\Omega\\)</span> – <em>пространство\nэлементарных событий</em> или <em>множество исходов</em>,</p>\n<p><span class=\"math inline\">\\(p: 2^\\Omega \\to [0, 1]\\)</span> –\n<em>вероятностная мера</em>, если <span class=\"math inline\">\\(p(\\Omega)\n= 1\\)</span> и <span class=\"math inline\">\\(p(A\\sqcup B) = p(A)+p(B),\n\\,\\,\\,\\, \\forall A, B \\in 2^{\\Omega}\\)</span>\n(<em>аддитивность</em>).</p>\n<p>Будем рассматривать не более чем счетное пространство событий <span\nclass=\"math inline\">\\(\\Omega = \\{w_1, \\ldots, w_n, \\ldots\\}\\)</span>.\nТакое пространство <em>дискретное</em>.</p>\n<p><span class=\"math inline\">\\(A \\subset \\Omega\\)</span> –\n<em>событие</em>. <em>Вероятность события</em> <span\nclass=\"math inline\">\\(A\\)</span> – это <span\nclass=\"math inline\">\\(p(A)\\)</span>.</p>\n<p>В классическом определении вероятности рассматривается <span\nclass=\"math inline\">\\(p\\)</span>, такое что <span\nclass=\"math inline\">\\(p(w_1) = \\ldots = p(w_n)\\)</span>. Тогда <span\nclass=\"math inline\">\\(p(A) = \\frac{|A|}{|\\Omega|}\\)</span>.</p>\n<p>Это очень важно уметь разбивать на равновероятные исходы.</p>",
+        "url": "лекция-1.html#definition-0"
+    },
+    {
+        "keyword": "условная вероятность события априорная вероятность апостериорная вероятность",
+        "html": "<p><a href=\"лекция-2.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Условная вероятность события</em> <span\nclass=\"math inline\">\\(B\\)</span> при условии события <span\nclass=\"math inline\">\\(A\\)</span> – это <span\nclass=\"math inline\">\\(P(B|A) = \\frac{P(AB)}{P(A)}\\)</span>.</p>\n<p><span class=\"math inline\">\\(P(B)\\)</span> – <em>априорная\nвероятность</em>, то есть до опыта,</p>\n<p><span class=\"math inline\">\\(P(B|A)\\)</span> – <em>апостериорная\nвероятность</em>, то есть после опыта.</p>",
+        "url": "лекция-2.html#definition-1"
+    },
+    {
+        "keyword": "разбиение пространства событий",
+        "html": "<p><a href=\"лекция-2.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНабор событий <span class=\"math inline\">\\(A_1, \\ldots, A_n\\)</span> –\n<em>разбиение пространства событий</em> <span\nclass=\"math inline\">\\(\\Omega\\)</span>, если <span\nclass=\"math inline\">\\(\\forall i, j \\,\\,\\,\\, A_iA_j =\n\\varnothing\\)</span> и <span class=\"math inline\">\\(A_1 + \\ldots + A_n =\n\\Omega\\)</span>.</p>",
+        "url": "лекция-2.html#definition-2"
+    },
+    {
+        "keyword": "независимо",
+        "html": "<p><a href=\"лекция-2.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСобытие <span class=\"math inline\">\\(B\\)</span> <em>независимо</em> от\nсобытия <span class=\"math inline\">\\(A\\)</span>, если <span\nclass=\"math inline\">\\(P(B|A) = P(B)\\)</span> или <span\nclass=\"math inline\">\\(P(AB) = P(A)P(B)\\)</span>.</p>",
+        "url": "лекция-2.html#definition-3"
+    },
+    {
+        "keyword": "независимы",
+        "html": "<p><a href=\"лекция-2.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСобытия <span class=\"math inline\">\\(A_1, \\ldots, A_n\\)</span>\n<em>независимы</em>, если <span class=\"math inline\">\\(\\forall k \\,\\,\\,\\,\n\\forall 1 \\leqslant i_1 &lt; \\ldots &lt; i_k \\leqslant n \\,\\,\\,\\,\nP(A_{i_1}\\ldots A_{i_k}) = P(A_{i_1})\\cdot \\ldots \\cdot\nP(A_{i_k})\\)</span>.</p>",
+        "url": "лекция-2.html#definition-4"
+    },
+    {
+        "keyword": "случайная величина",
+        "html": "<p><a href=\"лекция-3.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть задано дискретное вероятностное пространство <span\nclass=\"math inline\">\\(\\Omega\\)</span>.</p>\n<p><em>Случайная величина</em> <span class=\"math inline\">\\(\\xi\\)</span>\n– это функция <span class=\"math inline\">\\(\\xi: \\Omega \\to\n\\mathbb{R}\\)</span>.</p>",
+        "url": "лекция-3.html#definition-5"
+    },
+    {
+        "keyword": "разбиение",
+        "html": "<p><a href=\"лекция-3.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНабор событий <span class=\"math inline\">\\(A_1, \\ldots, A_k \\subset\n\\Omega, \\,\\,\\,\\, p(A_i) &gt; 0\\)</span> – <em>разбиение</em>\nпространства <span class=\"math inline\">\\(\\Omega\\)</span>, если <span\nclass=\"math inline\">\\(A_i \\cap A_j = \\varnothing, \\,\\,\\,\\, i \\ne\nj\\)</span> и <span class=\"math inline\">\\(A_1 + \\ldots + A_k =\n\\Omega\\)</span>.</p>",
+        "url": "лекция-3.html#definition-6"
+    },
+    {
+        "keyword": "распределение случайной величины",
+        "html": "<p><a href=\"лекция-3.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Распределение случайной величины</em> <span\nclass=\"math inline\">\\(\\xi\\)</span> – это таблица, где <span\nclass=\"math inline\">\\(x_1 &lt; \\ldots &lt; x_k &lt; \\ldots\\)</span></p>\n<table>\n<thead>\n<tr class=\"header\">\n<th><span class=\"math inline\">\\(\\xi\\)</span></th>\n<th><span class=\"math inline\">\\(x_1\\)</span></th>\n<th><span class=\"math inline\">\\(x_2\\)</span></th>\n<th><span class=\"math inline\">\\(\\ldots\\)</span></th>\n<th><span class=\"math inline\">\\(x_k\\)</span></th>\n<th><span class=\"math inline\">\\(\\ldots\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td></td>\n<td><span class=\"math inline\">\\(p_1\\)</span></td>\n<td><span class=\"math inline\">\\(p_2\\)</span></td>\n<td><span class=\"math inline\">\\(\\ldots\\)</span></td>\n<td><span class=\"math inline\">\\(p_k\\)</span></td>\n<td><span class=\"math inline\">\\(\\ldots\\)</span></td>\n</tr>\n</tbody>\n</table>",
+        "url": "лекция-3.html#definition-7"
+    },
+    {
+        "keyword": "распределение бернулли",
+        "html": "<p><a href=\"лекция-3.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>Распределение Бернулли</em>) Это распределение задается\nтаблицей</p>\n<table>\n<thead>\n<tr class=\"header\">\n<th><span class=\"math inline\">\\(\\theta\\)</span></th>\n<th><span class=\"math inline\">\\(0\\)</span></th>\n<th><span class=\"math inline\">\\(1\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td></td>\n<td><span class=\"math inline\">\\(1-p\\)</span></td>\n<td><span class=\"math inline\">\\(p\\)</span></td>\n</tr>\n</tbody>\n</table>",
+        "url": "лекция-3.html#definition-8"
+    },
+    {
+        "keyword": "биномиальное распределение",
+        "html": "<p><a href=\"лекция-3.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>Биномиальное распределение</em>) Рассмотрим <span\nclass=\"math inline\">\\(\\Omega = \\{(i_1, \\ldots, i_n)|\\,\\,\\,\\, i_j \\in\n\\{0, 1\\}\\}\\)</span>. Пусть количество единиц в <span\nclass=\"math inline\">\\(w \\in \\Omega\\)</span> равно <span\nclass=\"math inline\">\\(k\\)</span>. Пусть <span class=\"math inline\">\\(0\n&lt; p_0 &lt; 1\\)</span>. Введем вероятность <span\nclass=\"math inline\">\\(p(w) = p_0^k\\cdot (1 - p_0)^{n - k}\\)</span>.\nОпределим случайную величину <span class=\"math inline\">\\(\\nu_n(w) =\n\\displaystyle \\sum_{j = 1}^{n}i_j\\)</span>.</p>\n<p>Это распределение задается таблицей</p>\n<table>\n<colgroup>\n<col style=\"width: 9%\" />\n<col style=\"width: 11%\" />\n<col style=\"width: 22%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 29%\" />\n<col style=\"width: 10%\" />\n<col style=\"width: 6%\" />\n</colgroup>\n<thead>\n<tr class=\"header\">\n<th><span class=\"math inline\">\\(\\nu_n\\)</span></th>\n<th><span class=\"math inline\">\\(0\\)</span></th>\n<th><span class=\"math inline\">\\(1\\)</span></th>\n<th><span class=\"math inline\">\\(\\ldots\\)</span></th>\n<th><span class=\"math inline\">\\(k\\)</span></th>\n<th><span class=\"math inline\">\\(\\ldots\\)</span></th>\n<th><span class=\"math inline\">\\(n\\)</span></th>\n</tr>\n</thead>\n<tbody>\n<tr class=\"odd\">\n<td></td>\n<td><span class=\"math inline\">\\((1-p)^n\\)</span></td>\n<td><span class=\"math inline\">\\(np(1-p)^{n - 1}\\)</span></td>\n<td><span class=\"math inline\">\\(\\ldots\\)</span></td>\n<td><span class=\"math inline\">\\(C_n^kp^k(1-p)^{n - k}\\)</span></td>\n<td><span class=\"math inline\">\\(\\ldots\\)</span></td>\n<td><span class=\"math inline\">\\(p^n\\)</span></td>\n</tr>\n</tbody>\n</table>",
+        "url": "лекция-3.html#definition-9"
+    },
+    {
+        "keyword": "математическое ожидание",
+        "html": "<p><a href=\"лекция-3.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Математическое ожидание</em> случайной величины <span\nclass=\"math inline\">\\(\\xi\\)</span> – это <span\nclass=\"math inline\">\\(\\operatorname{\\operatorname{E}}\\xi = \\displaystyle\n\\sum_{w \\in \\Omega}\\xi(w)\\cdot p(w)\\)</span>.</p>\n<p>Математическое ожидание определено при абсолютной сходимости ряда\nсправа, так как хотим переставлять слагаемые.</p>",
+        "url": "лекция-3.html#definition-10"
+    },
+    {
+        "keyword": "дисперсия",
+        "html": "<p><a href=\"лекция-3.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Дисперсия</em> случайной величины <span\nclass=\"math inline\">\\(\\xi\\)</span> при условии существования ее\nматематического ожидания – это <span\nclass=\"math inline\">\\(\\operatorname{D}(\\xi) = \\operatorname{E}\\left((\\xi\n- \\operatorname{E}\\xi)^2\\right)\\)</span>.</p>",
+        "url": "лекция-3.html#definition-11"
+    },
+    {
+        "keyword": "ковариация",
+        "html": "<p><a href=\"лекция-3.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Ковариация</em> случайных величин <span\nclass=\"math inline\">\\(\\xi\\)</span> и <span\nclass=\"math inline\">\\(\\nu\\)</span> – это <span\nclass=\"math inline\">\\(\\operatorname{cov}(\\xi, \\nu) =\n\\operatorname{E}(\\xi - \\operatorname{E}\\xi)(\\nu -\n\\operatorname{E}\\nu)\\)</span>.</p>",
+        "url": "лекция-3.html#definition-12"
+    }
 ]
