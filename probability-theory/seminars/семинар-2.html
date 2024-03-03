@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Семинар 2</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="семинар-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="семинар-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="2" id="семинар-2">Семинар 2</h1>
+<h2 data-number="2.1" id="геометрическая-вероятность">Геометрическая
+вероятность</h2>
+<p>Отношения площадей.</p>
+<h2 data-number="2.2" id="операции-над-событиями">Операции над
+событиями</h2>
+<h2 data-number="2.3" id="домашняя-работа-2">Домашняя работа 2</h2>
+<div id="problem-8">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Стержень
+длиной <span class="math inline">\(l\)</span> разламывают в двух наугад
+выбранных точках. С какой вероятностью из получившихся кусков можно
+собрать треугольник?</p>
+<p><em>Решение:</em></p>
+<p>Пусть расстояние от первой точки до начала стержня <span
+class="math inline">\(x\)</span>, а от второй – <span
+class="math inline">\(y\)</span>. Тогда стороны треугольника <span
+class="math inline">\(x, \,\,\,\, y - x, \,\,\,\, l - y\)</span>, то
+есть из неравенства треугольника имеем:</p>
+<p><span class="math inline">\(x + y - x &gt; l - y \implies y &gt;
+\frac{l}2\)</span></p>
+<p><span class="math inline">\(x + l - y &gt; y - x \implies y &lt; x +
+\frac{l}2\)</span></p>
+<p><span class="math inline">\(l - y + y - x &gt; x \implies x &lt;
+\frac{l}2\)</span></p>
+<p>Также <span class="math inline">\(0 \leqslant x &lt; y \leqslant
+l\)</span>.</p>
+<p>Построим картинку:</p>
+<p><img src="83f2eaddea70decfcded2540d756d56f9615174e.svg" /></p>
+<p>Вероятность <span class="math inline">\(\frac14\)</span></p>
+</div>
+<div id="problem-9">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Плоскость
+разграфлена параллельными прямыми, находящимися на расстоянии <span
+class="math inline">\(2a\)</span>. На плоскость бросают иглу длиной
+<span class="math inline">\(2l, \,\,\,\, l &lt; a\)</span>. С какой
+вероятностью игла пересечет прямую?</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(d\)</span> – расстояние от центра
+иглы до ближайшей прямой. <span class="math inline">\(\alpha\)</span> –
+минимальный угол между иглой и горизонталью. Чтобы игла пересекла прямую
+нужно: <span class="math inline">\(l &gt;
+\frac{d}{\cos{\alpha}}\)</span>. Имеем <span class="math inline">\(0
+\leqslant \alpha \leqslant \frac{\pi}{2}\)</span> и <span
+class="math inline">\(0 \leqslant d \leqslant a\)</span>.</p>
+<!-- ```metapost
+% some
+outputtemplate := "%j.svg";
+outputformat := "svg";
+beginfig(1)
+
+u := 4cm;
+
+path line; line = (0, -2u) -- (0, 2u);
+
+draw line;
+draw line shifted (u, 0);
+draw line shifted (2u, 0);
+draw line shifted (3u, 0);
+
+draw (0.4u, -0.6u) -- (1.1u, 0.6u);
+
+endfig
+bye.
+``` -->
+<p>Вероятность <span
+class="math inline">\(\frac{\displaystyle\int\limits_0^l
+\operatorname{acos}{\frac{x}{l}}dx}{\frac{\pi}2\cdot a} =
+\frac{2}{\pi}\cdot \frac{l}{a}\)</span>.</p>
+</div>
+<div id="problem-10">
+<p><span class="margin-lft"><strong>Задача: </strong></span>В
+прямоугольник <span class="math inline">\([-1, 1]\times [-3, 2]\)</span>
+бросают точку. Пусть <span class="math inline">\((x, y)\)</span> ее
+координаты. Найти вероятность того, что у уравнения</p>
+<p><span class="math display">\[12t^2 - (2|x| + |y| - 2)t + (\sqrt{x^2 +
+y^2} - 4) = 0\]</span></p>
+<p>относительно неизвестной <span class="math inline">\(t\)</span>
+отрицательный корень по модулю меньше положительного.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Дискриминант уравнения в прямоугольнике всегда положительный, поэтому
+у уравнения два корня.</p>
+<p>Дискриминант <span class="math inline">\(D(x, y) = (2|x|+|y| - 2)^2 -
+48(\sqrt{x^2 + y^2} - 4)\)</span></p>
+<p>Корни уравнения <span class="math inline">\(t_{1, 2} =
+\frac1{24}\left(2|x|+|y| - 2 \pm \sqrt{D(x, y)}\right)\)</span>.</p>
+<p><span class="math inline">\(t_1 &gt; |t_2| \implies 2|x| + |y| &gt;
+2\)</span>.</p>
+<p><img src="77bfcc6ba95da3a7549a8bdd56e07a55a7d41c7a.svg" /></p>
+<p>Найдем искомое отношение: <span class="math inline">\(\frac{5\cdot 2
+- \frac12\cdot(4 \cdot 2)}{5\cdot 2} = 0.6\)</span></p>
+</div>
+<div id="definition-1">
+<p><span class="margin-lft"><strong>Определение: </strong></span>События
+<em>несовместны</em>, если они попарно не пересекаются.</p>
+</div>
+<div id="problem-11">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
+class="math inline">\(P(A) &gt; 0\)</span> и <span
+class="math inline">\(P(B) &gt; 0\)</span>.</p>
+<ol type="1">
+<li>Могут ли независимые события <span class="math inline">\(A\)</span>
+и <span class="math inline">\(B\)</span> быть несовместными?</li>
+<li>Могут ли несовместные события <span class="math inline">\(A\)</span>
+и <span class="math inline">\(B\)</span> быть независимыми?</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(A\)</span> и <span
+class="math inline">\(B\)</span> независимы <span
+class="math inline">\(\implies P(AB) = P(A)\cdot P(B)\)</span></p>
+<p><span class="math inline">\(A\)</span> и <span
+class="math inline">\(B\)</span> несовместны <span
+class="math inline">\(AB = \varnothing \implies P(AB) = 0 \ne P(A)\cdot
+P(B)\)</span>, так как <span class="math inline">\(P(A) &gt; 0\)</span>
+и <span class="math inline">\(P(B) &gt; 0\)</span></p>
+<p>Значит при условии <span class="math inline">\(P(A) &gt; 0\)</span> и
+<span class="math inline">\(P(B) &gt; 0\)</span> оба утверждения ложны
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-12">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Доказать,
+что <span class="math inline">\(P(A_1\ldots A_n) = P(A_n|A_{n - 1}\ldots
+A_1)\cdot P(A_{n - 1}|A_{n - 2}\ldots A_1)\cdot \ldots \cdot
+P(A_2|A_1)\cdot P(A_1)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(P(A_1\ldots A_n) = P(A_n|A_{n - 1}\ldots A_1)\cdot
+P(A_{n - 1}|A_{n - 2}\ldots A_1)\cdot \ldots \cdot P(A_2|A_1)\cdot
+P(A_1)\)</span></p>
+<p><span class="math inline">\(P(A_2|A_1)\cdot P(A_1) = \frac{P(A_2
+A_1)}{P(A_1)}\cdot p(A_1) = P(A_2 A_1)\)</span>. Продолжая также далее
+получим утверждение <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-13">
+<p><span class="margin-lft"><strong>Задача: </strong></span>В урне <span
+class="math inline">\(6\)</span> черных, <span
+class="math inline">\(5\)</span> красных и <span
+class="math inline">\(4\)</span> белых шара. Последовательно извлекают
+три шара.</p>
+<ol type="a">
+<li>третий белый, если до этого вынули черный и красный?</li>
+<li>первый – черный, второй – красный, третий – белый?</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="a">
+<li><p><span
+class="math inline">\(P(\{\operatorname{white}\}|\frac{6}{15}\cdot
+\frac{5}{14}) = \frac{\frac{4}{13}\frac{6}{15}\cdot
+\frac{5}{14}}{\frac{6}{15}\cdot \frac{5}{14}} =
+\frac{4}{13}\)</span></p></li>
+<li><p><span class="math inline">\(\frac{6}{15}\frac{5}{14}\cdot
+\frac{4}{13} = \frac{4}{91}\)</span></p></li>
+</ol>
+</div>
+<div id="problem-14">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Ключ в столе
+с вероятностью <span class="math inline">\(p\)</span>. При этом в любом
+из <span class="math inline">\(8\)</span> ящиков он с одинаковой
+вероятностью. С какой вероятностью он в столе, если его нет в <span
+class="math inline">\(7\)</span> уже проверенных ящиках?</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\frac{p}{8 - 7p}\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="семинар-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="семинар-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

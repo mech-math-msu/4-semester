@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Семинар 3</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: -16px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: -16px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="семинар-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="семинар-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="3" id="семинар-3">Семинар 3</h1>
+<h2 data-number="3.1" id="мера-стилтьеса">Мера Стилтьеса</h2>
+<div id="definition-7">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\varphi\)</span> неубывающая функция на
+<span class="math inline">\([a_0, b_0]\)</span>. <span
+class="math inline">\(S = \{[a, b)| \,\,\,\, a_0 \leqslant a \leqslant b
+\leqslant b_0\}\)</span>.</p>
+<p><span class="math inline">\(m_{\varphi}([a, b)) = \varphi(b) -
+\varphi(a)\)</span> – <em>мера Стилтьеса</em>. При <span
+class="math inline">\(\varphi(x) = x\)</span> получаем стандартную меру
+на отрезке.</p>
+<p>Докажем, что мера: <span class="math inline">\([a, b) = \bigsqcup_{k
+= 1}^n[a_k, b_k)\)</span>.</p>
+<p>Перенумеруем полуинтервалы:</p>
+<p>Если <span class="math inline">\(b_k &gt; a_{k + 1} \implies [a_k,
+b_k)\cap [a_{k + 1}, b_{k + 1}) \ne \varnothing\)</span>.</p>
+<p>Если <span class="math inline">\(b_k &lt; a_{k + 1} \implies [b_k,
+a_{k + 1})\)</span> ничем не покрыт.</p>
+<p><span class="math inline">\(\displaystyle \sum_{k =
+1}^{n}(\varphi(b_k) - \varphi(a_k)) = \varphi(a) -
+\varphi(b)\)</span></p>
+</div>
+<div id="definition-8">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Мера
+Стилтьеса <span class="math inline">\(m_{\varphi}\)</span>
+<em>правильная</em>, если <span class="math inline">\(\varphi\)</span>
+непрерывна слева.</p>
+</div>
+<h3 data-number="3.1.1" id="внешняя-мера-жордана">Внешняя мера
+Жордана</h3>
+<div id="definition-9">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>внешняя мера Жордана</em>) Тоже самое, что внешняя
+мера Лебега, только берем инфимум конечных покрытий множества.</p>
+</div>
+<div id="statement-7">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Мера
+Лебега стандартного Канторова множества равна <span
+class="math inline">\(0\)</span>. (а мощность континнум)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\mu I_k^n = \frac1{3^{n + 1}}\)</span> и
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}\frac{2^n}{3^{n + 1}} = 1 \implies \mu P_0 = 0
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="3.1.2" id="неизмеримое-по-лебегу-множество">Неизмеримое
+по Лебегу множество</h3>
+<p>Рассмотрим стандартную меру на <span class="math inline">\(A = [-1,
+2]\)</span>. Введем отношение эквивалентности <span
+class="math inline">\(x\sim y \iff x - y \in \mathbb{Q}\)</span>. Пусть
+<span class="math inline">\(E\)</span> множество, содержащее ровно по
+одной точке из каждого класса эквивалентности. <span
+class="math inline">\(\{q_n\}_{n = 1}^{\infty} = \mathbb{Q}\cap [-1, 2],
+\,\,\,\, E_n = E + \{q_n\}\)</span>.</p>
+<h2 data-number="3.2" id="домашняя-работа-3">Домашняя работа 3</h2>
+<div id="problem-10">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Правильная
+мера Стилтьеса <span
+class="math inline">\(\sigma\)</span>-аддитивна.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\([a, b) = \displaystyle\bigsqcup_{n
+= 1}^{\infty}[a_n, b_n)\)</span>. <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{N}\mu_{\varphi}[a_n,
+b_n) \leqslant \mu_{\varphi}([a, b))\)</span>, так как объединение
+дизъюнктно. Значит соответствующий ряд сходится.</p>
+<p><span class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\,
+\forall a \leqslant b&#39; &lt; b\)</span> в силу непрерывности слева
+<span class="math inline">\(\varphi\)</span> существует <span
+class="math inline">\(a&#39;_n &lt; a_n: \,\,\,\, \varphi(a_n) -
+\varphi(a&#39;_n) &lt; \frac{\varepsilon}{2^n} \implies \varphi(b_n) -
+\varphi(a&#39;_n) &lt; \varphi(b_n) - \varphi(a_n) +
+\frac{\varepsilon}{2^n}\)</span>.</p>
+<p><span class="math inline">\([a_n, b_n) \subset [a&#39;_n, b_n)
+\implies [a, b&#39;] \subset [a, b) = \displaystyle\bigsqcup_{n =
+1}^{\infty}[a_n, b_n) \subset \displaystyle\bigcup_{n =
+1}^{\infty}(a&#39;_n, b_n)\)</span>.</p>
+<p>Выделяем подпокрытие отрезка <span class="math inline">\([a, b&#39;]:
+[a, b&#39;] \subset \displaystyle\bigcup_{k = 1}^{m}(a&#39;_{n_k},
+b_{n_k})\)</span>. Имеем: <span class="math inline">\(\mu_{\varphi}([a,
+b&#39;)) = \varphi(b&#39;) - \varphi(a) \leqslant
+\mu_{\varphi}\left(\displaystyle\bigcup_{k = 1}^{m}[a&#39;_{n_k},
+b_{n_k})\right) = \displaystyle \sum_{k =
+1}^{m}\mu_{\varphi}[a&#39;_{n_k}, b_{n_k})=\)</span> <span
+class="math inline">\(= \displaystyle \sum_{k = 1}^{m}(\varphi(b_{n_k})
+- \varphi(a&#39;_{n_k})) &lt; \displaystyle \sum_{k =
+1}^{m}(\varphi(b_n) - \varphi(a_n) + \frac{\varepsilon}{2^n}) =
+\displaystyle \sum_{k = 1}^{m}(\varphi(b_n) - \varphi(a_n)) +
+\varepsilon\)</span>.</p>
+<p>В силу произвольности <span
+class="math inline">\(\varepsilon\)</span>: <span
+class="math inline">\(\mu_{\varphi}([a, b&#39;)) = \displaystyle \sum_{k
+= 1}^{m}(\varphi(b_n) - \varphi(a_n))\)</span>, а в силу произвольности
+<span class="math inline">\(b&#39;\)</span>: <span
+class="math inline">\(\mu_{\varphi}([a, b)) = \displaystyle \sum_{k =
+1}^{m}(\varphi(b_n) - \varphi(a_n)) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-10">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Неправильная
+мера Стилтьеса не является <span
+class="math inline">\(\sigma\)</span>-аддитивной.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Докажем
+отрицание этого утверждения.</p>
+<p>Пусть <span class="math inline">\(\mu_{\varphi}\)</span>
+сигма-аддитивна, <span class="math inline">\(x \in \mathbb{R}\)</span>.
+Рассмотрим последовательнось <span class="math inline">\(\{x_n\} \subset
+(-\infty, x)\)</span>, такую, что <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}x_n =
+x\)</span>.</p>
+<p>Пусть <span class="math inline">\(A = [x_1, x)\)</span> и <span
+class="math inline">\(A_n = [x_1, x_n)\)</span>. Тогда по теореме о
+полунепрерывности снизу сигма-аддитивной меры получаем <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}\mu A_n =
+\displaystyle \lim_{n\to \infty}(\varphi(x_n) - \varphi(x_1)) = \mu A =
+\varphi(x) - \varphi(x_1)\)</span>. Значит по Гейне утверждение верно
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-12">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Пример
+счетного множества на <span class="math inline">\(I\)</span> стандартная
+мера Жордана которого равна <span class="math inline">\(0\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Множество <span class="math inline">\(\{\frac1n\}\)</span>.</p>
+</div>
+<div id="problem-13">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Мощность
+измеримых по Лебегу множеств <span
+class="math inline">\(\mathfrak{M}\)</span> – это <span
+class="math inline">\(2^c\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Канторово
+множество мощности континуум и меры <span
+class="math inline">\(0\)</span>. Так как мера ноль и измеримые
+множества полны, любое подмножество Канторова множества измеримо <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-14">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Рассмотрим
+стандартную меру на <span class="math inline">\(A = [-1, 2]\)</span>.
+Введем отношение эквивалентности <span class="math inline">\(x\sim y
+\iff x - y \in \mathbb{Q}\)</span>. Пусть <span
+class="math inline">\(E\)</span> – фактормножество. <span
+class="math inline">\(\{q_n\}_{n = 1}^{\infty} = \mathbb{Q}\cap [-1, 2],
+\,\,\,\, E_n = E \cup \{q_n\}\)</span>.</p>
+<p>Доказать, что <span class="math inline">\(A \subset \bigsqcup_{n =
+1}^{\infty}E_n \subset [-1, 2]\)</span>. (чего)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(x \in E_k \cap E_j \implies x = q_k
++ x_k = q_j + x_j \implies x_k - x_j \in \mathbb{Q}\)</span>, что
+противоречит единственности точки из класса эквивалентности в <span
+class="math inline">\(E_i\)</span>. Значит объединение дизъюнктно.
+Остальное понятно <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="семинар-2.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="семинар-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>
