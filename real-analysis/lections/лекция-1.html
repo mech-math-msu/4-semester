@@ -229,6 +229,17 @@
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -265,6 +276,9 @@
 <h1 data-number="1" id="лекция-1">Лекция 1</h1>
 <p>Действительный анализ – это про изучение ‘’плохих’’ функций, то есть
 не дифференцируемых и т.д.</p>
+<h2 data-number="1.1" id="идея-того-к-чему-идем-следующие-n-лекций">Идея
+того, к чему идем следующие <span class="math inline">\(n\)</span>
+лекций</h2>
 <p>Есть интеграл Римана – это когда разбивается область определения
 функции (<span class="math inline">\(I_k = [x_{k - 1}, x_k], \,\,\,\,
 \xi_k \in I_k\)</span> и интегральная сумма <span
@@ -274,7 +288,8 @@ class="math inline">\(S = \displaystyle
 берем <span class="math inline">\(\{x|\,\,\,\,y_{k - 1}\leqslant f(x)
 &lt;  y_k\}\)</span>. Ну и возникла проблема: что такое длина (мера)
 такого <span class="math inline">\(I_k\)</span>?</p>
-<h2 data-number="1.1" id="системы-множеств">Системы множеств</h2>
+<h2 data-number="1.2" id="системы-множеств">Системы множеств</h2>
+<h3 data-number="1.2.1" id="полукольцо">Полукольцо</h3>
 <div id="definition-2">
 <p><span class="margin-lft"><strong>Определение:
 </strong></span>(<em>симметрическая разность</em>) <span
@@ -308,6 +323,7 @@ A_n = \bigsqcup_{n = 1}^N B_n\)</span>.</p>
 <p><span class="math inline">\(B_n = A_n\setminus \bigcup_{k = 1}^{n -
 1}A_k \,\,\,\,\blacksquare\)</span></p>
 </div>
+<h3 data-number="1.2.2" id="кольцо">Кольцо</h3>
 <div id="definition-1">
 <p><span class="margin-lft"><strong>Определение: </strong></span>Система
 множеств <span class="math inline">\(R\)</span> – <em>кольцо</em>,
@@ -355,6 +371,20 @@ class="math inline">\(\exists E \in S: \,\,\,\, \forall A \in S \,\,\,\,
 A \subset E\)</span>, то <span class="math inline">\(E\)</span> –
 <em>единица</em>.</p>
 <p>Кольцо с единицей – <em>алгебра</em>.</p>
+<p>Чаще всего алгебры строятся, начиная с единицы:</p>
+<p>Пусть задано некоторое множество <span
+class="math inline">\(X\)</span>. Тогда алгебра <span
+class="math inline">\(\A\)</span> с единицей <span
+class="math inline">\(X\)</span> <strong>обозначается</strong> <span
+class="math inline">\((X, \A)\)</span> и говорится, что <span
+class="math inline">\(X\)</span> <em>пространство</em>, на котором
+задана алгебра <span class="math inline">\(\A\)</span>.</p>
+<p>В таком случае <span class="math inline">\(\A\)</span> – алгебра
+<span class="math inline">\(\iff \varnothing, X \in \A\)</span> и <span
+class="math inline">\(\forall A, B \in \A \,\,\,\, A\setminus B \in \A
+\iff \varnothing, X \in \A\)</span> и <span
+class="math inline">\(\forall A, B \in \A \,\,\,\, X\setminus A \in \A,
+\,\,\,\, A\cap B \in \A\)</span>.</p>
 </div>
 <div id="definition-4">
 <p><span class="margin-lft"><strong>Определение:
@@ -373,7 +403,7 @@ class="math inline">\(\sigma\)</span>-<em>алгебра</em>.</p>
 class="math inline">\(\delta\)</span>.</p>
 </div>
 </div>
-<h3 data-number="1.1.1" id="примеры">Примеры</h3>
+<h3 data-number="1.2.3" id="примеры">Примеры</h3>
 <ol type="1">
 <li>Пусть <span class="math inline">\(X\)</span> – множество. Тогда
 <span class="math inline">\(S_1 = \{\varnothing, X\}\)</span> и система
@@ -474,7 +504,7 @@ class="math inline">\(R(S)\)</span> – минимальное кольцо, с�
 <p><span class="margin-lft"><strong>Определение: </strong></span><span
 class="math inline">\(R(S)\)</span> – <em>порожденное кольцо</em>.</p>
 </div>
-<h2 data-number="1.2" id="меры-на-системах-множеств">Меры на системах
+<h2 data-number="1.3" id="меры-на-системах-множеств">Меры на системах
 множеств</h2>
 <div id="definition-5">
 <p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
@@ -494,7 +524,7 @@ class="math inline">\(\forall A \in S, \{A_k \in S\}_{k = 1}^{\infty}:
 \,\,\,\, A = \bigsqcup_{k = 1}^{\infty}A_k \,\,\,\, mA = \displaystyle
 \sum_{k = 1}^{\infty}mA_k\)</span>.</p>
 </div>
-<h3 data-number="1.2.1" id="примеры-1">Примеры</h3>
+<h3 data-number="1.3.1" id="примеры-1">Примеры</h3>
 <ol type="1">
 <li>(<em>Дискретные меры</em>) Пусть <span
 class="math inline">\(X\)</span> множество, <span
@@ -506,7 +536,7 @@ class="math inline">\(\sigma\)</span>-алгебра всех его подмн�
 <li>Мера <span class="math inline">\(b - a\)</span> на кольце
 промежутков.</li>
 </ol>
-<h3 data-number="1.2.2"
+<h3 data-number="1.3.2"
 id="единственность-продолжения-меры-на-порожденное-кольцо">Единственность
 продолжения меры на порожденное кольцо</h3>
 <div id="theorem-1">

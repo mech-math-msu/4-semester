@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 4. Измеримые функции</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-3.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="4" id="лекция-4.-измеримые-функции">Лекция 4. Измеримые
+функции</h1>
+<blockquote>
+<p>Несмотря на свое название, понятие измеримости функций <strong>никак
+не связано с мерами</strong></p>
+</blockquote>
+<h2 data-number="4.1" id="борелевская-алгебра">Борелевская алгебра</h2>
+<div id="definition-18">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Наименьшая <span
+class="math inline">\(\sigma\)</span>-алгебра на топологическом
+пространстве, содержащая все открытые множества – <em>борелевская
+алгебра</em>. Далее рассматривается борелевская алгебра на <span
+class="math inline">\(\mathbb{R}\)</span>, которая
+<strong>обозначается:</strong> <span
+class="math inline">\(\B\)</span>.</p>
+</div>
+<div id="lemma-6">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Если <span
+class="math inline">\(\{M_{\alpha}\}\)</span> – семейство сигма-алгебр
+каждая с единицей <span class="math inline">\(X\)</span>, то <span
+class="math inline">\(\cap_{\alpha}M_{\alpha} = M\)</span> –
+сигма-алгебра с единицей <span class="math inline">\(X\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="note-2">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Пересекая
+все сигма-алгебры, содержащие открытые множества получим
+борелевскую.</p>
+</div>
+<div id="definition-20">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\((X_1, \A_1)\)</span> и <span
+class="math inline">\((X_2, \A_2)\)</span> – пространства с <span
+class="math inline">\(\sigma\)</span>-алгебрами. Отображение <span
+class="math inline">\(f: X_1 \to X_2\)</span> <span
+class="math inline">\((\A_1, \A_2)\)</span>-<em>измеримо</em> (или
+<em>измеримо</em> относительно <span class="math inline">\((\A_1,
+\A_2)\)</span>), если <span class="math inline">\(f^{-1}(B) \in \A_1
+\,\,\,\, \forall B \in \A_2\)</span>.</p>
+<p>Чаще всего будет рассматриваться случай <span
+class="math inline">\((\A_{|E}, \B)\)</span>-измеримых отображений
+(функций, так как алгебры <span class="math inline">\(\A\)</span> и
+<span class="math inline">\(\B\)</span> на <span
+class="math inline">\(\mathbb{R}\)</span>). Такие функции далее
+называются просто <strong>измеримыми</strong> без указания алгебр.</p>
+<p>Далее будем считать, что <span class="math inline">\(E = X\)</span>
+единица в <span class="math inline">\(\A\)</span>.</p>
+<p>Если <span class="math inline">\(f_{|A}, \,\,\,\, A \subset
+X\)</span> измерима относительно <span class="math inline">\((\A_{|A},
+\B)\)</span>, то <strong>пишем</strong> <span
+class="math inline">\(f\)</span> измерима на <span
+class="math inline">\(A\)</span>.</p>
+</div>
+<div id="lemma-7">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(f: X \to \mathbb{R}\)</span> и <span
+class="math inline">\(Q\)</span> система всех <span
+class="math inline">\(A \subset \mathbb{R}\)</span>, таких, что <span
+class="math inline">\(f^{-1}(A) \in \A\)</span>.</p>
+<p>Тогда <span class="math inline">\(Q\)</span> является <span
+class="math inline">\(\sigma\)</span>-алгеброй.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Свойства
+полных прообразов <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-14">
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math inline">\(f: X \to \mathbb{R}\)</span> измерима относительно
+<span class="math inline">\((\A, \B)\)</span> <span
+class="math inline">\(\iff \forall c \in \mathbb{R} \,\,\,\, f^{-1}((c,
++\infty)) = \{x: \,\,\,\, f(x) &gt; c\} \in \A\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> верно,
+так как <span class="math inline">\((c, +\infty) \in \B \,\,\,\, \forall
+c \in \mathbb{R}\)</span>.</p>
+<p><span class="math inline">\(\boxed{\Longleftarrow}\)</span> нужно
+доказать, в силу свойств полного прообраза, что любая <span
+class="math inline">\(\sigma\)</span> алгебра, содержащая <span
+class="math inline">\((c, +\infty)\)</span> содержит все открытые
+подмножества <span class="math inline">\(\mathbb{R}\)</span>, а
+соответственно и все элементы <span
+class="math inline">\(\B\)</span>.</p>
+<p><span class="math display">\[[c, +\infty) = \displaystyle\bigcap_{n =
+1}^{\infty}(c - \frac1n, +\infty)\]</span></p>
+<p><span class="math display">\[(-\infty, c) =
+\left(\displaystyle\bigcup_{n = 1}^{\infty}(-n, +\infty)\right)\setminus
+[c, +\infty)\]</span></p>
+<p><span class="math display">\[\forall a, b \in \mathbb{R} \,\,\,\, (a,
+b) = (a, +\infty)\setminus [b, +\infty)
+\,\,\,\,\blacksquare\]</span></p>
+</div>
+<h2 data-number="4.2" id="свойства-измеримых-функций">Свойства измеримых
+функций</h2>
+<div id="statement-0">
+<span class="margin-lft"><strong>Утверждение: </strong></span>
+<ol type="1">
+<li>Индикаторная функция множества <span class="math inline">\(A \subset
+X\)</span> измерима <span class="math inline">\(\iff A \in
+\A\)</span>.</li>
+<li>Если <span class="math inline">\(f\)</span> измерима, то <span
+class="math inline">\(\alpha f\)</span> и <span
+class="math inline">\(\alpha + f\)</span> измаеримы.</li>
+<li>Если <span class="math inline">\(f\)</span> и <span
+class="math inline">\(g\)</span> измеримы, то <span
+class="math inline">\(\{x: \,\,\,\, f(x) &lt;  g(x)\} \in \A\)</span>,
+<span class="math inline">\(\{x: \,\,\,\, f(x) &gt; g(x)\} \in
+\A\)</span> и <span class="math inline">\(\{x: \,\,\,\, f(x) = g(x)\}
+\in \A\)</span>.</li>
+<li>Если <span class="math inline">\(f\)</span> и <span
+class="math inline">\(g\)</span> измеримы, то <span
+class="math inline">\(\alpha f + \beta g\)</span> измаерима.</li>
+<li>Непрерывная функция измерима.</li>
+<li>Если <span class="math inline">\(f\)</span> измерима, а <span
+class="math inline">\(g\)</span> непрерывна, то <span
+class="math inline">\(g(f)\)</span> измерима.</li>
+<li>Если <span class="math inline">\(f\)</span> и <span
+class="math inline">\(g\)</span> измеримы, то <span
+class="math inline">\(f\cdot g\)</span> измерима. (В силу <span
+class="math inline">\(6\)</span> измеримы функции <span
+class="math inline">\(f^2\)</span> и <span
+class="math inline">\(g^2\)</span>, а <span class="math inline">\(f\cdot
+g = \frac12((f + g)^2 - f^2 - g^2)\)</span>)</li>
+<li>Если мера <span class="math inline">\(\mu\)</span> полна и <span
+class="math inline">\(\mu A = 0\)</span>, то любая функция на <span
+class="math inline">\(A\)</span> измерима. (По определению полной меры
+любое подмножество <span class="math inline">\(X\)</span> измеримо, а
+значит и любой прообраз измерим.)</li>
+<li>Если <span class="math inline">\(f\)</span> измерима на <span
+class="math inline">\(A_{|E}\)</span>, то <span
+class="math inline">\(f_{|E_1}\)</span> измерима на <span
+class="math inline">\(A_{|E_1}\)</span>.</li>
+<li>Если <span class="math inline">\(f\)</span> измерима на <span
+class="math inline">\(A_{|E_k}, \,\,\,\, \forall k \in
+\mathbb{N}\)</span>, то <span class="math inline">\(f\)</span> измерима
+на <span class="math inline">\(A_{|\bigcup_{k}E_k}\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="4.3" id="сходимости-измеримых-функций">Сходимости
+измеримых функций</h2>
+<div id="statement-1">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f_n\)</span> измеримы на <span
+class="math inline">\(A \in \A \,\,\,\, \forall n \in N\)</span> и <span
+class="math inline">\(f_0(x) = \displaystyle \lim_{n\to
+\infty}f_n(x)\)</span>. Тогда <span class="math inline">\(f_0\)</span>
+измерима.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math display">\[\{x: \,\,\,\, f_0(x) &gt; c\} =
+\displaystyle\bigcup_{k = 1}^{\infty}\displaystyle\bigcup_{n =
+1}^{\infty}\displaystyle\bigcap_{m = n + 1}^{\infty}\{x: f_m(x) &lt; c -
+\frac1k\} \,\,\,\,\blacksquare\]</span></p>
+</div>
+<div id="definition-21">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Последовательность функций <span
+class="math inline">\(\{f_n\}_{n = 1}^{\infty}\)</span> сходится к <span
+class="math inline">\(f\)</span> на <span class="math inline">\(A \in
+\A\)</span> <em>почти всюду</em>, если мера множества точек, где не
+существует предела <span class="math inline">\(f_n(x)\)</span>, равна
+нулю.</p>
+</div>
+<div id="statement-2">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+измеримые <span class="math inline">\(\{f_n\}_{n = 1}^{\infty}\)</span>
+сходятся к <span class="math inline">\(f\)</span> почти всюду. Тогда
+<span class="math inline">\(f\)</span> измерима.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="definition-22">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Последовательность измеримых функций <span
+class="math inline">\(\{f_n\}_{n = 1}^{\infty}\)</span> сходится к
+измеримой функции <span class="math inline">\(f\)</span> на <span
+class="math inline">\(A \in \A\)</span> <em>по мере</em> <span
+class="math inline">\(\mu\)</span>, если <span
+class="math inline">\(\forall \sigma &gt; 0 \,\,\,\, \displaystyle
+\lim_{n\to \infty}\mu\{x \in A: \,\,\,\, |f_n(x) - f(x)| &gt; \sigma\} =
+0\)</span>.</p>
+<p>Множество <span class="math inline">\(\{x \in A: \,\,\,\, |f_n(x) -
+f(x)| &gt; \sigma\}\)</span> <strong>обозначается</strong> <span
+class="math inline">\(E_n(\sigma)\)</span> и <span
+class="math inline">\(R_n(\sigma) = \displaystyle\bigcup_{k =
+n}^{\infty}E_n(\sigma)\)</span>.</p>
+<p>Далее рассматриваем полную <span
+class="math inline">\(\sigma\)</span>-аддитивную меру на алгебре.</p>
+</div>
+<div id="theorem-15">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>критерий сходимости почти всюду на множествах
+конечной меры</em>) Пусть <span class="math inline">\(\mu A &lt;
+\infty\)</span>.</p>
+<p>Тогда <span class="math inline">\(\{f_n\}\)</span> сходятся к <span
+class="math inline">\(f\)</span> почти всюду на <span
+class="math inline">\(A \iff \forall \sigma &gt; 0 \,\,\,\,
+\displaystyle \lim_{n\to \infty}R_n(\sigma) = 0\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Запишем множество точек, в которых нет предела <span
+class="math inline">\(f_n\)</span>:</p>
+<p><span class="math display">\[E_0 = \displaystyle\bigcup_{\sigma &gt;
+0}\displaystyle\bigcap_{n = 1}^{\infty}\displaystyle\bigcup_{k = n}\{x:
+\,\,\,\, |f_k(x) - f(x)| &gt; \sigma\}\]</span></p>
+<p><span class="math display">\[E_0 = \displaystyle\bigcup_{\sigma &gt;
+0}\displaystyle\bigcap_{n = 1}^{\infty}R_n(\sigma) =
+\displaystyle\bigcup_{m = 1}^{\infty}\displaystyle\bigcap_{n =
+1}^{\infty}R_n\left(\frac1m\right)\]</span></p>
+<p><span class="math inline">\(\forall \sigma &gt; 0 \,\,\,\,
+R_n(\sigma) \supset R_{n + 1}(\sigma)\)</span>, а значит, в силу
+непрерывности меры сверху (мера сигма-аддитивна), имеем: <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}R_n(\sigma) =
+\mu\left(\bigcap_{n = 1}^{\infty}R_n(\sigma)\right)\)</span>.</p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> Имеем
+<span class="math inline">\(\mu(E_0) = 0 \implies \mu\left(\bigcap_{n =
+1}^{\infty}R_n(\sigma)\right) = 0 \,\,\,\, \forall n\)</span>, далее по
+равенству выше.</p>
+<p><span class="math inline">\(\boxed{\Longleftarrow}\)</span> Имеем
+<span class="math inline">\(\displaystyle \lim_{n\to \infty}R_n(\sigma)
+= 0 \,\,\,\, \forall \sigma &gt; 0\)</span>, далее по равенству выше
+имеем счетное объединение множеств меры ноль <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-5">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Из
+сходимости почти всюду следует сходимость по мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(E_n(\sigma) \subset R_n(\sigma) \,\,\,\,
+\forall n \in \mathbb{N} \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-16">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Рисса</em>) Пусть последовательнось функций <span
+class="math inline">\(f_n\)</span> сходится по мере к <span
+class="math inline">\(f\)</span>. Тогда существует подпоследовательность
+<span class="math inline">\(f_{n_k}\)</span>, которая сходится почти
+всюду.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\forall k \in \mathbb{N} \,\,\,\,
+\mu\left(E_n\left(\frac1k\right)\right) \to 0, \,\,\,\, n \to
+\infty\)</span></p>
+<p>Обозначим <span class="math inline">\(E_{n_k} =
+E_n\left(\frac1k\right)\)</span>. Можем подобрать <span
+class="math inline">\(n_k &gt; n_{k + 1}\)</span>, так, чтобы <span
+class="math inline">\(\mu E_{n_k}\left(\frac1k\right) &lt;
+\frac1{2^k}\)</span></p>
+<p><span class="math display">\[\mu\left(\displaystyle\bigcup_{k =
+s}^{\infty}E_{n_k}(\sigma)\right) \leqslant \displaystyle \sum_{k =
+s}^{\infty}\mu\left(E_{n_k}\left(\frac1k\right)\right) \leqslant
+\displaystyle \sum_{k = s}^{\infty}\frac1{2^k} = \frac1{2^{s - 1}} \to
+0, \,\,\,\, s \to \infty \,\,\,\,\blacksquare\]</span></p>
+</div>
+<div id="theorem-17">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Егорова</em>)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-3.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>
