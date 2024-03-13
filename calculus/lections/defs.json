@@ -38,5 +38,30 @@
         "keyword": "интегральная сумма интеграл",
         "html": "<p><a href=\"лекция-4.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f\\)</span> определена на <span\nclass=\"math inline\">\\(G\\)</span>, есть <span\nclass=\"math inline\">\\(\\{(G_k, \\xi_k)\\}_{k = 1}^l\\)</span>. Тогда <span\nclass=\"math inline\">\\(\\displaystyle \\sum_{k =\n1}^{}f(\\xi_k)\\mu(G_k)\\)</span> – <em>интегральная сумма</em> <span\nclass=\"math inline\">\\(f\\)</span>.</p>\n<p>Если <span class=\"math inline\">\\(\\exists I \\,\\,\\,\\, \\forall\n\\varepsilon &gt; 0 \\,\\,\\,\\, \\exists \\delta &gt; 0: \\,\\,\\,\\, \\forall\n\\{G_k, \\xi_k\\}\\)</span> с диаметром <span\nclass=\"math inline\">\\(d\\)</span> меньшим <span\nclass=\"math inline\">\\(\\delta\\,\\,\\,\\, \\left|\\sigma_{f}(\\cup_k G_k) -\nI\\right| &lt; \\varepsilon\\)</span>, где <span class=\"math inline\">\\(d =\n\\max_k \\max_{\\mathbf{x}, \\mathbf{y} \\in \\operatorname{Cl}G_k}\n\\rho(\\mathbf{x}, \\mathbf{y})\\)</span>, то <span\nclass=\"math inline\">\\(I\\)</span> – <em>интеграл</em>.\n<strong>Обозначается:</strong> <span class=\"math inline\">\\(I =\n\\underbrace{\\int\\ldots\\int}_{G}fdx_1 \\ldots dx_n\\)</span>.</p>",
         "url": "лекция-4.html#definition-7"
+    },
+    {
+        "keyword": "исчерпывание",
+        "html": "<p><a href=\"лекция-6.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G \\subset \\mathbb{R}^n\\)</span> –\nоткрытая, связная область. Семейство открытых, связных, ограниченных\nобластей <span class=\"math inline\">\\(G_n\\)</span>, таких, что <span\nclass=\"math inline\">\\(G_n \\subset G_{n + 1} \\,\\,\\,\\, \\forall n\\)</span>\nи <span class=\"math inline\">\\(\\bigcup_{n}G_n = G\\)</span> –\n<em>исчерпывание</em> <span class=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "лекция-6.html#definition-8"
+    },
+    {
+        "keyword": "интегрируема на в несобственном смысле",
+        "html": "<p><a href=\"лекция-6.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G \\subset \\mathbb{R}^n\\)</span> –\nоткрытая, связная область. Пусть <span class=\"math inline\">\\(\\forall A\n\\subset G, \\,\\,\\,\\, A\\)</span> замкнута и ограничена <span\nclass=\"math inline\">\\(\\exists\n\\displaystyle\\underbrace{\\int\\ldots\\int}_{A}f(\\mathbf{x})d\\mathbf{x}\\)</span>.</p>\n<p>Если <span class=\"math inline\">\\(\\exists I: \\,\\,\\,\\, \\forall\\)</span>\nисчерпывания <span class=\"math inline\">\\(G_n\\)</span> области <span\nclass=\"math inline\">\\(G \\exists \\displaystyle \\lim_{n\\to\n\\infty}\\displaystyle\\underbrace{\\int\\ldots\\int}_{\\operatorname{Cl}G_n}f(\\mathbf{x})d\\mathbf{x}\n= I\\)</span>, то <span class=\"math inline\">\\(f\\)</span> –\n<em>интегрируема на</em> <span class=\"math inline\">\\(G\\)</span> <em>в\nнесобственном смысле</em>.</p>",
+        "url": "лекция-6.html#definition-9"
+    },
+    {
+        "keyword": "разбиение кривой",
+        "html": "<p><a href=\"лекция-7.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(Кривая – это образ, а параметризации – это параметризации)</p>\n<p>Пусть <span class=\"math inline\">\\(\\mathcal{T}\\)</span> – разбиение\nотрезка <span class=\"math inline\">\\([a, b]\\)</span>. Тогда <span\nclass=\"math inline\">\\(\\gamma(\\mathcal{T})\\)</span> – <em>разбиение\nкривой</em> <span class=\"math inline\">\\(\\gamma: [a, b] \\to\n\\mathbb{R}^n\\)</span>.</p>",
+        "url": "лекция-7.html#definition-10"
+    },
+    {
+        "keyword": "криволинейный интеграл первого рода",
+        "html": "<p><a href=\"лекция-7.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f(x_1, \\ldots, x_n)\\)</span>\nопределена на точках кривой. Пусть <span class=\"math inline\">\\(\\xi_i \\in\n\\Delta \\gamma_i\\)</span>. Если <span class=\"math inline\">\\(\\exists I:\n\\,\\,\\,\\, \\forall \\varepsilon &gt; 0 \\,\\,\\,\\, \\exists \\delta &gt; 0:\n\\,\\,\\,\\, \\forall \\mathcal{T}(\\operatorname{d}\\mathcal{T} &lt; \\delta)\n\\,\\,\\,\\, \\left|\\displaystyle \\sum_{i = 1}f(\\xi_i)|\\Delta \\gamma_i| -\nI\\right| &lt; \\varepsilon\\)</span>, то <span\nclass=\"math inline\">\\(\\displaystyle\\int\\limits_{\\gamma} fds = I\\)</span>\n– <em>криволинейный интеграл первого рода</em>.</p>",
+        "url": "лекция-7.html#definition-11"
+    },
+    {
+        "keyword": "криволинейный интеграл второго рода",
+        "html": "<p><a href=\"лекция-7.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f_j(x_1, \\ldots, x_n)\\)</span>\nопределена на точках кривой. Пусть <span class=\"math inline\">\\(\\xi_i \\in\n\\Delta \\gamma_i\\)</span>. Если <span class=\"math inline\">\\(\\exists I_j:\n\\,\\,\\,\\, \\forall \\varepsilon &gt; 0 \\,\\,\\,\\, \\exists \\delta &gt; 0:\n\\,\\,\\,\\, \\forall \\mathcal{T}(\\operatorname{d}\\mathcal{T} &lt; \\delta)\n\\,\\,\\,\\, \\left|\\displaystyle \\sum_{i = 1}f_j(\\xi_i)|\\Delta x_{ji}| -\nI_j\\right| &lt; \\varepsilon\\)</span> (<span\nclass=\"math inline\">\\(x_j\\)</span> – разность координат), то <span\nclass=\"math inline\">\\(\\displaystyle\\int\\limits_{\\gamma} f_jdx_j =\nI_j\\)</span> – <em>криволинейный интеграл второго рода</em>.</p>\n<p>Вообще интеграл второго рода – это <span\nclass=\"math inline\">\\(\\displaystyle\\int\\limits_{\\gamma} f_1dx_1 +\nf_2dx_2 + \\ldots + f_ndx_n\\)</span>.</p>\n<p>Классический интеграл Римана – это криволинейный интеграл второго\nрода.</p>",
+        "url": "лекция-7.html#definition-12"
     }
 ]

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 7</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="7" id="лекция-7">Лекция 7</h1>
+<div id="theorem-16">
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math inline">\(G \subset \mathbb{R}^n\)</span> – открытая,
+связная область. (для <span class="math inline">\(n \geqslant
+2\)</span>). Если <span class="math inline">\(\exists
+\displaystyle\underbrace{\int\ldots\int}_{G}f(\mathbf{x})d\mathbf{x}\)</span>,
+то <span class="math inline">\(\exists
+\displaystyle\underbrace{\int\ldots\int}_{G}|f|(\mathbf{x})d\mathbf{x}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Предположим, что <span class="math inline">\(\not \exists
+\displaystyle\underbrace{\int\ldots\int}_{G}|f|(\mathbf{x})d\mathbf{x}\)</span>,
+то есть для любого исчерпания <span class="math inline">\(\{G_n\}
+\,\,\,\,
+\displaystyle\underbrace{\int\ldots\int}_{G_n}|f|(\mathbf{x})d\mathbf{x}
+\to \infty, \,\,\,\, n \to \infty\)</span> (так как модуль
+неотрицателен).</p>
+<p>Пусть <span class="math inline">\(G_n\)</span>, таково, что <span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{G_{n +
+1}}|f|(\mathbf{x})d\mathbf{x} \geqslant
+3\displaystyle\underbrace{\int\ldots\int}_{G_n}|f|(\mathbf{x})d\mathbf{x}
++ 2n + 4\)</span> (такое исчерпание есть, так как стремится к
+бесконечности (выкидываем все неподходящие <span
+class="math inline">\(G_n\)</span>, то есть выбираем подходящую
+подпоследовательность из какого-то исчерпания, которая также является
+исчерпанием)).</p>
+<p><span class="math inline">\(D_n = G_{n + 1}\setminus
+G_n\)</span>.</p>
+<p><span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{\operatorname{Cl}D_n}|f|(\mathbf{x})d\mathbf{x}
+\geqslant 2
+\displaystyle\underbrace{\int\ldots\int}_{G_n}|f|(\mathbf{x})d\mathbf{x}
++ 2n + 4\)</span></p>
+<p>Рассмотрим <span class="math inline">\(f_{+}\)</span> и <span
+class="math inline">\(f_{-}\)</span>. Один из двух интегралов <span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{D_n}f_{+}(\mathbf{x})d\mathbf{x}\)</span>
+и <span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{D_n}f_{-}(\mathbf{x})d\mathbf{x}\)</span>
+больше либо равен другого.</p>
+<p><span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{\operatorname{Cl}D_n}f_{+}(\mathbf{x})d\mathbf{x}
+\geqslant
+\displaystyle\underbrace{\int\ldots\int}_{G_n}|f|(\mathbf{x})d\mathbf{x}
++ n + 2\)</span></p>
+<p><span class="math inline">\(\exists \{D_{n_i}\}\)</span>, такое, что
+<span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{D_{n_i}}f_{+}(\mathbf{x})d\mathbf{x}
+- s_{f_{+}}(\cup D_{n_i}) \leqslant 1\)</span> и <span
+class="math inline">\(m_i = \inf_{D_{n_i}}f_{+}\)</span> и пусть <span
+class="math inline">\(I = \{i: \,\,\,\, m_i &gt; 0\}\)</span>.</p>
+<p><span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{\cup_{i
+\in I}D_{n_i}}f(\mathbf{x})d\mathbf{x}\)</span> (на этом множестве <span
+class="math inline">\(f_{+}\equiv f\)</span>) <span
+class="math inline">\(\geqslant
+\displaystyle\underbrace{\int\ldots\int}_{G_n}|f|(\mathbf{x})d\mathbf{x}
++ n + 1 (*)\)</span>.</p>
+<p>Заметим, что <span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{G_n}f(\mathbf{x})d\mathbf{x}
+\geqslant
+-\displaystyle\underbrace{\int\ldots\int}_{G_n}|f|(\mathbf{x})d\mathbf{x}\)</span></p>
+<p>Складываем со <span class="math inline">\((*)\)</span> и
+получаем:</p>
+<p><span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{G_n \cup
+\left(\cup_{i \in I}D_{n_i}\right)}f(\mathbf{x})d\mathbf{x} \geqslant n
++ 1\)</span></p>
+<p>Если <span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{D_n}f_{+}(\mathbf{x})d\mathbf{x}
+\leqslant
+\displaystyle\underbrace{\int\ldots\int}_{D_n}f_{-}(\mathbf{x})d\mathbf{x}\)</span>,
+то, аналогично рассуждая, получим</p>
+<p><span
+class="math inline">\(\displaystyle\underbrace{\int\ldots\int}_{G_n \cup
+\left(\cup_{i \in I}D_{n_i}\right)}f(\mathbf{x})d\mathbf{x} \leqslant -n
+- 1\)</span></p>
+<p><span
+class="math inline">\(\left|\displaystyle\underbrace{\int\ldots\int}_{G_n
+\cup \left(\cup_{i \in I}D_{n_i}\right)}f(\mathbf{x})d\mathbf{x}\right|
+\geqslant n + 1\)</span></p>
+<p>Это: <span class="math inline">\(G_n \cup \left(\cup_{i \in
+I}D_{n_i}\right)\)</span> не исчерпание (не хватает как минимум
+связности). Пусть <span class="math inline">\(A_n\)</span> таково, что
+<span class="math inline">\(\mu(A_n) \leqslant \frac1{\sup_{D_n}|f|},
+\,\,\,\, A_n \subset D_n\)</span> и <span class="math inline">\(G_n \cup
+\left(\cup_{i \in I}D_{n_i}\right) \cup A_n = \Omega_n\)</span>
+связно.</p>
+<p><img src="img/cor.png" /></p>
+<p>В силу выбора <span class="math inline">\(A_n \,\,\,\,
+\left|\displaystyle\underbrace{\int\ldots\int}_{\Omega_n}f(\mathbf{x})d\mathbf{x}\right|
+\geqslant n\)</span></p>
+<p>Исчерпанием является <span
+class="math inline">\(\Omega_{2n}\)</span>, так как в таком случае
+замыкания лежат строго внутри следующего множества. Следовательно, на
+этом исчерпании сама функция не имеет предела, поэтому противоречие
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<!-- > История из жизни: будучи молоденьким аспирантом, я написал работу, отправил в журнал, она прошла рецензирование, а я проверил и понял, что ошибка.-->
+<blockquote>
+<p>Двойной интеграл никому не нужен. Чаще всего интеграл сразу
+повторный.</p>
+</blockquote>
+</div>
+<h2 data-number="7.1" id="криволинейные-интегралы">Криволинейные
+интегралы</h2>
+<div id="definition-10">
+<p><span class="margin-lft"><strong>Определение: </strong></span>(Кривая
+– это образ, а параметризации – это параметризации)</p>
+<p>Пусть <span class="math inline">\(\mathcal{T}\)</span> – разбиение
+отрезка <span class="math inline">\([a, b]\)</span>. Тогда <span
+class="math inline">\(\gamma(\mathcal{T})\)</span> – <em>разбиение
+кривой</em> <span class="math inline">\(\gamma: [a, b] \to
+\mathbb{R}^n\)</span>.</p>
+</div>
+<div id="definition-11">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f(x_1, \ldots, x_n)\)</span> определена на
+точках кривой. Пусть <span class="math inline">\(\xi_i \in \Delta
+\gamma_i\)</span>. Если <span class="math inline">\(\exists I: \,\,\,\,
+\forall \varepsilon &gt; 0 \,\,\,\, \exists \delta &gt; 0: \,\,\,\,
+\forall \mathcal{T}(\operatorname{d}\mathcal{T} &lt; \delta) \,\,\,\,
+\left|\displaystyle \sum_{i = 1}f(\xi_i)|\Delta \gamma_i| - I\right|
+&lt; \varepsilon\)</span>, то <span
+class="math inline">\(\displaystyle\int\limits_{\gamma} fds = I\)</span>
+– <em>криволинейный интеграл первого рода</em>.</p>
+</div>
+<div id="definition-12">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f_j(x_1, \ldots, x_n)\)</span> определена на
+точках кривой. Пусть <span class="math inline">\(\xi_i \in \Delta
+\gamma_i\)</span>. Если <span class="math inline">\(\exists I_j:
+\,\,\,\, \forall \varepsilon &gt; 0 \,\,\,\, \exists \delta &gt; 0:
+\,\,\,\, \forall \mathcal{T}(\operatorname{d}\mathcal{T} &lt; \delta)
+\,\,\,\, \left|\displaystyle \sum_{i = 1}f_j(\xi_i)|\Delta x_{ji}| -
+I_j\right| &lt; \varepsilon\)</span> (<span
+class="math inline">\(x_j\)</span> – разность координат), то <span
+class="math inline">\(\displaystyle\int\limits_{\gamma} f_jdx_j =
+I_j\)</span> – <em>криволинейный интеграл второго рода</em>.</p>
+<p>Вообще интеграл второго рода – это <span
+class="math inline">\(\displaystyle\int\limits_{\gamma} f_1dx_1 +
+f_2dx_2 + \ldots + f_ndx_n\)</span>.</p>
+<p>Классический интеграл Римана – это криволинейный интеграл второго
+рода.</p>
+</div>
+<h2 data-number="7.2" id="два-очевидных-но-важных-утверждения">Два
+очевидных, но важных утверждения</h2>
+<div id="statement-0">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Интеграл первого рода не зависит от обхода <span
+class="math inline">\(\gamma\)</span>, интеграл второго рода меняет знак
+на противоположный при изменении направления.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-1">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(\varphi: [a, b] \to \gamma, \,\,\,\, \varphi
+\in C^1[a, b]\)</span>, то</p>
+<p><span class="math inline">\(\displaystyle\int\limits_{\gamma} fds =
+\displaystyle\int\limits_a^b f(\gamma(t))\sqrt{\displaystyle \sum_{i =
+1}^{n}(x_i&#39;)^2(t)}dt\)</span></p>
+<p><span class="math inline">\(\displaystyle\int\limits_{\gamma} f_1dx_1
++ f_2dx_2 + \ldots + f_ndx_n = \displaystyle\int\limits_a^b\displaystyle
+\sum_{i = 1}^{n}f_i(\gamma(t))x_i&#39;(t)dt\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

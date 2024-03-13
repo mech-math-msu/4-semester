@@ -229,6 +229,21 @@
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
+            <style>
+                html {
+                    color: #69a197;
+                    background-color: #000000;
+                }
+                #sitenav i {
+                    color: #69a197 !important;
+                }
+                a {
+                    color: #69a197  !important;
+                }
+                a:visited {
+                    color: #69a197  !important;
+                }
+            </style>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -303,6 +318,7 @@ class="math inline">\(X\)</span> – единица, имеем:</p>
 class="math inline">\([0, 1] = P_0\sqcup \displaystyle\bigsqcup_{n =
 0}^{\infty}\displaystyle\bigsqcup_{k = 1}^{2^{n - 1}}I^n_k\)</span>, где
 <span class="math inline">\(I^n_k\)</span> интервалы.</p>
+<p><img src="img/cantor-func.svg" height="400" /></p>
 <p>Построим функцию на дополнении к <span
 class="math inline">\(P_0\)</span>: пусть <span
 class="math inline">\(f(0) = 0\)</span> и <span
@@ -411,6 +427,27 @@ class="math inline">\(\iff\)</span> <span class="math inline">\(\forall
 class="math inline">\(G_{\varepsilon} \supset A: \,\,\,\,
 \mu^{*}(G_{\varepsilon}\setminus A) &lt; \varepsilon\)</span>.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow} \,\,\,\, A \in
+\mathfrak{M}, \,\,\,\, A \subset (\alpha, \beta)\)</span>. <span
+class="math inline">\(\exists \displaystyle\bigcup_{n = 1}^{\infty}I_n,
+\,\,\,\, I_n\)</span> – промежуток, такое, что <span
+class="math inline">\(\mu^{*}(A) \geqslant
+\mu^{*}(\displaystyle\bigcup_{n = 1}^{\infty}I_n) -
+\varepsilon\)</span>, далее можем сделать все промежутки интервалами, то
+есть сделать <span class="math inline">\(\displaystyle\bigcup_{n =
+1}^{\infty}I_n = G_{\varepsilon}\)</span> открытым. Имеем по критерию
+измеримости (<a href="семинар-4.html#problem-17">см. задачу</a>) <span
+class="math inline">\(\mu*(G_{\varepsilon}\setminus A) =
+\mu*(G_{\varepsilon}) - \mu*(G_{\varepsilon}\cap A) &lt;
+\varepsilon\)</span>.</p>
+<p><span class="math inline">\(\boxed{\Longleftarrow} \,\,\,\, G =
+\displaystyle\bigcup_{n = 1}^{\infty}I_n\)</span>, где <span
+class="math inline">\(I_n\)</span> – интервал. <span
+class="math inline">\(A\)</span> – ограничено <span
+class="math inline">\(\implies \exists N: \displaystyle \sum_{n = N +
+1}^{\infty}m I_n &lt; \varepsilon\)</span>. Пусть <span
+class="math inline">\(B = \displaystyle\bigcup_{n =
+1}^{N}I_n\)</span></p>
 </div>
 <div id="problem-16">
 <p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
@@ -422,13 +459,20 @@ class="math inline">\(\mu_{\varphi}([a, b])\)</span> и <span
 class="math inline">\(\mu_{\varphi}((a, b])\)</span>. Они измеримы, так
 как будут находится в порожденном кольце.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\mu_{\varphi}([a, b]) = \displaystyle
+\lim_{n\to \infty}[a, b + \frac1n) = \varphi(b + 0) -
+\varphi(a)\)</span> (следует из непрерывности снизу сигма-аддитивной
+меры). Далее <span class="math inline">\(\mu_{\varphi}(\{a\}) =
+\mu_{\varphi}([a, a]) = \varphi(a + 0) - \varphi(a)
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-17">
 <p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
 class="math inline">\(mX &lt; \infty, \,\,\,\, E \subset X\)</span> и
 <span class="math inline">\(\mu^{*}E + \mu^{*}(X\setminus E) =
 mX\)</span>. Тогда <span class="math inline">\(E\)</span> измеримо.</p>
-<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> см.
+где-нибудь в Богачеве</p>
 </div>
 <div id="problem-19">
 <p><span class="margin-lft"><strong>Задача: </strong></span>Существует
@@ -437,12 +481,123 @@ mX\)</span>. Тогда <span class="math inline">\(E\)</span> измеримо.
 \mu((a, b)\setminus E) &gt; 0\)</span> и <span
 class="math inline">\(\mu((a, b)\cap E) &gt; 0\)</span>.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<blockquote>
+<p>Затыкаем дырки в канторовом множестве канторовыми множествами.</p>
+</blockquote>
+<p>Пусть <span class="math inline">\(F_0 = P_{\frac1{4}}\)</span> –
+канторово множество меры <span
+class="math inline">\(\frac14\)</span>.</p>
+<p><span class="math inline">\([0, 1]\setminus F_0 = \bigcup_{k =
+1}^{\infty}I_k^0 \,\,\,\, \displaystyle \sum_{k = 1}^{\infty}I_k^0 =
+\frac34\)</span></p>
+<p>В каждый <span class="math inline">\(I^0_k\)</span> поместим <span
+class="math inline">\(F^1_k\)</span> – канторово множество меры <span
+class="math inline">\(\frac18\cdot \frac34 |I^0_k|\)</span>.</p>
 </div>
 <div id="problem-20">
 <p><span class="margin-lft"><strong>Задача: </strong></span>Следует ли
 измеримость <span class="math inline">\(f\)</span> из того, что <span
 class="math inline">\(\forall c \,\,\,\, f^{-1}(\{c\}) \in
 M\)</span>?</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Нет, не
+следует.</p>
+</div>
+<h2 data-number="4.4" id="сходимость-измеримых-функций">Сходимость
+измеримых функций</h2>
+<p><img src="img/dia.svg" /></p>
+<p><a
+href="../lections/лекция-4.-измеримые-функции.html#theorem-17">теорема
+Егорова</a> и <a
+href="../lections/лекция-4.-измеримые-функции.html#theorem-16">теорема
+Рисса</a></p>
+<div id="statement-13">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пуcть
+<span class="math inline">\(f_n \to f\)</span> по мере.</p>
+<p>Тогда <span class="math inline">\(f_n \to g \iff f \sim g\)</span>
+(то есть <span class="math inline">\(f = g\)</span> почти всюду).</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
+class="math inline">\(\mu\{x: f(x)\ne g(x)\} \leqslant \displaystyle
+\sum_{k = 1}^{\infty}\mu\{x: \,\,\,\, |f(x) - g(x)| &gt; \frac1k\}
+\leqslant \displaystyle \sum_{k = 1}^{\infty}0\)</span>, так как:</p>
+<p><span class="math inline">\(\forall k \,\,\,\, \{x: \,\,\,\, |f(x) -
+g(x)| &gt; \frac1k\} \subset \underbrace{\{x: \,\,\,\, |f(x) - f_n(x)|
+&gt; \frac1{2k}\}}_{\mu \to 0} \cup \underbrace{\{x: \,\,\,\, |g(x) -
+f_n(x)| &gt; \frac1{2k}}_{\mu \to 0}\} \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-14">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(f_n \to f\)</span> по мере и <span
+class="math inline">\(g_n \to g\)</span> по мере <span
+class="math inline">\(\implies f_n + g_n \to f + g\)</span> по мере и
+<span class="math inline">\(\alpha f_n \to \alpha f\)</span> по
+мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\{x: \,\,\,\,|f_n(x) + g_n(x) - (f(x) +
+g(x))| &gt; \sigma\} \subset \{x: \,\,\,\,|f_n(x) - f(x)| &gt;
+\frac{\sigma}2\} \cup \{x: \,\,\,\,|g_n(x)- g(x)| &gt; \frac{\sigma}2\}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-15">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(\mu X &lt; \infty \,\,\,\, f_n \to
+f\)</span> по мере, <span class="math inline">\(g_n \to g\)</span> по
+мере, то <span class="math inline">\(f_n\cdot g_n \to f\cdot g\)</span>
+по мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> В силу <span
+class="math inline">\(f\cdot g = \frac12((f + g)^2 - f^2 - g^2)\)</span>
+достаточно доказать для <span class="math inline">\(f^2\)</span>. Далее
+примерно как в предыдущих двух утверждениях <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="4.5" id="домашняя-работа-5">Домашняя работа 5</h2>
+<div id="problem-21">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((1)\)</span> Если <span
+class="math inline">\(f\)</span> измерима и <span
+class="math inline">\(\forall x \,\,\,\, f(x)\ne 0\)</span>, то <span
+class="math inline">\(\frac1{f(x)}\)</span> измерима.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-22">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((2)\)</span> Построить измеримую <span
+class="math inline">\(f\)</span> и непрерывную <span
+class="math inline">\(g\)</span>, такие что <span
+class="math inline">\(f(g)\)</span> неизмерима.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-23">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((3)\)</span> Пример <span
+class="math inline">\(f_n \to f\)</span>, такой, что <span
+class="math inline">\(f_n^2 \not\to f^2\)</span> по мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-24">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((4)\)</span> Доказать, что на множестве классов
+эквивалентных функций на отрезке с классической мерой не существует
+метрики, сходимость по которой совпадает со сходимостью почти всюду.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="statement-16">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>(<span
+class="math inline">\(C\)</span>-<em>свойство Лузина</em>) Пусть <span
+class="math inline">\(\mu\)</span> классическая мера на <span
+class="math inline">\((0, 1]\)</span>, <span
+class="math inline">\(f\)</span> измерима на <span
+class="math inline">\([0, 1]\)</span>. Тогда <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists
+g_{\varepsilon} \in C([0, 1]): \,\,\,\, \mu\{x:
+\,\,\,\,g_{\varepsilon}(x) \ne f(x)\} &lt; \varepsilon\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-25">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((5)\)</span> Вывести из <span
+class="math inline">\(C\)</span>-свойства Лузина утверждение для прямой
+<span class="math inline">\(\mathbb{R}\)</span>.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 

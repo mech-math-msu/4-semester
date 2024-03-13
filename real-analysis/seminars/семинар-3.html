@@ -229,6 +229,21 @@
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
+            <style>
+                html {
+                    color: #69a197;
+                    background-color: #000000;
+                }
+                #sitenav i {
+                    color: #69a197 !important;
+                }
+                a {
+                    color: #69a197  !important;
+                }
+                a:visited {
+                    color: #69a197  !important;
+                }
+            </style>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -298,17 +313,26 @@ a_{k + 1})\)</span> ничем не покрыт.</p>
 </strong></span>(<em>внешняя мера Жордана</em>) Тоже самое, что внешняя
 мера Лебега, только берем инфимум конечных покрытий множества.</p>
 </div>
+<h2 data-number="3.2"
+id="континуальное-множество-с-мерой-лебега-0">Континуальное множество с
+мерой Лебега <span class="math inline">\(0\)</span></h2>
 <div id="statement-7">
 <p><span class="margin-lft"><strong>Утверждение: </strong></span>Мера
 Лебега стандартного Канторова множества равна <span
 class="math inline">\(0\)</span>. (а мощность континнум)</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>На каждом шаге выкидываем <span
+class="math inline">\(\frac13\)</span> каждого полуинтервала канторова
+множества, поэтому на <span class="math inline">\(n\)</span> шаге <span
+class="math inline">\(\left(\frac13\right)^{n + 1}\)</span> будет
+выкинут <span class="math inline">\(2^n\)</span> раз. (см. картинку)</p>
+<p><img src="img/standard-cantor-set.svg" /></p>
 <p><span class="math inline">\(\mu I_k^n = \frac1{3^{n + 1}}\)</span> и
 <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}\frac{2^n}{3^{n + 1}} = 1 \implies \mu P_0 = 0
 \,\,\,\,\blacksquare\)</span></p>
 </div>
-<h3 data-number="3.1.2" id="неизмеримое-по-лебегу-множество">Неизмеримое
+<h3 data-number="3.2.1" id="неизмеримое-по-лебегу-множество">Неизмеримое
 по Лебегу множество</h3>
 <p>Рассмотрим стандартную меру на <span class="math inline">\(A = [-1,
 2]\)</span>. Введем отношение эквивалентности <span
@@ -317,7 +341,7 @@ class="math inline">\(x\sim y \iff x - y \in \mathbb{Q}\)</span>. Пусть
 одной точке из каждого класса эквивалентности. <span
 class="math inline">\(\{q_n\}_{n = 1}^{\infty} = \mathbb{Q}\cap [-1, 2],
 \,\,\,\, E_n = E + \{q_n\}\)</span>.</p>
-<h2 data-number="3.2" id="домашняя-работа-3">Домашняя работа 3</h2>
+<h2 data-number="3.3" id="домашняя-работа-3">Домашняя работа 3</h2>
 <div id="problem-10">
 <p><span class="margin-lft"><strong>Задача: </strong></span>Правильная
 мера Стилтьеса <span
