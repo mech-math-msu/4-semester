@@ -254,7 +254,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-8.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -265,7 +265,7 @@
 <h1 data-number="7" id="лекция-7">Лекция 7</h1>
 <div id="theorem-16">
 <p><span class="margin-lft"><strong>Теорема: </strong></span><span
-class="math inline">\(G \subset \mathbb{R}^n\)</span> – открытая,
+class="math inline">\(G \subset \mathbf{R}^n\)</span> – открытая,
 связная область. (для <span class="math inline">\(n \geqslant
 2\)</span>). Если <span class="math inline">\(\exists
 \displaystyle\underbrace{\int\ldots\int}_{G}f(\mathbf{x})d\mathbf{x}\)</span>,
@@ -366,47 +366,69 @@ class="math inline">\(\Omega_{2n}\)</span>, так как в таком случ
 </div>
 <h2 data-number="7.1" id="криволинейные-интегралы">Криволинейные
 интегралы</h2>
+<p>Далее кривые гладкие.</p>
 <div id="definition-10">
 <p><span class="margin-lft"><strong>Определение: </strong></span>(Кривая
 – это образ, а параметризации – это параметризации)</p>
-<p>Пусть <span class="math inline">\(\mathcal{T}\)</span> – разбиение
-отрезка <span class="math inline">\([a, b]\)</span>. Тогда <span
-class="math inline">\(\gamma(\mathcal{T})\)</span> – <em>разбиение
-кривой</em> <span class="math inline">\(\gamma: [a, b] \to
-\mathbb{R}^n\)</span>.</p>
+<p>Пусть <span class="math inline">\(\mathcal{T} = \{t_i\}_{i =
+1}^n\)</span> – разбиение отрезка <span class="math inline">\([a,
+b]\)</span>. Тогда <em>разбиение кривой</em> <span
+class="math inline">\(\gamma: [a, b] \to \mathbf{R}^N\)</span> – это
+<span class="math inline">\(\{\{\gamma(t_i)\}, \{\gamma(t_{i +
+1})\}\}_{i = 0}^{n - 1}\)</span>. <strong>Обозначается:</strong> <span
+class="math inline">\(\gamma(\mathcal{T})\)</span>. Кусок кривой от
+<span class="math inline">\(\gamma(t_i)\)</span> до <span
+class="math inline">\(\gamma(t_{i + 1})\)</span> – это <span
+class="math inline">\(\gamma_i\)</span>. <em>Диаметр разбиения
+кривой</em> – это <span class="math inline">\(\max\{\Delta
+\gamma_i\}\)</span>, где <span class="math inline">\(\Delta
+\gamma_i\)</span> – длина <span
+class="math inline">\(\gamma_i\)</span>.</p>
+<p>Пусть <span class="math inline">\(\mathbf{R}^n \ni \xi \in
+\gamma_i\)</span>. Тогда разбиение называется <em>размеченным</em>, а
+<span class="math inline">\(\xi = \{\xi_i\}_{i = 1}^n\)</span> –
+<em>разметка</em> (<span class="math inline">\(n\)</span> – количество
+точек в разбиении, а не размернось <span
+class="math inline">\(\mathbf{R}\)</span>).</p>
 </div>
 <div id="definition-11">
 <p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
-<span class="math inline">\(f(x_1, \ldots, x_n)\)</span> определена на
-точках кривой. Пусть <span class="math inline">\(\xi_i \in \Delta
+<span class="math inline">\(f(\mathbf{x}) = f(x_1, \ldots, x_n)\)</span>
+определена на точках кривой <span class="math inline">\(\gamma: [a, b]
+\to \mathbf{R}^n\)</span>. Пусть <span class="math inline">\(\xi_i \in
 \gamma_i\)</span>. Если <span class="math inline">\(\exists I: \,\,\,\,
 \forall \varepsilon &gt; 0 \,\,\,\, \exists \delta &gt; 0: \,\,\,\,
 \forall \mathcal{T}(\operatorname{d}\mathcal{T} &lt; \delta) \,\,\,\,
-\left|\displaystyle \sum_{i = 1}f(\xi_i)|\Delta \gamma_i| - I\right|
-&lt; \varepsilon\)</span>, то <span
+\left|\displaystyle \sum_{i = 1}f(\xi_i)\Delta \gamma_i - I\right| &lt;
+\varepsilon\)</span>, то <span
 class="math inline">\(\displaystyle\int\limits_{\gamma} fds = I\)</span>
 – <em>криволинейный интеграл первого рода</em>.</p>
 </div>
 <div id="definition-12">
 <p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
-<span class="math inline">\(f_j(x_1, \ldots, x_n)\)</span> определена на
-точках кривой. Пусть <span class="math inline">\(\xi_i \in \Delta
-\gamma_i\)</span>. Если <span class="math inline">\(\exists I_j:
-\,\,\,\, \forall \varepsilon &gt; 0 \,\,\,\, \exists \delta &gt; 0:
-\,\,\,\, \forall \mathcal{T}(\operatorname{d}\mathcal{T} &lt; \delta)
-\,\,\,\, \left|\displaystyle \sum_{i = 1}f_j(\xi_i)|\Delta x_{ji}| -
-I_j\right| &lt; \varepsilon\)</span> (<span
-class="math inline">\(x_j\)</span> – разность координат), то <span
-class="math inline">\(\displaystyle\int\limits_{\gamma} f_jdx_j =
-I_j\)</span> – <em>криволинейный интеграл второго рода</em>.</p>
-<p>Вообще интеграл второго рода – это <span
-class="math inline">\(\displaystyle\int\limits_{\gamma} f_1dx_1 +
-f_2dx_2 + \ldots + f_ndx_n\)</span>.</p>
+<span class="math inline">\(\mathbf{f} = \{f_j(\mathbf{x})\}_{i = 1}^n =
+\{f_j(x_1, \ldots, x_n)\}_{i = 1}^n\)</span> определена на точках кривой
+<span class="math inline">\(\gamma: [a, b] \to \mathbf{R}^n\)</span>.
+Пусть <span class="math inline">\(\xi_i \in \gamma_i\)</span>. Если
+<span class="math inline">\(\exists I: \,\,\,\, \forall \varepsilon &gt;
+0 \,\,\,\, \exists \delta &gt; 0: \,\,\,\, \forall
+\mathcal{T}(\operatorname{d}\mathcal{T} &lt; \delta) \,\,\,\,
+\left|\displaystyle \sum_{j = 1}^{n}\displaystyle \sum_{i = 1}^N
+f_j(\xi_i)\Delta x_{ji} - I\right| &lt; \varepsilon\)</span> (<span
+class="math inline">\(\Delta x_{ji} = \gamma\)</span> – разность <span
+class="math inline">\(j\)</span> координат точек <span
+class="math inline">\(\gamma(t_i)\)</span> и <span
+class="math inline">\(\gamma(t_{i + 1})\)</span>, <span
+class="math inline">\(N\)</span> – количество точек в разбиении), то
+<span class="math inline">\(\displaystyle\int\limits_{\gamma} f_1dx_1 +
+f_2dx_2 + \ldots + f_ndx_n\)</span> – <em>криволинейный интеграл второго
+рода</em>.</p>
 <p>Классический интеграл Римана – это криволинейный интеграл второго
 рода.</p>
 </div>
-<h2 data-number="7.2" id="два-очевидных-но-важных-утверждения">Два
-очевидных, но важных утверждения</h2>
+<h2 data-number="7.2"
+id="два-очевидных-вообще-нет-но-важных-утверждения">Два очевидных
+(вообще нет), но важных утверждения</h2>
 <div id="statement-0">
 <p><span class="margin-lft"><strong>Утверждение:
 </strong></span>Интеграл первого рода не зависит от обхода <span
@@ -439,7 +461,7 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-8.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

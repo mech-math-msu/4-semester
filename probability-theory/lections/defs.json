@@ -63,5 +63,30 @@
         "keyword": "ковариация",
         "html": "<p><a href=\"лекция-3.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Ковариация</em> случайных величин <span\nclass=\"math inline\">\\(\\xi\\)</span> и <span\nclass=\"math inline\">\\(\\nu\\)</span> – это <span\nclass=\"math inline\">\\(\\operatorname{cov}(\\xi, \\nu) =\n\\operatorname{E}(\\xi - \\operatorname{E}\\xi)(\\nu -\n\\operatorname{E}\\nu)\\)</span>.</p>",
         "url": "лекция-3.html#definition-12"
+    },
+    {
+        "keyword": "независимы",
+        "html": "<p><a href=\"лекция-4.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nДискретные случайные величины <span class=\"math inline\">\\(\\xi_1, \\ldots,\n\\xi_n\\)</span> <em>независимы</em>, если <span\nclass=\"math inline\">\\(\\forall x_1, \\ldots, x_n \\in \\mathbb{R}\\)</span>\nвыполнено <span class=\"math inline\">\\(P(\\{\\xi_1 = x_1, \\ldots, \\xi_n =\nx_n\\}) = P(\\{\\xi_1 = x_1\\})\\cdot\\ldots\\cdot P(\\{\\xi_n =\nx_n\\})\\)</span>.</p>",
+        "url": "лекция-4.html#definition-13"
+    },
+    {
+        "keyword": "некоррелированы",
+        "html": "<p><a href=\"лекция-4.html#definition-14\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСлучайные величины <em>некоррелированы</em>, если их ковариация равна\nнулю.</p>",
+        "url": "лекция-4.html#definition-14"
+    },
+    {
+        "keyword": "коэффицент корреляции среднеквадратичное отклонение",
+        "html": "<p><a href=\"лекция-4.html#definition-15\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть случайные величины <span class=\"math inline\">\\(\\xi\\)</span> и\n<span class=\"math inline\">\\(\\eta\\)</span>, таковы, что <span\nclass=\"math inline\">\\(\\operatorname{D}\\xi &gt; 0\\)</span> и <span\nclass=\"math inline\">\\(\\operatorname{D}\\eta &gt; 0\\)</span>. Тогда\n<em>коэффицент корреляции</em> <span class=\"math inline\">\\(\\xi\\)</span>\nи <span class=\"math inline\">\\(\\eta\\)</span> – это <span\nclass=\"math inline\">\\(\\operatorname{cor}(\\xi, \\eta) =\n\\frac{\\operatorname{cov}(\\xi, \\eta)}{\\sqrt{\\operatorname{D}\\xi}\\cdot\n\\sqrt{\\operatorname{D}\\eta}} = \\frac{E\\xi\\eta - }\\)</span></p>\n<p><span class=\"math inline\">\\(\\sqrt{\\operatorname{D}\\xi}\\)</span> – это\n<em>среднеквадратичное отклонение</em>.</p>",
+        "url": "лекция-4.html#definition-15"
+    },
+    {
+        "keyword": "вероятностная мера неотрицательность нормированность счетная аддитивность",
+        "html": "<p><a href=\"лекция-7.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((\\Omega, \\mathcal{F})\\)</span> –\nсигма-алгебра с единицей <span\nclass=\"math inline\">\\(\\Omega\\)</span>.</p>\n<p>Отображение <span class=\"math inline\">\\(P: \\mathcal{F} \\to\n\\mathbb{R}\\)</span> – <em>вероятностная мера</em>, если</p>\n<ol type=\"1\">\n<li>(<em>неотрицательность</em>) <span class=\"math inline\">\\(\\forall A\n\\in \\mathcal{F} \\,\\,\\,\\, P(A) \\geqslant 0\\)</span>,</li>\n<li>(<em>нормированность</em>) <span class=\"math inline\">\\(P(\\Omega) =\n1\\)</span>,</li>\n<li>(<em>счетная аддитивность</em>) <span class=\"math inline\">\\(\\forall\nA_1, \\ldots, A_n, \\ldots: \\,\\,\\,\\, A_i \\cap A_j = \\varnothing, \\,\\,\\,\\,\ni \\ne j \\,\\,\\,\\, P\\left(\\displaystyle \\bigsqcup_{i =\n1}^{\\infty}A_i\\right)P\\left(\\displaystyle \\sum_{i =\n1}^{\\infty}A_i\\right) = \\displaystyle \\sum_{i =\n1}^{\\infty}P(A_i)\\)</span>.</li>\n</ol>",
+        "url": "лекция-7.html#definition-16"
+    },
+    {
+        "keyword": "вероятностное пространство",
+        "html": "<p><a href=\"лекция-7.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТройка <span class=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span> –\n<em>вероятностное пространство</em>.</p>",
+        "url": "лекция-7.html#definition-17"
     }
 ]

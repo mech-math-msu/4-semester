@@ -9,7 +9,7 @@
     
     
     
-    <title>Поиск</title>
+    <title>Лекция 5</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -101,7 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
-            margin-left: -16px;
+            margin-left: 0px;
         }
 
         h1 {
@@ -223,27 +223,12 @@
 
 
         .margin-lft {
-            margin-left: -16px;
+            margin-left: 0px;
         }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
-            <style>
-                html {
-                    color: #69a197;
-                    background-color: #000000;
-                }
-                #sitenav i {
-                    color: #69a197 !important;
-                }
-                a {
-                    color: #69a197  !important;
-                }
-                a:visited {
-                    color: #69a197  !important;
-                }
-            </style>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -263,12 +248,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-4.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="лекция-6.-распределение-сумм-независимых-случайных-величин.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -276,64 +262,112 @@
 
 
 
-<h1 class="unnumbered unlisted" id="search">Поиск</h1>
-<style>
-    h1#search {
-        display: none;
-    }
-    input#searchbar {
-        fontsize: 2rem;
-        width: 16rem;
-        height: 2.5rem;
-        border-radius: 25px;
-        padding-left: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-</style>
-<script type="module">
-    import data from "./defs.json" assert {type: 'json'};
-
-    let ans_div = document.getElementById('answer');
-
-    function search() {
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-
-        if (input.length < 3) {
-            return;
-        }
-
-        let ans = "";
-
-        data.forEach((item, i) => {
-            if (item.keyword.includes(input)) {
-                ans += item.html;
-            }
-        });
-
-        ans_div.innerHTML = ans;
-        MathJax.typeset();
-    }
-    window.search = search;
-</script>
-<center>
-<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Поиск...">
-</center>
-<div id="answer">
-
+<h1 data-number="5" id="лекция-5">Лекция 5</h1>
+<h2 data-number="5.1"
+id="распределение-сумм-независимых-случайных-величин">Распределение сумм
+независимых случайных величин</h2>
+<h2 data-number="5.2" id="неравенства-чебышёва-и-маркова">Неравенства
+Чебышёва и Маркова</h2>
+<div id="statement-13">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>первое неравенство Чебышёва</em>) Если случайная
+величина <span class="math inline">\(\xi\)</span> неотрицательна, то
+<span class="math inline">\(\forall c &gt; 0 \,\,\,\, P(\{\xi \geqslant
+c\}) \leqslant \frac1c\cdot E\xi\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> см. действан
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-14">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>второе неравенство Чебышёва</em>) Если случайная
+величина <span class="math inline">\(\xi\)</span> имеет конечную
+дисперсию, то <span class="math inline">\(\forall c &gt; 0 \,\,\,\,
+P(\{|\xi - E\xi| \geqslant c\}) \leqslant \frac1{c^2}\cdot
+\operatorname{D}\xi\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-1">
+<p><span class="margin-lft"><strong>Следствие:
+</strong></span>(<em>Неравенство Маркова</em>) <span
+class="math inline">\(\forall r \in \mathbb{R} \,\,\,\,\forall c &gt; 0
+\,\,\,\, P(\{|\xi| \geqslant c\}) \leqslant \frac1{c^r}\cdot
+E|\xi|^r\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="note-3">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Второе
+неравенство Чебышёва в употребимой форме: <span
+class="math inline">\(P(\{|\xi - E\xi| \geqslant c\cdot
+\sqrt{\operatorname{D}\xi}\}) \leqslant \frac1{c^2}\)</span>.</p>
+</div>
+<h2 data-number="5.3" id="закон-больших-чисел">Закон больших чисел</h2>
+<div id="theorem-2">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>закон
+больших чисел в форме Чебышёва</em>) Пусть <span
+class="math inline">\(\xi_1, \ldots, \xi_N\)</span> попарно независимы
+(достаточно некорреллированности) и <span class="math inline">\(\forall
+i \,\,\,\, \operatorname{D}\xi_i &lt; C, \,\,\,\, C &gt; 0\)</span>.
+Обозначим <span class="math inline">\(\xi = \displaystyle \sum_{i =
+1}^{N}\xi_i\)</span> Тогда <span class="math inline">\(\forall c &gt;
+0:\)</span></p>
+<p><span class="math display">\[\displaystyle \lim_{n\to
+\infty}P\left(\left\{\left|\frac{\xi}{n} - E\frac{\xi}n\right| \geqslant
+c \right\}\right) \to 0\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>По второму неравенству Чебышёва <span
+class="math inline">\(P\left(\left\{\left|\frac{\xi}{n} -
+E\frac{\xi}n\right| \geqslant c \right\}\right) \leqslant
+\frac{\operatorname{D}\xi}{n^2c^2} =\)</span> в силу независимости <span
+class="math inline">\(= \frac1{n^2c^2} \displaystyle \sum_{i =
+1}^{N}\operatorname{D}\xi_i \leqslant \frac{NC}{n^2c^2}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="5.4"
+id="распределения-сумм-бернуллиевских-случайных-величин">Распределения
+сумм Бернуллиевских случайных величин</h2>
+<div id="theorem-3">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(\nu_p\)</span> – число успехов в серии из <span
+class="math inline">\(n\)</span> независимых испытаний с вероятностью
+успеха в каждом конкретном случае <span class="math inline">\(p\)</span>
+(испытание Бернулли). Тогда <span class="math inline">\(\forall
+\varepsilon &gt; 0\)</span></p>
+<p><span class="math display">\[\displaystyle \lim_{n\to
+\infty}P\left(\left\{\left|\frac{\nu_p}{n} - p\right| \geqslant
+\varepsilon \right\}\right) \to 0\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> следует из
+закона больших чисел <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="5.5" id="предельная-теорема-пуассона">Предельная
+теорема Пуассона</h2>
+<div id="theorem-4">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(\nu_p\)</span> – число успехов в серии из <span
+class="math inline">\(n\)</span> независимых испытаний с вероятностью
+успеха в каждом конкретном случае <span class="math inline">\(p\)</span>
+(испытание Бернулли). Пусть <span class="math inline">\(p\)</span>
+зависит от <span class="math inline">\(n\)</span>, так, что <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}np = \lambda,
+\,\,\,\, \lambda &gt; 0\)</span>. Тогда</p>
+<p><span class="math display">\[P\{\nu_n = k\} = C^k_n p^k\cdot (1 -
+p)^{n - k} \to \frac{\lambda^k}{k!}e^{-\lambda},\,\,\,\, n \to
+\infty\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-4.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="лекция-6.-распределение-сумм-независимых-случайных-величин.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

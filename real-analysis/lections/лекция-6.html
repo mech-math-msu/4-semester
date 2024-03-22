@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 6</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="6" id="лекция-6">Лекция 6</h1>
+<div id="lemma-10">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Если <span
+class="math inline">\(\{g_n(x)\}\)</span> последовательность простых
+неотрицательных функций неубывающая в каждой точке <span
+class="math inline">\(x\)</span> и сходящаяся к <span
+class="math inline">\(f(x)\)</span>, то <span
+class="math inline">\(\displaystyle\int\limits_X f(x)dx = \displaystyle
+\lim_{n\to \infty}\displaystyle\int\limits_X g_n(x)dx\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\displaystyle\int\limits_X f(x)dx \leqslant
+\displaystyle \lim_{n\to \infty}\displaystyle\int\limits_X
+g_n(x)dx\)</span>, так как <span class="math inline">\(0 \leqslant
+g_n(x) \leqslant g_{n + 1}(x) \,\,\,\, \forall x\)</span>.</p>
+<p>Обратное неравенство слелует из <a
+href="лекция-5.html#theorem-19">теоремы</a>, примененной к <span
+class="math inline">\(g_n\)</span> и произвольной <span
+class="math inline">\(g \in J(f) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-20">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если мера
+<span class="math inline">\(X\)</span> равна нулю и <span
+class="math inline">\(f\)</span> измерима (в случае полной меры это
+следствие), то <span class="math inline">\(f \in \mathcal{L}(X)\)</span>
+и <span class="math inline">\(\displaystyle\int\limits_X fd\mu =
+0\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="6.1" id="свойства-интеграла-лебега">Свойства интеграла
+Лебега</h2>
+<div id="theorem-21">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>линейность для неотрицательных</em>) Если <span
+class="math inline">\(f\)</span> и <span
+class="math inline">\(g\)</span> неотрицательные измеримые функции и
+<span class="math inline">\(\alpha &gt; 0, \,\,\,\, \beta &gt;
+0\)</span>, то <span class="math inline">\(\displaystyle\int\limits_X
+(\alpha f + \beta g)d\mu = \alpha\displaystyle\int\limits_X fd\mu +
+\beta\displaystyle\int\limits_X g d\mu\)</span>,</p>
+<p>Если <span class="math inline">\(f\)</span> неотрицательная измеримая
+функция на <span class="math inline">\(X = A\sqcup B\)</span>, то <span
+class="math inline">\(\displaystyle\int\limits_X fd\mu =
+\displaystyle\int\limits_A fd\mu + \displaystyle\int\limits_B f
+d\mu\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> следует из
+аналогичного утверждения для простейших функций <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-22">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>линейность в общем случае</em>) Если <span
+class="math inline">\(f\)</span> и <span
+class="math inline">\(g\)</span> измеримые функции и <span
+class="math inline">\(\alpha, \,\,\,\,\beta \in \mathbb{R}\)</span>, то
+<span class="math inline">\(\displaystyle\int\limits_X (\alpha f + \beta
+g)d\mu = \alpha\displaystyle\int\limits_X fd\mu +
+\beta\displaystyle\int\limits_X g d\mu\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="theorem-23">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>интегрирование неравенств</em>) Если для
+интегрируемых функций верно: <span class="math inline">\(f(x) \leqslant
+g(x)\)</span>, то <span class="math inline">\(\displaystyle\int\limits_X
+f(x)dx \leqslant \displaystyle\int\limits_X g(x)dx\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="theorem-24">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>интегрирование ограниченной</em>) Если <span
+class="math inline">\(|f| \leqslant M &gt; 0\)</span> и <span
+class="math inline">\(\mu X &lt; \infty\)</span>, то <span
+class="math inline">\(f \in \mathcal{L}(X)\)</span> и <span
+class="math inline">\(\left|\displaystyle\int\limits_X f(x)d\mu\right|
+\leqslant M\mu X\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="6.1.1"
+id="признак-сравнения-для-интеграла-лебега">Признак сравнения для
+интеграла Лебега</h3>
+<div id="statement-10">
+<span class="margin-lft"><strong>Утверждение: </strong></span>
+<ol type="1">
+<li>Если <span class="math inline">\(f\)</span> измерима, <span
+class="math inline">\(g\)</span> интегрируема и <span
+class="math inline">\(|f| \leqslant g\)</span> почти всюду на <span
+class="math inline">\(X\)</span>, то <span
+class="math inline">\(f\)</span> интегрируема,</li>
+<li>Если <span class="math inline">\(f\)</span> измерима, то <span
+class="math inline">\(f\)</span> и <span
+class="math inline">\(|f|\)</span> инетгрируемы или неинтегрируемы
+одновременно.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="6.2"
+id="интеграл-лебега-как-функция-множества">Интеграл Лебега как функция
+множества</h2>
+<div id="note-4">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Согласно
+<a href="лекция-6.html#theorem-21">теореме</a> система множеств, на
+которых <span class="math inline">\(f\)</span> интегрируема – кольцо, а
+интеграл мера на этом кольце.</p>
+</div>
+<div id="theorem-25">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(A, A_n\)</span> измеримые множества (элементы
+сигма-алгебры), <span class="math inline">\(A = \bigsqcup_{n =
+1}^{\infty}A_n\)</span> и неотрицательная измеримая функция <span
+class="math inline">\(f\)</span> интегрируема на каждом из <span
+class="math inline">\(A_n\)</span>. Тогда <span
+class="math inline">\(\displaystyle\int\limits_A fd\mu = \displaystyle
+\sum_{n = 1}^{\infty}\displaystyle\int\limits_{A_n} fd\mu\)</span>, в
+частности, если ряд в правой части сходится, то <span
+class="math inline">\(f\)</span> интегрируема.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Как всегда
+берем разбиение (в данном случае <span
+class="math inline">\(A_n\)</span>) и пересекаем с элементами некоторой
+суммы (в данном случае интеграл по <span
+class="math inline">\(A\)</span> от <span class="math inline">\(h(x) =
+\displaystyle \sum_{k = 1}^{K}a_k\chi_{E_k}(x) \leqslant f(x)\)</span>)
+и переставляем знаки суммирования (делать это можно, так как разбиение
+покроет все) <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-6">
+<p><span class="margin-lft"><strong>Следствие: </strong></span><a
+href="лекция-6.html#theorem-25">Теорема выше</a> верна для любой
+измеримой интегрируемой на <span class="math inline">\(A_n\)</span>
+функции.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="corollary-7">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Пусть
+<span class="math inline">\(A, A_n\)</span> измеримые множества
+(элементы сигма-алгебры), <span class="math inline">\(A = \bigsqcup_{n =
+1}^{\infty}A_n\)</span> и измеримая функция <span
+class="math inline">\(f\)</span> интегрируема на каждом из <span
+class="math inline">\(A_n\)</span>. Пусть <span
+class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}\displaystyle\int\limits_{A_n} |f|d\mu &lt; \infty\)</span>.
+Тогда <span class="math inline">\(f\)</span> интегрируема на <span
+class="math inline">\(A\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(f\)</span> и <span
+class="math inline">\(|f|\)</span> интегрируемы или неинтегрируемы
+одновременно, а <span class="math inline">\(|f|\)</span> интегрируем по
+предыдущей теореме <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-26">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Неравенство Чебышёва</em>) Если <span
+class="math inline">\(f\)</span> неотрицательная интегрируемая, то <span
+class="math inline">\(\forall c &gt; 0 \,\,\,\, \mu\{x: \,\,\,\, f(x)
+\geqslant c\} \leqslant \frac1c \displaystyle\int\limits_X
+f(x)d\mu\)</span></p>
+<blockquote>
+<p><span class="math inline">\(f\)</span> может быть неограничена, но не
+слишком.</p>
+</blockquote>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+функцию <span class="math inline">\(h(x) = c\cdot \chi_{\{x: \,\,\,\,
+f(x) \geqslant c\}} \in J(f) \implies \displaystyle\int\limits_X
+h(x)d\mu \leqslant \displaystyle\int\limits_X f(x)d\mu
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-27">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>абсолютная непрерывность интеграла Лебега</em>)
+Пусть <span class="math inline">\(f\)</span> интегрируема на <span
+class="math inline">\(A\)</span>. Тогда <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists
+\delta\)</span>, такая, что для произвольного измеримого <span
+class="math inline">\(B \subset A\)</span> с <span
+class="math inline">\(\mu B &lt; \delta \,\,\,\,
+\displaystyle\int\limits_B f(x)d\mu &lt; \varepsilon\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Если <span
+class="math inline">\(f\)</span> ограничена, то <span
+class="math inline">\(\delta = \frac{\varepsilon}C\)</span>.</p>
+<p>Иначе рассмотрим <span class="math inline">\(A_n = \{x: \,\,\,\, n -
+1 \leqslant |f(x)|  \leqslant n\}\)</span>. Имеем <span
+class="math inline">\(A = \bigsqcup_{n = 1}^{\infty}A_n\)</span>. Модуль
+интегрируемой функции интегрируем, а значит, <span
+class="math inline">\(\displaystyle\int\limits_A |f|d\mu = \displaystyle
+\sum_{n = 1}^{\infty}\displaystyle\int\limits_{A_n} |f|d\mu\)</span></p>
+<p>Дальше разбиваем объединение <span class="math inline">\(A_n\)</span>
+на два множества: хвост ряда, который ограничен <span
+class="math inline">\(\frac{\varepsilon}2\)</span> и <span
+class="math inline">\(\bigsqcup_{n = 1}^{N} A_n\)</span>, на котором
+<span class="math inline">\(|f| \leqslant N\)</span> и берем <span
+class="math inline">\(\delta = \frac{\varepsilon}{2N}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="6.3"
+id="предельный-переход-под-знаком-интеграла-лебега">Предельный переход
+под знаком интеграла Лебега</h2>
+<blockquote>
+<p>Для интеграла Римана обычно доказывается следующая теорема о
+предельном переходе: если функции равномерно сходятся на отрезке, то
+интегралы Римана от них сходятся к интегралу от предельной функции.
+Более слабые условия, например поточечная сходимость, не гарантируют
+ограниченности и непрерывности (хотя бы п.в.) предельной функции, а
+значит, и интегрируемости по Риману. Для интеграла Лебега одной только
+поточечной сходимости, вообще говоря, тоже недостаточно. Хотя предельная
+функция обязана быть измеримой по лемме 6.2, но она может не быть
+интегрируемой или интегралы могут не сходиться к интегралу от предельной
+функции. Тем не менее, можно наложить дополнительные условия, которые
+слабее равномерной сходимости, но достаточны для предельного
+перехода.</p>
+</blockquote>
+<p>Далее пусть <span class="math inline">\((X, \A, \mu)\)</span> –
+пространство с мерой. Для простоты будем считать меру полной.</p>
+<div id="theorem-28">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(f_n(x)\)</span> измеримые функции на <span
+class="math inline">\(X\)</span>, <span class="math inline">\(f_n(x) \to
+f(x)\)</span> почти всюду на <span class="math inline">\(X\)</span> и
+<span class="math inline">\(\forall n \,\,\,\, |f_n(x)| \leqslant
+g(x)\)</span> почти всюду, где <span class="math inline">\(g(x)\)</span>
+интегрируема на <span class="math inline">\(X\)</span>. Тогда <span
+class="math inline">\(\displaystyle \lim_{n\to
+\infty}\displaystyle\int\limits_X f_n(x)d\mu =
+\displaystyle\int\limits_X f_n(x)d\mu &lt; \infty\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(f\)</span> <a
+href="лекция-4.-измеримые-функции.html#statement-2">измерима, как предел
+измеримых функций</a>. <a href="лекция-6.html#statement-10">По признаку
+сравнения</a> каждая <span class="math inline">\(f_n(x)\)</span>
+интегрируема, и, так как <span class="math inline">\(|f(x)| \leqslant
+g(x)\)</span> почти всюду, <span class="math inline">\(f(x)\)</span>
+интегрируема.</p>
+<p>Хотим: <span class="math inline">\(\forall \varepsilon &gt; 0
+\,\,\,\, \exists N \in \mathbb{N}: \,\,\,\, \forall n &gt; N \,\,\,\,
+\left|\displaystyle\int\limits_X f_n(x)d\mu - \displaystyle\int\limits_X
+f(x)d\mu\right| &lt; \varepsilon\)</span></p>
+<p>Пусть <span class="math inline">\(A_{\varepsilon} = X\)</span> в
+случае сигма-аддитивной меры, в случае сигма-конечной меры (<span
+class="math inline">\(X = \bigsqcup_{n = 1}^{\infty}X_n, \,\,\,\, \mu
+X_n &lt; \infty, \,\,\,\, \mu X = +\infty\)</span>) сходится ряд <span
+class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}\displaystyle\int\limits_{X_n} g(x)d\mu\)</span> (так как
+<span class="math inline">\(g\)</span> интегрируема), а значит можем
+взять <span class="math inline">\(A_{\varepsilon} = \bigsqcup_{n = 1}^N
+X_n\)</span>, так, чтобы <span class="math inline">\(\displaystyle
+\sum_{n = N + 1}^{\infty}\displaystyle\int\limits_{X_n} g(x)d\mu &lt;
+\frac{\varepsilon}6\)</span> (оценили хвост ряда, как обычно).</p>
+<p><span class="math inline">\(g\)</span> интегрируема на <span
+class="math inline">\(A_{\varepsilon}\)</span>, а значит <a
+href="лекция-6.html#theorem-27">по теореме о абсолютной непрерывности
+интеграла Лебега</a> <span class="math inline">\(\exists \delta &gt;
+0\)</span>, такое, что на любом измеримом подмножестве <span
+class="math inline">\(A \subset A_{\varepsilon}\)</span> с мерой меньшей
+<span class="math inline">\(\delta\)</span> интеграл по <span
+class="math inline">\(A\)</span> от <span
+class="math inline">\(g\)</span> не превосходит <span
+class="math inline">\(\frac{\varepsilon}6\)</span>.</p>
+<p>А <a href="лекция-4.-измеримые-функции.html#theorem-17">по теореме
+Егорова</a> существует множество <span
+class="math inline">\(B_{\delta}\)</span> сколь угодно малой меры (в
+данном случае с мерой не превосходящей <span
+class="math inline">\(\delta\)</span>) такое, что на <span
+class="math inline">\(A_{\varepsilon}\setminus B_{\delta}\)</span>
+последовательность <span class="math inline">\(f_n\)</span> сходится
+равномерно.</p>
+<p>Имеем разбиение: <span class="math inline">\(X =
+A_{\varepsilon}\sqcup (X\setminus A_{\varepsilon})  = (B_{\delta} \sqcup
+(A_{\varepsilon}\setminus B_{\delta}))\sqcup (X\setminus
+A_{\varepsilon})\)</span>.</p>
+<p><span class="math display">\[\left|\displaystyle\int\limits_X
+f_n(x)d\mu - \displaystyle\int\limits_X f(x)d\mu\right| =
+\left|\displaystyle\int\limits_X (f_n(x) - f(x))d\mu\right|=\]</span>
+<span class="math display">\[=
+\left|\displaystyle\int\limits_{B_{\delta}} (f_n(x) - f(x))d\mu +
+\displaystyle\int\limits_{A_{\varepsilon}\setminus B_{\delta}} (f_n(x) -
+f(x))d\mu + \displaystyle\int\limits_{X\setminus A_{\varepsilon}}
+(f_n(x) - f(x))d\mu\right| \leqslant\]</span> <span
+class="math display">\[\leqslant \displaystyle\int\limits_{B_{\delta}}
+|f_n(x)| + |f(x)|d\mu +
+\displaystyle\int\limits_{A_{\varepsilon}\setminus B_{\delta}} |f_n(x) -
+f(x)|d\mu + \displaystyle\int\limits_{X\setminus A_{\varepsilon}}
+|f_n(x)| + |f(x)|d\mu \leqslant\]</span> <span
+class="math display">\[\leqslant 2\cdot
+\displaystyle\int\limits_{B_{\delta}} g(x)d\mu + \mu
+(A_{\varepsilon}\setminus B_{\delta})\cdot \varepsilon_0 + 2\cdot
+\displaystyle\int\limits_{X\setminus A_{\varepsilon}} g(x)d\mu &lt;
+\varepsilon \,\,\,\,\blacksquare\]</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

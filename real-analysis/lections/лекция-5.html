@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 5</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-4.-измеримые-функции.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-6.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="5" id="лекция-5">Лекция 5</h1>
+<h2 data-number="5.1" id="интеграл-лебега-начало">Интеграл Лебега:
+начало</h2>
+<p>Далее предполагается, что задана конечная или <span
+class="math inline">\(\sigma\)</span>-конечная <span
+class="math inline">\(\sigma\)</span>-аддитивная мера <span
+class="math inline">\(\mu\)</span> на пространстве (алгебра с единицей)
+<span class="math inline">\((X, \mathcal{A})\)</span>. Элементы <span
+class="math inline">\(\mathcal{A}\)</span> далее называются измеримыми
+множествами, а вещественнозначные <span
+class="math inline">\((\mathcal{A}, \B)\)</span>-измеримые функции
+просто измеримыми функциями.</p>
+<h3 data-number="5.1.1"
+id="простые-функции-и-интеграл-лебега-от-них">Простые функции и интеграл
+Лебега от них</h3>
+<div id="definition-23">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Функция
+<span class="math inline">\(f(x): X \to \mathbb{R}\)</span> <em>простая
+(простейшая)</em>, если она представима в виде линейной комбинации
+характеристических функций попарно непересекающихся измеримых множеств
+конечной меры, то есть <span class="math inline">\(f(x) = \displaystyle
+\sum_{k = 1}^{n}a_k \chi_{E_k}(x), \,\,\,\, \mu E_k &lt; \infty,
+\,\,\,\, E_j \cap E_i = \varnothing \,\,\,\, i \ne j\)</span>.</p>
+<p>Формально можно разрешить множествам <span
+class="math inline">\(E_k\)</span> иметь бесконечную меру, если при этом
+соответствующий <span class="math inline">\(a_k\)</span> равен <span
+class="math inline">\(0\)</span>. Это удобно, так как можно считать, что
+<span class="math inline">\(X = \bigsqcup_k E_k\)</span>.</p>
+</div>
+<div id="lemma-8">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Одноточечное
+множество <span class="math inline">\(\{x\}, \,\,\,\, x \in
+\mathbb{R}\)</span> является борелевским <span
+class="math inline">\(\{x\} \in \B\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\{x\} = \bigcap_{n = 1}^{\infty}[x, x +
+\frac1n]\)</span>, а <span class="math inline">\([a, b] =
+\mathbb{R}\setminus\left((-\infty, a)\cup (b, +\infty)\right)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-3">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>критерий простейшей функции</em>) <span
+class="math inline">\(f(x): X \to \mathbb{R}\)</span> – простейшая <span
+class="math inline">\(\iff f(x)\)</span> измерима, <span
+class="math inline">\(\mu\{x: \,\,\,\,f(x)\ne 0\} = 0\)</span> и <span
+class="math inline">\(f(x)\)</span> принимает конечное число
+значений.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}
+\,\,\,\,f(x)\)</span> линейная комбинации характеристических функций
+измеримых множеств, а следовательно эти характеристичекие функции
+измеримы, а линейная комбинация измеримых функций измерима, то есть
+<span class="math inline">\(f(x)\)</span> измерима. <span
+class="math inline">\(f(x)\)</span> принимает конечное число значений,
+так как линейная комбинация конечна. Множество, где <span
+class="math inline">\(f(x)\)</span> имеет ненулевое значение конечно в
+силу предыдущего пункта, а значит его мера ноль.</p>
+<p><span class="math inline">\(\boxed{\Longleftarrow}\)</span> функция
+<span class="math inline">\(f(x)\)</span> измерима и принимает конечное
+число значений <span class="math inline">\(\{a_1, \ldots,
+a_k\}\)</span>. Множество <span class="math inline">\(\{a_k\}\)</span>
+борелевское, поэтому в силу измеримости <span
+class="math inline">\(f(x)\)</span> множество <span
+class="math inline">\(E_k = f^{-1}(\{a_k\})\in \A\)</span> и <span
+class="math inline">\(f(x) = \displaystyle \sum_{k = 1}^{n}a_k
+\chi_{E_k}(x)\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="note-3">
+<p><span class="margin-lft"><strong>Замечание:
+</strong></span><strong>Обозначение</strong> <span
+class="math inline">\(a_n \uparrow a\)</span> показывает, что <span
+class="math inline">\(a_n \to a, \,\,\,\, n \to \infty\)</span> и <span
+class="math inline">\(a_n &lt; a_{n + 1} \,\,\,\, \forall
+n\)</span>.</p>
+</div>
+<div id="statement-4">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Для
+любой неотрицательной измеримой на <span
+class="math inline">\(X\)</span> функции <span
+class="math inline">\(f(x)\)</span> существует последовательность
+простейших функций <span class="math inline">\(\{f_n(x)\}\)</span>,
+такая, что <span class="math inline">\(\forall x \in X \,\,\,\, f_n(x)
+\uparrow f(x)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="5.1.2" id="ура-интеграл-лебега">Ура! Интеграл
+Лебега</h3>
+<div id="definition-24">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f(x)\)</span> простейшая функция вида <span
+class="math inline">\(f(x) = \displaystyle \sum_{k =
+1}^{n}a_k\chi_{E_k}(x)\)</span>. Тогда <span
+class="math inline">\(\displaystyle\int\limits_X f(x)d\mu =
+\displaystyle \sum_{k = 1}^{n}a_k\mu(E_k)\)</span> – <em>интеграл
+Лебега</em> функции <span class="math inline">\(f(x)\)</span>.</p>
+</div>
+<div id="statement-5">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>корректность определения</em>) Интеграл Лебега не
+зависит от представления функции <span
+class="math inline">\(f(x)\)</span> в виде линейной комбинации.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Записать
+суммы и понять, что <span class="math inline">\(a_k = b_j \iff E_k \cap
+F_j \ne \varnothing \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-6">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Линейная комбинация простейших функций – простейшая
+функция и интеграл Лебега от нее – это линейная комбинация интегралов
+Лебега.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-7">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f(x)\)</span> – простая функция, <span
+class="math inline">\(E\)</span> множество, на котором <span
+class="math inline">\(f(x)\)</span> отлична от нуля и <span
+class="math inline">\(\max\{a_1, \ldots, a_k\}  \leqslant
+M\)</span>.</p>
+<p>Тогда <span class="math inline">\(\left|\displaystyle\int\limits_X
+f(x)d\mu\right| \leqslant \displaystyle\int\limits_X |f(x)|d\mu\)</span>
+и <span class="math inline">\(\displaystyle\int\limits_X f(x)d\mu
+\leqslant M\cdot \mu(E)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-8">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Для
+простейших функций <span class="math inline">\(f(x) \geqslant 0\)</span>
+и <span class="math inline">\(g(x) \leqslant f(x)\)</span>
+выполнено:</p>
+<p><span class="math display">\[\displaystyle\int\limits_X f(x)d\mu
+\geqslant 0 \,\,\,\, \displaystyle\int\limits_X g(x)d\mu \leqslant
+\displaystyle\int\limits_X f(x)d\mu\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-25">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Интеграл Лебега</em> простейшей функции <span
+class="math inline">\(f(x)\)</span> по произвольному измеримому
+множеству <span class="math inline">\(A \subset X\)</span> – это <span
+class="math inline">\(\displaystyle\int\limits_A f(x)d\mu =
+\displaystyle \sum_{k = 1}^{\infty}a_k \mu(E_k \cap A)\)</span>.</p>
+<p>Так как это интеграл Лебега по единице сужения <span
+class="math inline">\(\mathcal{A}_{|A}\)</span>, все свойства
+сохраняются.</p>
+</div>
+<div id="statement-9">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f(x)\)</span> – простая функция и <span
+class="math inline">\(A = \sqcup_{k}A_k, \,\,\,\, A_k \in
+\mathcal{A}\)</span>. Тогда <span
+class="math inline">\(\displaystyle\int\limits_A f(x)d\mu =
+\displaystyle \sum_{k = 1}^{\infty}\displaystyle\int\limits_{A_k}
+f(x)d\mu\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-19">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(g\)</span> и <span
+class="math inline">\(g_n\)</span> простые неотрицательные функции,
+<span class="math inline">\(\forall x \in X \,\,\,\, \displaystyle
+\lim_{n\to \infty}g_n(x) \geqslant g(x)\)</span> и <span
+class="math inline">\(\forall x \in X \,\,\,\, \forall n \in \mathbb{N}
+\,\,\,\, g_n(x) \leqslant g_{n + 1}(x)\)</span>. Тогда</p>
+<p><span class="math display">\[\displaystyle \lim_{n\to
+\infty}\displaystyle\int\limits_X g_n(x)d\mu \geqslant
+\displaystyle\int\limits_X g(x)d\mu\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(g(x) = \displaystyle \sum_{k =
+1}^{K}a_k E_k\)</span>.</p>
+<p>Пусть <span class="math inline">\(0 &lt; a_1 &lt; \ldots &lt;
+a_K\)</span>, <span class="math inline">\(F_0 = \{x: \,\,\,\, g(x) &gt;
+0\}\)</span>, <span class="math inline">\(\varepsilon \in (0,
+a_1)\)</span> и <span class="math inline">\(F_n = \{x \in F_0: \,\,\,\,
+g_n(x) &lt; g(x) - \varepsilon\}\)</span>.</p>
+<p>Имеем <span class="math inline">\(F_n \subset \ldots \subset F_1
+\subset F_0\)</span> в силу <span class="math inline">\(g_n(x) \leqslant
+g_{n + 1}(x)\)</span> и <span class="math inline">\(\bigcap_n F_n =
+\varnothing\)</span> в силу <span class="math inline">\(\displaystyle
+\lim_{n\to \infty}g_n(x) \geqslant g(x)\)</span>. А значит по теореме о
+непрерывности снизу сигма-аддитивной меры, получаем <span
+class="math inline">\(\mu F_n \to 0, \,\,\,\, n \to \infty\)</span>.</p>
+<p><span class="math display">\[\displaystyle\int\limits_X g(x)d\mu =
+\displaystyle\int\limits_{F_n} g(x)d\mu +
+\displaystyle\int\limits_{X\setminus F_n} g(x)d\mu \leqslant a_K \mu F_n
++ \displaystyle\int\limits_{X\setminus F_n} (g_n(x) + \varepsilon)d\mu
+\leqslant a_K \mu F_n + \displaystyle\int\limits_{X} g_n(x)d\mu +
+\varepsilon\mu X \,\,\,\,\blacksquare\]</span></p>
+</div>
+<h2 data-number="5.2" id="общее-определение-интеграла-лебега">Общее
+определение интеграла Лебега</h2>
+<div id="definition-26">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f(x)\)</span> неотрицательная измеримая
+функция на <span class="math inline">\(X\)</span>. Пусть <span
+class="math inline">\(J(f) = \{h(x): \,\,\,\, \forall x \in X \,\,\,\, 0
+\leqslant h(x) \leqslant f(x)\}\)</span> и <span
+class="math inline">\(h(x)\)</span> простейшие.</p>
+<p><em>Интеграл Лебега</em> функции <span
+class="math inline">\(f(x)\)</span> – это <span
+class="math inline">\(\displaystyle\int\limits_X f(x)d\mu = \sup_{h \in
+J(f)}\displaystyle\int\limits_X h(x)d\mu\)</span>.</p>
+<p>Если эта величина конечна, то функция <em>интегрируема по Лебегу</em>
+на <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="definition-27">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f(x)\)</span> – измеримая функция на <span
+class="math inline">\(X\)</span>. Тогда функции</p>
+<p><span class="math inline">\(f_{+}(x) = \max\{f(x), 0\}\)</span> –
+<em>положительная часть</em> <span
+class="math inline">\(f(x)\)</span>,</p>
+<p><span class="math inline">\(f_{-}(x) = -\min\{f(x), 0\}\)</span> –
+<em>отрицательная часть</em> <span
+class="math inline">\(f(x)\)</span>.</p>
+<p>В силу построения эти функции неотрицательны.</p>
+<p>Функция <span class="math inline">\(f(x)\)</span> <em>интегрируема по
+Лебегу</em> на <span class="math inline">\(X\)</span>, если <span
+class="math inline">\(f_{+}(x)\)</span> и <span
+class="math inline">\(f_{-}(x)\)</span> интегрируемы по Лебегу на <span
+class="math inline">\(X\)</span> и <em>интеграл Лебега</em> от <span
+class="math inline">\(f(x)\)</span> – это <span
+class="math inline">\(\displaystyle\int\limits_X f(x)d\mu =
+\displaystyle\int\limits_X f_{+}(x)d\mu - \displaystyle\int\limits_X
+f_{-}(x)d\mu\)</span>.</p>
+</div>
+<div id="lemma-9">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Все
+определения интеграла Лебега согласованы.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-4.-измеримые-функции.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-6.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
     
     
     
-    <title>Поиск</title>
+    <title>Лекция 10</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -101,7 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
-            margin-left: -16px;
+            margin-left: 0px;
         }
 
         h1 {
@@ -223,27 +223,12 @@
 
 
         .margin-lft {
-            margin-left: -16px;
+            margin-left: 0px;
         }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
-            <style>
-                html {
-                    color: #69a197;
-                    background-color: #000000;
-                }
-                #sitenav i {
-                    color: #69a197 !important;
-                }
-                a {
-                    color: #69a197  !important;
-                }
-                a:visited {
-                    color: #69a197  !important;
-                }
-            </style>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -263,12 +248,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -276,64 +262,74 @@
 
 
 
-<h1 class="unnumbered unlisted" id="search">Поиск</h1>
-<style>
-    h1#search {
-        display: none;
-    }
-    input#searchbar {
-        fontsize: 2rem;
-        width: 16rem;
-        height: 2.5rem;
-        border-radius: 25px;
-        padding-left: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-</style>
-<script type="module">
-    import data from "./defs.json" assert {type: 'json'};
-
-    let ans_div = document.getElementById('answer');
-
-    function search() {
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-
-        if (input.length < 3) {
-            return;
-        }
-
-        let ans = "";
-
-        data.forEach((item, i) => {
-            if (item.keyword.includes(input)) {
-                ans += item.html;
-            }
-        });
-
-        ans_div.innerHTML = ans;
-        MathJax.typeset();
-    }
-    window.search = search;
-</script>
-<center>
-<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Поиск...">
-</center>
-<div id="answer">
-
+<h1 data-number="10" id="лекция-10">Лекция 10</h1>
+<h2 data-number="10.1" id="поверхностные-интегралы">Поверхностные
+интегралы</h2>
+<div id="definition-15">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Рассмотрим гладкую невырожденную поверхность <span
+class="math inline">\(S\)</span> в <span
+class="math inline">\(\mathbf{R}^3\)</span> и пусть у <span
+class="math inline">\(S\)</span> нет кратных точек (самопересечений), то
+есть параметризация <span
+class="math inline">\(\mathbf{\varphi}\)</span> – биекция.
+<em>Граница</em> <span class="math inline">\(\partial S\)</span>
+поверхности <span class="math inline">\(S\)</span> – это <span
+class="math inline">\(\mathbf{\varphi}(\partial \Omega)\)</span>. (<span
+class="math inline">\(\partial S\)</span> – это простая замкнутая кривая
+в <span class="math inline">\(\mathbf{R}^3\)</span>)</p>
+</div>
+<div id="definition-16">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+все обозначения взяты <a href="лекция-9.html#definition-14">из
+определения</a> только <span class="math inline">\(n = 3\)</span> и
+пусть <span class="math inline">\(f(x, y, z) \in C(S)\)</span>. Если
+<span class="math inline">\(\exists \displaystyle \lim_{d\to 0}
+\displaystyle \sum_{i, j = 1}^{N}f(x(u_i, v_j), y(u_i, v_j), z(u_i,
+v_j))\mu(\Pi_{ij}) = I\)</span>, то <span
+class="math inline">\(I\)</span> – <em>поверхностный интеграл первого
+рода по поверхности</em> <span class="math inline">\(S\)</span>.
+<strong>Обозначается:</strong> <span
+class="math inline">\(\displaystyle\iint\limits_S f(x, y, z)ds =
+I\)</span>.</p>
+</div>
+<div id="note-5">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Для
+поверхностного интеграла первого рода верна аддитивность, то есть для
+разбиения поверхности <span class="math inline">\(S\)</span> на
+подповерхности, сумма интегралов по подповерхностям равна интегралу по
+поверхности.</p>
+</div>
+<div id="definition-17">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(P(x, y, z), Q(x, y, z), R(x, y, z) \in
+C(S)\)</span>. Если <span class="math inline">\(\exists \displaystyle
+\lim_{d\to 0}\displaystyle \sum_{i, j =
+1}^{N}\left(P(\mathbf{\varphi}(u_i, v_j))\langle \mathbf{n}((u_i, v_j)),
+\mathbf{e}_x \rangle + Q(\mathbf{\varphi}(u_i, v_j))\langle
+\mathbf{n}((u_i, v_j)), \mathbf{e}_y \rangle + Q(\mathbf{\varphi}(u_i,
+v_j))\langle \mathbf{n}((u_i, v_j)), \mathbf{e}_z
+\rangle\right)\mu(\Pi_{ij}) = I\)</span>, то <span
+class="math inline">\(I\)</span> – <em>поверхностный интеграл второго
+рода от дифференциальной формы</em> <span class="math inline">\(P(x, y,
+z)dydz + Q(x, y, z)dxdz + R(x, y, z)dxdy\)</span>. (скалярные
+произведения – это по сути соответствующая координата вектора.)</p>
+<p><strong>Обозначается:</strong> <span
+class="math inline">\(\displaystyle\iint\limits_{S^{\mathbf{n}}} P(x, y,
+z)dydz + Q(x, y, z)dxdz + R(x, y, z)dxdy\)</span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

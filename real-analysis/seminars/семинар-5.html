@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Семинар 5</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: -16px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: -16px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <style>
+                html {
+                    color: #69a197;
+                    background-color: #000000;
+                }
+                #sitenav i {
+                    color: #69a197 !important;
+                }
+                a {
+                    color: #69a197  !important;
+                }
+                a:visited {
+                    color: #69a197  !important;
+                }
+            </style>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="семинар-4.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="семинар-6.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="5" id="семинар-5">Семинар 5</h1>
+<h2 data-number="5.1" id="сходимость-измеримых-функций">Сходимость
+измеримых функций</h2>
+<p><img src="img/dia.svg" /></p>
+<p><a
+href="../lections/лекция-4.-измеримые-функции.html#theorem-17">теорема
+Егорова</a> и <a
+href="../lections/лекция-4.-измеримые-функции.html#theorem-16">теорема
+Рисса</a></p>
+<div id="statement-13">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пуcть
+<span class="math inline">\(f_n \to f\)</span> по мере.</p>
+<p>Тогда <span class="math inline">\(f_n \to g \iff f \sim g\)</span>
+(то есть <span class="math inline">\(f = g\)</span> почти всюду).</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
+class="math inline">\(\mu\{x: f(x)\ne g(x)\} \leqslant \displaystyle
+\sum_{k = 1}^{\infty}\mu\{x: \,\,\,\, |f(x) - g(x)| &gt; \frac1k\}
+\leqslant \displaystyle \sum_{k = 1}^{\infty}0\)</span>, так как:</p>
+<p><span class="math inline">\(\forall k \,\,\,\, \{x: \,\,\,\, |f(x) -
+g(x)| &gt; \frac1k\} \subset \underbrace{\{x: \,\,\,\, |f(x) - f_n(x)|
+&gt; \frac1{2k}\}}_{\mu \to 0} \cup \underbrace{\{x: \,\,\,\, |g(x) -
+f_n(x)| &gt; \frac1{2k}}_{\mu \to 0}\} \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-14">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(f_n \to f\)</span> по мере и <span
+class="math inline">\(g_n \to g\)</span> по мере <span
+class="math inline">\(\implies f_n + g_n \to f + g\)</span> по мере и
+<span class="math inline">\(\alpha f_n \to \alpha f\)</span> по
+мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\{x: \,\,\,\,|f_n(x) + g_n(x) - (f(x) +
+g(x))| &gt; \sigma\} \subset \{x: \,\,\,\,|f_n(x) - f(x)| &gt;
+\frac{\sigma}2\} \cup \{x: \,\,\,\,|g_n(x)- g(x)| &gt; \frac{\sigma}2\}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-15">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(\mu X &lt; \infty \,\,\,\, f_n \to
+f\)</span> по мере, <span class="math inline">\(g_n \to g\)</span> по
+мере, то <span class="math inline">\(f_n\cdot g_n \to f\cdot g\)</span>
+по мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> В силу <span
+class="math inline">\(f\cdot g = \frac12((f + g)^2 - f^2 - g^2)\)</span>
+достаточно доказать для <span class="math inline">\(f^2\)</span>. Далее
+примерно как в предыдущих двух утверждениях <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="5.2" id="домашняя-работа-5">Домашняя работа 5</h2>
+<div id="problem-21">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((1)\)</span> Если <span
+class="math inline">\(f\)</span> измерима и <span
+class="math inline">\(\forall x \,\,\,\, f(x)\ne 0\)</span>, то <span
+class="math inline">\(\frac1{f(x)}\)</span> измерима.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\frac1{x}\)</span> доопределенная в нуле нулем
+измерима, так как прообраз любого <span class="math inline">\((c,
++\infty)\)</span> – борелевское множество (понятно по графику) <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-22">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((2)\)</span> Построить измеримую <span
+class="math inline">\(f\)</span> и непрерывную <span
+class="math inline">\(g\)</span>, такие что <span
+class="math inline">\(f(g)\)</span> неизмерима.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><img src="img/comp_meas_cont.png" /></p>
+</div>
+<div id="problem-23">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((3)\)</span> Пример <span
+class="math inline">\(f_n \to f\)</span>, такой, что <span
+class="math inline">\(f_n^2 \not\to f^2\)</span> по мере.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(f(x) = \max\{0, x\}, \,\,\,\, f_n(x) = f +
+\frac1n, \,\,\,\, f^2 - f_n^2 = \frac{2x}n - \frac1{n^2}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-24">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((4)\)</span> Доказать, что на множестве классов
+эквивалентных функций на отрезке с классической мерой не существует
+метрики, сходимость по которой совпадает со сходимостью почти всюду.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть
+существует такая топология с метрикой <span
+class="math inline">\(\rho\)</span>. <span
+class="math inline">\(f_n\)</span> последовательность, сходящаяся к нулю
+по мере, но не почти всюду (см. табличку выше).</p>
+<p>Для метрики это значит, что <span class="math inline">\(\exists
+\varepsilon &gt; 0: \,\,\,\, \forall N \,\,\,\, \exists n &gt; N:
+\,\,\,\, \rho(f_n, 0) \geqslant \varepsilon\)</span>, то есть существует
+последовательность <span class="math inline">\(\{n_k\}\)</span>, такая,
+что <span class="math inline">\(f_{n_k}\)</span> не лежат в окрестности
+<span class="math inline">\(0\)</span>. <span
+class="math inline">\(f_{n_k}\)</span> сходится к нулю по мере, поэтому
+по теореме Рисса существует его подпоследовательность, сходящаяся почти
+всюду, а значит существует подпоследовательность <span
+class="math inline">\(n_{k_l}\)</span>, такая, что $f_{n_{k_l}} лежат в
+окрестности нуля. Противоречие <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-16">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>(<span
+class="math inline">\(C\)</span>-<em>свойство Лузина</em>) Пусть <span
+class="math inline">\(\mu\)</span> классическая мера на <span
+class="math inline">\((0, 1]\)</span>, <span
+class="math inline">\(f\)</span> измерима на <span
+class="math inline">\([0, 1]\)</span>. Тогда <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists
+g_{\varepsilon} \in C([0, 1]): \,\,\,\, \mu\{x:
+\,\,\,\,g_{\varepsilon}(x) \ne f(x)\} &lt; \varepsilon\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-25">
+<p><span class="margin-lft"><strong>Задача: </strong></span><span
+class="math inline">\((5)\)</span> Вывести из <span
+class="math inline">\(C\)</span>-свойства Лузина утверждение для прямой
+<span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\mathbb{R} = \displaystyle\bigcup_{n \in \{\ldots,
+-1, 0, 1, \ldots\}}^{\infty}[n, n + 1]\)</span>. По <span
+class="math inline">\(C\)</span>-свойству существуют <span
+class="math inline">\(g_n(x) \in C([n, n + 1]): \,\,\,\, \mu\{x\in [n ,
+n+1]: \,\,\,\, f(x)\ne g_n(x)\} &lt; \frac{\varepsilon}{2^{|n| +
+1}}\)</span>. Далее на каждом отрезке немного <span
+class="math inline">\(\delta\)</span> отступим с двух концов отрезка и
+соединим <span class="math inline">\(g_n(x)\)</span> с нулем с двух
+сторон. Получим новые функции <span class="math inline">\(h(x)\)</span>
+их объединение будет непрерывной функцией, а мера точек, где что-то
+поменяли <span class="math inline">\(\leqslant 2\displaystyle \sum_{n =
+1}^{\infty}2\delta\cdot \frac{\varepsilon}{2^{n + 1}} &lt; 2\delta
+\varepsilon \,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="семинар-4.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="семинар-6.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

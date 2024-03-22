@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Семинар 7</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="6" id="семинар-7">Семинар 7</h1>
+<div id="problem-25">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Есть <span
+class="math inline">\(N\)</span> билетов, студент выучил <span
+class="math inline">\(M\)</span> из них. <span
+class="math inline">\(A_k\)</span> – студент, стоя <span
+class="math inline">\(k\)</span>-м в очереди вытащил хороший билет.
+<span class="math inline">\(P(A_k) = ?\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(H_i\)</span> – до <span
+class="math inline">\(k\)</span>-го студента вытащили ровно <span
+class="math inline">\(i\)</span> хороших билетов.</p>
+<p><span class="math inline">\(\Omega = \bigsqcup_i^M H_i\)</span></p>
+<p><span class="math inline">\(P(H_i) = \frac{C_M^i\cdot C_{N - M}^{k -
+1 - i}}{C_N^{k - 1}}\)</span>.</p>
+<p><span class="math inline">\(P(A_k|H_i) = \frac{M - i}{N - (k +
+1)}\)</span> (оставшиеся хорошие поделить на оставшиеся билеты).</p>
+<p><span class="math inline">\(P(A_k) = \displaystyle \sum_{i =
+0}^{M}P(H_i)\cdot P(A_k|H_i) = \frac{C_M^i\cdot C_{N - M}^{k - 1 -
+i}}{C_N^{k - 1}}\cdot \frac{M - i}{N - (k + 1)} = \frac{M}N\cdot
+\displaystyle \sum_{i = 0}^{M}P(H_i)\cdot P(A_k|H_i) = \frac{C_{M -
+1}^i\cdot C_{N - M}^{k - 1 - i}}{C_{N - 1}^{k - 1}}\)</span>, где
+последняя сумма, также сумма по событиям, составляющим разбиение (просто
+уменьшили количество билетов на <span class="math inline">\(1\)</span>),
+то есть эта сумма равна <span class="math inline">\(1
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="6.1" id="домашняя-работа-7">Домашняя работа 7</h2>
+<div id="problem-26">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol type="1">
+<li>Случайная величина <span class="math inline">\(\xi\)</span> имеет
+распределение Пуассона с параметром <span
+class="math inline">\(\lambda\)</span>. Найти <span
+class="math inline">\(E\left(\frac1{1+\xi}\right)\)</span></li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(P(\{\xi = k\}) =
+\frac{\lambda^k}{k!}e^{-\lambda}, \,\,\,\, k = 0, \ldots\)</span></p>
+<p><span class="math inline">\(\frac1{1+\xi}\)</span> принимает значения
+<span class="math inline">\(1, \frac12, \frac13, \ldots\)</span></p>
+<p><span class="math display">\[E\left(\frac1{1+\xi}\right) =
+\displaystyle \sum_{k = 1}^{\infty}\frac1k\cdot P(\{\frac1{1+\xi} =
+\frac1k\}) = \displaystyle \sum_{k = 1}^{\infty}\frac1k\cdot
+P(\{\frac1{1+\xi} = \frac1k\})=\]</span> <span class="math display">\[=
+\displaystyle \sum_{k = 1}^{\infty}\frac1k\cdot P(\{\xi = k - 1\}) =
+\displaystyle \sum_{k = 1}^{\infty}\frac1k\cdot\frac{\lambda^{k- 1}}{(k
+- 1)!}e^{-\lambda} = \frac1{\lambda}\]</span></p>
+</div>
+<div id="problem-27">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="2" type="1">
+<li>Найдите коэффицент коррелляции <span
+class="math inline">\(\xi\)</span> и <span
+class="math inline">\(\eta\)</span>, если <span
+class="math inline">\(\eta = a\xi + b\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\rho(\xi, \eta) =
+\frac{\operatorname{cov}(\xi, \eta)}{\sqrt{D\xi}\cdot \sqrt{D\eta}} =
+\frac{\operatorname{cov}(\xi, a\xi + b)}{\sqrt{D\xi}\cdot \sqrt{Da\xi +
+b}} = \frac{a\operatorname{cov}(\xi, \xi) + \operatorname{cov}(\xi,
+b)}{\sqrt{D\xi}\cdot \sqrt{Da\xi + b}} = \frac{aD\xi}{\sqrt{D\xi}\cdot
+\sqrt{a^2D\xi}} = 1 \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-28">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="3" type="1">
+<li>Совместное распределение двух дискретных случайных величин <span
+class="math inline">\(\xi\)</span> и <span
+class="math inline">\(\eta\)</span> задано таблицей</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\xi\setminus \eta\)</span></th>
+<th><span class="math inline">\(-1\)</span></th>
+<th><span class="math inline">\(0\)</span></th>
+<th><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(-1\)</span></td>
+<td><span class="math inline">\(\frac19\)</span></td>
+<td><span class="math inline">\(\frac16\)</span></td>
+<td><span class="math inline">\(\frac29\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\(\frac13\)</span></td>
+<td><span class="math inline">\(\frac1{18}\)</span></td>
+<td><span class="math inline">\(\frac19\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Зависимы ли <span class="math inline">\(\xi\)</span> и <span
+class="math inline">\(\eta\)</span>?</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\eta\)</span></th>
+<th><span class="math inline">\(-1\)</span></th>
+<th><span class="math inline">\(0\)</span></th>
+<th><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P\)</span></td>
+<td><span class="math inline">\(\frac49\)</span></td>
+<td><span class="math inline">\(\frac29\)</span></td>
+<td><span class="math inline">\(\frac13\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\xi\)</span></th>
+<th><span class="math inline">\(-1\)</span></th>
+<th><span class="math inline">\(1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P\)</span></td>
+<td><span class="math inline">\(\frac12\)</span></td>
+<td><span class="math inline">\(\frac12\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(P(\{\xi = -1, \eta = -1\}) = \frac19 \ne
+P(\xi = -1)\cdot P(\xi = -1) = \frac29 \implies\)</span> зависимы</p>
+</div>
+<div id="problem-29">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="4" type="1">
+<li>Найдите коэффицент коррелляции случайных величин <span
+class="math inline">\(\xi\)</span> и <span
+class="math inline">\(\xi^2\)</span>, если <span
+class="math inline">\(\xi\)</span> имеет распределение Пуассона с
+параметром <span class="math inline">\(\lambda\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(E\xi^2 = e^{-\lambda}\displaystyle
+\sum_{k = 1}^{\infty}k^2\cdot \frac{\lambda^{k}}{k!} =
+\lambda^2\)</span></p>
+<p><span class="math inline">\(\operatorname{corr}(\xi, \xi^2) =
+\frac{\operatorname{cov}(\xi, \xi^2)}{\sqrt{D\xi}\sqrt{D\xi^2}}=
+\frac{E\xi^3 - \lambda^3}{\ldots} = 0 \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-30">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="5" type="1">
+<li>Пусть <span class="math inline">\(\xi\)</span> и <span
+class="math inline">\(\eta\)</span> независимые случайные величины.
+Докажите, что <span class="math inline">\(D(\xi\eta) = D\xi D\eta +
+(E\xi)^2D\eta + (E\eta)^2D\xi\)</span></li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math display">\[D(\xi\eta) = E(\xi\eta - E(\xi\eta))^2 =
+E(\xi\eta - E\xi E\eta)^2=\]</span> <span class="math display">\[=
+E(\xi\eta)^2 - E(2\xi\eta E\xi E\eta) + E(E\xi E\eta)^2 = E(\xi\eta)^2 -
+2(E\xi)^2(E\eta)^2 + (E\xi E\eta)^2 = E\xi^2E\eta^2 - (E\xi
+E\eta)^2\]</span></p>
+<p><span class="math display">\[D\xi D\eta + (E\xi)^2D\eta +
+(E\eta)^2D\xi=\]</span> <span class="math display">\[= (E\xi^2 -
+(E\xi)^2)(E\eta^2 - (E\eta)^2)  + (E\xi)^2(E\eta^2 - (E\eta)^2)  +
+(E\eta)^2(E\xi^2 - (E\xi)^2)=\]</span> <span class="math display">\[=
+E\xi^2E\eta^2 - (E\xi)^2(E\eta)^2 - (E\eta)^2(E\xi)^2 + (E\xi E\eta)^2 =
+E\xi^2E\eta^2 - (E\xi E\eta)^2 \,\,\,\,\blacksquare\]</span></p>
+</div>
+<div id="problem-31">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="6" type="1">
+<li>Докажите, что <span class="math inline">\(D\left(\displaystyle
+\sum_{i = 1}^n\xi_i\right) = \displaystyle \sum_{i = 1}^nD\xi_i +
+\displaystyle \sum_{i \ne j} \operatorname{cov}(\xi_i,
+\xi_j)\)</span></li>
+</ol>
+<p>С помощью этой формулы и представления <span
+class="math inline">\(\xi = \displaystyle \sum_{i = 1}^{n}\xi_i\)</span>
+вычислить сумму гипергеометрического распределения.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math display">\[D\left(\displaystyle \sum_{i = 1}^n\xi_i\right) =
+E\left(\displaystyle \sum_{i = 1}^n\xi_i - E\left(\displaystyle \sum_{i
+= 1}^n\xi_i\right)\right)^2 = E\left(\displaystyle \sum_{i = 1}^n(\xi_i
+- E\xi_i)\right)^2=\]</span> <span class="math display">\[=
+\displaystyle \sum_{i = 1}^nD\xi_i + \displaystyle \sum_{i \ne j}
+E(\xi_i - E\xi_i) E(\xi_j - E\xi_j) = \displaystyle \sum_{i = 1}^nD\xi_i
++ \displaystyle \sum_{i \ne j} \operatorname{cov}(\xi_i, \xi_j)
+\,\,\,\,\blacksquare\]</span></p>
+<p>Посчитаем дисперсию гипергеометрического распределения с параметрами
+<span class="math inline">\(N, M\)</span> и <span
+class="math inline">\(n\)</span>. Пусть есть <span
+class="math inline">\(N\)</span> шаров, из них <span
+class="math inline">\(M\)</span> – белых, остальные – черные. Вынимают
+<span class="math inline">\(n\)</span> шаров.</p>
+<p><span class="math inline">\(\xi\)</span> – число белых шаров среди
+вынутых.</p>
+<p><span class="math inline">\(P(\{\xi = m\}) = \frac{C_M^m\cdot C_{N -
+M}^{n - m}}{C^n_N}, \,\,\,\, m \in \{0,1, \ldots, \min\{M,
+n\}\}\)</span>.</p>
+<p>Рассмотрим случайные величины <span class="math inline">\(\xi_i =
+1\)</span> в случае, если достали белый шар и <span
+class="math inline">\(\xi_i = 0\)</span> – черный. Тогда</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\xi_i\)</span></th>
+<th><span class="math inline">\(0\)</span></th>
+<th><span class="math inline">\(1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P\)</span></td>
+<td><span class="math inline">\(1-\frac{M}N\)</span></td>
+<td><span class="math inline">\(\frac{M}N\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(E\xi = \displaystyle \sum_{i =
+1}^{n}\xi_i = n\cdot \frac{M}N\)</span></p>
+<p><span class="math inline">\(D\xi_i = E(\xi_i - E\xi_i)^2 =
+E\left(\xi_i - \frac{M}N\right)^2 = \frac{M}N -
+\left(\frac{M}N\right)^2\)</span></p>
+<p><span class="math inline">\(\operatorname{cov}(\xi_i, \xi_j) =
+E\xi_i\xi_j - E\xi_iE\xi_j = \frac{M(M - 1)}{N(N - 1)} -
+\left(\frac{M}N\right)^2\)</span></p>
+<p><span class="math display">\[D\xi = D\left(\displaystyle \sum_{i =
+1}^{n}\xi_i\right)=\displaystyle \sum_{i = 1}^nD\xi_i + \displaystyle
+\sum_{i \ne j} \operatorname{cov}(\xi_i, \xi_j) =\]</span> <span
+class="math display">\[= n \cdot \left(\frac{M}N -
+\left(\frac{M}N\right)^2\right) + n(n - 1)\left(\frac{M(M - 1)}{N(N -
+1)} - \left(\frac{M}N\right)^2\right)=\]</span> <span
+class="math display">\[=n\frac{M}N\left(1 - \frac{M}N\right) + n(n -
+1)\frac{M}N\left(\frac{M - 1}{N - 1} - \frac{M}N\right)=\]</span> <span
+class="math display">\[=n\frac{M}N\left(1 - \frac{M}N\right) + n(n -
+1)\frac{M}N\left(\frac{M - N}{(N - 1)N}\right)=\]</span></p>
+<p><span class="math display">\[=n\frac{M}N\left(1 -
+\frac{M}N\right)\left(\frac{N - n}{N - 1}\right)\]</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

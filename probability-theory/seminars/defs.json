@@ -1,0 +1,12 @@
+[
+    {
+        "keyword": "элементарные события исходы пространство элементарных событий отображение вероятности вероятность исхода дискретное событие вероятность события",
+        "html": "<p><a href=\"семинар-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\Omega\\)</span> – произвольное\nмножество.</p>\n<p>Элементы <span class=\"math inline\">\\(w \\in \\Omega\\)</span> –\n<em>элементарные события</em> или <em>исходы</em>,</p>\n<p><span class=\"math inline\">\\(\\Omega\\)</span> – <em>пространство\nэлементарных событий</em>,</p>\n<p><span class=\"math inline\">\\(p: \\Omega \\to \\mathbb{R}\\)</span> –\n<em>отображение вероятности</em>, если <span\nclass=\"math inline\">\\(\\displaystyle \\sum_{w \\in \\Omega}p(w) =\n1\\)</span>, при этом <span class=\"math inline\">\\(p(w)\\)</span> –\n<em>вероятность исхода</em> <span class=\"math inline\">\\(w\\)</span>.</p>\n<p>Будем рассматривать не более чем счетное пространство событий <span\nclass=\"math inline\">\\(\\Omega = \\{w_1, \\ldots, w_n, \\ldots\\}\\)</span>.\nТакое пространство <em>дискретное</em>.</p>\n<p><span class=\"math inline\">\\(A \\subset \\Omega\\)</span> –\n<em>событие</em>. <em>Вероятность события</em> <span\nclass=\"math inline\">\\(A\\)</span> – это <span\nclass=\"math inline\">\\(\\displaystyle \\sum_{w \\in A}p(w)\\)</span>.</p>\n<p>В классическом определении вероятности рассматривается <span\nclass=\"math inline\">\\(p\\)</span>, такое что <span\nclass=\"math inline\">\\(p(w_1) = \\ldots = p(w_n)\\)</span>. Тогда <span\nclass=\"math inline\">\\(p(A) = \\frac{|A|}{|\\Omega|}\\)</span>.</p>",
+        "url": "семинар-1.html#definition-0"
+    },
+    {
+        "keyword": "несовместны",
+        "html": "<p><a href=\"семинар-2.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСобытия <em>несовместны</em>, если они попарно не пересекаются.</p>",
+        "url": "семинар-2.html#definition-1"
+    }
+]

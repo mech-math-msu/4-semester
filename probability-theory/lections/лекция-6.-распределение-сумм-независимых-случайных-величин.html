@@ -9,7 +9,8 @@
     
     
     
-    <title>Поиск</title>
+    <title>Лекция 6. Распределение сумм независимых случайных
+величин</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -101,7 +102,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
-            margin-left: -16px;
+            margin-left: 0px;
         }
 
         h1 {
@@ -223,27 +224,12 @@
 
 
         .margin-lft {
-            margin-left: -16px;
+            margin-left: 0px;
         }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
-            <style>
-                html {
-                    color: #69a197;
-                    background-color: #000000;
-                }
-                #sitenav i {
-                    color: #69a197 !important;
-                }
-                a {
-                    color: #69a197  !important;
-                }
-                a:visited {
-                    color: #69a197  !important;
-                }
-            </style>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -263,12 +249,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="лекция-7.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -276,64 +263,76 @@
 
 
 
-<h1 class="unnumbered unlisted" id="search">Поиск</h1>
-<style>
-    h1#search {
-        display: none;
-    }
-    input#searchbar {
-        fontsize: 2rem;
-        width: 16rem;
-        height: 2.5rem;
-        border-radius: 25px;
-        padding-left: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-</style>
-<script type="module">
-    import data from "./defs.json" assert {type: 'json'};
-
-    let ans_div = document.getElementById('answer');
-
-    function search() {
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-
-        if (input.length < 3) {
-            return;
-        }
-
-        let ans = "";
-
-        data.forEach((item, i) => {
-            if (item.keyword.includes(input)) {
-                ans += item.html;
-            }
-        });
-
-        ans_div.innerHTML = ans;
-        MathJax.typeset();
-    }
-    window.search = search;
-</script>
-<center>
-<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Поиск...">
-</center>
-<div id="answer">
-
+<h1 data-number="6"
+id="лекция-6.-распределение-сумм-независимых-случайных-величин">Лекция
+6. Распределение сумм независимых случайных величин</h1>
+<h2 data-number="6.1" id="теоремы-муавра-лапласа">Теоремы
+Муавра-Лапласа</h2>
+<div id="theorem-5">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Локальная теорема Муавра-Лапласа</em>) Пусть <span
+class="math inline">\(\nu_p\)</span> – число успехов в серии из <span
+class="math inline">\(n\)</span> независимых испытаний с вероятностью
+успеха в каждом конкретном случае <span class="math inline">\(p\)</span>
+(испытание Бернулли). Обозначим <span class="math inline">\(q = 1 -
+p\)</span> (вероятность неудачи). Тогда <span
+class="math inline">\(\forall k: \,\,\,\, |k - np| =
+o((npq)^{\frac23})\)</span></p>
+<p><span class="math display">\[\displaystyle \lim_{n\to
+\infty}P(\{\nu_n = k\}) = \frac1{\sqrt{2\pi npq}}e^{-\frac{(k -
+np)^2}{2npq}}\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="theorem-6">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>интегральная теорема Муавра-Лапласа</em>) Пусть
+<span class="math inline">\(\nu_p\)</span> – число успехов в серии из
+<span class="math inline">\(n\)</span> независимых испытаний с
+вероятностью успеха в каждом конкретном случае <span
+class="math inline">\(p\)</span> (испытание Бернулли). Обозначим <span
+class="math inline">\(q = 1 - p\)</span> (вероятность неудачи). Пусть
+<span class="math inline">\(-\infty \leqslant c &lt; d \leqslant
++\infty\)</span>. Тогда <span class="math inline">\(P\left(\left\{c
+\leqslant \frac{\nu_n - E\nu_n}{\sqrt{\operatorname{D}\nu_n}} \leqslant
+d\right\}\right) \to \Phi(d) - \Phi(c)\)</span>, где <span
+class="math inline">\(\Phi(x) =
+\frac1{\sqrt{2\pi}}\displaystyle\int\limits_{-\infty}^x
+e^{-\frac{u^2}2}du\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="6.2" id="оценка-берри-эссена">Оценка Берри-Эссена</h2>
+<div id="theorem-7">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>оценка
+Берри-Эссена</em>) Пусть <span class="math inline">\(\xi_1, \xi_2,
+\ldots, \xi_n, \ldots\)</span> – последовательность случайных величин с
+одинаковым распределением (одинаковых получается). Пусть <span
+class="math inline">\(E\xi_1 = m, \,\,\,\, \operatorname{D}\xi_1 =
+\sigma^2, \,\,\,\, S_n = \displaystyle \sum_{i = 1}^{n}\xi_i\)</span> и
+пусть <span class="math inline">\(E|\xi_1| &lt; \infty\)</span>. Тогда
+<span class="math inline">\(\forall n\)</span> и <span
+class="math inline">\(\forall x\)</span></p>
+<p><span class="math display">\[\sup_{x \in
+\mathbb{R}}\left|P\left\{\frac{S_n - ES_n}{\sqrt{\operatorname{D}S_n}}
+\leqslant x\right\} - \Phi(x)\right|  \leqslant \frac{C}{\sqrt{n}}\cdot
+\frac{E|\xi_1 - E\xi_1 |^3}{\sigma^3},\]</span></p>
+<p>где <span class="math inline">\(C\)</span> – константна и для <span
+class="math inline">\(C\)</span> верно <span
+class="math inline">\(0.3989 \leqslant \frac1{\sqrt{2\pi}} \leqslant C
+&lt; 0.4784\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="лекция-7.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

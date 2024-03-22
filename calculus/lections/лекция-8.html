@@ -9,7 +9,7 @@
     
     
     
-    <title>Поиск</title>
+    <title>Лекция 8</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -101,7 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
-            margin-left: -16px;
+            margin-left: 0px;
         }
 
         h1 {
@@ -223,27 +223,12 @@
 
 
         .margin-lft {
-            margin-left: -16px;
+            margin-left: 0px;
         }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
-            <style>
-                html {
-                    color: #69a197;
-                    background-color: #000000;
-                }
-                #sitenav i {
-                    color: #69a197 !important;
-                }
-                a {
-                    color: #69a197  !important;
-                }
-                a:visited {
-                    color: #69a197  !important;
-                }
-            </style>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -263,12 +248,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="лекция-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -276,64 +262,79 @@
 
 
 
-<h1 class="unnumbered unlisted" id="search">Поиск</h1>
-<style>
-    h1#search {
-        display: none;
-    }
-    input#searchbar {
-        fontsize: 2rem;
-        width: 16rem;
-        height: 2.5rem;
-        border-radius: 25px;
-        padding-left: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-</style>
-<script type="module">
-    import data from "./defs.json" assert {type: 'json'};
-
-    let ans_div = document.getElementById('answer');
-
-    function search() {
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-
-        if (input.length < 3) {
-            return;
-        }
-
-        let ans = "";
-
-        data.forEach((item, i) => {
-            if (item.keyword.includes(input)) {
-                ans += item.html;
-            }
-        });
-
-        ans_div.innerHTML = ans;
-        MathJax.typeset();
-    }
-    window.search = search;
-</script>
-<center>
-<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Поиск...">
-</center>
-<div id="answer">
-
+<h1 data-number="8" id="лекция-8">Лекция 8</h1>
+<h2 data-number="8.1"
+id="криволинейные-интегралы-второго-рода-по-замкнутому-контуру">Криволинейные
+интегралы второго рода по замкнутому контуру</h2>
+<div id="note-3">
+<p><span class="margin-lft"><strong>Замечание: </strong></span><span
+class="math inline">\(\displaystyle\oint\limits_{\gamma} f_1dx_1 +
+\ldots + f_ndx_n\)</span> (<em>устаревающее обозначение</em>)</p>
+</div>
+<h3 data-number="8.1.1" id="формула-грина">Формула Грина</h3>
+<div id="theorem-17">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>формула Грина</em>) Пусть <span
+class="math inline">\(G \subset \mathbf{R}^n\)</span> ограниченная,
+выпуклая и замкнутая область с кусочно-гладкой границей.</p>
+<p>Пусть <span class="math inline">\(P(x, y), \,\,\,\, Q(x, y) \in
+C^1(G)\)</span>.</p>
+<p>Тогда <span class="math inline">\(\displaystyle\oint\limits_{\partial
+G} Pdx + Qdy = \displaystyle{\int\int}\limits_G \left(\frac{\partial
+Q}{\partial x} - \frac{\partial P}{\partial y}\right)dx dy\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(Q\equiv 0\)</span> (потом
+просуммируем).</p>
+<p><img src="img/grin.png" /></p>
+<p>Параметризация <span class="math inline">\(\psi(x) \,\,\,\,
+\begin{cases}
+x = x\\
+y = \psi(x)\\
+\end{cases}\)</span></p>
+<p>Параметризация <span class="math inline">\(\varphi(x) \,\,\,\,
+\begin{cases}
+x = x\\
+y = \varphi(x)\\
+\end{cases}\)</span></p>
+<p>Но важен порядок обхода, поэтому в интеграле поменяем знак.</p>
+<p><span class="math display">\[\displaystyle\oint\limits_{\partial G}
+Pdx = \displaystyle\int\limits_a^b P(x, \varphi(x))dx + 0 -
+\displaystyle\int\limits_a^b P(x, \psi(x))dx + 0=\]</span> <span
+class="math display">\[= -\displaystyle\int\limits_a^b
+\left(\displaystyle\int\limits_{\varphi(x)}^{\psi(x)} \frac{\partial
+P}{\partial y}(x, y)dy\right)dx = -
+\displaystyle{\int\int}\limits_G\frac{\partial P}{\partial y}dx dy
+\,\,\,\,\blacksquare\]</span></p>
+</div>
+<div id="corollary-0">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Если
+<span class="math inline">\(G = \bigcup_{i}^{n}G_i, \,\,\,\, G_i \cap
+G_j \subset (\partial G_i)\cap (\partial G_j)\)</span> и <span
+class="math inline">\(\forall i \,\,\,\, G_i\)</span> выпукла, то
+формула Грина верна для <span class="math inline">\(G\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-1">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Если
+<span class="math inline">\(G_1\)</span> и <span
+class="math inline">\(G_2\)</span> выпуклы, <span
+class="math inline">\(G_2 \subset G_1\)</span>, то на <span
+class="math inline">\(G_1\setminus G_2\)</span> верна формула Грина.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="семинар-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="лекция-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>
