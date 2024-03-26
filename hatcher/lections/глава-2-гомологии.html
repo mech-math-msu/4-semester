@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Глава 2 Гомологии</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<img src="ico.png" alt="" class="logo">
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="глава-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="2" id="глава-2-гомологии">Глава 2 Гомологии</h1>
+<blockquote>
+<p>Фундаментальная группа полезна для изучения пространств малой
+размерности (потому что она – это отображения пространства малой
+размерности (отрезка в случаие петли и квадрата в случае гомотопии))</p>
+</blockquote>
+<blockquote>
+<p>Поэтому для <span class="math inline">\(C-W\)</span>-комплекса
+фундаментальная группа зависит только от двумерного остова комплекса, то
+есть фундаментальная группа не различает, например, сферы размерности
+<span class="math inline">\(\geqslant 2\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Устранить этот недостаток группы <span
+class="math inline">\(\pi_1(X)\)</span> (<span
+class="math inline">\(1\)</span>, кстати, потому что различает
+размерности до <span class="math inline">\(1\)</span> включительно, а
+<span class="math inline">\(\pi\)</span>, потому что фундаментальная ;)
+можно введя <em>гомотопические группы</em> <span
+class="math inline">\(\pi_n(X)\)</span>, которые являются классами
+эквивалентности гомотопий отображений <span
+class="math inline">\(n\)</span>-мерного куба <span
+class="math inline">\(I^n\)</span> в <span
+class="math inline">\(X\)</span>. Группы <span
+class="math inline">\(\pi_n(X)\)</span> различают сферы всех
+размерностей, так как <span class="math inline">\(\pi_i(S^n) =
+\mathbf{0}, \,\,\,\,i &lt; n, \,\,\,\, \pi_n(S^n) =
+\mathbb{Z}\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>И все бы хорошо, но такие группы очень сложно считать. Поэтому
+придумали гомологические группы со сложнейшим определением и
+необходимостью понимать алгебру и теорию категорий, НО, вы не поверите,
+их проще считать.</p>
+</blockquote>
+<blockquote>
+<p>Как и <span class="math inline">\(n\)</span>-я гомотопическая группа,
+группа гомологий <span class="math inline">\(H^n(X)\)</span> зависит
+только от <span class="math inline">\(n+1\)</span>-мерного остова <span
+class="math inline">\(C-W\)</span> комплекса.</p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(H_i(S^n) \cong \pi_i(S^n), \,\,\,\, 1
+\leqslant i \leqslant n\)</span>, но <span
+class="math inline">\(H_i(S^n) = 0, \,\,\,\, i &gt; n\)</span>, что
+удобнее.</p>
+</blockquote>
+<blockquote>
+<p>Чтоб не помереть от непонимания, сначала приводится несколько
+примеров, потом урезанная теория (симплициальные гомологии), потом идет
+общая теория (сингулярные гомологии), потом кучу свойств этих самых
+сингулярных гомологий, ну а потом (если я еще не отчаюсь) будут
+приложения всей этой мути.</p>
+</blockquote>
+<blockquote>
+<p>Интересная особенность гомологий состоит в том, что чаще всего
+используются основные свойства гомологий, а не их определение.
+<strong>Это позволяет предположить, что к гомологиям возможен
+аксиоматический подход</strong>. Это действительно так и об этом будет
+сказано далее. Аксиомы гомологий алгебраические, поэтому можно считать,
+что гомологии чисто алгебраический объект, и геометрия, участвующая в
+определении, вторична.</p>
+</blockquote>
+<h2 data-number="2.1" id="идея-гомологий">Идея гомологий</h2>
+<blockquote>
+<p>Группа гомологий показывает каким образом <span
+class="math inline">\(n\)</span>-мерные клетки приклеиваются к <span
+class="math inline">\(n - 1\)</span>-мерным</p>
+</blockquote>
+<h2 data-number="2.2"
+id="симплициальные-и-сингулярные-гомологии">Симплициальные и сингулярные
+гомологии</h2>
+<blockquote>
+<p>Сингулярные гомологии – самая важная теория гомологий в
+алгебраической топологии.</p>
+</blockquote>
+<blockquote>
+<p>Мы сначала рассмотрим более простые симплициальные гомологии, чтобы
+понять, как вообще работать с гомологиями.</p>
+</blockquote>
+<h3 data-number="2.2.1" id="delta-комплексы"><span
+class="math inline">\(\Delta\)</span>-комплексы</h3>
+<blockquote>
+<p>Тут какие-то сложности в терминологии, но, кажется, это
+«полусимплициальный комплекс»</p>
+</blockquote>
+<div id="definition-3">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(n\)</span>-<em>мерный симплекс</em> (<span
+class="math inline">\(n\)</span>-мерный аналог треугольника) – это
+наименьшее выпуклое пространство в <span
+class="math inline">\(\mathbb{R}^m\)</span>, содержащее <span
+class="math inline">\(n + 1\)</span> точек <span
+class="math inline">\(v_0, \ldots, v_n\)</span>, которые не лежат в
+гиперплоскости размерности меньше, чем <span
+class="math inline">\(n\)</span> (гиперплоскость – множество решений
+системы линейных уравнений) или, что тоже самое, векторы <span
+class="math inline">\(v_1 - v_0, \ldots, v_n - v_0\)</span> должны быть
+линейно независимы.</p>
+<p>Точки <span class="math inline">\(v_i\)</span> – <em>вершины
+симплекса</em>, а симплекс <strong>обозначают</strong> <span
+class="math inline">\([v_0, \ldots, v_n]\)</span>.</p>
+<p><em>Стандартный</em> <span
+class="math inline">\(n\)</span>-<em>мерный симплекс</em> – это <span
+class="math inline">\(\Delta^n = \left\{(t_0, \ldots, t_n)\in
+\mathbb{R}^{n + 1}|\,\,\,\, \displaystyle \sum_{i}t_i = 1, \,\,\,\, t_i
+\geqslant 0, \,\,\,\, \forall i\right\}\)</span> (его вершины – это
+концы единичных векторов, направленные по координатным осям).</p>
+<p>Для гомологий важен порядок вершин симплекса, поэтому <span
+class="math inline">\(n\)</span>-мерный симплекс <span
+class="math inline">\(= \,\,\,\,n\)</span>-мерный симплекс с указанным
+порядком вершин.</p>
+<p>Пусть есть симплекс <span class="math inline">\([v_0, \ldots,
+v_n]\)</span>. Отображение <span class="math inline">\(\Delta^n \to
+[v_0, \ldots, v_n], \,\,\,\, (t_0, \ldots, t_n) \mapsto \displaystyle
+\sum_{i}t_i\cdot v_i\)</span> – гомоморфизм, который называется
+<em>каноническим</em>, а <span class="math inline">\(t_i\)</span> –
+<em>барицентрические координаты</em> точки <span
+class="math inline">\(\displaystyle \sum_{i}t_i\cdot v_i\)</span> в
+симплексе <span class="math inline">\([v_0, \ldots, v_n]\)</span>.</p>
+<p>Если из симплекса удалить одну из вершин, то получим <span
+class="math inline">\(n - 1\)</span>-мерный симплекс, который называется
+<em>гранью</em> симплекса.</p>
+<p>Граница симплекса, которая <strong>обозначается</strong> <span
+class="math inline">\(\partial \Delta^n\)</span> – это объединение всех
+граней симплекса.</p>
+<p>Открытый симплекс <strong>обозначается</strong> <span
+class="math inline">\(\mathring{\Delta}^n\)</span>.</p>
+<p><span class="math inline">\(\Delta\)</span>-<em>комплекс</em>
+определяется как <span class="math inline">\(C-W\)</span>-комплекс,
+только шары заменяются на симплексы.</p>
+</div>
+<div id="definition-4">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Структура</em> <span
+class="math inline">\(\Delta\)</span>-комплекса на пространстве <span
+class="math inline">\(X\)</span> – это набор отображений <span
+class="math inline">\(\sigma_{\alpha}: \Delta^n \to X\)</span>, где
+<span class="math inline">\(n\)</span> зависит от <span
+class="math inline">\(\alpha\)</span> (по сути это отображения
+клеток-симплексов комплекса в <span class="math inline">\(X\)</span>),
+такой, что выполнены условия:</p>
+<ol type="1">
+<li>Ограничение <span class="math inline">\(\sigma_{\alpha}\)</span> на
+<span class="math inline">\(\mathring{\Delta^n}\)</span> инъективно,
+причем каждая точка пространства <span class="math inline">\(X\)</span>
+содержится в образе ровно одного такого ограничения. (нужно покрыть
+клетками-симплексами все <span class="math inline">\(X\)</span> и не
+накладывать клетки)</li>
+<li>Каждое ограничение <span
+class="math inline">\(\sigma_{\alpha}\)</span> на грань симплекса <span
+class="math inline">\(\Delta^n\)</span> – это одно из отображений <span
+class="math inline">\(\sigma_{\beta}: \Delta^{n - 1} \to X\)</span>.
+Здесь грань симплекса <span class="math inline">\(\Delta^n\)</span>
+отождествляется с симплексом <span class="math inline">\(\Delta^{n -
+1}\)</span> посредством канонического гомоморфизма (с сохранением
+порядка вершин). (нужно, чтобы отображения клеток склеивались на
+границах)</li>
+<li>Множество <span class="math inline">\(A \subset X\)</span> открыто
+тогда и только тогда, когда множество <span
+class="math inline">\(\sigma_{\alpha}^{-1}(A)\)</span> открыто в <span
+class="math inline">\(\Delta^n\)</span> для всех <span
+class="math inline">\(\alpha\)</span>. (это чтобы нельзя было делать
+всякие гадости, например, считать каждую точку пространства
+вершиной)</li>
+</ol>
+</div>
+<div id="note-0">
+<p><span class="margin-lft"><strong>Замечание: </strong></span><span
+class="math inline">\(X\)</span> можно построить как фактор-пространство
+симплексов.</p>
+</div>
+<h2 data-number="2.3" id="симплициальные-гомологии">Симплициальные
+гомологии</h2>
+<div id="definition-5">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Определим <em>группы симплициальных гомологий</em> для
+структуры <span class="math inline">\(\Delta\)</span>-комплекса
+пространства <span class="math inline">\(X\)</span>.</p>
+<p>Пусть <span class="math inline">\(\Delta_n(X)\)</span> – свободная
+абелева группа, базисом которой служат открытые <span
+class="math inline">\(n\)</span>-мерные симплексы <span
+class="math inline">\(e^n_{\alpha}\)</span> (<span
+class="math inline">\(\operatorname{Cl}e^n_{\alpha} = \sigma_{\alpha}:
+\Delta^n \to X\)</span>) комплекса <span
+class="math inline">\(X\)</span>. Элементы этой группы (формальные суммы
+<span class="math inline">\(\displaystyle
+\sum_{\alpha}n_{\alpha}e^n_{\alpha}\)</span> или, так как <span
+class="math inline">\(e^n_{\alpha}\)</span> определяется отображением
+<span class="math inline">\(\sigma_{\alpha}\)</span>, формальные суммы
+<span class="math inline">\(\displaystyle
+\sum_{\alpha}n_{\alpha}\sigma_{\alpha}, \,\,\,\, n_{\alpha} \in
+\mathbb{Z}\)</span>) – n-<em>мерные цепи</em>.</p>
+<p>Граница <span class="math inline">\(n\)</span>-мерного симплекса
+<span class="math inline">\([v_0, \ldots, v_n]\)</span> – это
+объединение граней <span class="math inline">\([v_0, \ldots, \hat{v}_i,
+\ldots, v_n]\)</span>, где <span
+class="math inline">\(\hat{v}_i\)</span> <strong>обозначает</strong>,
+что <span class="math inline">\(i\)</span>-я вершина удалена.</p>
+<p>Чтобы представить границу <span
+class="math inline">\(n\)</span>-мерного симплекса, как элемент группы
+(<span class="math inline">\(n - 1\)</span>-мерную цепь) <span
+class="math inline">\(\Delta_{n - 1}(X)\)</span>, лучше не просто
+суммировать грани <span class="math inline">\([v_0, \ldots, \hat{v}_i,
+\ldots, v_n]\)</span>, а считать границей <span
+class="math inline">\(\displaystyle \sum_{i}(-1)^i[v_0, \ldots,
+\hat{v}_i, \ldots, v_n]\)</span>. (если смотреть на картинки, то при
+таком представлении учитывается ориентация)</p>
+<p><img src="img/chains.png" /></p>
+<p>Определим гомоморфизм <span
+class="math inline">\(\partial_n(\sigma_{\alpha}) = \displaystyle
+\sum_{i}(-1)^i\sigma_{\alpha}_{|[v_0, \ldots, \hat{v}_i, \ldots,
+v_n]}\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="глава-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>
