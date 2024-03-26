@@ -1,2 +1,17 @@
-
+[
+    {
+        "keyword": "(псевдо)евклидово скалярное произведение",
+        "html": "<p><a href=\"разные-геометрии.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>(Псевдо)евклидово скалярное произведение</em> – это невырожденная\nсимметрическая билинейная форма <a\nhref=\"https://mech-math-msu.github.io/2-semester/linear-algebra/lections/%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D1%8B-%D0%BD%D0%B0%D0%B4-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8-%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D1%85-%D1%87%D0%B8%D1%81%D0%B5%D0%BB.html#definition-53\">сигнатуры</a>\n<span class=\"math inline\">\\((p, q)\\)</span>.</p>\n<p><span class=\"math inline\">\\((x, y) = \\displaystyle \\sum_{i =\n1}^{p}x^iy^i - \\displaystyle \\sum_{i = p + 1}^{p +\nq}x^iy^j\\)</span>.</p>",
+        "url": "разные-геометрии.html#definition-0"
+    },
+    {
+        "keyword": "пространственноподобные временноподобные изотропные светоподобные",
+        "html": "<p><a href=\"разные-геометрии.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a> В\nзависимости от знака скалярного квадрата векторы псевдоевклидова\nпространства делятся на:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\((x, x) &gt; 0\\)</span> –\n<em>пространственноподобные</em>,</li>\n<li><span class=\"math inline\">\\((x, x) &lt; 0\\)</span> –\n<em>временноподобные</em>,</li>\n<li><span class=\"math inline\">\\((x, x) = 0\\)</span> –\n<em>изотропные</em> или <em>светоподобные</em><a href=\"#fn1\"\nclass=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>.</li>\n</ol>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Чтобы <span class=\"math inline\">\\((x, x) = 0\\)</span>\nвектор не обязан быть нулевым.<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "разные-геометрии.html#definition-1"
+    },
+    {
+        "keyword": "пространство минковского",
+        "html": "<p><a href=\"разные-геометрии.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(n + 1\\)</span> мерное <em>пространство\nМинковского</em> – это <span class=\"math inline\">\\(M^{n + 1} =\n\\mathbb{R}_n^1\\)</span>.</p>",
+        "url": "разные-геометрии.html#definition-2"
+    }
 ]
