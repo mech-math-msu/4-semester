@@ -138,5 +138,25 @@
         "keyword": "положительная часть отрицательная часть интегрируема по лебегу интеграл лебега",
         "html": "<p><a href=\"лекция-5.html#definition-27\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f(x)\\)</span> – измеримая функция на\n<span class=\"math inline\">\\(X\\)</span>. Тогда функции</p>\n<p><span class=\"math inline\">\\(f_{+}(x) = \\max\\{f(x), 0\\}\\)</span> –\n<em>положительная часть</em> <span\nclass=\"math inline\">\\(f(x)\\)</span>,</p>\n<p><span class=\"math inline\">\\(f_{-}(x) = -\\min\\{f(x), 0\\}\\)</span> –\n<em>отрицательная часть</em> <span\nclass=\"math inline\">\\(f(x)\\)</span>.</p>\n<p>В силу построения эти функции неотрицательны.</p>\n<p>Функция <span class=\"math inline\">\\(f(x)\\)</span> <em>интегрируема по\nЛебегу</em> на <span class=\"math inline\">\\(X\\)</span>, если <span\nclass=\"math inline\">\\(f_{+}(x)\\)</span> и <span\nclass=\"math inline\">\\(f_{-}(x)\\)</span> интегрируемы по Лебегу на <span\nclass=\"math inline\">\\(X\\)</span> и <em>интеграл Лебега</em> от <span\nclass=\"math inline\">\\(f(x)\\)</span> – это <span\nclass=\"math inline\">\\(\\displaystyle\\int\\limits_X f(x)d\\mu =\n\\displaystyle\\int\\limits_X f_{+}(x)d\\mu - \\displaystyle\\int\\limits_X\nf_{-}(x)d\\mu\\)</span>.</p>",
         "url": "лекция-5.html#definition-27"
+    },
+    {
+        "keyword": "колебание функции в точке",
+        "html": "<p><a href=\"лекция-7.html#definition-28\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Колебание функции</em> <span class=\"math inline\">\\(f\\)</span> <em>в\nточке</em> <span class=\"math inline\">\\(x\\)</span> – это <span\nclass=\"math inline\">\\(w_f(x) = \\displaystyle\\inf_{I \\ni\nx}\\left(\\sup_{I}f - \\inf_If\\right) = \\displaystyle\\inf_{I \\ni\nx}\\left(\\sup_{x_1, x_2 \\in I}|f(x_1) - f(x_2)|\\right)\\)</span>. (<span\nclass=\"math inline\">\\(I\\)</span> – интервал)</p>",
+        "url": "лекция-7.html#definition-28"
+    },
+    {
+        "keyword": "прямое произведение полуколец",
+        "html": "<p><a href=\"лекция-7.html#definition-29\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(S_k, \\,\\,\\,\\, k \\in \\{1, \\ldots,\nn\\}\\)</span> – полукольца.</p>\n<p><em>Прямое произведение полуколец</em> – это <span\nclass=\"math inline\">\\(S = S_1\\times \\ldots \\times S_n = \\{A_1\\times\n\\ldots\\times A_n|\\,\\,\\,\\, A_k \\in S_k\\}\\)</span></p>",
+        "url": "лекция-7.html#definition-29"
+    },
+    {
+        "keyword": "произведение мер",
+        "html": "<p><a href=\"лекция-7.html#definition-30\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_k\\)</span> – меры на полукольцах\n<span class=\"math inline\">\\(S_k\\)</span>. Тогда функция <span\nclass=\"math inline\">\\(m: S_1\\times\\ldots\\times S_n \\to \\mathbb{R},\n\\,\\,\\,\\, m: A_1\\times\\ldots\\times A_n \\mapsto m_1(A_1)\\cdot \\ldots\\cdot\nm_n(A_n)\\)</span> – <em>произведение мер</em> <span\nclass=\"math inline\">\\(m_k\\)</span>.</p>",
+        "url": "лекция-7.html#definition-30"
+    },
+    {
+        "keyword": "прямое произведение мер",
+        "html": "<p><a href=\"лекция-7.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_1, \\ldots, m_n\\)</span> – конечные\nили сигма-конечные сигма-аддитивные меры на сигма-алгебрах <span\nclass=\"math inline\">\\(S_k\\)</span>. <em>Прямое произведение мер</em>\n<span class=\"math inline\">\\(\\mu = m_1\\times\\ldots\\times m_n\\)</span> –\nэто продолжение по Лебегу меры <span class=\"math inline\">\\(m =\nm_1\\cdot\\ldots\\cdot m_n\\)</span>, т.е. их определенного выше\nпроизведения.</p>",
+        "url": "лекция-7.html#definition-31"
     }
 ]

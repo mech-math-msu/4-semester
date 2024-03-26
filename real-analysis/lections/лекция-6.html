@@ -265,7 +265,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-7.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -301,8 +301,8 @@ class="math inline">\(f\)</span> измерима (в случае полной 
 0\)</span>.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<h2 data-number="6.1" id="свойства-интеграла-лебега">Свойства интеграла
-Лебега</h2>
+<h3 data-number="6.0.1" id="свойства-интеграла-лебега">Свойства
+интеграла Лебега</h3>
 <div id="theorem-21">
 <p><span class="margin-lft"><strong>Теорема:
 </strong></span>(<em>линейность для неотрицательных</em>) Если <span
@@ -350,9 +350,9 @@ class="math inline">\(\left|\displaystyle\int\limits_X f(x)d\mu\right|
 \leqslant M\mu X\)</span></p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<h3 data-number="6.1.1"
+<h4 data-number="6.0.1.1"
 id="признак-сравнения-для-интеграла-лебега">Признак сравнения для
-интеграла Лебега</h3>
+интеграла Лебега</h4>
 <div id="statement-10">
 <span class="margin-lft"><strong>Утверждение: </strong></span>
 <ol type="1">
@@ -368,7 +368,7 @@ class="math inline">\(|f|\)</span> инетгрируемы или неинте�
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<h2 data-number="6.2"
+<h2 data-number="6.1"
 id="интеграл-лебега-как-функция-множества">Интеграл Лебега как функция
 множества</h2>
 <div id="note-4">
@@ -467,7 +467,7 @@ class="math inline">\(\bigsqcup_{n = 1}^{N} A_n\)</span>, на котором
 class="math inline">\(\delta = \frac{\varepsilon}{2N}
 \,\,\,\,\blacksquare\)</span></p>
 </div>
-<h2 data-number="6.3"
+<h2 data-number="6.2"
 id="предельный-переход-под-знаком-интеграла-лебега">Предельный переход
 под знаком интеграла Лебега</h2>
 <blockquote>
@@ -561,6 +561,39 @@ class="math display">\[\leqslant 2\cdot
 \displaystyle\int\limits_{X\setminus A_{\varepsilon}} g(x)d\mu &lt;
 \varepsilon \,\,\,\,\blacksquare\]</span></p>
 </div>
+<div id="theorem-31">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>теорема Леви или теорема о монотонной
+сходимости</em>) Пусть <span class="math inline">\(f_n\)</span>
+интегрируемы по Лебегу на <span class="math inline">\(A\)</span> и
+последовательность <span class="math inline">\(\{f_n(x)\}_{n =
+1}^{\infty}\)</span> возрастает почти всюду на <span
+class="math inline">\(A\)</span>, и <span class="math inline">\(\forall
+n \,\,\,\, |\displaystyle\int\limits_A f_n(x)d\mu| \leqslant C\)</span>.
+Тогда почти всюду на <span class="math inline">\(A\)</span> существует
+<span class="math inline">\(\displaystyle \lim_{n\to \infty}f_n(x) =
+f(x)\)</span>, <span class="math inline">\(f(x)\)</span> интегрируема по
+Лебегу на <span class="math inline">\(A\)</span> и <span
+class="math inline">\(\displaystyle \lim_{n\to
+\infty}\displaystyle\int\limits_A f_n(x)d\mu =
+\displaystyle\int\limits_A f(x)d\mu\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="corollary-9">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Пусть
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}f_n(x)\)</span> почти всюду сходящийся ряд из измеримых на
+<span class="math inline">\(X\)</span> функций и <span
+class="math inline">\(\exists g(x) \in \mathcal{L}(X): \,\,\,\, \forall
+N\)</span> и почти всех <span class="math inline">\(x \,\,\,\,
+\left|\displaystyle \sum_{n = 1}^{N}f_n(x)\right| \leqslant
+g(x)\)</span>. Тогда</p>
+<p><span class="math display">\[\displaystyle\int\limits_X
+\left(\displaystyle \sum_{n = 1}^{\infty}f_n(x)\right)d\mu =
+\displaystyle \sum_{n = 1}^{\infty}\displaystyle\int\limits_X
+f_n(x)d\mu\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
 
 
 <nav id="sitenav">
@@ -572,7 +605,7 @@ class="math display">\[\leqslant 2\cdot
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-7.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>
