@@ -9,7 +9,7 @@
     
     
     
-    <title>Поиск</title>
+    <title>Лекция 11</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -261,12 +261,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="лекция-11.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-10.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -274,64 +275,117 @@
 
 
 
-<h1 class="unnumbered unlisted" id="search">Поиск</h1>
-<style>
-    h1#search {
-        display: none;
-    }
-    input#searchbar {
-        fontsize: 2rem;
-        width: 16rem;
-        height: 2.5rem;
-        border-radius: 25px;
-        padding-left: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-</style>
-<script type="module">
-    import data from "./defs.json" assert {type: 'json'};
-
-    let ans_div = document.getElementById('answer');
-
-    function search() {
-        let input = document.getElementById('searchbar').value
-        input = input.toLowerCase();
-
-        if (input.length < 3) {
-            return;
-        }
-
-        let ans = "";
-
-        data.forEach((item, i) => {
-            if (item.keyword.includes(input)) {
-                ans += item.html;
-            }
-        });
-
-        ans_div.innerHTML = ans;
-        MathJax.typeset();
-    }
-    window.search = search;
-</script>
-<center>
-<input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Поиск...">
-</center>
-<div id="answer">
-
+<h1 data-number="11" id="лекция-11">Лекция 11</h1>
+<div id="theorem-20">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>(узкая) формула Стокса</em>) <span
+class="math inline">\(\Omega \subset \mathbb{R}^2\)</span> – замкнутая,
+ограниченная, <span class="math inline">\(\partial \Omega\)</span> –
+гладкая и <span class="math inline">\(\varphi: \Omega \to \mathbb{R}^3,
+\,\,\,\, \varphi \in C^2(\Omega), \,\,\,\, \varphi(\Omega) = S, \,\,\,\,
+\varphi(\partial \Omega) = \partial S\)</span>. Пусть <span
+class="math inline">\(P, Q, R \in C^1(S)\)</span>.</p>
+<p>Тогда <span class="math inline">\(\displaystyle\oint\limits_{\partial
+S} Pdx + Qdy + Rdz = \displaystyle\iint\limits_S\left(\frac{\partial
+R}{\partial y} - \frac{\partial Q}{\partial y}\right)dydz +
+\left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial
+x}\right)dzdx + \left(\frac{\partial Q}{\partial x} - \frac{\partial
+P}{\partial y}\right)dxdy\)</span></p>
+<blockquote>
+<p><span class="math inline">\(Pdx + Qdy + Rdz\)</span> – вектор
+силы</p>
+</blockquote>
+<blockquote>
+<p><span class="math inline">\(\left(\frac{\partial R}{\partial y} -
+\frac{\partial Q}{\partial y}\right)dydz + \left(\frac{\partial
+P}{\partial z} - \frac{\partial R}{\partial x}\right)dzdx +
+\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial
+y}\right)dxdy\)</span> – ротор поля</p>
+</blockquote>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(Q = R = 0\)</span>. Хотим <span
+class="math inline">\(\displaystyle\oint\limits_{\partial S} Pdx =
+\displaystyle\iint\limits_S\frac{\partial P}{\partial z}dzdx  -
+\frac{\partial P}{\partial y}dxdy\)</span></p>
+<p>Параметризуем границу области и <span
+class="math inline">\(\displaystyle\oint\limits_{\partial S} Pdx =
+\displaystyle\int\limits_0^1 P(x(u, v), y(u, v), z(u, v))dx(u, v) =
+\displaystyle\int\limits_{\partial \Omega} P(x(u, v), y(u, v), z(u,
+v))dx(u, v)\)</span></p>
+<p><span class="math inline">\(= \displaystyle\int\limits_{\partial
+\Omega} P(x_u&#39;du + x_v&#39;dv)=\)</span> формула Грина <span
+class="math inline">\(=\displaystyle\iint\limits_{\Omega}
+\left((Px&#39;_v)_u&#39; - (Px&#39;_u)_v&#39;\right)dudv=\)</span> берем
+производную произведения и здесь требуется дважды дифференцируемость (но
+эти производные сократятся, хотя требование дважды дифференцируемости
+останется) <span
+class="math display">\[=\displaystyle\iint\limits_{\Omega}
+\left(P_u&#39;x&#39;_v - P_v&#39;x&#39;_u\right)dxdy =
+\displaystyle\int\limits_{\Omega} ((p_x&#39;x_u&#39; + P_y&#39;y_u&#39;
++ P_z&#39;z_u&#39;)x_v&#39; + (P_x&#39;x_v&#39; + P_y&#39;y_v&#39; +
+P_z&#39;z_v&#39;)x_u&#39;)dudv=\]</span> <span class="math display">\[=
+\displaystyle\int\limits_{\Omega} \left(P_y&#39;
+\cdot\left|\begin{array}{cc} y_u&#39; &amp; y_v&#39; \\ x_u&#39; &amp;
+x_v&#39; \end{array}\right| + P_z&#39; \cdot\left|\begin{array}{cc}
+z_u&#39; &amp; z_v&#39; \\ x_u&#39; &amp; x_v&#39;
+\end{array}\right|\right)dx = \displaystyle\int\limits_{\Omega}
+(P_z&#39;dzdx - P_y&#39;dxdy) \,\,\,\,\blacksquare\]</span></p>
+</div>
+<h3 data-number="11.0.1"
+id="кусочно-гладкие-поверхности">Кусочно-гладкие поверхности</h3>
+<p>Обходим границу склееной из кусков поверхности, так чтобы сократились
+отрезки границы и суммируем нормали.</p>
+<div id="theorem-21">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>формула Гаусса-Остроградского</em>) Пусть <span
+class="math inline">\(V\)</span> – замкнутая, ограниченная, выпуклая
+область в <span class="math inline">\(\mathbb{R}^3\)</span>, <span
+class="math inline">\(\partial V\)</span> – кусочно-гладкая
+невырожденная поверхность <span class="math inline">\(P, Q, R \in
+C^1(V)\)</span>. Пусть задана внешняя нормаль <span
+class="math inline">\(\mathbf{n}\)</span> к <span
+class="math inline">\(V\)</span>. Тогда</p>
+<p><span class="math display">\[\displaystyle\oiint_{\partial V^{(+)}}
+Pdydz + Q dzdx + Rdxdz = \displaystyle\iiint_V \left(\frac{\partial
+P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial
+R}{\partial z}\right)dxdydx\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+случай <span class="math inline">\(P = Q = 0\)</span>. Пусть <span
+class="math inline">\(\Omega_x\)</span> – проекция <span
+class="math inline">\(\Omega\)</span> на <span
+class="math inline">\(Oxy\)</span>. <span class="math inline">\(\Omega =
+\{(x, y, z): \,\,\,\, (x, y) \in \Omega_x, \varphi(x, y) \leqslant z
+\leqslant \psi(x, y)\}\)</span>. Разобьем область <span
+class="math inline">\(V\)</span> на три части: <span
+class="math inline">\(\Omega = \{z = \varphi(x, y)\}\cup \{z = \psi(x,
+y)\}\cup\{\)</span> цилиндр <span class="math inline">\(\}\)</span>.</p>
+<p><span
+class="math display">\[\displaystyle\iiint_{\Omega}R_z&#39;dxdydz =
+\displaystyle\iint_{\Omega_x}\left(\displaystyle\int\limits_{\varphi(x,
+y)}^{\psi(x, y)} R_z&#39;dz\right)dxdy =
+\displaystyle\iint_{\Omega_x}\left(R(x, y, \psi(x, y)) - R(x, y,
+\varphi(x, y))\right)dxdy = \displaystyle\iint_{\partial
+\Omega^{+}}Rdxdy\]</span></p>
+<p>Дальше творим что-то с параметризацией <span
+class="math inline">\(\begin{cases}
+x = x\\
+y = y\\
+z = \psi(x, y)
+\end{cases}\)</span>, короче, см. конспект <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="лекция-11.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-10.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

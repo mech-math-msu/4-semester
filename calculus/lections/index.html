@@ -229,6 +229,17 @@
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
 
+            <script defer>
+                window.MathJax = {
+                  //loader: {load: ['[tex]/esint']},
+                  //tex: {packages: {'[+]': ['esint']}}
+                    tex: {
+                        macros: {
+                            oiint: "{\\mathop{\\vcenter{\\!\\int\\!\\!\\!\\!\\!\\!\\bigcirc\\!\\!\\!\\!\\!\\int}}\\nolimits}"
+                        }
+                    }
+                };
+            </script>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -366,6 +377,12 @@
         <ul>
         <li><a href="лекция-10.html#поверхностные-интегралы"
         id="toc-поверхностные-интегралы">Поверхностные интегралы</a></li>
+        </ul></li>
+        <li><a href="лекция-11.html#лекция-11" id="toc-лекция-11">Лекция 11</a>
+        <ul>
+        <li><a href="лекция-11.html#кусочно-гладкие-поверхности"
+        id="toc-кусочно-гладкие-поверхности">Кусочно-гладкие
+        поверхности</a></li>
         </ul></li>
         </ul>
 </nav>
