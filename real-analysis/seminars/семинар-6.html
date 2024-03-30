@@ -252,7 +252,9 @@
 <body>
 
 
-<img src="ico.png" alt="" class="logo">
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
 
 <nav id="sitenav">
     <div class="sitenav">
@@ -269,7 +271,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-7.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -468,7 +470,9 @@ class="math inline">\(X\)</span> и <span class="math inline">\(\mu X
 g) = \displaystyle\int\limits_X \frac{|f(x) - g(x)|}{1 + |f(x) -
 g(x)|}d\mu\)</span> – метрика на <span
 class="math inline">\(\mathcal{I}(X)\)</span>.</p>
-<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> прямая или
+не очень проверка <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-29">
 <p><span class="margin-lft"><strong>Задача: </strong></span><span
@@ -476,17 +480,54 @@ class="math inline">\((4)\)</span> Доказать, что <span
 class="math inline">\(\rho(f_n, f) \to 0, \,\,\,\, n \to \infty \iff f_n
 \to f\)</span> по мере.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longleftarrow}\)</span> сходится
+по мере <span class="math inline">\(\implies \forall \varepsilon &gt; 0
+\,\,\,\, \mu E_n(\varepsilon) = \mu \{x:\,\,\,\, |f_n(x) - f(x)| &gt;
+\varepsilon\} \to 0, \,\,\,\, n \to \infty\)</span></p>
+<p><span class="math display">\[\rho(f_n, f) =
+\displaystyle\int\limits_X \frac{|f_n(x) - f(x)|}{1 + |f_n(x) -
+f(x)|}d\mu=\]</span> <span class="math display">\[=
+\displaystyle\int\limits_{E_n} \frac{|f_n(x) - f(x)|}{1 + |f_n(x) -
+f(x)|}d\mu + \displaystyle\int\limits_{X\setminus E_n} \frac{|f_n(x) -
+f(x)|}{1 + |f_n(x) - f(x)|}d\mu \leqslant\]</span> <span
+class="math display">\[\leqslant  1\cdot \mu E_n + \varepsilon\cdot \mu
+X = \varepsilon(1 + \mu X) \,\,\,\,\blacksquare\]</span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow} \varphi(x) =
+\frac{x}{1+x}\)</span> монотонно возрастает <span
+class="math inline">\(\implies \,\,\,\, \{x: \,\,\,\, |\varphi(|f_n(x) -
+f(x)|)| &gt; \varphi(\varepsilon)\} = E_n\)</span>, а по неравенству
+Чебышева имеем <span class="math inline">\(\mu E_n \leqslant
+\frac{1}{\varphi(\varepsilon)}\displaystyle\int\limits_X \varphi(|f_n(x)
+- f(x)|)d\mu \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-30">
 <p><span class="margin-lft"><strong>Задача: </strong></span><span
 class="math inline">\((5)\)</span> Построить <span
 class="math inline">\(f\)</span> и <span class="math inline">\(A_n:
-\,\,\,\, [0, 1] = \displaystyle\bigsqcup_{n = 1}^{\infty}A_n \,\,\,\,
+\,\,\,\, [0, 1] = \displaystyle\bigsqcup_{n = 0}^{\infty}A_n \,\,\,\,
 \forall n \,\,\,\, f \in \mathcal{L}(A_n) \,\,\,\, \displaystyle \sum_{n
-= 1}^{\infty}\left|\displaystyle\int\limits_{A_n} f(x)d\mu\right| &lt;
+= 0}^{\infty}\left|\displaystyle\int\limits_{A_n} f(x)d\mu\right| &lt;
 \infty\)</span>, но <span class="math inline">\(f\not\in \mathcal{L}([0,
 1])\)</span>.</p>
-<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(A_n = \left(\frac1{n+1}, \frac1n\right]\)</span> и
+пусть <span class="math inline">\(A_0 = \{0\}\)</span>.</p>
+<p>Середина каждого <span class="math inline">\(A_n\)</span> – это <span
+class="math inline">\(\frac12\left(\frac1{n+1}+\frac1n\right) =
+\frac{2n+1}{2n(2n+1)}\)</span>.</p>
+<p>Мера <span class="math inline">\(\mu(\frac1{n+1},
+\frac{2n+1}{2n(2n+1)}] = \frac1{2n(n + 1)}\)</span></p>
+<p>На каждом <span class="math inline">\(A_n\)</span> определелим <span
+class="math inline">\(f_n = \frac{-1}{\frac1{2n(n + 1)}}\cdot
+\chi_{(\frac1{n+1}, \frac{2n+1}{2n(2n+1)}]}(x) + \frac{1}{\frac1{2n(n +
+1)}}\cdot \chi_{(\frac{2n+1}{2n(2n+1)}, \frac1{n}]}(x)\)</span></p>
+<p>Пусть <span class="math inline">\(f = f_n, \,\,\,\, x \in
+A_n\)</span></p>
+<p>Получили, что на каждом <span class="math inline">\(A_n\)</span>
+<span class="math inline">\(f\)</span> интегрируема и интеграл равен
+нулю, а на <span class="math inline">\([0, 1] \,\,\,\, f\)</span> не
+интегрируема <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 
 
@@ -499,7 +540,7 @@ class="math inline">\(f\)</span> и <span class="math inline">\(A_n:
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-7.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

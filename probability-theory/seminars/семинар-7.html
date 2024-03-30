@@ -237,7 +237,9 @@
 <body>
 
 
-<img src="ico.png" alt="" class="logo">
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
 
 <nav id="sitenav">
     <div class="sitenav">
@@ -254,7 +256,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-8.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -408,12 +410,23 @@ class="math inline">\(\xi\)</span> имеет распределение Пуа�
 параметром <span class="math inline">\(\lambda\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(E\xi^2 = e^{-\lambda}\displaystyle
-\sum_{k = 1}^{\infty}k^2\cdot \frac{\lambda^{k}}{k!} =
-\lambda^2\)</span></p>
+<p><span class="math inline">\(D\xi = E\xi^2 - (E\xi)^2 \implies E\xi^2
+= D\xi + (E\xi)^2 = \lambda^2 + \lambda\)</span>.</p>
+<p><span class="math inline">\(E\xi^3 = e^{-\lambda}\displaystyle
+\sum_{k = 1}^{\infty}k^3\cdot \frac{\lambda^{k}}{k!} = \lambda
+e^{-\lambda}\displaystyle \sum_{k = 1}^{\infty}k^2\cdot
+\frac{\lambda^{(k - 1)}}{(k - 1)!}=\)</span> <span
+class="math inline">\(\lambda e^{-\lambda}\displaystyle \sum_{l =
+0}^{\infty}(l + 1)^2\cdot \frac{\lambda^{l}}{l!} = \lambda
+e^{-\lambda}\left(\displaystyle \sum_{l = 0}^{\infty}l^2\cdot
+\frac{\lambda^{l}}{l!} + \displaystyle \sum_{l = 0}^{\infty}2l\cdot
+\frac{\lambda^{l}}{l!} + \displaystyle \sum_{l =
+0}^{\infty}\frac{\lambda^{l}}{l!}\right) = \lambda(\lambda^2 + \lambda +
+2 \lambda + 1)\)</span></p>
 <p><span class="math inline">\(\operatorname{corr}(\xi, \xi^2) =
 \frac{\operatorname{cov}(\xi, \xi^2)}{\sqrt{D\xi}\sqrt{D\xi^2}}=
-\frac{E\xi^3 - \lambda^3}{\ldots} = 0 \,\,\,\,\blacksquare\)</span></p>
+\frac{E\xi^3 - E\xi\cdot E\xi^2}{\ldots} = \ldots
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-30">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -518,7 +531,7 @@ class="math display">\[=n\frac{M}N\left(1 - \frac{M}N\right) + n(n -
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-8.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>
