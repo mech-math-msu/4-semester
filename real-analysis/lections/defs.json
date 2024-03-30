@@ -156,7 +156,7 @@
     },
     {
         "keyword": "прямое произведение мер",
-        "html": "<p><a href=\"лекция-7.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_1, \\ldots, m_n\\)</span> – конечные\nили сигма-конечные сигма-аддитивные меры на сигма-алгебрах <span\nclass=\"math inline\">\\(S_k\\)</span>. <em>Прямое произведение мер</em>\n<span class=\"math inline\">\\(\\mu = m_1\\times\\ldots\\times m_n\\)</span> –\nэто продолжение по Лебегу меры <span class=\"math inline\">\\(m =\nm_1\\cdot\\ldots\\cdot m_n\\)</span>, т.е. их определенного выше\nпроизведения.</p>",
+        "html": "<p><a href=\"лекция-7.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_1, \\ldots, m_n\\)</span> – конечные\nили сигма-конечные сигма-аддитивные меры на сигма-алгебрах <span\nclass=\"math inline\">\\(S_k\\)</span>. <em>Прямое произведение мер</em>\n<span class=\"math inline\">\\(\\mu = m_1\\times\\ldots\\times m_n\\)</span> –\nэто продолжение по Лебегу меры <span class=\"math inline\">\\(m =\nm_1\\cdot\\ldots\\cdot m_n\\)</span>, т.е. их определенного выше\nпроизведения.</p>\n<p>Это мера на порожденной сигма-алгебре с единицей <span\nclass=\"math inline\">\\(X = X_1\\times \\ldots\\times X_n\\)</span>.</p>",
         "url": "лекция-7.html#definition-31"
     }
 ]
