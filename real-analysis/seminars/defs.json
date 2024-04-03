@@ -68,5 +68,20 @@
         "keyword": "нулевой класс бэра класс бэра",
         "html": "<p><a href=\"семинар-6.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Нулевой класс Бэра</em> – это непрерывные функции,</p>\n<p><span class=\"math inline\">\\(n\\)</span>-й <em>класс Бэра</em> – это\nтакие <span class=\"math inline\">\\(f\\)</span>, не лежащие в предыдущих\nклассах Бэра, что существует последовательность функций из <span\nclass=\"math inline\">\\(n - 1\\)</span> класса Бэра, сходящаяся к <span\nclass=\"math inline\">\\(f\\)</span>.</p>",
         "url": "семинар-6.html#definition-13"
+    },
+    {
+        "keyword": "заряд",
+        "html": "<p><a href=\"семинар-8.html#definition-14\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Заряд</em> – <span class=\"math inline\">\\(\\sigma\\)</span>-аддитивная\nфункция на <span class=\"math inline\">\\(\\sigma\\)</span>-алгебре с\nконечным вещественными значениями.</p>\n<p>Все значения конечны, в крайнем случае бесконечность одного\nзнака.</p>",
+        "url": "семинар-8.html#definition-14"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"семинар-8.html#definition-15\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\displaystyle\\int\\limits_{X} f(x)\\Phi(dx) =\n\\displaystyle\\int\\limits_{X} f(x)\\Phi_{+}(dx) -\n\\displaystyle\\int\\limits_{X} f(x)\\Phi_{-}(dx)\\)</span> при условии, что\nоба интеграла существуют и конечны.</p>\n<p>Почти все свойства сохранятся (кроме всего связанного с\nнеравенствами).</p>",
+        "url": "семинар-8.html#definition-15"
+    },
+    {
+        "keyword": "полная вариация заряда",
+        "html": "<p><a href=\"семинар-8.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Полная вариация заряда</em> – это <span class=\"math inline\">\\(|\\Phi|\n= \\Phi_{+} - \\Phi_{-}\\)</span>.</p>\n<p><span class=\"math inline\">\\(|\\Phi|(E)\\ne |\\Phi(E)|\\)</span></p>\n<p>Для <span class=\"math inline\">\\(\\Phi(E) =\n\\displaystyle\\int\\limits_{E} f(x)\\mu(dx) \\,\\,\\,\\, |\\Phi|(E) =\n\\displaystyle\\int\\limits_{E} |f(x)|\\mu(dx)\\)</span> и <span\nclass=\"math inline\">\\(\\Phi_{+}(E) = \\displaystyle\\int\\limits_{E\\cap\\{x:\nf(x) \\geqslant 0\\}} f(x)\\mu(dx)\\)</span></p>",
+        "url": "семинар-8.html#definition-16"
     }
 ]

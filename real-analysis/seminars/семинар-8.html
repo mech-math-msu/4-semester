@@ -282,7 +282,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-8-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -347,7 +347,20 @@ class="math inline">\(\forall f \in \mathcal{L}(X) \,\,\,\, f(x)
 class="math inline">\(\exists c: \,\,\,\, \mu \{x: \,\,\,\, |\varphi(x)|
 &gt; c\} = 0\)</span></li>
 </ol>
-<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть такого
+<span class="math inline">\(c\)</span> не существует. Рассмотрим <span
+class="math inline">\(E_n = \{t: \,\,\,\, n \leqslant |\varphi(t)| &lt;
+n + 1\}\)</span></p>
+<p><span class="math inline">\(\exists\)</span> возрастающая
+последовательность <span class="math inline">\(\{n_k\}: \,\,\,\, \mu
+E_{n_k} &gt; 0\)</span></p>
+<p>Рассмотрим <span class="math inline">\(f(x) = \displaystyle \sum_{n =
+1}^{\infty}\frac{1}{k^2\cdot \mu E_{n_k}} \,\,\,\,
+\displaystyle\int\limits_{X} f(x)\mu(dx) = \displaystyle \sum_{n =
+1}^{\infty}\frac1{k^2}\)</span></p>
+<p><span class="math inline">\(\displaystyle\int\limits_{} |f(x)\cdot
+\varphi(x)|\mu(dx) \geqslant \displaystyle \sum_{n = 1}^{\infty}\frac1k
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-37">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -359,6 +372,23 @@ class="math inline">\(\exists c: \,\,\,\, \mu \{x: \,\,\,\, |\varphi(x)|
 h(x)|d\mu &lt; \varepsilon\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Если <span class="math inline">\(f\)</span> – простая, то <span
+class="math inline">\(h = f\)</span>,</p>
+<p>Если <span class="math inline">\(f \geqslant 0\)</span> и <span
+class="math inline">\(f \in \mathcal{L}(X)\)</span>, то <span
+class="math inline">\(\sup_{h \in J(f)}\{\displaystyle\int\limits_{X}
+h(x)\mu(dx)\} &lt; \infty\)</span>, а значит <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists h \in
+J(f): \,\,\,\, \displaystyle\int\limits_{X} f(x)\mu(dx) - \varepsilon
+&lt; \displaystyle\int\limits_{X} h(x)\mu(dx)\)</span>,</p>
+<p>Если <span class="math inline">\(f \in \mathcal{L}(X)\)</span>, то
+имеем <span class="math inline">\(\displaystyle\int\limits_{X}
+f_{+}(x)\mu(dx) - \frac{\varepsilon}2 &lt; \displaystyle\int\limits_{X}
+h_1(x)\mu(dx)\)</span> и <span class="math inline">\(-
+\displaystyle\int\limits_{X} f_{-}(x)\mu(dx) + \frac{\varepsilon}2 &lt;
+- \displaystyle\int\limits_{X} h_2(x)\mu(dx)\)</span>, далее складываем
+и получаем искомое <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-38">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -377,6 +407,16 @@ h(x)|d\mu &lt; \varepsilon\)</span>.</li>
 интеграл существует, а другой нет.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(f(x, y)= \frac{xy}{(x^2 +
+y^2)^2}\)</span> на <span class="math inline">\([-1, 1]^2\setminus \{(0,
+0)\}\)</span>.</p>
+<p>Повторные считаем.</p>
+<p><span class="math inline">\(\displaystyle\int\limits_{[-1, 1]^2}
+|f(x, y)|\mu(dx, dy) = 4 \displaystyle\int\limits_{[0,1]^2} |f(x,
+y)|\mu(dx, dx) = \displaystyle\int\limits_{[0, 1]}
+\displaystyle\int\limits_{[0, 1]} |f(x)|\mu(dx)\mu(dx)\)</span>, а этого
+не существует <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-40">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -392,7 +432,8 @@ class="math inline">\(\displaystyle\int\limits_{X_1}
 <p>Подсказка: рассмотреть <span class="math inline">\(f \geqslant
 0\)</span> и построить заведомо интегрируемые <span
 class="math inline">\(f_n\uparrow f\)</span></p>
-<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> см. лекции
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 
 
@@ -405,7 +446,7 @@ class="math inline">\(f_n\uparrow f\)</span></p>
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-8-1.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>
