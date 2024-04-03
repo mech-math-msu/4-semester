@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 1. Разные геометрии</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-2.-координаты.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="1" id="лекция-1.-разные-геометрии">Лекция 1. Разные
+геометрии</h1>
+<p>Что такое прямая?</p>
+<ol type="1">
+<li>Прямая – это единственная кривая, по которой можно двигаться с
+нулевым ускорением.</li>
+<li>Прямая – это самая короткая кривая, соединяющая точки.</li>
+</ol>
+<h2 data-number="1.1" id="евклидово-пространство-mathbbrn">Евклидово
+пространство <span class="math inline">\(\mathbb{R}^n\)</span></h2>
+<p>Это векторное пространство со скалярным произведением, то есть
+симметрической (<span class="math inline">\(\beta(x, y) = \beta(y,
+x)\)</span>) положительно определенной (в частности невырожденной)
+(угловые миноры положительны) билинейной (линейна по каждому аргументу)
+формой (существует базис, в котором <span
+class="math inline">\(\beta\)</span> имеет канонический вид).</p>
+<h2 data-number="1.2"
+id="сферическая-геометрия-на-сфере-s2-в-mathbbrn">Сферическая геометрия
+на сфере <span class="math inline">\(S^2\)</span> в <span
+class="math inline">\(\mathbb{R}^n\)</span></h2>
+<p><em>Прямые</em> – это большие окружности, то есть <span
+class="math inline">\(S^2\cap \pi\)</span>, где <span
+class="math inline">\(\pi\)</span> – плоскость, проходящая через центр
+сферы.</p>
+<h2 data-number="1.3" id="проективная-плоскость-mathbbrp2">Проективная
+плоскость <span class="math inline">\(\mathbb{R}P^2\)</span></h2>
+<h2 data-number="1.4"
+id="псевдоевклидово-пространство-mathbbrq_p">Псевдоевклидово
+пространство <span class="math inline">\(\mathbb{R}^q_p\)</span></h2>
+<p>Это векторное пространство строк <span
+class="math inline">\(\mathbb{R}^n\)</span> с псевдоевклидовым скалярным
+произведением.</p>
+<div id="definition-0">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>(Псевдо)евклидово скалярное произведение</em> – это
+невырожденная симметрическая билинейная форма <a
+href="https://mech-math-msu.github.io/2-semester/linear-algebra/lections/%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D1%8B-%D0%BD%D0%B0%D0%B4-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8-%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D1%85-%D1%87%D0%B8%D1%81%D0%B5%D0%BB.html#definition-53">сигнатуры</a>
+<span class="math inline">\((p, q)\)</span>.</p>
+<p><span class="math inline">\((x, y) = \displaystyle \sum_{i =
+1}^{p}x^iy^i - \displaystyle \sum_{i = p + 1}^{p +
+q}x^iy^j\)</span>.</p>
+</div>
+<p>Если у псевдоевклидова скалярного произведения сигнатура <span
+class="math inline">\((p, q)\)</span>, то псевдоевклидово пространство
+<strong>обозначается</strong> <span
+class="math inline">\(\mathbb{R}_p^q\)</span>.</p>
+<div id="definition-1">
+<p><span class="margin-lft"><strong>Определение: </strong></span>В
+зависимости от знака скалярного квадрата векторы псевдоевклидова
+пространства делятся на:</p>
+<ol type="1">
+<li><span class="math inline">\((x, x) &gt; 0\)</span> –
+<em>пространственноподобные</em>,</li>
+<li><span class="math inline">\((x, x) &lt; 0\)</span> –
+<em>временноподобные</em>,</li>
+<li><span class="math inline">\((x, x) = 0\)</span> –
+<em>изотропные</em> или <em>светоподобные</em><a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</li>
+</ol>
+</div>
+<div id="definition-2">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(n + 1\)</span> мерное <em>пространство
+Минковского</em> – это <span class="math inline">\(M^{n + 1} =
+\mathbb{R}_n^1\)</span>.</p>
+</div>
+<h3 data-number="1.4.1" id="пространство-время">Пространство-время</h3>
+<div id="definition-3">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(n + 1\)</span>-мерное пространство Минковского
+можно рассматривать как пространство с временной координатой.</p>
+<p>Пусть псевдоевклидово скалярное произведение <span
+class="math inline">\((\mathbf{x}, \mathbf{y}) = -x^0y^0 + \displaystyle
+\sum_{i = 1}^{n}x^i y^i\)</span>.</p>
+<p>Тогда <span class="math inline">\(x^0 = c\cdot t\)</span>, где <span
+class="math inline">\(c\)</span> – <em>скорость света</em>, <span
+class="math inline">\(t\)</span> – <em>время</em>, а <span
+class="math inline">\(x^1, \ldots, x^n\)</span> – <em>пространственные
+координаты</em>.</p>
+<p>Кривая <span class="math inline">\(\begin{cases}
+x^i = \mathcal{x}^i(t)\\
+x^0 = c\cdot t
+\end{cases}\)</span> – <em>мировая линия частицы</em>.</p>
+<p><span class="math inline">\(w = (c,
+\dot{x}^1,\ldots,  \dot{x}^n)\)</span> – <em>типа скорость</em>,</p>
+<p><span class="math inline">\((w, w) = -c^2 + \displaystyle \sum_{i =
+1}^{n}(\dot{x}^i)^2 = -c^2 + |v|^2\)</span>.</p>
+<p><em>Световой конус</em> – множество изотропных векторов.</p>
+</div>
+<h3 data-number="1.4.2" id="псевдосфера">Псевдосфера</h3>
+<div id="definition-4">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Псевдосфера</em> в <span
+class="math inline">\(\mathbb{R}^q_p\)</span> – это множество векторов
+<span class="math inline">\(\mathbf{x}\in \mathbb{R}^q_p: \,\,\,\, (x,
+x) = A, \,\,\,\, A \in \mathbb{R}\)</span>.</p>
+<p>Псевдосфера:</p>
+<ul>
+<li><em>действительная</em>, если <span class="math inline">\(A &gt;
+0\)</span>,</li>
+<li><em>мнимая</em>, если <span class="math inline">\(A &lt;
+0\)</span>,</li>
+<li><em>нулевая</em>, если <span class="math inline">\(A =
+0\)</span>.</li>
+</ul>
+</div>
+<h2 data-number="1.5" id="геометрия-лобачевского">Геометрия
+Лобачевского</h2>
+<h3 data-number="1.5.1"
+id="модель-на-гиперболоиде-в-пространстве-минковского">Модель на
+гиперболоиде в пространстве Минковского</h3>
+<div id="definition-5">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Геометрия Лобачевского</em> – это
+(псевдо)сферическая геометрия на верхней половине мнимой псевдосфере
+(которая двуполостный гиперболоид) в <span
+class="math inline">\(\mathbb{R}^q_p\)</span>.</p>
+</div>
+<h3 data-number="1.5.2"
+id="конформно-евклидова-модель-модель-пуанкаре">Конформно-евклидова
+модель, модель Пуанкаре</h3>
+<p>Прямые – это диаметры и дуги окружностей, пересекающие данную под
+прямыми углами.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Чтобы <span class="math inline">\((x, x) = 0\)</span>
+вектор не обязан быть нулевым.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-2.-координаты.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+    {
+        "keyword": "линейная система",
+        "html": "<p><a href=\"семинар-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\begin{cases}\n\\dot{x} = Ax\\\\\nx(0) = x_0\n\\end{cases},\\,\\,\\,\\,x, x_0 \\in \\mathbf{R}^n, \\,\\,\\,\\, A \\in\n\\operatorname{Mat}_{n\\times n}\\)</span> – <em>линейная система</em>.</p>",
+        "url": "семинар-1.html#definition-0"
+    },
+    {
+        "keyword": "субмультиплипликативна",
+        "html": "<p><a href=\"семинар-1.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(e^B = E + B + \\frac{B^2}{2!} +\n\\frac{B^3}{3!} + \\ldots\\)</span></p>\n<p>Зададим в линейном пространстве матриц <span\nclass=\"math inline\">\\(n\\times n\\)</span> норму <span\nclass=\"math inline\">\\(||A|| = \\sup_{x \\in\n\\mathbb{R}^n}\\frac{||Ax||}{||x||}\\)</span>, где <span\nclass=\"math inline\">\\(||x||\\)</span> – норма вектора (<span\nclass=\"math inline\">\\(=\\)</span> длина) в пространстве строк <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span>.</p>\n<p>Эта норма <em>субмультиплипликативна</em>, то есть <span\nclass=\"math inline\">\\(||AB|| \\leqslant ||A||\\cdot ||B||\\)</span>,\nпоэтому ряд сходится абсолютно относительно этой нормы.</p>",
+        "url": "семинар-1.html#definition-1"
+    }
+]

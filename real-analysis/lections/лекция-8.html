@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 8</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="8" id="лекция-8">Лекция 8</h1>
+<h2 data-number="8.1" id="произведения-мер">Произведения мер</h2>
+<h3 data-number="8.1.1" id="прямое-произведение-полуколец">Прямое
+произведение полуколец</h3>
+<div id="definition-29">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(S_k, \,\,\,\, k \in \{1, \ldots,
+n\}\)</span> – полукольца.</p>
+<p><em>Прямое произведение полуколец</em> – это <span
+class="math inline">\(S = S_1\times \ldots \times S_n = \{A_1\times
+\ldots\times A_n|\,\,\,\, A_k \in S_k\}\)</span></p>
+</div>
+<div id="lemma-13">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Прямое
+произведение полуколец – полукольцо.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li><span class="math inline">\(\varnothing =
+\varnothing\times\ldots\times \varnothing \in S\)</span></li>
+<li><span class="math inline">\(A = A_1\times \ldots\times A_n \in
+S\)</span> и <span class="math inline">\(B = B_1\times \ldots\times B_n
+\in S \implies A\cap B = (A_1\cap B_1)\times \ldots\times (A_n\cap B_n)
+\in S\)</span>.</li>
+<li><span class="math inline">\(A^1 = A^1_1\times \ldots\times A^1_n
+\subset A = A_1\times \ldots\times A_n\)</span>. Тогда <span
+class="math inline">\(\forall k \,\,\,\, \exists A^2_k \ldots A^{n_k}_k:
+\,\,\,\, A_k = \bigsqcup_{i = 1}^{n_k}A^i_k
+\,\,\,\,\blacksquare\)</span></li>
+</ol>
+</div>
+<div id="note-5">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Прямое
+произведение, например, колец не обязательно кольцо.</p>
+</div>
+<h3 data-number="8.1.2"
+id="собственно-прямое-произведение-мер">Собственно прямое произведение
+мер</h3>
+<div id="definition-30">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(m_k\)</span> – меры на полукольцах <span
+class="math inline">\(S_k\)</span>. Тогда функция <span
+class="math inline">\(m: S_1\times\ldots\times S_n \to \mathbb{R},
+\,\,\,\, m: A_1\times\ldots\times A_n \mapsto m_1(A_1)\cdot \ldots\cdot
+m_n(A_n)\)</span> – <em>произведение мер</em> <span
+class="math inline">\(m_k\)</span>.</p>
+</div>
+<div id="lemma-14">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Произведение
+мер – мера.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Докажем для <span class="math inline">\(n = 2\)</span>, а далее по
+индукции.</p>
+<p>Пусть <span class="math inline">\(\bigsqcup_{i = 1}^n A^1_i\times
+A^2_i = \bigsqcup_{i = 1}^n A_i = A = A^1\times A^2, \,\,\,\, A^1_i, A^1
+\in S_1, \,\,\,\, A^2_i, A^2 \in S_2\)</span>.</p>
+<p>Тогда <a href="лекция-1.html#lemma-2">по лемме</a> непересекающиеся
+<span class="math inline">\(\exists \{B^1_i\}_{i = 1}^l\)</span> и <span
+class="math inline">\(\exists \{B^2_i\}_{i = 1}^k\)</span>, такие, что
+<span class="math inline">\(A^1_i\)</span> и <span
+class="math inline">\(A^2_i\)</span> – это объединения некоторых из
+<span class="math inline">\(B^1_i\)</span> и <span
+class="math inline">\(B^2_i\)</span> и <span class="math inline">\(A^1 =
+\bigsqcup_{i = 1}^l B^1_i, \,\,\,\, A^2 = \bigsqcup_{i = 1}^k
+B^2_i\)</span>.</p>
+<p>нда <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="8.1.3"
+id="произведение-сигма-аддитивных-мер">Произведение сигма-аддитивных
+мер</h3>
+<div id="theorem-32">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>Произведение сигма-аддитивных или сигма-конечных мер –
+сигма-аддитивная или, соответственно, сигма-конечная мера.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(m_1\)</span> и <span
+class="math inline">\(m_2\)</span> сигма-аддитивные меры, <span
+class="math inline">\(m = m_1\cdot m_2\)</span>. Обозначим <span
+class="math inline">\(\mu_1\)</span> лебеговское продолжение меры <span
+class="math inline">\(m_1\)</span>.</p>
+<p>Пусть <span class="math inline">\(C = \bigsqcup_{n = 1}^{\infty}C_n,
+\,\,\,\, C = A\times B, C_n = A_n\times B_n, \,\,\,\, A, A_n \in S_1,
+\,\,\,\, B, B_n \in S_2\)</span>. Хотим <span class="math inline">\(mC =
+\displaystyle \sum_{n = 1}^{\infty}m C_n\)</span>.</p>
+<p>Пусть <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}m C_n &lt; \infty\)</span>. Определим функции <span
+class="math inline">\(f_n: A \to \mathbb{R}, \,\,\,\, f_n(x) =
+m_2(B_n)\cdot \chi_{A_n}(x)\)</span>.</p>
+<p>Имеем <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}f_n = m_2B\)</span> почти всюду на <span
+class="math inline">\(A\)</span> и <span
+class="math inline">\(\displaystyle\int\limits_A f_n(x)\mu_1(dx) = m_1
+A_n \cdot m_2 B_n\)</span></p>
+<p><a href="лекция-6.html#corollary-9">По следствию</a> (частичные суммы
+ограничены почти всюду, так как ряд сходится) имеем <span
+class="math inline">\(m_1A m_2 B=\displaystyle\int\limits_A
+\left(\displaystyle \sum_{n = 1}^{\infty}f_n(x)\right)\mu_1(dx) =
+\displaystyle \sum_{n = 1}^{\infty}\displaystyle\int\limits_A
+f_n(x)\mu_1(dx) = \displaystyle \sum_{n = 1}^{\infty}(m_1 A_n \cdot m_2
+B_n) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-31">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(m_1, \ldots, m_n\)</span> – конечные или
+сигма-конечные сигма-аддитивные меры на сигма-алгебрах <span
+class="math inline">\(S_k\)</span>. <em>Прямое произведение мер</em>
+<span class="math inline">\(\mu = m_1\times\ldots\times m_n\)</span> –
+это продолжение по Лебегу меры <span class="math inline">\(m =
+m_1\cdot\ldots\cdot m_n\)</span>, т.е. их определенного выше
+произведения.</p>
+<p>Это мера на порожденной сигма-алгебре с единицей <span
+class="math inline">\(X = X_1\times \ldots\times X_n\)</span>.</p>
+</div>
+<div id="theorem-34">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\((X_k, \A_k, \mu_k), \,\,\,\, k = 1, 2\)</span> –
+пространства с полными мерами. <span class="math inline">\(\mu =
+\mu_1\times \mu_2\)</span> и <span class="math inline">\(A \subset
+X_1\times X_2\)</span> измеримо относительно произведения мер и <span
+class="math inline">\(\mu A &lt; \infty\)</span>. Для <span
+class="math inline">\(x \in X_1\)</span> положим <span
+class="math inline">\(A_x = \{y \in X_2: \,\,\,\, (x, y) \in
+A\}\)</span>. Тогда</p>
+<p><span class="math display">\[(\mu_1\times\mu_2)(A) = \mu(A) =
+\displaystyle\int\limits_{X_1} \mu_2(A_x)\mu_1(dx) =
+\displaystyle\int\limits_{X_2} \mu_1(A_y)\mu_2(dy)\]</span></p>
+<p>причем интеграл корректно определен, то есть <span
+class="math inline">\(A_x\)</span> <span
+class="math inline">\(\mu_2\)</span> – измеримо <span
+class="math inline">\(\forall x \in X_1\)</span> и <span
+class="math inline">\(\varphi_A(x) = \mu_2(A_x)\)</span> <span
+class="math inline">\(\A_1\)</span>-измерима и интегрируема по Лебегу на
+<span class="math inline">\(X_1\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Для <span class="math inline">\(A_1\times A_2 = A \in S = \A_1\times
+\A_2\)</span> верно, так как <span class="math inline">\(\varphi_A(x) =
+\mu_2(A_2)\cdot \chi_{A_1}(x)\)</span>, также теорема верна для <span
+class="math inline">\(A \in R(S)\)</span>, так как такие множества можно
+представить в виде конечного дизъюнктного объединения.</p>
+<p>Для произвольного измеримого множества <span
+class="math inline">\(A\)</span> построим <span
+class="math inline">\(B_{n, k} \in S\)</span> из теоремы о структуре
+измеримых по Лебегу множеств. Для них два раза применим теорему Леви и
+получим, что утверждение верно для множества <span
+class="math inline">\(B\)</span>, для которого по построению верно <span
+class="math inline">\(\mu(B\setminus A) = 0\)</span>. Дальше непонятно
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-35">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\((X, \A, \nu)\)</span> – пространство с полной
+мерой, а <span class="math inline">\(\mu\)</span> – классическая мера на
+<span class="math inline">\(\mathbb{R}\)</span>. Пусть <span
+class="math inline">\(\eta = \nu\times \mu\)</span>, <span
+class="math inline">\(f\)</span> – интегрируемая по Лебегу
+неотрицательная функция на множестве <span class="math inline">\(E \in
+\A\)</span>. Тогда множество <span class="math inline">\(A(f) = \{(x,
+y): \,\,\,\, x \in E, \,\,\,\, 0 \leqslant y &lt; f(x)\} \subset X
+\times \mathbb{R}\)</span> измеримо относительно <span
+class="math inline">\(\eta\)</span> и</p>
+<p><span class="math display">\[\eta(A(f)) = \displaystyle\int\limits_E
+f(x)\nu(dx)\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(f(x) = \displaystyle \sum_{i =
+1}^{n}c_i \cdot \chi_{E_i}(x)\)</span>. Тогда <span
+class="math inline">\(A(f) = \{(x, y): \,\,\,\, x \in E, \,\,\,\, 0
+\leqslant y &lt; f(x)\} =\bigsqcup_{i = 1}^n E_i\cdot [0, c_i)\)</span>
+и <span class="math inline">\(\eta(A(f)) = \nu(E_i)\cdot c_i =
+\displaystyle\int\limits_{E} f(x)\mu(dx)\)</span>.</p>
+<p>Если <span class="math inline">\(f \in \mathcal{L}(X)\)</span>, то <a
+href="лекция-5.html#statement-4">по утверждению</a> существует
+последовательность <span class="math inline">\(F_n\)</span> простейших
+функций, такая, что <span class="math inline">\(f_n \uparrow f\)</span>
+(поточечно сходится к <span class="math inline">\(f\)</span> и поточечно
+монотонно возрастает). Тогда <span class="math inline">\(\eta(A(f)) =
+\eta(\bigcup_{n = 1}^{\infty}A(f_n)) \leqslant \displaystyle \sum_{n =
+1}^{\infty}\displaystyle\int\limits_{E}
+f_n(x)\mu(dx)\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="8.1.4" id="теорема-фубини">Теорема Фубини</h3>
+<div id="theorem-33">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Фубини</em>) Пусть <span
+class="math inline">\((X_k, \A_k, \mu_k), \,\,\,\, k = 1, 2\)</span> –
+пространства с полными мерами, <span class="math inline">\(\mu =
+\mu_1\times \mu_2\)</span> – их прямое произведение, определенное на
+<span class="math inline">\(\sigma\)</span>-алгебре <span
+class="math inline">\(\mathfrak{M}\)</span> с единицей <span
+class="math inline">\(X = X_1\times X_2\)</span>. Пусть <span
+class="math inline">\(f(x_1, x_2) \in \mathcal{L}(X, \mathfrak{M},
+\mu)\)</span>. Тогда</p>
+<ol type="1">
+<li><span class="math inline">\(f(x_1, x_2) \in
+\mathcal{L}(X_2)\)</span>, в частности <span
+class="math inline">\(f(x_1, x_2)\)</span> <span
+class="math inline">\((\A_2, \B)\)</span>-измерима для <span
+class="math inline">\(\mu_1\)</span> почти всех <span
+class="math inline">\(x_1 \in X_1\)</span>.</li>
+<li>Функция <span class="math inline">\(I_f(x_1) =
+\displaystyle\int\limits_{X_2} f(x_1, x_2)\mu_1(dx_1)\)</span> измерима
+на <span class="math inline">\(X_1\)</span> и интегрируема относительно
+<span class="math inline">\(\mu_1\)</span>.</li>
+<li><span class="math inline">\(\displaystyle\int\limits_{X} f(x_1,
+x_2)\mu(dx_1, dx_2) = \displaystyle\int\limits_{X_1} I_f(x_1)\mu_1(dx_1)
+= \displaystyle\int\limits_{X_1} \left(\displaystyle\int\limits_{X_2}
+f(x_1, x_2)\mu_2(dx_2)\right)\mu_1(dx_1)\)</span></li>
+</ol>
+<blockquote>
+<p>Из соображений симметрии ясно, что существует и другой повторный
+интеграл, который тоже равен двойному, в частности, при этом повторные
+интегралы равны.</p>
+</blockquote>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Рассмотрим меру <span class="math inline">\(\mu_1\times \mu_2 \times
+\lambda = \mu\times \lambda\)</span>, где <span
+class="math inline">\(\lambda\)</span> – мера Лебега на <span
+class="math inline">\(\mathbb{R}\)</span>. Тогда на порожденной <span
+class="math inline">\(\sigma\)</span>-алгебре с единицей <span
+class="math inline">\(X_1\times X_2 \times \mathbb{R}\)</span> для
+множества <span class="math inline">\(A = \{(x_1, x_2, x_3): \,\,\,\,
+(x_1, x_2)\in X, \,\,\,\, 0 \leqslant x_3 \leqslant f(x_1,
+x_2)\}\)</span> выполнено <a href="лекция-8.html#theorem-35">по
+теореме</a> <span class="math inline">\((\mu\times \lambda)(A) =
+\displaystyle\int\limits_{X} f(x, y)\mu(dx_1, dx_2)\)</span>.</p>
+<p><a href="лекция-8.html#theorem-34">По теореме</a> (<span
+class="math inline">\(A_x = \{(x_2, x_3)\in X_2\times\mathbb{R}:
+\,\,\,\, (x_1, x_2, x_3)\in A\} = \{\}\)</span>) <span
+class="math inline">\(\mu\times \lambda(A) = (\mu_1\times(\mu_2\times
+\lambda))(A) = \displaystyle\int\limits_{X_1} (\mu_2\times
+\lambda)(A_x)\mu_1(dx_1)\)</span> снова применяем <a
+href="лекция-8.html#theorem-35">теорему</a> для <span
+class="math inline">\((\mu_2\times \lambda)(A_x)\)</span> и получаем
+<span class="math inline">\(\mu\times \lambda(A) =
+(\mu_1\times(\mu_2\times \lambda))(A) = \displaystyle\int\limits_{X_1}
+(\mu_2\times \lambda)(A_x)\mu_1(dx_1) = \displaystyle\int\limits_{X_1}
+\displaystyle\int\limits_{X_2} f(x_1, x_2)\mu_2(dx_2)\mu_1(dx_1)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="8.1.5" id="теорема-тонелли">Теорема Тонелли</h3>
+<div id="theorem-36">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Тонелли</em>) Пусть <span
+class="math inline">\((X_k, \A_k, \mu_k), \,\,\,\, k = 1, 2\)</span> –
+пространства с полными мерами, <span class="math inline">\(\mu =
+\mu_1\times \mu_2\)</span> – их прямое произведение, определенное на
+<span class="math inline">\(\sigma\)</span>-алгебре <span
+class="math inline">\(\mathfrak{M}\)</span> с единицей <span
+class="math inline">\(X = X_1\times X_2\)</span>. Пусть <span
+class="math inline">\(f(x_1, x_2)\)</span> измерима на <span
+class="math inline">\(\mathfrak{M}\)</span> и <span
+class="math inline">\(\displaystyle\int\limits_{X_1}
+\left(\displaystyle\int\limits_{X_2} |f(x_1,
+x_2)|\mu_2(dx_2)\right)\mu_1(dx_1) &lt; \infty\)</span>.</p>
+<p>Тогда <span class="math inline">\(f(x_1, x_2) \in \mathcal{L}(X,
+\mathfrak{M}, \mu)\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Строим последовательность <span class="math inline">\(f_n =
+\min\{f(x, y), n\}\cdot
+\chi_{(X_1)_n}(x)\cdot\chi_{(X_2)_n}(x)\)</span>, где <span
+class="math inline">\((X_1)_n\)</span> и <span
+class="math inline">\((X_2)_n\)</span> множества из определения <span
+class="math inline">\(\sigma\)</span>-конечной меры или <span
+class="math inline">\(X_1\)</span> и <span
+class="math inline">\(X_2\)</span> соответственно для любого <span
+class="math inline">\(n\)</span> в случае конечной меры.</p>
+<p><span class="math inline">\(f_n\)</span> измеримы, так как каждое
+<span class="math inline">\((X_1)_n\)</span> и <span
+class="math inline">\((X_2)_n\)</span> измеримо, каждая <span
+class="math inline">\(f_n\)</span> ограничена <span
+class="math inline">\(n\)</span> и <span
+class="math inline">\(f_n\)</span> отлична от нуля на множестве конечной
+меры (<span class="math inline">\((X_1)_n\times (X_2)_n\)</span> или
+меньшее). Значит <a href="лекция-6.html#theorem-24">по лемме</a>.
+Применяем для последовательности <span
+class="math inline">\(f_n\)</span> теорему Фубини, а затем теорему Леви
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="8.2"
+id="добавление-интегрирование-комплекснозначных-функций">Добавление:
+интегрирование комплекснозначных функций</h2>
+<div id="definition-32">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\((X, \A, \mu)\)</span> – пространство с
+мерой. Рассмотрим функцию <span class="math inline">\(f: X \to
+\mathbb{C}\)</span>, имеющую вид <span class="math inline">\(f(x) = u(x)
++ iv(x)\)</span>, где <span class="math inline">\(u: X \to
+\mathbb{R}\)</span> и <span class="math inline">\(v: X \to
+\mathbb{R}\)</span>. Функция <span class="math inline">\(f\)</span>
+<em>измерима</em>, если <span class="math inline">\(u\)</span> и <span
+class="math inline">\(v\)</span> измеримы. Функция <span
+class="math inline">\(f\)</span> <em>интегрируема по Лебегу</em>, если
+<span class="math inline">\(u, v \in \mathcal{L}(X)\)</span>.
+<em>Интегралом Лебега от интегрируемой функции</em> <span
+class="math inline">\(f\)</span> – это</p>
+<p><span class="math display">\[\displaystyle\int\limits_{X} f(x)\mu(dx)
+= \displaystyle\int\limits_{X} u(x)\mu(dx) +
+i\displaystyle\int\limits_{X} v(x)\mu(dx)\]</span></p>
+<p>Для интеграла Лебега от комплекснозначной функции сохраняются многие
+свойства. Рассматривая отдельно вещественную и мнимую части или
+рассматривая модули, можно доказать линейность класса <span
+class="math inline">\(\mathcal{L}(X)\)</span>, теорему Лебега о
+предельном переходе, теоремы Фубини и Тонелли.</p>
+<p>Простой функцией, как и в вещественном случае,
+<strong>назовём</strong> измеримую функцию с конечным числом значений,
+равную нулю вне некоторого множества конечной меры.</p>
+</div>
+<div id="lemma-15">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Функция <span
+class="math inline">\(f = u + iv\)</span> – простая тогда и только
+тогда, когда <span class="math inline">\(u\)</span> и <span
+class="math inline">\(v\)</span> простые.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

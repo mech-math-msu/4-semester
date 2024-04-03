@@ -1,0 +1,42 @@
+[
+    {
+        "keyword": "элементарные события исходы пространство элементарных событий отображение вероятности вероятность исхода дискретное событие вероятность события",
+        "html": "<p><a href=\"семинар-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\Omega\\)</span> – произвольное\nмножество.</p>\n<p>Элементы <span class=\"math inline\">\\(w \\in \\Omega\\)</span> –\n<em>элементарные события</em> или <em>исходы</em>,</p>\n<p><span class=\"math inline\">\\(\\Omega\\)</span> – <em>пространство\nэлементарных событий</em>,</p>\n<p><span class=\"math inline\">\\(p: \\Omega \\to \\mathbb{R}\\)</span> –\n<em>отображение вероятности</em>, если <span\nclass=\"math inline\">\\(\\displaystyle \\sum_{w \\in \\Omega}p(w) =\n1\\)</span>, при этом <span class=\"math inline\">\\(p(w)\\)</span> –\n<em>вероятность исхода</em> <span class=\"math inline\">\\(w\\)</span>.</p>\n<p>Будем рассматривать не более чем счетное пространство событий <span\nclass=\"math inline\">\\(\\Omega = \\{w_1, \\ldots, w_n, \\ldots\\}\\)</span>.\nТакое пространство <em>дискретное</em>.</p>\n<p><span class=\"math inline\">\\(A \\subset \\Omega\\)</span> –\n<em>событие</em>. <em>Вероятность события</em> <span\nclass=\"math inline\">\\(A\\)</span> – это <span\nclass=\"math inline\">\\(\\displaystyle \\sum_{w \\in A}p(w)\\)</span>.</p>\n<p>В классическом определении вероятности рассматривается <span\nclass=\"math inline\">\\(p\\)</span>, такое что <span\nclass=\"math inline\">\\(p(w_1) = \\ldots = p(w_n)\\)</span>. Тогда <span\nclass=\"math inline\">\\(p(A) = \\frac{|A|}{|\\Omega|}\\)</span>.</p>",
+        "url": "семинар-1.html#definition-0"
+    },
+    {
+        "keyword": "несовместны",
+        "html": "<p><a href=\"семинар-2.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСобытия <em>несовместны</em>, если они попарно не пересекаются.</p>",
+        "url": "семинар-2.html#definition-1"
+    },
+    {
+        "keyword": "вероятностное пространство элементарные исходы события вероятностная мера вероятность",
+        "html": "<p><a href=\"семинар-9.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\Omega\\)</span> – произвольное\nмножество. Тройка <span class=\"math inline\">\\((\\Omega, \\mathcal{F},\nP)\\)</span> – <em>вероятностное пространство</em>, если <span\nclass=\"math inline\">\\(\\mathcal{F}\\)</span> – <span\nclass=\"math inline\">\\(\\sigma\\)</span>-алгебра с единицей <span\nclass=\"math inline\">\\(\\Omega\\)</span>, а <span\nclass=\"math inline\">\\(P\\)</span> – <span\nclass=\"math inline\">\\(\\sigma\\)</span>-аддитивная мера на <span\nclass=\"math inline\">\\(\\mathcal{F}\\)</span>, такая что <span\nclass=\"math inline\">\\(P(\\mathcal{F}) = [0, 1]\\)</span> и <span\nclass=\"math inline\">\\(P(\\Omega) = 1\\)</span>.</p>\n<p>В таком случае элементы <span class=\"math inline\">\\(\\Omega\\)</span> –\n<em>элементарные исходы</em>,</p>\n<p>Элементы <span class=\"math inline\">\\(\\mathcal{F}\\)</span> –\n<em>события</em>,</p>\n<p><span class=\"math inline\">\\(P\\)</span> – <em>вероятностная мера</em>\nили <em>вероятность</em>.</p>",
+        "url": "семинар-9.html#definition-2"
+    },
+    {
+        "keyword": "непрерывна в нуле",
+        "html": "<p><a href=\"семинар-9.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМера <span class=\"math inline\">\\(P\\)</span> на пространстве <span\nclass=\"math inline\">\\(\\mathcal{F}\\)</span> <em>непрерывна в нуле</em>\n(частный случай непрерывности сверху), если <span\nclass=\"math inline\">\\(\\forall \\{A_n\\}_{n = 1}^{\\infty}, \\,\\,\\,\\, A_n \\in\n\\mathcal{F}, \\,\\,\\,\\, A_{n + 1} \\subset A_n \\,\\,\\,\\, \\forall n, \\,\\,\\,\\,\n\\varnothing = \\bigcap_{n = 1}^{\\infty}A_n\\)</span> выполнено <span\nclass=\"math inline\">\\(\\displaystyle \\lim_{n\\to \\infty}P(A_n) =\n0\\)</span>.</p>",
+        "url": "семинар-9.html#definition-3"
+    },
+    {
+        "keyword": "случайная величина",
+        "html": "<p><a href=\"семинар-9.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span> –\nвероятностное пространство.</p>\n<p><em>Случайная величина</em> <span class=\"math inline\">\\(\\xi\\)</span>\n– это <span class=\"math inline\">\\((\\mathcal{F},\n\\mathcal{B}(\\mathbb{R}))\\)</span>-измеримая функция, то есть функция\n<span class=\"math inline\">\\(\\xi: \\Omega \\to \\mathbb{R}\\)</span>, такая\nчто <span class=\"math inline\">\\(\\forall B \\in \\mathcal{B} \\,\\,\\,\\,\n\\xi^{-1}(B) \\in \\mathcal{F}\\)</span>.</p>",
+        "url": "семинар-9.html#definition-4"
+    },
+    {
+        "keyword": "алгебра, порожденная случайной величиной",
+        "html": "<p><a href=\"семинар-9.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\sigma_{\\xi}\\)</span> – <span\nclass=\"math inline\">\\(\\sigma\\)</span>-<em>алгебра, порожденная случайной\nвеличиной</em> <span class=\"math inline\">\\(\\xi\\)</span> – это наименьшая\n<span class=\"math inline\">\\(\\sigma\\)</span>-алгебра, содержащая\nмножества вида <span class=\"math inline\">\\(\\xi^{-1}(B) \\,\\,\\,\\, B \\in\n\\mathcal{B}\\)</span>.</p>",
+        "url": "семинар-9.html#definition-5"
+    },
+    {
+        "keyword": "борелевская",
+        "html": "<p><a href=\"семинар-9.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\((\\mathcal{B}(\\mathbb{R}),\n\\mathcal{B}(\\mathbb{R}))\\)</span>-измеримая функция –\n<em>борелевская</em>.</p>",
+        "url": "семинар-9.html#definition-6"
+    },
+    {
+        "keyword": "независимы независимы",
+        "html": "<p><a href=\"семинар-9.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСлучайные величины <span class=\"math inline\">\\(\\xi\\)</span> и <span\nclass=\"math inline\">\\(\\eta\\)</span> на пространстве <span\nclass=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span>\n<em>независимы</em>, если порожденные ими <span\nclass=\"math inline\">\\(\\sigma\\)</span>-алгебры <span\nclass=\"math inline\">\\(\\sigma_{\\xi}\\)</span> и <span\nclass=\"math inline\">\\(\\sigma_{\\eta}\\)</span> <em>независимы</em>, то\nесть <span class=\"math inline\">\\(\\forall A \\in \\sigma_{\\xi}\\)</span> и\n<span class=\"math inline\">\\(\\forall B \\in \\sigma_{\\eta} \\,\\,\\,\\,\nP(A\\cdot B) = P(A)\\cdot P(B)\\)</span> (события <span\nclass=\"math inline\">\\(A\\)</span> и <span\nclass=\"math inline\">\\(B\\)</span> независимы)</p>",
+        "url": "семинар-9.html#definition-7"
+    }
+]

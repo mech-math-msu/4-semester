@@ -261,7 +261,7 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
@@ -290,13 +290,26 @@
     }
 </style>
 <script type="module">
-    import data from "./defs.json" assert {type: 'json'};
+    import data from "./defs.json" with {type: 'json'};
 
     let ans_div = document.getElementById('answer');
 
     function search() {
         let input = document.getElementById('searchbar').value
         input = input.toLowerCase();
+
+        console.log(input)
+        if (input == "все" || input == "all") {
+            let ans = "";
+
+            data.forEach((item, i) => {
+                ans += item.html;
+            });
+
+            ans_div.innerHTML = ans;
+            MathJax.typeset();
+            return;
+        }
 
         if (input.length < 3) {
             return;
@@ -326,7 +339,7 @@
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>

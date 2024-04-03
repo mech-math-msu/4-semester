@@ -9,7 +9,7 @@
     
     
     
-    <title>Разные геометрии</title>
+    <title>Лекция 2. Координаты</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -250,7 +250,7 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-1.-разные-геометрии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
@@ -264,69 +264,35 @@
 
 
 
-<h1 data-number="1" id="разные-геометрии">Разные геометрии</h1>
-<h2 data-number="1.1" id="евклидово-пространство-mathbbrn">Евклидово
-пространство <span class="math inline">\(\mathbb{R}^n\)</span></h2>
-<p>Это векторное пространство со скалярным произведением, то есть
-симметрической положительно определенной (в частности невырожденной)
-билинейной формой.</p>
-<h2 data-number="1.2" id="сфера">Сфера</h2>
-<h2 data-number="1.3" id="проективная-плоскость-mathbbrp2">Проективная
-плоскость <span class="math inline">\(\mathbb{R}P^2\)</span></h2>
-<h2 data-number="1.4" id="псевдоевклидово-пространство">Псевдоевклидово
-пространство</h2>
-<p>Это векторное пространство с псевдоевклидовым скалярным
-произведением.</p>
-<div id="definition-0">
-<p><span class="margin-lft"><strong>Определение:
-</strong></span><em>(Псевдо)евклидово скалярное произведение</em> – это
-невырожденная симметрическая билинейная форма <a
-href="https://mech-math-msu.github.io/2-semester/linear-algebra/lections/%D0%BA%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D1%84%D0%BE%D1%80%D0%BC%D1%8B-%D0%BD%D0%B0%D0%B4-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8-%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BD%D1%8B%D1%85-%D1%87%D0%B8%D1%81%D0%B5%D0%BB.html#definition-53">сигнатуры</a>
-<span class="math inline">\((p, q)\)</span>.</p>
-<p><span class="math inline">\((x, y) = \displaystyle \sum_{i =
-1}^{p}x^iy^i - \displaystyle \sum_{i = p + 1}^{p +
-q}x^iy^j\)</span>.</p>
-</div>
-<p>Если у псевдоевклидова скалярного произведения сигнатура <span
-class="math inline">\((p, q)\)</span>, то псевдоевклидово пространство
-<strong>обозначается</strong> <span
-class="math inline">\(\mathbb{R}_p^q\)</span>.</p>
-<div id="definition-1">
-<p><span class="margin-lft"><strong>Определение: </strong></span>В
-зависимости от знака скалярного квадрата векторы псевдоевклидова
-пространства делятся на:</p>
-<ol type="1">
-<li><span class="math inline">\((x, x) &gt; 0\)</span> –
-<em>пространственноподобные</em>,</li>
-<li><span class="math inline">\((x, x) &lt; 0\)</span> –
-<em>временноподобные</em>,</li>
-<li><span class="math inline">\((x, x) = 0\)</span> –
-<em>изотропные</em> или <em>светоподобные</em><a href="#fn1"
-class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>.</li>
-</ol>
-</div>
-<div id="definition-2">
+<h1 data-number="2" id="лекция-2.-координаты">Лекция 2. Координаты</h1>
+<h2 data-number="2.1"
+id="стереографическая-проекция-сферы">Стереографическая проекция
+сферы</h2>
+<p>нарисовать картинку</p>
+<h3 data-number="2.1.1" id="куда-переходит-большие-окружности">Куда
+переходит большие окружности?</h3>
+<h2 data-number="2.2"
+id="псевдостреографическая-проекция-плоскости-лобачевского">(Псевдостреографическая
+проекция плоскости Лобачевского)</h2>
+<p>нарисовать картинку</p>
+<h2 data-number="2.3"
+id="криволинейные-координаты-в-области">Криволинейные координаты в
+области</h2>
+<div id="definition-6">
 <p><span class="margin-lft"><strong>Определение: </strong></span><span
-class="math inline">\(n + 1\)</span> мерное <em>пространство
-Минковского</em> – это <span class="math inline">\(M^{n + 1} =
-\mathbb{R}_n^1\)</span>.</p>
+class="math inline">\(D \subset \mathbb{R}^n, \,\,\,\, (x^1, \ldots,
+x^n)\)</span> – <em>область</em>, то есть открытое, связное множество. В
+<span class="math inline">\(D\)</span> заданы <em>криволинейные
+координаты</em> <span class="math inline">\((y^1, \ldots, y^n)\)</span>,
+если задано <span class="math inline">\(f: \Omega \to D\)</span>, где
+<span class="math inline">\(\Omega \subset \mathbb{R}^n\)</span>.</p>
 </div>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>Чтобы <span class="math inline">\((x, x) = 0\)</span>
-вектор не обязан быть нулевым.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-1.-разные-геометрии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>

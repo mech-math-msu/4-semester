@@ -146,17 +146,22 @@
     },
     {
         "keyword": "прямое произведение полуколец",
-        "html": "<p><a href=\"лекция-7.html#definition-29\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(S_k, \\,\\,\\,\\, k \\in \\{1, \\ldots,\nn\\}\\)</span> – полукольца.</p>\n<p><em>Прямое произведение полуколец</em> – это <span\nclass=\"math inline\">\\(S = S_1\\times \\ldots \\times S_n = \\{A_1\\times\n\\ldots\\times A_n|\\,\\,\\,\\, A_k \\in S_k\\}\\)</span></p>",
-        "url": "лекция-7.html#definition-29"
+        "html": "<p><a href=\"лекция-8.html#definition-29\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(S_k, \\,\\,\\,\\, k \\in \\{1, \\ldots,\nn\\}\\)</span> – полукольца.</p>\n<p><em>Прямое произведение полуколец</em> – это <span\nclass=\"math inline\">\\(S = S_1\\times \\ldots \\times S_n = \\{A_1\\times\n\\ldots\\times A_n|\\,\\,\\,\\, A_k \\in S_k\\}\\)</span></p>",
+        "url": "лекция-8.html#definition-29"
     },
     {
         "keyword": "произведение мер",
-        "html": "<p><a href=\"лекция-7.html#definition-30\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_k\\)</span> – меры на полукольцах\n<span class=\"math inline\">\\(S_k\\)</span>. Тогда функция <span\nclass=\"math inline\">\\(m: S_1\\times\\ldots\\times S_n \\to \\mathbb{R},\n\\,\\,\\,\\, m: A_1\\times\\ldots\\times A_n \\mapsto m_1(A_1)\\cdot \\ldots\\cdot\nm_n(A_n)\\)</span> – <em>произведение мер</em> <span\nclass=\"math inline\">\\(m_k\\)</span>.</p>",
-        "url": "лекция-7.html#definition-30"
+        "html": "<p><a href=\"лекция-8.html#definition-30\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_k\\)</span> – меры на полукольцах\n<span class=\"math inline\">\\(S_k\\)</span>. Тогда функция <span\nclass=\"math inline\">\\(m: S_1\\times\\ldots\\times S_n \\to \\mathbb{R},\n\\,\\,\\,\\, m: A_1\\times\\ldots\\times A_n \\mapsto m_1(A_1)\\cdot \\ldots\\cdot\nm_n(A_n)\\)</span> – <em>произведение мер</em> <span\nclass=\"math inline\">\\(m_k\\)</span>.</p>",
+        "url": "лекция-8.html#definition-30"
     },
     {
         "keyword": "прямое произведение мер",
-        "html": "<p><a href=\"лекция-7.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_1, \\ldots, m_n\\)</span> – конечные\nили сигма-конечные сигма-аддитивные меры на сигма-алгебрах <span\nclass=\"math inline\">\\(S_k\\)</span>. <em>Прямое произведение мер</em>\n<span class=\"math inline\">\\(\\mu = m_1\\times\\ldots\\times m_n\\)</span> –\nэто продолжение по Лебегу меры <span class=\"math inline\">\\(m =\nm_1\\cdot\\ldots\\cdot m_n\\)</span>, т.е. их определенного выше\nпроизведения.</p>\n<p>Это мера на порожденной сигма-алгебре с единицей <span\nclass=\"math inline\">\\(X = X_1\\times \\ldots\\times X_n\\)</span>.</p>",
-        "url": "лекция-7.html#definition-31"
+        "html": "<p><a href=\"лекция-8.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(m_1, \\ldots, m_n\\)</span> – конечные\nили сигма-конечные сигма-аддитивные меры на сигма-алгебрах <span\nclass=\"math inline\">\\(S_k\\)</span>. <em>Прямое произведение мер</em>\n<span class=\"math inline\">\\(\\mu = m_1\\times\\ldots\\times m_n\\)</span> –\nэто продолжение по Лебегу меры <span class=\"math inline\">\\(m =\nm_1\\cdot\\ldots\\cdot m_n\\)</span>, т.е. их определенного выше\nпроизведения.</p>\n<p>Это мера на порожденной сигма-алгебре с единицей <span\nclass=\"math inline\">\\(X = X_1\\times \\ldots\\times X_n\\)</span>.</p>",
+        "url": "лекция-8.html#definition-31"
+    },
+    {
+        "keyword": "измерима интегрируема по лебегу интегралом лебега от интегрируемой функции",
+        "html": "<p><a href=\"лекция-8.html#definition-32\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((X, \\A, \\mu)\\)</span> – пространство с\nмерой. Рассмотрим функцию <span class=\"math inline\">\\(f: X \\to\n\\mathbb{C}\\)</span>, имеющую вид <span class=\"math inline\">\\(f(x) = u(x)\n+ iv(x)\\)</span>, где <span class=\"math inline\">\\(u: X \\to\n\\mathbb{R}\\)</span> и <span class=\"math inline\">\\(v: X \\to\n\\mathbb{R}\\)</span>. Функция <span class=\"math inline\">\\(f\\)</span>\n<em>измерима</em>, если <span class=\"math inline\">\\(u\\)</span> и <span\nclass=\"math inline\">\\(v\\)</span> измеримы. Функция <span\nclass=\"math inline\">\\(f\\)</span> <em>интегрируема по Лебегу</em>, если\n<span class=\"math inline\">\\(u, v \\in \\mathcal{L}(X)\\)</span>.\n<em>Интегралом Лебега от интегрируемой функции</em> <span\nclass=\"math inline\">\\(f\\)</span> – это</p>\n<p><span class=\"math display\">\\[\\displaystyle\\int\\limits_{X} f(x)\\mu(dx)\n= \\displaystyle\\int\\limits_{X} u(x)\\mu(dx) +\ni\\displaystyle\\int\\limits_{X} v(x)\\mu(dx)\\]</span></p>\n<p>Для интеграла Лебега от комплекснозначной функции сохраняются многие\nсвойства. Рассматривая отдельно вещественную и мнимую части или\nрассматривая модули, можно доказать линейность класса <span\nclass=\"math inline\">\\(\\mathcal{L}(X)\\)</span>, теорему Лебега о\nпредельном переходе, теоремы Фубини и Тонелли.</p>\n<p>Простой функцией, как и в вещественном случае,\n<strong>назовём</strong> измеримую функцию с конечным числом значений,\nравную нулю вне некоторого множества конечной меры.</p>",
+        "url": "лекция-8.html#definition-32"
     }
 ]

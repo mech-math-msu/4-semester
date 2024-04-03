@@ -1,0 +1,72 @@
+[
+    {
+        "keyword": "плотно",
+        "html": "<p><a href=\"семинар-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМножество <span class=\"math inline\">\\(A\\)</span> <em>плотно</em> в\nмножестве <span class=\"math inline\">\\(B\\)</span>, если <span\nclass=\"math inline\">\\(B \\subset \\operatorname{Cl}A\\)</span>.</p>",
+        "url": "семинар-1.html#definition-0"
+    },
+    {
+        "keyword": "нигде не плотно",
+        "html": "<p><a href=\"семинар-1.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМножество <span class=\"math inline\">\\(A\\)</span> <em>нигде не\nплотно</em> в метрическом пространстве <span\nclass=\"math inline\">\\(X\\)</span>, если для любого шара <span\nclass=\"math inline\">\\(U\\)</span> существует подшар <span\nclass=\"math inline\">\\(V \\subset U\\)</span>, такой что <span\nclass=\"math inline\">\\(V\\cap A = \\varnothing\\)</span>.</p>",
+        "url": "семинар-1.html#definition-0"
+    },
+    {
+        "keyword": "имеет тип имеет тип",
+        "html": "<p><a href=\"семинар-1.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМножество <span class=\"math inline\">\\(A\\)</span> <em>имеет тип</em>\n<span class=\"math inline\">\\(G_{\\delta}\\)</span>, если <span\nclass=\"math inline\">\\(\\exists\\)</span> последовательность открытых\nмножеств <span class=\"math inline\">\\(\\{G_n\\}_{n = 1}^{\\infty}\\)</span>,\nтакая что <span class=\"math inline\">\\(A = \\bigcap_{n =\n1}^{\\infty}G_n\\)</span>.</p>\n<p>Множество <span class=\"math inline\">\\(A\\)</span> <em>имеет тип</em>\n<span class=\"math inline\">\\(F_{\\sigma}\\)</span>, если <span\nclass=\"math inline\">\\(\\exists\\)</span> последовательность замкнутых\nмножеств <span class=\"math inline\">\\(\\{F_n\\}_{n = 1}^{\\infty}\\)</span>,\nтакая что <span class=\"math inline\">\\(A = \\bigcup_{n =\n1}^{\\infty}G_n\\)</span>.</p>",
+        "url": "семинар-1.html#definition-2"
+    },
+    {
+        "keyword": "функция римана",
+        "html": "<p><a href=\"семинар-2.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\tau(x) = \\begin{cases}\n\\frac1n, \\,\\,\\,\\, x = \\frac{m}{n}\\\\\n0, \\,\\,\\,\\, x \\not\\in \\mathbb{Q}\n\\end{cases}\\)</span> – <em>функция Римана</em>.</p>",
+        "url": "семинар-2.html#definition-3"
+    },
+    {
+        "keyword": "множество канторова типа",
+        "html": "<p><a href=\"семинар-2.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(F_0 = J^1_0 = [0, 1]\\)</span>.</p>\n<p><span class=\"math inline\">\\(I^1_0\\)</span> интервал с той же\nсерединой <a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>, что и <span\nclass=\"math inline\">\\(J^1_0\\)</span> но меньшей длины.</p>\n<p><span class=\"math inline\">\\(F_1 = F_0 \\setminus I^1_0 = \\sqcup_{k =\n1}^2J^1_k\\)</span>.</p>\n<p><span class=\"math inline\">\\(F_n = \\sqcup_{k = 1}^{2^n}J^n_k\\)</span>\n<span class=\"math inline\">\\(\\forall k\\)</span> выбираем <span\nclass=\"math inline\">\\(I_k^n \\subset J_k^n\\)</span> с той же серединой,\nно меньшей длины.</p>\n<p><span class=\"math inline\">\\(F_{n + 1} = F_n \\setminus \\sqcup_{k =\n1}^{2^n}J^n_k = \\sqcup_{k = 1}^{2^{n + 1}}J^{n + 1}_k\\)</span>.</p>\n<p>Заметим, что все <span class=\"math inline\">\\(F_n\\)</span>\nзамкнуты.</p>\n<p>Множество <span class=\"math inline\">\\(P = \\bigcap_{n =\n0}^{\\infty}F_n\\)</span> – <em>множество Канторова типа</em>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p><span class=\"math inline\">\\(\\frac12\\)</span> в этом\nслучае<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "семинар-2.html#definition-4"
+    },
+    {
+        "keyword": "стандартное канторово множество",
+        "html": "<p><a href=\"семинар-2.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМножество Канторова типа, когда на <span\nclass=\"math inline\">\\(n\\)</span> шаге берется средняя треть, –\n<em>стандартное Канторово множество</em>. <strong>Обозначается:</strong>\n<span class=\"math inline\">\\(P_0\\)</span>.</p>",
+        "url": "семинар-2.html#definition-5"
+    },
+    {
+        "keyword": "совершенно",
+        "html": "<p><a href=\"семинар-2.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМножество <em>совершенно</em>, если оно не имеет изолированных\nточек.</p>",
+        "url": "семинар-2.html#definition-6"
+    },
+    {
+        "keyword": "мера стилтьеса",
+        "html": "<p><a href=\"семинар-3.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\varphi\\)</span> неубывающая функция\nна <span class=\"math inline\">\\([a_0, b_0]\\)</span>. <span\nclass=\"math inline\">\\(S = \\{[a, b)| \\,\\,\\,\\, a_0 \\leqslant a \\leqslant b\n\\leqslant b_0\\}\\)</span>.</p>\n<p><span class=\"math inline\">\\(m_{\\varphi}([a, b)) = \\varphi(b) -\n\\varphi(a)\\)</span> – <em>мера Стилтьеса</em>. При <span\nclass=\"math inline\">\\(\\varphi(x) = x\\)</span> получаем стандартную меру\nна отрезке.</p>\n<p>Докажем, что мера: <span class=\"math inline\">\\([a, b) = \\bigsqcup_{k\n= 1}^n[a_k, b_k)\\)</span>.</p>\n<p>Перенумеруем полуинтервалы:</p>\n<p>Если <span class=\"math inline\">\\(b_k &gt; a_{k + 1} \\implies [a_k,\nb_k)\\cap [a_{k + 1}, b_{k + 1}) \\ne \\varnothing\\)</span>.</p>\n<p>Если <span class=\"math inline\">\\(b_k &lt; a_{k + 1} \\implies [b_k,\na_{k + 1})\\)</span> ничем не покрыт.</p>\n<p><span class=\"math inline\">\\(\\displaystyle \\sum_{k =\n1}^{n}(\\varphi(b_k) - \\varphi(a_k)) = \\varphi(a) -\n\\varphi(b)\\)</span></p>",
+        "url": "семинар-3.html#definition-7"
+    },
+    {
+        "keyword": "правильная",
+        "html": "<p><a href=\"семинар-3.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМера Стилтьеса <span class=\"math inline\">\\(m_{\\varphi}\\)</span>\n<em>правильная</em>, если <span class=\"math inline\">\\(\\varphi\\)</span>\nнепрерывна слева.</p>",
+        "url": "семинар-3.html#definition-8"
+    },
+    {
+        "keyword": "внешняя мера жордана",
+        "html": "<p><a href=\"семинар-3.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>внешняя мера Жордана</em>) Тоже самое, что внешняя мера Лебега,\nтолько берем инфимум конечных покрытий множества.</p>",
+        "url": "семинар-3.html#definition-9"
+    },
+    {
+        "keyword": "функция кантора",
+        "html": "<p><a href=\"семинар-4.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(P_0\\)</span> стандартное Канторово\nмножество. Тогда по предыдущим семинарам: <span\nclass=\"math inline\">\\([0, 1] = P_0\\sqcup \\displaystyle\\bigsqcup_{n =\n0}^{\\infty}\\displaystyle\\bigsqcup_{k = 1}^{2^{n - 1}}I^n_k\\)</span>, где\n<span class=\"math inline\">\\(I^n_k\\)</span> интервалы.</p>\n<p><img src=\"img/cantor-func.svg\" height=\"400\" /></p>\n<p>Построим функцию на дополнении к <span\nclass=\"math inline\">\\(P_0\\)</span>: пусть <span\nclass=\"math inline\">\\(f(0) = 0\\)</span> и <span\nclass=\"math inline\">\\(f(1) = 1\\)</span>.</p>\n<p><span class=\"math inline\">\\(f(x) = \\frac{2k - 1}{2^{n + 1}}\\)</span>\nна <span class=\"math inline\">\\(I^n_k\\)</span>.</p>\n<p>Заметим, что на дополнении значение функции совпадает с <span\nclass=\"math inline\">\\(\\sup_{y &lt; x}f(y)\\)</span>, а на <span\nclass=\"math inline\">\\(P_0\\)</span> возьмем значение супремума за\nопределение функции. Получили неубывающую функцию на <span\nclass=\"math inline\">\\([0, 1]\\)</span>.</p>\n<p>Эта функция называется <em>функция Кантора</em>.</p>",
+        "url": "семинар-4.html#definition-10"
+    },
+    {
+        "keyword": "измерима",
+        "html": "<p><a href=\"семинар-4.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M\\)</span> – сигма-алгебра с единицей\n<span class=\"math inline\">\\(X\\)</span>, <span class=\"math inline\">\\(f: X\n\\to \\mathbb{R}\\)</span>. <span class=\"math inline\">\\(f\\)</span>\n<em>измерима</em>, если <span class=\"math inline\">\\(\\forall c \\in\n\\mathbb{R} \\,\\,\\,\\, f^{-1}((c, +\\infty)) = \\{x|\\,\\,\\,\\, f(x) &gt; c\\}\n\\in M\\)</span>.</p>\n<p>(эквивалентное определение) <span class=\"math inline\">\\(\\forall B \\in\n\\mathcal{B} \\,\\,\\,\\, f^{-1}(B) \\in M\\)</span>.</p>",
+        "url": "семинар-4.html#definition-11"
+    },
+    {
+        "keyword": "эквивалентно (измеримы)",
+        "html": "<p><a href=\"семинар-4.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФункции <span class=\"math inline\">\\(f\\)</span> и <span\nclass=\"math inline\">\\(g\\)</span> <em>эквивалентно (измеримы)</em>, если\n<span class=\"math inline\">\\(\\mu\\{x: \\,\\,\\,\\, f(x)\\ne g(x)\\} =\n0\\)</span>.</p>",
+        "url": "семинар-4.html#definition-12"
+    },
+    {
+        "keyword": "нулевой класс бэра класс бэра",
+        "html": "<p><a href=\"семинар-6.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Нулевой класс Бэра</em> – это непрерывные функции,</p>\n<p><span class=\"math inline\">\\(n\\)</span>-й <em>класс Бэра</em> – это\nтакие <span class=\"math inline\">\\(f\\)</span>, не лежащие в предыдущих\nклассах Бэра, что существует последовательность функций из <span\nclass=\"math inline\">\\(n - 1\\)</span> класса Бэра, сходящаяся к <span\nclass=\"math inline\">\\(f\\)</span>.</p>",
+        "url": "семинар-6.html#definition-13"
+    }
+]

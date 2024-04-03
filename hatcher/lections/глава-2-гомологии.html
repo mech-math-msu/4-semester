@@ -371,7 +371,13 @@ class="math inline">\(n\)</span>-<em>мерный симплекс</em> – эт
 class="math inline">\(\Delta^n = \left\{(t_0, \ldots, t_n)\in
 \mathbb{R}^{n + 1}|\,\,\,\, \displaystyle \sum_{i}t_i = 1, \,\,\,\, t_i
 \geqslant 0, \,\,\,\, \forall i\right\}\)</span> (его вершины – это
-концы единичных векторов, направленные по координатным осям).</p>
+концы единичных векторов, направленные по координатным осям, а <span
+class="math inline">\(\displaystyle \sum_{i}t_i = 1\)</span> – это
+плоскость перпендикулярная биссектрисе <span
+class="math inline">\(n\)</span>-мерного угла, образующего первый
+квадрант (это первая четверть в <span
+class="math inline">\(n\)</span>-мерном пространстве) координатной
+системы).</p>
 <p>Для гомологий важен порядок вершин симплекса, поэтому <span
 class="math inline">\(n\)</span>-мерный симплекс <span
 class="math inline">\(= \,\,\,\,n\)</span>-мерный симплекс с указанным
@@ -379,7 +385,7 @@ class="math inline">\(= \,\,\,\,n\)</span>-мерный симплекс с ук
 <p>Пусть есть симплекс <span class="math inline">\([v_0, \ldots,
 v_n]\)</span>. Отображение <span class="math inline">\(\Delta^n \to
 [v_0, \ldots, v_n], \,\,\,\, (t_0, \ldots, t_n) \mapsto \displaystyle
-\sum_{i}t_i\cdot v_i\)</span> – гомоморфизм, который называется
+\sum_{i}t_i\cdot v_i\)</span> – гомеоморфизм, который называется
 <em>каноническим</em>, а <span class="math inline">\(t_i\)</span> –
 <em>барицентрические координаты</em> точки <span
 class="math inline">\(\displaystyle \sum_{i}t_i\cdot v_i\)</span> в
@@ -473,11 +479,86 @@ class="math inline">\(\displaystyle \sum_{i}(-1)^i[v_0, \ldots,
 \hat{v}_i, \ldots, v_n]\)</span>. (если смотреть на картинки, то при
 таком представлении учитывается ориентация)</p>
 <p><img src="img/chains.png" /></p>
-<p>Определим гомоморфизм <span
-class="math inline">\(\partial_n(\sigma_{\alpha}) = \displaystyle
-\sum_{i}(-1)^i\sigma_{\alpha}_{|[v_0, \ldots, \hat{v}_i, \ldots,
-v_n]}\)</span></p>
+<p>Определим гомоморфизм <span class="math inline">\(\partial_n:
+\Delta_n(X) \to \Delta_{n - 1}(X): \sigma_{\alpha} \mapsto \displaystyle
+\sum_{i}(-1)^i{\sigma_{\alpha}}_{|[v_0, \ldots, \hat{v}_i, \ldots,
+v_n]}\)</span> (проверить, что гомоморфизм), который
+<strong>называется</strong> <em>граничным</em>.</p>
+<p><strong>Собственно этот гомоморфизм – ключевая часть гомологий :), а
+следующее утверждение показывает, что построены гомологии.</strong></p>
 </div>
+<div id="statement-0">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Композиция <span class="math inline">\(\Delta_n(X)
+\overset{\partial_n}{\to} \Delta_{n - 1}(X) \overset{\partial_{n -
+1}}{\to} \Delta_{n - 2}(X)\)</span> – нулевое отображение.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\partial_n(\sigma_{\alpha}) =
+\displaystyle \sum_{i}(-1)^i{\sigma_{\alpha}}_{|[v_0, \ldots, \hat{v}_i,
+\ldots, v_n]}\)</span></p>
+<p><span class="math inline">\(\partial_{n - 1}\partial_n =
+\displaystyle \sum_{j &lt;
+i}(-1)^i(-1)^j{\sigma_{\alpha}}_{|[v_0,\ldots, \hat{v}_j, \ldots,
+\hat{v}_i, \ldots, v_n]} + \displaystyle \sum_{i &gt;
+j}{\sigma_{\alpha}}_{|[v_0,\ldots, \hat{v}_i, \ldots, \hat{v}_j, \ldots,
+v_n]}\)</span> (это так, потому что если <span class="math inline">\(j
+&lt; i\)</span>, то с нумерацией ничего не происходит, потому что она
+еще не была затронута (оттуда ничего не выкинули), а при <span
+class="math inline">\(j &gt; i\)</span> уже выкинули вершину и нужно
+сдвинуть индексы на один назад) дальше сокращаем суммы <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h4 data-number="2.3.0.1"
+id="приехали-к-важному-определению-цепной-комплекс">Приехали к важному
+определению: цепной комплекс</h4>
+<div id="definition-6">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Последовательность:</p>
+<p><span class="math display">\[\ldots \to C_{n + 1}
+\overset{\partial_{n + 1}}{\to} C_n \overset{\partial_{n}}{\to} C_{n -
+1} \to \ldots \to C_1 \overset{\partial_1}{\to} C_0
+\overset{\partial_0}{\to} 0,\]</span></p>
+<p>где <span class="math inline">\(C_n\)</span> – абелева группа, а
+<span class="math inline">\(\partial_{n + 1}\partial_{n} = 0 \forall
+n\)</span> – <em>цепной комплекс</em>.</p>
+<p>Из условия <span class="math inline">\(\partial_{n + 1}\partial_{n} =
+0 \forall n\)</span> следует, что <span
+class="math inline">\(\operatorname{Img}\partial_{n + 1} \subset
+\operatorname{Ker}\partial_n\)</span>, поэтому определим:</p>
+<p><span class="math inline">\(H_n = \operatorname{Ker}\partial_n /
+\operatorname{Img}\partial_{n + 1}\)</span> – <span
+class="math inline">\(n\)</span>-я <em>группа гомологий</em> цепного
+комплекса <span class="math inline">\((C_n, \partial)\)</span>,</p>
+<p>Элементы <span
+class="math inline">\(\operatorname{Ker}\partial_n\)</span> –
+<em>циклы</em>,</p>
+<p>Элементы <span class="math inline">\(\operatorname{Img}\partial_{n +
+1}\)</span> – <em>границы</em>,</p>
+<p>Элементы <span class="math inline">\(H_n\)</span> – <em>классы
+гомологий</em>.</p>
+<p>В случае <span class="math inline">\(C_n = \Delta_n(X)\)</span>
+группа гомологий <span
+class="math inline">\(\operatorname{Ker}\partial_n /
+\operatorname{Img}\partial_{n + 1}\)</span> <strong>называется</strong>
+<span class="math inline">\(n\)</span>-й <em>группой симплициальных
+гомологий</em>.</p>
+</div>
+<div id="definition-7">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Нормальные люди (то есть которые умеют пользоваться
+компьютером и для которых <span class="math inline">\(14\)</span>
+треугольников, <span class="math inline">\(21\)</span> ребро и <span
+class="math inline">\(7\)</span> вершин – это не то чтобы очень много)
+вводят симплициальные гомологии на <em>симплициальных
+комплексах</em>.</p>
+<p><em>Симплициальный комплекс</em> – это семейство подмножеств
+множества <span class="math inline">\(\{1, \ldots, n\}\)</span>, такое,
+что …</p>
+</div>
+<h3 data-number="2.3.1"
+id="считаем-группы-гомологий-симплициального-комплекса">Считаем группы
+гомологий симплициального комплекса</h3>
+<p>Ща бахнем код. Я в себя верю.</p>
 
 
 <nav id="sitenav">

@@ -256,7 +256,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -484,6 +484,80 @@ P(\{\nu_n = 3N\}) \sim \frac1{\sqrt{4N\frac34 \frac14}}\cdot
 \sqrt{\frac23}\cdot \frac1{\sqrt{N}}, \,\,\,\, \varphi(x) =
 \frac1{\sqrt{2\pi}}e^{-\frac{x^2}2}\)</span></p>
 </div>
+<div id="problem-37">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="4" type="1">
+<li>Театр, вмещающий <span class="math inline">\(n = 1000\)</span>
+человек, имеет два разных входа. Около каждого из входов имеется свой
+гардероб. Сколько мест <span class="math inline">\(N\)</span> должно
+быть в каждом гардеробе для того, чтобы с вероятностью <span
+class="math inline">\(p_0 = 0.99\)</span> все зрители могли раздеться
+(<span class="math inline">\(\nu_n\)</span> - количество зрителей в
+первом гардеробе) в гардеробе того входа, через который они вошли?
+Рассмотреть два случая: а) зрители приходят поодиночке; б) зрители
+приходят парами. Предположить, что входы зрители выбирают с равными
+вероятностями <span class="math inline">\(p = \frac12\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(p_0 = P(\{\nu_n \leqslant N, 1000 - \nu_n
+\leqslant N\})\approx\ldots\implies N = 541
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-38">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="5" type="1">
+<li>В страховой компании застраховано <span class="math inline">\(n =
+15000\)</span> автомобилей. Плата за страховку составляет <span
+class="math inline">\(300\)</span> евро в год. В случае поломки
+автомобиля компания выплачивает владельцу <span
+class="math inline">\(650\)</span> евро. Вероятность поломки автомобиля
+равна <span class="math inline">\(p = \frac14\)</span>.</li>
+</ol>
+<ol type="a">
+<li>Найти вероятность разорения фирмы. б) Какой доход с вероятностью
+<span class="math inline">\(0.94\)</span> получит компания за год?</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\nu_n\)</span> – количество поломанных
+автомобилей.</p>
+<p><span class="math inline">\(P(\{300\cdot n - 650\cdot \nu_n \leqslant
+0\}) = P(\{0 \leqslant \nu_n \geqslant \frac6{13}n\}) 1 - P(\nu_n
+\leqslant \frac6{13}n)\)</span></p>
+<p><span class="math inline">\(P(\nu_n \leqslant \frac6{13}n) \approx
+P(0 \leqslant \nu_n \leqslant 693)\)</span></p>
+<p><span class="math inline">\(a\cdot \sqrt{npq} + np = 0 \implies a =
+\frac{-15000\cdot \frac14}{\sqrt{15000\cdot \frac14\cdot
+\frac34}}\)</span> <span class="math inline">\(b\cdot \sqrt{npq} + np =
+693 \implies b = \frac{693 - 15000 \cdot \frac14}{\sqrt{15000\cdot
+\frac14\cdot \frac34}} \ldots\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-39">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="6" type="1">
+<li>Наборщик делает в среднем полторы опечатки на одну страницу. Это
+означает, что в качестве модели распределения количества опечаток можно
+использовать распределение Пуассона со средним <span
+class="math inline">\(\lambda = \frac32\)</span>. Вычислить вероятность
+<span class="math inline">\(p\)</span> того, что данная страница
+содержит более семи опечаток, а также вероятность того, что в книге
+объемом <span class="math inline">\(n = 200\)</span> более двухсот
+страниц нет страницы, содержащей более семи опечаток.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\xi\)</span> – число ошибок на страницу
+(по условию имеет распределение Пуассона).</p>
+<p>Посчитаем <span class="math inline">\(p = P(\{\xi &gt; 7\}) = 1 -
+P(\{\xi \leqslant 7\}) = 1 - \displaystyle \sum_{k =
+1}^{7}\left(\frac32\right)^k\cdot \frac1{k!}\cdot e^{-\frac32} \approx
+0.0002\)</span></p>
+<p><span class="math inline">\(\nu_n\)</span> – число страниц в книге с
+более чем семью опечатками.</p>
+<p><span class="math inline">\(\lambda_0 = np = 200 \cdot 0.0002 =
+0.04\)</span></p>
+<p><span class="math inline">\(P(\{\nu_n = 0\}) \approx\)</span> теорема
+Пуассона <span class="math inline">\(\approx \frac{0.04^0}{0!}\cdot
+e^{-0.04} \approx 0.960789 \,\,\,\,\blacksquare\)</span></p>
+</div>
 
 
 <nav id="sitenav">
@@ -495,7 +569,7 @@ P(\{\nu_n = 3N\}) \sim \frac1{\sqrt{4N\frac34 \frac14}}\cdot
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

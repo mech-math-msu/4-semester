@@ -101,7 +101,7 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
-            margin-left: -16px;
+            margin-left: 0px;
         }
 
         h1 {
@@ -223,7 +223,7 @@
 
 
         .margin-lft {
-            margin-left: -16px;
+            margin-left: 0px;
         }    </style>
 
     
@@ -244,6 +244,17 @@
                     color: #69a197  !important;
                 }
             </style>
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
     
             <script
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
@@ -305,13 +316,14 @@ class="math inline">\(\displaystyle\int\limits_X f_n(x)d\mu \leqslant
 K\)</span>. Тогда <span class="math inline">\(f\in
 \mathcal{L}(X)\)</span> и <span
 class="math inline">\(\displaystyle\int\limits_X f(x)d\mu \leqslant
-\displaystyle \lim_{n\to \infty}_{_} \displaystyle\int\limits_X
+\displaystyle \varliminf_{n\to \infty} \displaystyle\int\limits_X
 f_n(x)d\mu\)</span></p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h3 data-number="8.0.3"
-id="пример-важности-меньше-или-равно-для-этой-функции-меньше">Пример
-важности меньше или равно (для этой функции меньше)</h3>
+id="пример-важности-меньше-или-равно-в-теореме-фубини-для-этой-функции-меньше">Пример
+важности меньше или равно в теореме Фубини (для этой функции
+меньше)</h3>
 <p><span class="math inline">\(f_n(x) = n\cdot \chi_{(0,
 \frac1n)}(x)\)</span> на <span class="math inline">\([0, 1]\)</span></p>
 <h2 data-number="8.1"
@@ -362,7 +374,7 @@ h(x)|d\mu &lt; \varepsilon\)</span>.</li>
 <ol start="4" type="1">
 <li>Построить пример измеримой <span class="math inline">\(f\not\in
 \mathcal{L}([a, b]\times[c, d])\)</span>, у которой один повторный
-интеграл существуют, а другой нет.</li>
+интеграл существует, а другой нет.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
