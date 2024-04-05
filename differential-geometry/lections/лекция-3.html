@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 3</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-2.-координаты.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="3" id="лекция-3">Лекция 3</h1>
+<h2 data-number="3.1" id="кривые">Кривые</h2>
+<div id="definition-8">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Гладкая элементарная параметризованная кривая</em> в
+<span class="math inline">\(\mathbb{R}^n\)</span> – это гладкое <span
+class="math inline">\((\in C^{\infty}(\mathbb{R}^n))\)</span>
+отображение <span class="math inline">\(\gamma: [a, b] \to
+\mathbb{R}^n\)</span>, то есть набор функций <span
+class="math inline">\(x^i = x^i(t), \,\,\,\, t \in [a, b], \,\,\,\,
+x^i(t) \in C^{\infty}([a, b]), \,\,\,\, i \in \{1, \ldots,
+n\}\)</span>.</p>
+<p>Кривая – это набор отображений <span
+class="math inline">\(\{x^i(t)\}\)</span>, а не образ. Образ – это
+<em>траектория</em>. То есть у двух кривых может быть один образ.</p>
+<p><span class="math inline">\(\mathbf{x} = \mathbf{r}(t) =
+\left(\begin{array}{c} x^1(t)\\ \vdots \\
+x^n(t)\end{array}\right)\)</span> – <em>параметрические уравнения
+кривой</em>.</p>
+</div>
+<div id="definition-9">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Вектор скорости</em> кривой <span
+class="math inline">\(\gamma\)</span> <em>в точке</em> <span
+class="math inline">\(t\)</span> – это <span
+class="math inline">\(\dot{\mathbf{r}}(t) = \left(\begin{array}{c}
+\dot{x}^1(t)\\ \vdots \\ \dot{x}^n(t)\end{array}\right)\)</span>.</p>
+<p>Кривая <em>регулярна</em>, если <span
+class="math inline">\(\dot{\mathbf{r}}(t) \ne 0, \,\,\,\, \forall t \in
+[a, b]\)</span>.</p>
+</div>
+<h3 data-number="3.1.1" id="координатные-линии">Координатные линии</h3>
+<div id="definition-10">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\Omega, D \subset \mathbb{R}^n, \,\,\,\, x^i =
+f^i(y^1, \ldots, y^n)\)</span> (локальные координаты)</p>
+<p>Зафиксируем точку <span class="math inline">\(y_0 \in D \,\,\,\, y_0
+= (y_0^1, \ldots, y_0^n)\)</span>.</p>
+<p>Зададим кривую <span class="math inline">\(\gamma_k(t): [-
+\varepsilon, \varepsilon] \to \mathbb{R}^n: \,\,\,\, t \mapsto
+\left(\begin{array}{c} y_0^1(t)\\ \vdots \\ y_0^k + t \\ \vdots \\
+y_0^n(t)\end{array}\right)\)</span> (фиксируем одну координату и идем
+вдоль нее).</p>
+<p><span class="math inline">\(k\)</span>-<em>координатная линия</em> –
+это <span class="math inline">\(\gamma_k(t)\)</span>. (то есть видов
+координатых линий столько же сколько размерность <span
+class="math inline">\(n\)</span>).</p>
+</div>
+<h4 data-number="3.1.1.1" id="пример">Пример</h4>
+<p>В случае полярных координат координатные линии – окружности и
+прямые.</p>
+<div id="lemma-0">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Координатные
+линии являются регулярными кривыми, более того вектора скоростей
+координатных линий линейно независимы.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="3.2" id="поверхности">Поверхности</h2>
+<h3 data-number="3.2.1" id="локальная-поверхность">Локальная
+поверхность</h3>
+<div id="definition-11">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть в
+<span class="math inline">\(\mathbb{R}^N\)</span> заданы координаты
+<span class="math inline">\(z = (z^1, \ldots, z^N)\)</span>.</p>
+<p>Множество <span class="math inline">\(M \subset \mathbb{R}^N\)</span>
+– <em>элементарная локальная</em> <span
+class="math inline">\(n\)</span>-<em>мерная поверхность</em>, если <span
+class="math inline">\(\exists\)</span> отображение <span
+class="math inline">\(f: D \to M\)</span> (это отображение задает
+локальные координаты на <span class="math inline">\(M\)</span>, что
+следует из условий 1. и 2., а еще это регулярные координаты, что следует
+из условия 3.), где <span class="math inline">\(D\)</span> – шар в <span
+class="math inline">\(\mathbb{R}^n\)</span> и выполнено:</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> – гомеоморфизм <span
+class="math inline">\(D\)</span> и <span
+class="math inline">\(M\)</span>,</li>
+<li><span class="math inline">\(f\)</span> – гладкое,</li>
+<li><span class="math inline">\(\operatorname{rk}\frac{\partial
+f^i}{\partial x_j} = n \,\,\,\, \forall x \in D\)</span></li>
+</ol>
+</div>
+<h3 data-number="3.2.2" id="n-мерное-подмногообразие"><span
+class="math inline">\(n\)</span>-мерное подмногообразие</h3>
+<div id="definition-12">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(M \subset \mathbb{R}^N\)</span> – <span
+class="math inline">\(n\)</span>-<em>мерное подмногообразие</em>, если
+<span class="math inline">\(\forall P \in M \,\,\,\, \exists\)</span>
+окрестность <span class="math inline">\(U_P \subset \mathbb{R}^N:
+\,\,\,\, M \cap U_P\)</span> – элементарная локальная <span
+class="math inline">\(n\)</span>-мерная поверхность.</p>
+</div>
+<h4 data-number="3.2.2.1" id="примеры-подмногообразий">Примеры
+подмногообразий</h4>
+<ol type="1">
+<li><p>Цилиндр (подмножество <span class="math inline">\(\mathbb{R}^3,
+\,\,\,\, z = (z^1, z^2, z^3)\)</span>, заданное уравнением <span
+class="math inline">\((z^1)^2 + (z^2)^2 = R^2\)</span>) – это <span
+class="math inline">\(2\)</span>-мерное подмногообразие в <span
+class="math inline">\(\mathbb{R}^3\)</span>, так как можно задать
+локальные координаты <span class="math inline">\(\begin{cases}
+z^1 = R\cos(x^1)\\
+z^2 = R\sin(x^1)\\
+z^3 = x^2
+\end{cases}\)</span>.</p></li>
+<li><p>Сфера со стереографической проекцией</p></li>
+</ol>
+<h3 data-number="3.2.3" id="кривые-на-подмногообразиях">Кривые на
+подмногообразиях</h3>
+<div id="definition-13">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Гладкая кривая на</em> <span
+class="math inline">\(n\)</span>-<em>мерном подмногообразии</em> <span
+class="math inline">\(M \subset \mathbb{R}^N\)</span> – это гладкое
+отображение <span class="math inline">\(\gamma: [a, b] \to M, \,\,\,\, t
+\in [a, b], \,\,\,\, \gamma(t) \in M\)</span></p>
+</div>
+<h3 data-number="3.2.4"
+id="касательные-векторы-к-подмногообразиям">Касательные векторы к
+подмногообразиям</h3>
+<div id="definition-17">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Касательный вектор</em> к <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span> – это вектор скорости некоторой гладкой
+кривой, проходящей через точку <span
+class="math inline">\(P\)</span>.</p>
+</div>
+<div id="definition-14">
+<p><span class="margin-lft"><strong>Определение: </strong></span>В
+каждой точке <span class="math inline">\(P\in \mathbb{R}^n\)</span>
+<span class="math inline">\(n\)</span>-мерного подмногообразия в <span
+class="math inline">\(\mathbb{R}^N\)</span> заданы локальные координаты
+и существует <span class="math inline">\(n\)</span> линейно независимых
+касательных векторов к координатым линиям. Линейная оболочка этих
+векторов <span class="math inline">\(T_p(M)\)</span> – это <span
+class="math inline">\(n\)</span>-мерное подпространство в <span
+class="math inline">\(\mathbb{R}^N\)</span>, которое называется
+<em>касательное пространство к поверхности</em> <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span>.</p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-2.-координаты.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-4.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

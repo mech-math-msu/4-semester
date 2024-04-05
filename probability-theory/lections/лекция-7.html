@@ -256,7 +256,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="лекция-8.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -293,6 +293,149 @@ i \ne j \,\,\,\, P\left(\displaystyle \bigsqcup_{i =
 <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> –
 <em>вероятностное пространство</em>.</p>
 </div>
+<h2 data-number="7.2" id="случайные-величины">Случайные величины</h2>
+<p>см. семинары</p>
+<h2 data-number="7.3"
+id="распределение-случайной-величины">Распределение случайной
+величины</h2>
+<div id="definition-18">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\xi\)</span> – случайная величина на
+пространстве <span class="math inline">\((\Omega, \mathcal{F},
+P)\)</span>. <em>Распределение случайной величины</em> <span
+class="math inline">\(\xi\)</span> – это функция <span
+class="math inline">\(F_{\xi}(x) = P\{w \in \Omega: \,\,\,\, \xi(w)
+\leqslant x\}\)</span>.</p>
+</div>
+<div id="lemma-5">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Вероятность
+попадания случайной величины в интервал <span class="math inline">\((a,
+b)\)</span> – это <span class="math inline">\(F_{\xi}(b) -
+F_{\xi}(a)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="7.3.1" id="свойства-функции-распределения">Свойства
+функции распределения</h3>
+<div id="statement-15">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(\xi\)</span> – случайная величина на
+пространстве <span class="math inline">\((\Omega, \mathcal{F},
+P)\)</span>. Тогда для <span class="math inline">\(F_{\xi}\)</span>
+выполнено:</p>
+<ol type="1">
+<li><span class="math inline">\(\forall x \in \mathbb{R} \,\,\,\, 0
+\leqslant F_{\xi}(x) \leqslant 1\)</span></li>
+<li><span class="math inline">\(F_{\xi}\)</span> неубывающая
+функция,</li>
+<li><span class="math inline">\(F_{\xi}(-\infty):= \displaystyle
+\lim_{x\to -\infty}F_{\xi}(x) = 0\)</span> и <span
+class="math inline">\(F_{\xi}(+\infty):= \displaystyle \lim_{x\to
++\infty}F_{\xi}(x) = 1\)</span>,</li>
+<li><span class="math inline">\(F_{\xi}\)</span> непрерывна справа в
+любой точке.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-19">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Случайная величина <span
+class="math inline">\(\xi\)</span> <em>непрерывна</em>, если непрерывна
+ее функция распределния.</p>
+</div>
+<div id="statement-16">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>критерий непрерывности</em>) <span
+class="math inline">\(\xi\)</span> непрерывна <span
+class="math inline">\(\iff P\{\xi = x_0\} = 0 \,\,\,\, \forall x_0 \in
+\mathbb{R}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\xi\)</span> непрерывна <span
+class="math inline">\(\implies \forall \varepsilon &gt; 0 \,\,\,\,
+\exists \delta &gt; 0: \,\,\,\, \forall x (|x - x_0| &lt; \delta)
+\,\,\,\, |F_{\xi}(x) - F_{\xi}(x_0)| = |P\{w: \,\,\,\,x_0 \leqslant
+\xi(w) \leqslant x\}| &lt; \varepsilon \,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="7.4"
+id="абсолютно-непрерывные-случайные-величины">Абсолютно непрерывные
+случайные величины</h2>
+<div id="definition-20">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Случайная величина <span
+class="math inline">\(\xi\)</span> – <em>абсолютно непрерывна</em>, если
+существует функция <span class="math inline">\(f: \mathbb{R} \to
+\mathbb{R}\)</span>, такая, что</p>
+<ol type="1">
+<li><span class="math inline">\(\forall x \in \mathbb{R} \,\,\,\, f(x)
+\geqslant 0\)</span>,</li>
+<li><span
+class="math inline">\(\displaystyle\int\limits_{-\infty}^{+\infty}
+f(x)dx = 1\)</span>,</li>
+<li><span class="math inline">\(\forall x \in \mathbb{R} \,\,\,\,
+F_{\xi}(x) = \displaystyle\int\limits_{-\infty}^x f(t)dt\)</span>.</li>
+</ol>
+<p>В таком случае <span class="math inline">\(f(x)\)</span> –
+<em>плотность распределения случайной величины</em> <span
+class="math inline">\(\xi\)</span>.</p>
+</div>
+<div id="lemma-6">
+<p><span class="margin-lft"><strong>Лемма: </strong></span><span
+class="math inline">\(\displaystyle\int\limits_a^b f_{\xi}(x)dx =
+F_{\xi}(b) - F_{\xi}(a)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="7.4.1"
+id="примеры-плотностей-абсолютно-непрерывных-случайных-величин">Примеры
+плотностей абсолютно непрерывных случайных величин</h3>
+<h4 data-number="7.4.1.1"
+id="плотность-равномерного-распределения-на-отрезке-a-b">Плотность
+равномерного распределения на отрезке <span class="math inline">\([a,
+b]\)</span></h4>
+<p><span class="math inline">\(f(x) = \frac1{b - a}, \,\,\,\, x \in [a,
+b], \,\,\,\, x = 0, \,\,\,\, x\not\in [a, b]\)</span></p>
+<h4 data-number="7.4.1.2"
+id="плотность-экмпоненциального-распределения-с-параметром-lambda">Плотность
+экмпоненциального распределения с параметром <span
+class="math inline">\(\lambda\)</span></h4>
+<p><span class="math display">\[f(x) = \lambda\cdot e^{- \lambda x},
+\,\,\,\, x \geqslant 0, \,\,\,\, 0, \,\,\,\, x &lt; 0\]</span></p>
+<h4 data-number="7.4.1.3"
+id="плотность-распределения-коши-с-параметром-сдвига-равным-нулю-и-масштаба-равным-единице">Плотность
+распределения Коши (с параметром сдвига равным нулю и масштаба равным
+единице)</h4>
+<p><span class="math display">\[f(x) = \frac1{\pi(1 + x^2)}\]</span></p>
+<h4 data-number="7.4.1.4"
+id="плотность-распределения-парето-с-параметром-a-0">Плотность
+распределения Парето с параметром <span class="math inline">\(a &gt;
+0\)</span></h4>
+<p><span class="math display">\[f(x) = \frac{a}{x^{a+ 1}}, \,\,\,\, x
+\geqslant 1\]</span></p>
+<h4 data-number="7.4.1.5"
+id="плотность-гауссовского-нормального-распределения-mathcalnmu-sigma-sigma-0">Плотность
+гауссовского (нормального) распределения <span
+class="math inline">\(\mathcal{N}(\mu, \sigma), \,\,\,\, \sigma &gt;
+0\)</span></h4>
+<p><span class="math display">\[f(x) =
+\frac1{\sqrt{2\pi}\sigma}e^{-\frac{(x - \mu)^2}{2\sigma^2}}\]</span></p>
+<h2 data-number="7.5" id="усиленный-закон-больших-чисел">Усиленный закон
+больших чисел</h2>
+<div id="theorem-8">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Усиленный закон больших чисел для схемы
+Бернулли</em>) Пусть <span class="math inline">\(\theta_1, \ldots,
+\theta_n\)</span> – независимые бернуллиевские случайные величины,
+принимающие значения <span class="math inline">\(1\)</span> и <span
+class="math inline">\(0\)</span> с вероятностями <span
+class="math inline">\(p\)</span> и <span class="math inline">\(q = 1 -
+p\)</span>. Обозначим <span class="math inline">\(\nu_n = \displaystyle
+\sum_{i = 1}^{n}\theta_i\)</span>. Тогда <span
+class="math inline">\(P\left\{\displaystyle \lim_{n\to
+\infty}\left|\frac{\nu_n}{n} - p\right| = 0\right\} = 1\)</span> (при
+большом числе экспериментов вероятность средняя вероятность успешных
+событий совпадает с вероятностью успеха)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
 
 
 <nav id="sitenav">
@@ -304,7 +447,7 @@ i \ne j \,\,\,\, P\left(\displaystyle \bigsqcup_{i =
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="лекция-8.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

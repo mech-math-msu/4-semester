@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 6</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="6" id="лекция-6">Лекция 6</h1>
+<h2 data-number="6.1" id="плоские-кривые-в-mathbbrn">Плоские кривые в
+<span class="math inline">\(\mathbb{R}^n\)</span></h2>
+<div id="lemma-1">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(a(t) \in \mathbb{R}^n\)</span> – гладкая функция,
+<span class="math inline">\(t \in U(t_0)\)</span>, причем <span
+class="math inline">\(|a(t)| = c\)</span>. Тогда <span
+class="math inline">\(\dot{a}\perp a\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\((a, a) = c^2 \implies (a, a)&#39; = 0 =
+2(a, \dot{a}) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="lemma-2">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(Q(t)\)</span> и <span
+class="math inline">\(A(t)\)</span> гладкие <span
+class="math inline">\(n\times n\)</span>-мерные матричные функции
+заданные на <span class="math inline">\(t \in [a, b]\)</span>. Пусть
+<span class="math inline">\(\dot{Q} = QA \,\,\,\, \forall t \in [a,
+b]\)</span>. Тогда</p>
+<ol type="1">
+<li>Если <span class="math inline">\(Q(t)\)</span> ортогональна для
+любого <span class="math inline">\(t\)</span>, то <span
+class="math inline">\(A\)</span> – кососимметрическая,</li>
+<li>Если <span class="math inline">\(A(t)\)</span> кососимметрическая
+для любого <span class="math inline">\(t\)</span> и <span
+class="math inline">\(\exists t_0: \,\,\,\, Q(t_0)\)</span>
+ортогональна, то <span class="math inline">\(Q(t)\)</span> ортогональна
+для любого <span class="math inline">\(t\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span> научиться
+дифференцировать матрицы и вспомнить все определения <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="6.1.1"
+id="регулярные-несамопересекающиеся-кривые-в-евклидовом-пространстве">Регулярные
+несамопересекающиеся кривые в евклидовом пространстве</h3>
+<div id="definition-24">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\mathbb{R}^n, \,\,\,\, x = (x^1, \ldots,
+x^n)\)</span> (сейчас кривая интересует, как образ)</p>
+<p><em>Гладкая регулярная вложенная кривая</em> в <span
+class="math inline">\(\mathbb{R}^n\)</span> – это множество точек <span
+class="math inline">\(\gamma\)</span> евклидова пространства, которые
+можно задать параметрическими уравнениями <span class="math inline">\(x
+= \mathbf{r}(t) = (x^1(t), \ldots, x^n(t)), \,\,\,\, x^i =
+x^i(t)\)</span>, причем:</p>
+<ol type="1">
+<li><span class="math inline">\(t \in [a, b]\)</span>,</li>
+<li><span class="math inline">\(\mathbf{r}(t) \in C^{\infty}([a,
+b])\)</span>,</li>
+<li><span class="math inline">\(\dot{\mathbf{r}}(t)\ne 0 \,\,\,\,
+\forall t \in [a, b]\)</span>,</li>
+<li><span class="math inline">\(\mathbf{r}(t_1) = \mathbf{r}(t_2) \iff
+t_1 = t_2\)</span>.</li>
+</ol>
+<p>Рассмотрим <span class="math inline">\(s(t) =
+\displaystyle\int\limits_{t_0}^t |\dot{\mathbf{r}}(t_1)|dt_1\)</span> –
+длина дуги кривой от точки <span
+class="math inline">\(\mathbf{r}(t_0)\)</span> до точки <span
+class="math inline">\(\mathbf{r}(t)\)</span>.</p>
+<div id="lemma-3">
+<p><span class="margin-lft"><strong>Лемма: </strong></span><span
+class="math inline">\(s(t) \in C^{\infty}([a, b])\)</span> и <span
+class="math inline">\(\dot{s} &gt; 0\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<p><em>Параметризация кривой</em> <span class="math inline">\(\gamma:
+[a, b] \to \mathbb{R}^n\)</span> – это отображение <span
+class="math inline">\(\mathbb{R} \to [a, b]\)</span>.</p>
+<p>Параметризация <span class="math inline">\(\gamma = \mathbf{r}(s) =
+\mathbf{r}(t(s))\)</span> – <em>натуральная</em>, а <span
+class="math inline">\(s\)</span> – <em>натуральный параметр</em>.</p>
+</div>
+<h3 data-number="6.1.2" id="уравнение-касательной">Уравнение
+касательной</h3>
+<div id="definition-25">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Касательная у кривой <span
+class="math inline">\(\gamma\)</span> в точке <span
+class="math inline">\(\mathbf{r}(t_0)\)</span> – это прямая, проходящая
+через <span class="math inline">\(\mathbf{r}(t_0)\)</span> в направлении
+<span class="math inline">\(\dot{\mathbf{r}}(t_0)\)</span>.</p>
+</div>
+<div id="statement-4">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>корректность определения</em>) Касательная не
+зависит от параметризации.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Рассмотрим параметризацию <span class="math inline">\(t =
+t(\tau)\)</span>. Тогда <span
+class="math inline">\(\dot{\mathbf{r}}(\tau) = \left(\begin{array}{c}
+\frac{\partial x^1(t(\tau))}{\partial \tau}\\ \vdots \\ \frac{\partial
+x^n(t(\tau))}{\partial \tau}\end{array}\right) = \frac{\partial
+t}{\partial \tau}\cdot \dot{\mathbf{r}}(t)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-26">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(x = \mathbf{r}(t_0) + \tau\cdot
+\dot{\mathbf{r}}(t_0)\)</span> – <em>уравнение касательной</em> к кривой
+<span class="math inline">\(\gamma\)</span> в точке <span
+class="math inline">\(\mathbf{r}(t_0)\)</span>.</p>
+</div>
+<div id="definition-27">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\gamma_1\)</span> и <span
+class="math inline">\(\gamma_2\)</span> – кривые, <span
+class="math inline">\(x = \mathbf{r}_1(s)\)</span> и <span
+class="math inline">\(x = \mathbf{r}_2(s)\)</span> – их натуральные
+параметризации и <span class="math inline">\(\exists s_0: \,\,\,\,
+\mathbf{r}_1(s_0) = \mathbf{r}_2(s_0) = P\)</span>.</p>
+<p>Кривые <span class="math inline">\(\gamma_1\)</span> и <span
+class="math inline">\(\gamma_2\)</span> имеют в точке <span
+class="math inline">\(P\)</span> <em>касание порядка</em> <span
+class="math inline">\(k\)</span>, если <span
+class="math inline">\(\mathbf{r}_1(s) - \mathbf{r}_2(s) = o((s -
+s_0)^k)\)</span></p>
+</div>
+<div id="statement-5">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(\gamma_1\)</span> и <span
+class="math inline">\(\gamma_2\)</span> имеют в точке <span
+class="math inline">\(\mathbf{r}_1(s_0)\)</span> касание порядка <span
+class="math inline">\(k\)</span>, если натуральную параметризацию на
+этих кривых можно выбрать так, чтобы <span
+class="math inline">\(\mathbf{r}_1(s_0) = \mathbf{r}_2(s_0), \ldots,
+\mathbf{r}_1^{(k)}(s_0) = \mathbf{r}_2^{(k)}(s_0)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="theorem-0">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть в
+точке <span class="math inline">\(s_0 \,\,\,\, \mathbf{r}&#39;&#39;(s_0)
+\ne 0\)</span>. Тогда <span class="math inline">\(\exists !\)</span>
+окружность, имеющая касание второго порядка с данной кривой в точке
+<span class="math inline">\(s_0\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="definition-28">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Центр
+построенной выше окружности – <em>центр кривизны</em>,</p>
+<p>Радиус построенной выше окружности – <em>радиус кривизны</em>,</p>
+<p><span class="math inline">\(\frac1{R} = |\mathbf{r}&#39;&#39;(s_0)| =
+k(s_0)\)</span> – <em>кривизна кривой</em> в точке <span
+class="math inline">\(s_0\)</span>.</p>
+<p><span class="math inline">\(n(s_0) =
+\frac{\mathbf{r}&#39;&#39;(s_0)}{|\mathbf{r}&#39;&#39;(s_0)|}\)</span> –
+вектор нормали к <span class="math inline">\(\gamma\)</span> в точке
+<span class="math inline">\(s_0\)</span>.</p>
+<p>Пара <span class="math inline">\((\mathbf{r} = v, n)\)</span> –
+<em>репер Френе</em> (ортогональная система координат).</p>
+</div>
+<h2 data-number="6.2" id="формулы-френе">Формулы Френе</h2>
+<div id="statement-6">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>плоские формулы Френе</em>) Пусть <span
+class="math inline">\(\forall s \,\,\,\, \mathbf{r}&#39;&#39;(s) \ne
+0\)</span>. Тогда <span class="math inline">\(\begin{cases}
+v&#39; = kn\\
+n&#39; = -kv
+\end{cases}\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

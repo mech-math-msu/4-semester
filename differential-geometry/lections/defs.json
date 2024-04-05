@@ -33,5 +33,115 @@
         "keyword": "область криволинейные координаты",
         "html": "<p><a href=\"лекция-2.-координаты.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(D \\subset \\mathbb{R}^n, \\,\\,\\,\\, (x^1,\n\\ldots, x^n)\\)</span> – <em>область</em>, то есть открытое, связное\nмножество. В <span class=\"math inline\">\\(D\\)</span> заданы\n<em>криволинейные координаты</em> <span class=\"math inline\">\\((y^1,\n\\ldots, y^n)\\)</span>, если задано <span class=\"math inline\">\\(f: \\Omega\n\\to D\\)</span>, где <span class=\"math inline\">\\(\\Omega \\subset\n\\mathbb{R}^n\\)</span>.</p>",
         "url": "лекция-2.-координаты.html#definition-6"
+    },
+    {
+        "keyword": "регулярна диффеоморфизм",
+        "html": "<p><a href=\"лекция-2.-координаты.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСистема криволинейных координат <em>регулярна</em>, если <span\nclass=\"math inline\">\\(f\\)</span> и <span\nclass=\"math inline\">\\(f^{-1}\\)</span> бесконечно дифференцируемы (в\nтаком случае <span class=\"math inline\">\\(f\\)</span> –\n<em>диффеоморфизм</em>).</p>",
+        "url": "лекция-2.-координаты.html#definition-7"
+    },
+    {
+        "keyword": "гладкая элементарная параметризованная кривая траектория параметрические уравнения кривой",
+        "html": "<p><a href=\"лекция-3.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Гладкая элементарная параметризованная кривая</em> в <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span> – это гладкое <span\nclass=\"math inline\">\\((\\in C^{\\infty}(\\mathbb{R}^n))\\)</span>\nотображение <span class=\"math inline\">\\(\\gamma: [a, b] \\to\n\\mathbb{R}^n\\)</span>, то есть набор функций <span\nclass=\"math inline\">\\(x^i = x^i(t), \\,\\,\\,\\, t \\in [a, b], \\,\\,\\,\\,\nx^i(t) \\in C^{\\infty}([a, b]), \\,\\,\\,\\, i \\in \\{1, \\ldots,\nn\\}\\)</span>.</p>\n<p>Кривая – это набор отображений <span\nclass=\"math inline\">\\(\\{x^i(t)\\}\\)</span>, а не образ. Образ – это\n<em>траектория</em>. То есть у двух кривых может быть один образ.</p>\n<p><span class=\"math inline\">\\(\\mathbf{x} = \\mathbf{r}(t) =\n\\left(\\begin{array}{c} x^1(t)\\\\ \\vdots \\\\\nx^n(t)\\end{array}\\right)\\)</span> – <em>параметрические уравнения\nкривой</em>.</p>",
+        "url": "лекция-3.html#definition-8"
+    },
+    {
+        "keyword": "вектор скорости в точке регулярна",
+        "html": "<p><a href=\"лекция-3.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Вектор скорости</em> кривой <span\nclass=\"math inline\">\\(\\gamma\\)</span> <em>в точке</em> <span\nclass=\"math inline\">\\(t\\)</span> – это <span\nclass=\"math inline\">\\(\\dot{\\mathbf{r}}(t) = \\left(\\begin{array}{c}\n\\dot{x}^1(t)\\\\ \\vdots \\\\ \\dot{x}^n(t)\\end{array}\\right)\\)</span>.</p>\n<p>Кривая <em>регулярна</em>, если <span\nclass=\"math inline\">\\(\\dot{\\mathbf{r}}(t) \\ne 0, \\,\\,\\,\\, \\forall t \\in\n[a, b]\\)</span>.</p>",
+        "url": "лекция-3.html#definition-9"
+    },
+    {
+        "keyword": "координатная линия",
+        "html": "<p><a href=\"лекция-3.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\Omega, D \\subset \\mathbb{R}^n, \\,\\,\\,\\, x^i\n= f^i(y^1, \\ldots, y^n)\\)</span> (локальные координаты)</p>\n<p>Зафиксируем точку <span class=\"math inline\">\\(y_0 \\in D \\,\\,\\,\\, y_0\n= (y_0^1, \\ldots, y_0^n)\\)</span>.</p>\n<p>Зададим кривую <span class=\"math inline\">\\(\\gamma_k(t): [-\n\\varepsilon, \\varepsilon] \\to \\mathbb{R}^n: \\,\\,\\,\\, t \\mapsto\n\\left(\\begin{array}{c} y_0^1(t)\\\\ \\vdots \\\\ y_0^k + t \\\\ \\vdots \\\\\ny_0^n(t)\\end{array}\\right)\\)</span> (фиксируем одну координату и идем\nвдоль нее).</p>\n<p><span class=\"math inline\">\\(k\\)</span>-<em>координатная линия</em> –\nэто <span class=\"math inline\">\\(\\gamma_k(t)\\)</span>. (то есть видов\nкоординатых линий столько же сколько размерность <span\nclass=\"math inline\">\\(n\\)</span>).</p>",
+        "url": "лекция-3.html#definition-10"
+    },
+    {
+        "keyword": "элементарная локальная мерная поверхность",
+        "html": "<p><a href=\"лекция-3.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть в <span class=\"math inline\">\\(\\mathbb{R}^N\\)</span> заданы\nкоординаты <span class=\"math inline\">\\(z = (z^1, \\ldots,\nz^N)\\)</span>.</p>\n<p>Множество <span class=\"math inline\">\\(M \\subset \\mathbb{R}^N\\)</span>\n– <em>элементарная локальная</em> <span\nclass=\"math inline\">\\(n\\)</span>-<em>мерная поверхность</em>, если <span\nclass=\"math inline\">\\(\\exists\\)</span> отображение <span\nclass=\"math inline\">\\(f: D \\to M\\)</span> (это отображение задает\nлокальные координаты на <span class=\"math inline\">\\(M\\)</span>, что\nследует из условий 1. и 2., а еще это регулярные координаты, что следует\nиз условия 3.), где <span class=\"math inline\">\\(D\\)</span> – шар в <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span> и выполнено:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(f\\)</span> – гомеоморфизм <span\nclass=\"math inline\">\\(D\\)</span> и <span\nclass=\"math inline\">\\(M\\)</span>,</li>\n<li><span class=\"math inline\">\\(f\\)</span> – гладкое,</li>\n<li><span class=\"math inline\">\\(\\operatorname{rk}\\frac{\\partial\nf^i}{\\partial x_j} = n \\,\\,\\,\\, \\forall x \\in D\\)</span></li>\n</ol>",
+        "url": "лекция-3.html#definition-11"
+    },
+    {
+        "keyword": "мерное подмногообразие",
+        "html": "<p><a href=\"лекция-3.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(M \\subset \\mathbb{R}^N\\)</span> – <span\nclass=\"math inline\">\\(n\\)</span>-<em>мерное подмногообразие</em>, если\n<span class=\"math inline\">\\(\\forall P \\in M \\,\\,\\,\\, \\exists\\)</span>\nокрестность <span class=\"math inline\">\\(U_P \\subset \\mathbb{R}^N:\n\\,\\,\\,\\, M \\cap U_P\\)</span> – элементарная локальная <span\nclass=\"math inline\">\\(n\\)</span>-мерная поверхность.</p>",
+        "url": "лекция-3.html#definition-12"
+    },
+    {
+        "keyword": "гладкая кривая на мерном подмногообразии",
+        "html": "<p><a href=\"лекция-3.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Гладкая кривая на</em> <span\nclass=\"math inline\">\\(n\\)</span>-<em>мерном подмногообразии</em> <span\nclass=\"math inline\">\\(M \\subset \\mathbb{R}^N\\)</span> – это гладкое\nотображение <span class=\"math inline\">\\(\\gamma: [a, b] \\to M, \\,\\,\\,\\, t\n\\in [a, b], \\,\\,\\,\\, \\gamma(t) \\in M\\)</span></p>",
+        "url": "лекция-3.html#definition-13"
+    },
+    {
+        "keyword": "касательный вектор",
+        "html": "<p><a href=\"лекция-3.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Касательный вектор</em> к <span class=\"math inline\">\\(M\\)</span> в\nточке <span class=\"math inline\">\\(P\\)</span> – это вектор скорости\nнекоторой гладкой кривой, проходящей через точку <span\nclass=\"math inline\">\\(P\\)</span>.</p>",
+        "url": "лекция-3.html#definition-17"
+    },
+    {
+        "keyword": "касательное пространство к поверхности",
+        "html": "<p><a href=\"лекция-3.html#definition-14\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a> В\nкаждой точке <span class=\"math inline\">\\(P\\in \\mathbb{R}^n\\)</span>\n<span class=\"math inline\">\\(n\\)</span>-мерного подмногообразия в <span\nclass=\"math inline\">\\(\\mathbb{R}^N\\)</span> заданы локальные координаты\nи существует <span class=\"math inline\">\\(n\\)</span> линейно независимых\nкасательных векторов к координатым линиям. Линейная оболочка этих\nвекторов <span class=\"math inline\">\\(T_p(M)\\)</span> – это <span\nclass=\"math inline\">\\(n\\)</span>-мерное подпространство в <span\nclass=\"math inline\">\\(\\mathbb{R}^N\\)</span>, которое называется\n<em>касательное пространство к поверхности</em> <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span>.</p>",
+        "url": "лекция-3.html#definition-14"
+    },
+    {
+        "keyword": "длина кривой",
+        "html": "<p><a href=\"лекция-4.html#definition-15\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\mathbb{R}^n, \\,\\,\\,\\, x = (x^1,\n\\ldots, x^n)\\)</span> и <span class=\"math inline\">\\(\\gamma: [a, b]\\to\n\\mathbb{R}^n\\)</span> кривая с радиус-вектором <span\nclass=\"math inline\">\\(\\mathbf{r}(t) = \\left(\\begin{array}{c} x^1(t)\\\\\n\\vdots \\\\ x^n(t)\\end{array}\\right)\\)</span>.</p>\n<p><em>Длина кривой</em> <span class=\"math inline\">\\(\\gamma\\)</span> –\nэто <span class=\"math inline\">\\(l(\\gamma) = \\displaystyle\\int\\limits_a^b\n|\\dot{\\mathbf{r}}(t)|dt\\)</span></p>\n<p>Длина кривой не совпадает с геометрической длиной, то есть при\nдвижении туда-обратно длина учитывается несколько раз, но если кривая\nрегулярна, то длина совпадает с геометрической.</p>",
+        "url": "лекция-4.html#definition-15"
+    },
+    {
+        "keyword": "риманова метрика",
+        "html": "<p><a href=\"лекция-4.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Риманова метрика</em> – это соответствие, сопоставляющее каждой\nточке <span class=\"math inline\">\\(P\\)</span> <span\nclass=\"math inline\">\\(n\\)</span>-мерного подмногообразия в <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span> скалярное произведение в\nкасательной поверхности <span class=\"math inline\">\\(T_P(M)\\)</span>\nгладко зависящее от точки <span class=\"math inline\">\\(P\\)</span>.</p>",
+        "url": "лекция-4.html#definition-16"
+    },
+    {
+        "keyword": "длина косинус угла между касательными векторами",
+        "html": "<p><a href=\"лекция-4.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Длина</em> <span class=\"math inline\">\\(|X|\\)</span> – это корень из\nскалярного квадрата <span class=\"math inline\">\\(\\sqrt{(X,\nX)}\\)</span>.</p>\n<p><em>Косинус угла между касательными векторами</em> <span\nclass=\"math inline\">\\(X\\)</span> и <span\nclass=\"math inline\">\\(Y\\)</span> – это <span\nclass=\"math inline\">\\(\\frac{(X, Y)}{|X|\\cdot |Y|}\\)</span>.</p>",
+        "url": "лекция-4.html#definition-18"
+    },
+    {
+        "keyword": "индуцированная риманова метрика",
+        "html": "<p><a href=\"лекция-5.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M\\)</span> – <span\nclass=\"math inline\">\\(n\\)</span>-мерное многообразие в <span\nclass=\"math inline\">\\(\\mathbb{R}^N\\)</span>. <em>Индуцированная риманова\nметрика</em> на <span class=\"math inline\">\\(M\\)</span> – это <span\nclass=\"math inline\">\\((X, Y)_{T_P(M)} := (X,\nY)_{\\mathbb{R}^N}\\)</span>.</p>",
+        "url": "лекция-5.html#definition-19"
+    },
+    {
+        "keyword": "диффеоморфизм",
+        "html": "<p><a href=\"лекция-5.html#definition-20\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГладкое биективное отображение <span class=\"math inline\">\\(f: M_1^n \\to\nM_2^m\\)</span>, такое, что <span class=\"math inline\">\\(f^{-1}\\)</span>\nгладкое, – <em>диффеоморфизм</em> многообразий <span\nclass=\"math inline\">\\(M_1^n\\)</span> и <span\nclass=\"math inline\">\\(M_2^m\\)</span>.</p>",
+        "url": "лекция-5.html#definition-20"
+    },
+    {
+        "keyword": "дифференциал отображения",
+        "html": "<p><a href=\"лекция-5.html#definition-21\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЛинейное отображение <span class=\"math inline\">\\(T_P(M_1) \\to T_Q(M_2):\nX \\to Y\\)</span> – <em>дифференциал отображения</em> <span\nclass=\"math inline\">\\(f\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span>. <strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(Y = d_Pf(X)\\)</span>.</p>",
+        "url": "лекция-5.html#definition-21"
+    },
+    {
+        "keyword": "изометрия",
+        "html": "<p><a href=\"лекция-5.html#definition-22\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M_1^n\\)</span> и <span\nclass=\"math inline\">\\(M_2^m\\)</span> – многообразия с Римановыми\nметриками и <span class=\"math inline\">\\(f: M_1^n \\to M_2^m\\)</span> –\nдиффеоморизм. <span class=\"math inline\">\\(f\\)</span> –\n<em>изометрия</em>, если <span class=\"math inline\">\\(\\forall P \\in M_1\n\\,\\,\\,\\, \\forall X, Y \\in T_P(M_1) \\,\\,\\,\\, (X, Y)_{M_1} = (d_Pf(X), d_P\nf(Y))_{M_2}\\)</span>. (Изометрия – это диффеоморфизм, созраняющий\nметрику)</p>",
+        "url": "лекция-5.html#definition-22"
+    },
+    {
+        "keyword": "локальная изометрия",
+        "html": "<p><a href=\"лекция-5.html#definition-23\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Локальная изометрия</em> – это такое отображение <span\nclass=\"math inline\">\\(f\\)</span> многообразий, что у каждой точки\nпервого многообразия существует окрестность <span\nclass=\"math inline\">\\(U\\)</span>, такая, что <span\nclass=\"math inline\">\\(f: U \\to f(U)\\)</span> – изометрия.</p>",
+        "url": "лекция-5.html#definition-23"
+    },
+    {
+        "keyword": "гладкая регулярная вложенная кривая доказательство: параметризация кривой натуральная натуральный параметр",
+        "html": "<p><a href=\"лекция-6.html#definition-24\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\mathbb{R}^n, \\,\\,\\,\\, x = (x^1, \\ldots,\nx^n)\\)</span> (сейчас кривая интересует, как образ)</p>\n<p><em>Гладкая регулярная вложенная кривая</em> в <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span> – это множество точек <span\nclass=\"math inline\">\\(\\gamma\\)</span> евклидова пространства, которые\nможно задать параметрическими уравнениями <span class=\"math inline\">\\(x\n= \\mathbf{r}(t) = (x^1(t), \\ldots, x^n(t)), \\,\\,\\,\\, x^i =\nx^i(t)\\)</span>, причем:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(t \\in [a, b]\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\mathbf{r}(t) \\in C^{\\infty}([a,\nb])\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\dot{\\mathbf{r}}(t)\\ne 0 \\,\\,\\,\\,\n\\forall t \\in [a, b]\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\mathbf{r}(t_1) = \\mathbf{r}(t_2) \\iff\nt_1 = t_2\\)</span>.</li>\n</ol>\n<p>Рассмотрим <span class=\"math inline\">\\(s(t) =\n\\displaystyle\\int\\limits_{t_0}^t |\\dot{\\mathbf{r}}(t_1)|dt_1\\)</span> –\nдлина дуги кривой от точки <span\nclass=\"math inline\">\\(\\mathbf{r}(t_0)\\)</span> до точки <span\nclass=\"math inline\">\\(\\mathbf{r}(t)\\)</span>.</p>\n<div id=\"lemma-3\">\n<p><span class=\"math inline\">\\(s(t) \\in C^{\\infty}([a, b])\\)</span> и\n<span class=\"math inline\">\\(\\dot{s} &gt; 0\\)</span>.</p>\n<p><em>Доказательство:</em> <span\nclass=\"math inline\">\\(\\,\\,\\,\\,\\blacksquare\\)</span></p>\n</div>\n<p><em>Параметризация кривой</em> <span class=\"math inline\">\\(\\gamma:\n[a, b] \\to \\mathbb{R}^n\\)</span> – это отображение <span\nclass=\"math inline\">\\(\\mathbb{R} \\to [a, b]\\)</span>.</p>\n<p>Параметризация <span class=\"math inline\">\\(\\gamma = \\mathbf{r}(s) =\n\\mathbf{r}(t(s))\\)</span> – <em>натуральная</em>, а <span\nclass=\"math inline\">\\(s\\)</span> – <em>натуральный параметр</em>.</p>",
+        "url": "лекция-6.html#definition-24"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"лекция-6.html#definition-25\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКасательная у кривой <span class=\"math inline\">\\(\\gamma\\)</span> в точке\n<span class=\"math inline\">\\(\\mathbf{r}(t_0)\\)</span> – это прямая,\nпроходящая через <span class=\"math inline\">\\(\\mathbf{r}(t_0)\\)</span> в\nнаправлении <span\nclass=\"math inline\">\\(\\dot{\\mathbf{r}}(t_0)\\)</span>.</p>",
+        "url": "лекция-6.html#definition-25"
+    },
+    {
+        "keyword": "уравнение касательной",
+        "html": "<p><a href=\"лекция-6.html#definition-26\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(x = \\mathbf{r}(t_0) + \\tau\\cdot\n\\dot{\\mathbf{r}}(t_0)\\)</span> – <em>уравнение касательной</em> к кривой\n<span class=\"math inline\">\\(\\gamma\\)</span> в точке <span\nclass=\"math inline\">\\(\\mathbf{r}(t_0)\\)</span>.</p>",
+        "url": "лекция-6.html#definition-26"
+    },
+    {
+        "keyword": "касание порядка",
+        "html": "<p><a href=\"лекция-6.html#definition-27\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\gamma_1\\)</span> и <span\nclass=\"math inline\">\\(\\gamma_2\\)</span> – кривые, <span\nclass=\"math inline\">\\(x = \\mathbf{r}_1(s)\\)</span> и <span\nclass=\"math inline\">\\(x = \\mathbf{r}_2(s)\\)</span> – их натуральные\nпараметризации и <span class=\"math inline\">\\(\\exists s_0: \\,\\,\\,\\,\n\\mathbf{r}_1(s_0) = \\mathbf{r}_2(s_0) = P\\)</span>.</p>\n<p>Кривые <span class=\"math inline\">\\(\\gamma_1\\)</span> и <span\nclass=\"math inline\">\\(\\gamma_2\\)</span> имеют в точке <span\nclass=\"math inline\">\\(P\\)</span> <em>касание порядка</em> <span\nclass=\"math inline\">\\(k\\)</span>, если <span\nclass=\"math inline\">\\(\\mathbf{r}_1(s) - \\mathbf{r}_2(s) = o((s -\ns_0)^k)\\)</span></p>",
+        "url": "лекция-6.html#definition-27"
+    },
+    {
+        "keyword": "центр кривизны радиус кривизны кривизна кривой репер френе",
+        "html": "<p><a href=\"лекция-6.html#definition-28\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЦентр построенной выше окружности – <em>центр кривизны</em>,</p>\n<p>Радиус построенной выше окружности – <em>радиус кривизны</em>,</p>\n<p><span class=\"math inline\">\\(\\frac1{R} = |\\mathbf{r}&#39;&#39;(s_0)| =\nk(s_0)\\)</span> – <em>кривизна кривой</em> в точке <span\nclass=\"math inline\">\\(s_0\\)</span>.</p>\n<p><span class=\"math inline\">\\(n(s_0) =\n\\frac{\\mathbf{r}&#39;&#39;(s_0)}{|\\mathbf{r}&#39;&#39;(s_0)|}\\)</span> –\nвектор нормали к <span class=\"math inline\">\\(\\gamma\\)</span> в точке\n<span class=\"math inline\">\\(s_0\\)</span>.</p>\n<p>Пара <span class=\"math inline\">\\((\\mathbf{r} = v, n)\\)</span> –\n<em>репер Френе</em> (ортогональная система координат).</p>",
+        "url": "лекция-6.html#definition-28"
     }
 ]

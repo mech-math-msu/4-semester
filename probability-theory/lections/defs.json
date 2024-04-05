@@ -88,5 +88,50 @@
         "keyword": "вероятностное пространство",
         "html": "<p><a href=\"лекция-7.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТройка <span class=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span> –\n<em>вероятностное пространство</em>.</p>",
         "url": "лекция-7.html#definition-17"
+    },
+    {
+        "keyword": "распределение случайной величины",
+        "html": "<p><a href=\"лекция-7.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\xi\\)</span> – случайная величина на\nпространстве <span class=\"math inline\">\\((\\Omega, \\mathcal{F},\nP)\\)</span>. <em>Распределение случайной величины</em> <span\nclass=\"math inline\">\\(\\xi\\)</span> – это функция <span\nclass=\"math inline\">\\(F_{\\xi}(x) = P\\{w \\in \\Omega: \\,\\,\\,\\, \\xi(w)\n\\leqslant x\\}\\)</span>.</p>",
+        "url": "лекция-7.html#definition-18"
+    },
+    {
+        "keyword": "непрерывна",
+        "html": "<p><a href=\"лекция-7.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСлучайная величина <span class=\"math inline\">\\(\\xi\\)</span>\n<em>непрерывна</em>, если непрерывна ее функция распределния.</p>",
+        "url": "лекция-7.html#definition-19"
+    },
+    {
+        "keyword": "абсолютно непрерывна плотность распределения случайной величины",
+        "html": "<p><a href=\"лекция-7.html#definition-20\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСлучайная величина <span class=\"math inline\">\\(\\xi\\)</span> –\n<em>абсолютно непрерывна</em>, если существует функция <span\nclass=\"math inline\">\\(f: \\mathbb{R} \\to \\mathbb{R}\\)</span>, такая,\nчто</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\forall x \\in \\mathbb{R} \\,\\,\\,\\, f(x)\n\\geqslant 0\\)</span>,</li>\n<li><span\nclass=\"math inline\">\\(\\displaystyle\\int\\limits_{-\\infty}^{+\\infty}\nf(x)dx = 1\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall x \\in \\mathbb{R} \\,\\,\\,\\,\nF_{\\xi}(x) = \\displaystyle\\int\\limits_{-\\infty}^x f(t)dt\\)</span>.</li>\n</ol>\n<p>В таком случае <span class=\"math inline\">\\(f(x)\\)</span> –\n<em>плотность распределения случайной величины</em> <span\nclass=\"math inline\">\\(\\xi\\)</span>.</p>",
+        "url": "лекция-7.html#definition-20"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"лекция-8.html#definition-21\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМатематическое ожидание абсолютно непрерывной случайной величины <span\nclass=\"math inline\">\\(\\xi\\)</span> с плотностью распределения <span\nclass=\"math inline\">\\(f_{\\xi}(x)\\)</span> – это</p>\n<p><span class=\"math inline\">\\(E\\xi =\n\\displaystyle\\int\\limits_{-\\infty}^{\\infty} xf_{\\xi}(x)dx\\)</span></p>",
+        "url": "лекция-8.html#definition-21"
+    },
+    {
+        "keyword": "момент распределения",
+        "html": "<p><a href=\"лекция-8.html#definition-22\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(i\\)</span>-й <em>момент распределения</em> –\nэто <span class=\"math inline\">\\(E\\xi^i\\)</span>.</p>",
+        "url": "лекция-8.html#definition-22"
+    },
+    {
+        "keyword": "квантиль уровня",
+        "html": "<p><a href=\"лекция-8.html#definition-23\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Квантиль уровня</em> <span class=\"math inline\">\\(\\alpha \\in (0,\n1)\\)</span> распределения <span\nclass=\"math inline\">\\(F_{\\xi}(x)\\)</span> (в случае строго возрастающей\n<span class=\"math inline\">\\(F_{\\xi}(x)\\)</span>) – это <span\nclass=\"math inline\">\\(x_{\\alpha}: \\,\\,\\,\\, F_{\\xi}(x_{\\alpha}) = \\{w:\n\\,\\,\\,\\, \\xi(w) \\leqslant x_{\\alpha}\\} = \\alpha\\)</span></p>",
+        "url": "лекция-8.html#definition-23"
+    },
+    {
+        "keyword": "медиана",
+        "html": "<p><a href=\"лекция-8.html#definition-24\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Медиана</em> – это квантиль уровня <span\nclass=\"math inline\">\\(0.5\\)</span>.</p>",
+        "url": "лекция-8.html#definition-24"
+    },
+    {
+        "keyword": "верхней и нижней квартилью",
+        "html": "<p><a href=\"лекция-8.html#definition-25\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Верхней и нижней квартилью</em> называются квантили уровней <span\nclass=\"math inline\">\\(0.75\\)</span> и <span\nclass=\"math inline\">\\(0.25\\)</span> соответственно.</p>",
+        "url": "лекция-8.html#definition-25"
+    },
+    {
+        "keyword": "мода",
+        "html": "<p><a href=\"лекция-8.html#definition-26\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Мода</em> абсолютно непрерывного распределения – это точка\nлокального максимума плотности распределения.</p>",
+        "url": "лекция-8.html#definition-26"
     }
 ]
