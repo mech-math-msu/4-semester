@@ -93,5 +93,15 @@
         "keyword": "нулевое среднее быстроосциллирующий интеграл",
         "html": "<p><a href=\"лекция-12.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f(x)\\in C(\\mathbb{R})\\)</span> с\nпериодом <span class=\"math inline\">\\(2T\\)</span>. Пусть у <span\nclass=\"math inline\">\\(f(x)\\)</span> <em>нулевое среднее</em>, то есть\n<span class=\"math inline\">\\(\\displaystyle\\int\\limits_{-T}^{T} f(x)dx =\n0\\)</span> (это условие обеспечивает периодичность первообразной). Тогда\nинтеграл вида <span class=\"math inline\">\\(F(\\lambda) =\n\\displaystyle\\int\\limits_{a}^{w} g(x)f(\\lambda x)dx\\)</span>, где <span\nclass=\"math inline\">\\(g(x): \\,\\,\\,\\, \\exists\n\\displaystyle\\int\\limits_a^w |g(x)|dx\\)</span> – <em>быстроосциллирующий\nинтеграл</em>.</p>",
         "url": "лекция-12.html#definition-18"
+    },
+    {
+        "keyword": "косинус преобразования фурье",
+        "html": "<p><a href=\"лекция-14.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\hat{f}_c(v) = \\frac1{2\\sqrt{\\pi}}\n\\displaystyle\\int\\limits_{-\\infty}^{+\\infty} f(t)\\cos(vt)dt\\)</span> –\n<em>косинус преобразования Фурье</em>.</p>",
+        "url": "лекция-14.html#definition-19"
+    },
+    {
+        "keyword": "синус преобразования фурье",
+        "html": "<p><a href=\"лекция-14.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\hat{f}_s(v) = \\frac1{2\\sqrt{\\pi}}\n\\displaystyle\\int\\limits_{-\\infty}^{+\\infty} f(t)\\sin(vt)dt\\)</span> –\n<em>синус преобразования Фурье</em>.</p>\n<p>Так как <span class=\"math inline\">\\(f\\)</span> – нечетная <span\nclass=\"math inline\">\\(\\hat{f}_s(v) = \\frac1{2\\sqrt{\\pi}}\n\\displaystyle\\int\\limits_{-\\infty}^{+\\infty} f(t)\\sin(vt)dt =\n\\frac1{\\sqrt{\\pi}} \\displaystyle\\int\\limits_{0}^{+\\infty}\nf(t)\\sin(vt)dt\\)</span></p>",
+        "url": "лекция-14.html#definition-19"
     }
 ]

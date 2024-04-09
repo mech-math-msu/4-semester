@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 14</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  //loader: {load: ['[tex]/esint']},
+                  //tex: {packages: {'[+]': ['esint']}}
+                    tex: {
+                        macros: {
+                            oiint: "{\\mathop{\\vcenter{\\!\\int\\!\\!\\!\\!\\!\\!\\bigcirc\\!\\!\\!\\!\\!\\int}}\\nolimits}"
+                        }
+                    }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-13.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="14" id="лекция-14">Лекция 14</h1>
+<h3 data-number="14.0.1"
+id="преобразовываем-формулы-фурье">Преобразовываем формулы Фурье</h3>
+<p><span class="math display">\[f(x) =
+\frac1{\pi}\displaystyle\int\limits_{0}^{+\infty} \left(
+\displaystyle\int\limits_{-\infty}^{+\infty} f(t)\cos(v(x - t))dt
+\right) dv = \frac1{\pi}
+\displaystyle\int\limits_{0}^{+\infty}\left(\cos(vx)\displaystyle\int\limits_{-\infty}^{+\infty}
+f(t)\cdot \cos(vt) dt + \sin(vt)
+\displaystyle\int\limits_{-\infty}^{+\infty} f(t)\sin(vt)dt\right)
+dv=\]</span></p>
+<p>Тут прокол, потому что нужно доказывать отдельно сходимость каждого
+из интегралов. (но для норм. функций все верно). Пусть <span
+class="math inline">\(f\)</span> – четная. Если нечетная и определенная
+на положительной полуоси, то доопределяем.</p>
+<div id="definition-19">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\hat{f}_c(v) = \frac1{2\sqrt{\pi}}
+\displaystyle\int\limits_{-\infty}^{+\infty} f(t)\cos(vt)dt\)</span> –
+<em>косинус преобразования Фурье</em>.</p>
+</div>
+<p>Так как <span class="math inline">\(f\)</span> – четная берем от нуля
+до бесконечности <span class="math inline">\(= \sqrt{\frac{1}{\pi}}
+\displaystyle\int\limits_{0}^{+\infty} f(t)\cos(vt)dt\)</span>:</p>
+<p><span class="math display">\[f(x) = \sqrt{\frac1{\pi}}
+\displaystyle\int\limits_{0}^{+\infty}
+\hat{f}_c(v)\cos(vx)dv\]</span></p>
+<p>Получили прямое и обратное косинусное преобразование Фурье.</p>
+<div id="definition-19">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\hat{f}_s(v) = \frac1{2\sqrt{\pi}}
+\displaystyle\int\limits_{-\infty}^{+\infty} f(t)\sin(vt)dt\)</span> –
+<em>синус преобразования Фурье</em>.</p>
+<p>Так как <span class="math inline">\(f\)</span> – нечетная <span
+class="math inline">\(\hat{f}_s(v) = \frac1{2\sqrt{\pi}}
+\displaystyle\int\limits_{-\infty}^{+\infty} f(t)\sin(vt)dt =
+\frac1{\sqrt{\pi}} \displaystyle\int\limits_{0}^{+\infty}
+f(t)\sin(vt)dt\)</span></p>
+</div>
+<p><span class="math display">\[f(x) = \sqrt{\frac1{\pi}}
+\displaystyle\int\limits_{0}^{+\infty} \hat{f}_s(v)\cdot
+\sin(vx)dv\]</span></p>
+<p>Получили прямое и обратное синусное преобразование Фурье.</p>
+<p>Любая <span class="math inline">\(f\)</span> представляется как сумма
+четной <span class="math inline">\(\frac{f(x) + f(-x)}2\)</span> и
+нечетной <span class="math inline">\(\frac{f(x) - f(-x)}2\)</span>.</p>
+<p><span class="math display">\[f(x) =
+\frac1{\pi}\displaystyle\int\limits_{0}^{+\infty} \left(
+\displaystyle\int\limits_{-\infty}^{+\infty} (f_{+}(t) +
+f_{-}(t))\cos(v(x - t))dt \right) dv = \frac2{\pi}
+\displaystyle\int\limits_{0}^{+\infty} \left(\cos(vx)\cdot
+\displaystyle\int\limits_{0}^{+\infty}f_{+}\cdot \cos(vt)dt +
+\sin(vx)\cdot \displaystyle\int\limits_{0}^{+\infty}
+f_{-}\cdot\cos(vt)dt\right) dv\]</span></p>
+<p>Запишем формулу Фурье в комплексном виде:</p>
+<p><span class="math display">\[f(x) = \frac1{2\pi}
+\displaystyle\int\limits_{-\infty}^{+\infty}
+\left(\displaystyle\int\limits_{-\infty}^{+\infty} f(t) e^{iv(x - t)}
+dt\right) dv = \frac1{2\pi} \displaystyle\int\limits_{-\infty}^{+\infty}
+\left(\displaystyle\int\limits_{-\infty}^{+\infty} (f_{+} +
+f_{-})(\cos(v(x - t)) + i\sin(v(x - t))) dt\right) dv\]</span></p>
+<p><span class="math display">\[\frac1{2\pi}
+\displaystyle\int\limits_{-\infty}^{+\infty}
+\left(\displaystyle\int\limits_{-\infty}^{+\infty} f(t)(\cos(v(x - t)))
+dt + \frac{i}{2\pi}\displaystyle\int\limits_{-\infty}^{+\infty}
+f(t)(i\sin(v(x - t))) dt\right) dv = ... + i \cdot 0\]</span></p>
+<div id="theorem-28">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(f\)</span> кусочно-непрерывна, <span
+class="math inline">\(\exists
+\displaystyle\int\limits_{-\infty}^{+\infty} |f(x)|dx, \,\,\,\, \exists
+f&#39;_{+}\)</span> и <span class="math inline">\(f&#39;_{-}\)</span>
+(это пределы справа и слева). Тогда</p>
+<p><span class="math display">\[\hat{f}(\lambda) = \frac1{\sqrt{2\pi}}
+\displaystyle\int\limits_{-\infty}^{+\infty} f(t)e^{-i \lambda
+t}dt\]</span> и</p>
+<p><span class="math inline">\(f(x) = \frac1{\sqrt{2\pi}}
+\operatorname{v.p.} \displaystyle\int\limits_{-\infty}^{+\infty}
+\hat{f}(\lambda) e^{i \lambda x}d \lambda\)</span></p>
+<p>Главное значение в смысле Коши <span
+class="math inline">\(\operatorname{v.p.}\)</span> существует всегда и
+тут у нас прокол в предыдущих рассуждениях.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> без
+доказательства <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-29">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(f(x) \in C^(\mathbb{R}),\,\,\,\, \forall k \in
+\{0, \ldots, n\} \,\,\,\, \exists
+\displaystyle\int\limits_{-\infty}^{+\infty} |f^{(k)}(x)|dx, \,\,\,\,
+\exists \displaystyle \lim_{x\to \infty} f^{(k)} = 0\)</span>. Тогда</p>
+<p><span class="math display">\[|\hat{f}(\lambda)| =
+\frac{C}{|\lambda|^n}\]</span>, при <span
+class="math inline">\(|\lambda| \geqslant a\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\hat{f}(\lambda) = \frac1{\sqrt{2\pi}}
+\displaystyle\int\limits_{-\infty}^{+\infty} f(x)e^{-i \lambda x}dx =
+-\frac1{i \lambda} \cdot \frac1{\sqrt{2\pi}}
+\displaystyle\int\limits_{-\infty}^{+\infty} f&#39;(x)e^{-i \lambda x}dx
+= \frac{-i}{\lambda}\cdot \hat{f&#39;}(x)=\ldots=\)</span></p>
+<p><span class="math inline">\(\left(\frac{-i}{\lambda}\right)^n
+\hat{f^{(n)}}(\lambda), \,\,\,\, |\hat{f^{(n)}}(\lambda)| \leqslant
+\frac1{\sqrt{2\pi}} \displaystyle\int\limits_{-\infty}^{+\infty}
+|f^{(n)}(x)|dx \,\,\,\,\blacksquare\)</span></p>
+</div>
+<p>Если у <span class="math inline">\(f\)</span> существует интеграл от
+модуля и <span class="math inline">\(f\)</span> непрерывна. Тогда ее
+преобразование Фурье непрерывно. Прменяем признак Вейерштрасса.</p>
+<div id="theorem-30">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(\forall k \in \{0, \ldots, n\} \,\,\,\, \exists
+\displaystyle\int\limits_{-\infty}^{+\infty} |x^k \cdot f(x)|dx,
+\,\,\,\, f(x)\in C(\mathbb{R})\)</span>. Тогда <span
+class="math inline">\(\hat{f}(x) \in C^{(n)}(\mathbb{R})\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\exists
+\displaystyle\int\limits_{-\infty}^{+\infty}(-i)^n x^n f(x) e^{-i
+\lambda x} dx\)</span> сходится равномерно по параметру <span
+class="math inline">\(\lambda\)</span> и все промежуточные производные
+существуют (по теореме о дифференцировании несобственного интеграла с
+параметром) <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-13.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>
