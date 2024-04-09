@@ -544,21 +544,154 @@ class="math inline">\(\operatorname{Ker}\partial_n /
 гомологий</em>.</p>
 </div>
 <div id="definition-7">
-<p><span class="margin-lft"><strong>Определение:
-</strong></span>Нормальные люди (то есть которые умеют пользоваться
-компьютером и для которых <span class="math inline">\(14\)</span>
-треугольников, <span class="math inline">\(21\)</span> ребро и <span
-class="math inline">\(7\)</span> вершин – это не то чтобы очень много)
-вводят симплициальные гомологии на <em>симплициальных
-комплексах</em>.</p>
-<p><em>Симплициальный комплекс</em> – это семейство подмножеств
-множества <span class="math inline">\(\{1, \ldots, n\}\)</span>, такое,
-что …</p>
+<span class="margin-lft"><strong>Определение: </strong></span>
+<!-- Нормальные люди (то есть которые умеют пользоваться компьютером и для которых $14$ треугольников, $21$ ребро и $7$ вершин -- это не то чтобы очень много)-->
+<p>Часто вводят симплициальные гомологии на симплициальных
+комплексах.</p>
+<p><em>Симплициальный комплекс</em> – это семейство <span
+class="math inline">\(K\)</span> подмножеств множества <span
+class="math inline">\(\{1, \ldots, n\}\)</span>, такое, что <span
+class="math inline">\(\forall K&#39; \in K\)</span> в <span
+class="math inline">\(K\)</span> содержатся все подмножества <span
+class="math inline">\(K&#39;\)</span>.</p>
 </div>
-<h3 data-number="2.3.1"
+<h3 data-number="2.3.1" id="примеры-симлициальных-комплексов">Примеры
+симлициальных комплексов</h3>
+<h3 data-number="2.3.2"
 id="считаем-группы-гомологий-симплициального-комплекса">Считаем группы
 гомологий симплициального комплекса</h3>
-<p>Ща бахнем код. Я в себя верю.</p>
+<p>Ща бахнем код. Я в себя верю. Уже нет.</p>
+<blockquote>
+<p>Зависят ли группы гомологий от выбора <span
+class="math inline">\(\Delta\)</span>-комплекса на <span
+class="math inline">\(X\)</span>? (То есть, если два комплекса
+гомеоморфны, то изоморфны ли их группы гомологий? Или еще сильнее, будут
+ли изоморфны группы гомологий, если пространства лишь гомотопически
+эквивалентны?)</p>
+</blockquote>
+<h2 data-number="2.4" id="сингулярные-гомологии">Сингулярные
+гомологии</h2>
+<div id="definition-8">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Сингулярный</em> <span
+class="math inline">\(n\)</span>-<em>мерный симплекс</em> в пространстве
+<span class="math inline">\(X\)</span> – это
+<strong>отображение</strong> <span class="math inline">\(\sigma:
+\Delta^n \to X\)</span>. (Отображение, конечно, непрерывное.)</p>
+<p>Пусть <span class="math inline">\(C_n(X)\)</span> – свободная абелева
+группа с базисом, состоящим из сингулярных <span
+class="math inline">\(n\)</span>-мерных симплексов в <span
+class="math inline">\(X\)</span>.</p>
+<p>Элементы <span class="math inline">\(C_n(X)\)</span> – <em>цепи</em>
+(<em>сингулярные</em> <span class="math inline">\(n\)</span>-<em>мерные
+цепи</em> :) Это конечные формальные суммы <span
+class="math inline">\(\displaystyle \sum_{i}n_i \sigma_i\)</span>, где
+<span class="math inline">\(\sigma_i: \Delta^n \to X\)</span> и <span
+class="math inline">\(n_i \in \mathbb{Z}\)</span>. (а если базис
+бесконечный? и может ли он быть бесконечным?)</p>
+<p>Граничное отображение: <span class="math inline">\(\delta_n(\sigma) =
+\displaystyle \sum_{i = 1}^{n}(-1)^n \sigma_{|[v_0, \ldots, \hat{v}_i,
+\ldots, v_n]}\)</span>.</p>
+<p>Доказательство <a
+href="глава-2-гомологии.html#statement-0">утверждения</a> применимо и к
+сингулярным симплексам, поэтому <span class="math inline">\(\delta_n
+\delta_{n + 1} = 0\)</span> и, следовательно, можем определить:</p>
+<p><span class="math inline">\(H_n(X) = \operatorname{Ker}\delta_n /
+\operatorname{Img}\delta_{n + 1}\)</span> – <span
+class="math inline">\(n\)</span>-<em>я группа гомологий</em>
+пространства <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="lemma-0">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Гомеоморфные
+пространства имеют изоморфные группы сингулярных гомологий.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(X \cong Y\)</span>, то есть <span
+class="math inline">\(\exists f: X \to Y, \,\,\,\, f\)</span> –
+биективно и непрерывно в обе стороны.</p>
+<p><span class="math inline">\(f_{\star}: H_n(X) \to H_n(Y): \sigma \to
+f\circ \sigma\)</span> ну и <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<blockquote>
+<p>Появились вопросики: почему <span
+class="math inline">\(H_n(X)\)</span> конечно порожденная для <span
+class="math inline">\(\Delta\)</span>-комплекса с конечным числом
+симплексов (у нас ведь произвольные отображения)? И почему <span
+class="math inline">\(H_n(X) = 0\)</span>, если <span
+class="math inline">\(n\)</span> больше размерности комплекса.</p>
+</blockquote>
+<blockquote>
+<p>Вообще сингулярные гомологии можно рассматривать как частный случай
+симплициальных, просто взяв <em>сингулярный комплекс</em> пространства
+<span class="math inline">\(X\)</span>, который определяется, как <span
+class="math inline">\(\Delta\)</span>-комплекс, имеющий по одному <span
+class="math inline">\(n\)</span>-мерному симплексу для каждого
+сингулярного симплекса.</p>
+</blockquote>
+<div id="statement-1">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X_{\alpha}\)</span> компоненты линейной
+связности пространства <span class="math inline">\(X\)</span>. Тогда
+<span class="math inline">\(H_n(X) =
+\bigoplus_{\alpha}H_n(X_{\alpha})\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Образ линейно связного пространства линейно связен, поэтому все
+образы сингулярных <span class="math inline">\(n\)</span>-мерных
+симплексов не выходят за компоненты линейной связности. Поэтому можем
+собрать <span class="math inline">\(C_n(X)\)</span> как прямую сумму
+<span class="math inline">\(C_n(X_{\alpha})\)</span>. При этом
+сохраняются граничные отображения и, следовательно, группы гомологий
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-2">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> непусто и линейно связно. Тогда
+<span class="math inline">\(H_0(X)\cong \mathbb{Z}\)</span>. И,
+следовательно, для непустого пространства <span class="math inline">\(X
+\,\,\,\, H_0(X) \cong \mathbb{Z}^{\bigoplus m}\)</span>, где <span
+class="math inline">\(m\)</span> – количество компонент линейной
+связности.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="statement-3">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(X\)</span> точка, то <span
+class="math inline">\(H_0(X = \mathbb{Z}\)</span> и <span
+class="math inline">\(H_n(X) = 0, \,\,\,\, n \geqslant 1\)</span>.</p>
+<blockquote>
+<p>Второе типо очев, да? Но нет, у нас же отображения.</p>
+</blockquote>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="2.5" id="гомотопическая-инвариантность">Гомотопическая
+инвариантность</h2>
+<blockquote>
+<p>Первый существенный (будущий) результат этой главы: гомотопически
+эквивалентные пространства имеют изоморфные группы гомологий.</p>
+</blockquote>
+<div id="definition-9">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
+class="math inline">\(Y\)</span> топологические пространства и <span
+class="math inline">\(f: X \to Y\)</span>. Определим <em>индуцированный
+гомоморфизм</em> <span class="math inline">\(f_{*}: C_n(X) \to C_n(Y):
+\sigma \mapsto f\circ \sigma\)</span>.</p>
+</div>
+<div id="lemma-1">
+<p><span class="margin-lft"><strong>Лемма: </strong></span><span
+class="math inline">\(f_{*}\circ \delta = \delta \circ
+f_{*}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<p>Получили диаграмму:</p>
+<p><span class="math display">\[\begin{CD}
+    \ldots @&gt;&gt;&gt; C_{n + 1}(X) @&gt;\delta&gt;&gt; C_n(X)
+@&gt;\delta&gt;&gt; C_{n - 1}(X) @&gt;&gt;&gt; \ldots\\
+    @VVV @Vf_{*}VV @Vf_{*}VV @Vf_{*}VV @VVV\\
+    \ldots @&gt;&gt;&gt; C_{n + 1}(Y) @&gt;\delta&gt;&gt; C_n(Y)
+@&gt;\delta&gt;&gt; C_{n - 1}(Y) @&gt;&gt;&gt; \ldots
+\end{CD}\]</span></p>
 
 
 <nav id="sitenav">

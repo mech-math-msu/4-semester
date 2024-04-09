@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 7</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="7" id="лекция-7">Лекция 7</h1>
+<p>У любой плоской кривой можем построить репер Френе. <span
+class="math inline">\(\alpha&#39;(s) = \tilde{k}(s)\)</span>, где <span
+class="math inline">\(\alpha\)</span> – угол между касательной и …</p>
+<h2 data-number="7.1" id="перейдем-в-mathbbr3">Перейдем в <span
+class="math inline">\(\mathbb{R}^3\)</span></h2>
+<div id="definition-29">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\gamma\)</span> – регулярная кривая в <span
+class="math inline">\(\mathbb{R}^3 \,\,\,\, x = \mathbf{r}(t) \,\,\,\, x
+= (x^1, x^2, x^3)\)</span>.</p>
+<p>На <span class="math inline">\(\gamma\)</span> можно ввести
+натуральный параметр – длину дуги.</p>
+<p><span class="math inline">\(v = \dot{\mathbf{r}}(s), \,\,\,\, n =
+\frac{\mathbf{r}&#39;&#39;}{|\mathbf{r}&#39;&#39;|}\)</span></p>
+<p><span class="math inline">\(b = v\times n\)</span></p>
+<p><span class="math inline">\(n\)</span> – <em>вектор главной
+нормали</em>,</p>
+<p><span class="math inline">\(b\)</span> – <em>вектор
+бинормали</em>,</p>
+<p><span class="math inline">\((v, n, b)\)</span> – <em>репер
+Френе</em>.</p>
+<p><span class="math inline">\(\gamma\)</span> – <em>бирегулярна</em>,
+если <span class="math inline">\(\mathbf{r}&#39;&#39;\)</span>.</p>
+</div>
+<h2 data-number="7.2" id="формулы-френе-для-mathbbrn">Формулы Френе для
+<span class="math inline">\(\mathbb{R}^n\)</span></h2>
+<div id="theorem-1">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>трехмерные формулы Френе</em>) Пусть в точке <span
+class="math inline">\(s_0: \,\,\,\, \mathbf{r}&#39;&#39;(s_0)\)</span>.
+Тогда в окрестности точки <span class="math inline">\(s_0\)</span>
+существует гладкая функция <span
+class="math inline">\(\mathbf{\varkappa}(s)\)</span>, такая что <span
+class="math inline">\(v&#39; = k&#39;n, \,\,\,\, n&#39; = -kv -
+\varkappa b, \,\,\,\, b&#39; = \varkappa n\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Формула <span class="math inline">\(\frac{v&#39;}k = n\)</span>
+следует из определения.</p>
+<p><span class="math inline">\(Q(s) = (v, n, b)\)</span> – ортогональная
+матрица, так как векторы – это векторное произведение,</p>
+<p><span class="math inline">\(Q&#39; = (v&#39;, n&#39;, b&#39;) = Q
+A\)</span>, по лемме <span class="math inline">\(A\)</span>
+кососимметричная матрица <span class="math inline">\(3\times
+3\)</span>,</p>
+<p><span class="math inline">\(\left(\begin{array}{ccc} 0 &amp; -a_{21}
+&amp; -a_{31} \\ a_{21} &amp; 0 &amp; -a_{32} \\ a_{31} &amp; a_{32}
+&amp; 0 \end{array}\right)\)</span></p>
+<p>Из первой формулы знаем первый столбец матрицы и, следовательно
+матрица имеет вид:</p>
+<p><span class="math inline">\(\left(\begin{array}{ccc} 0 &amp; -k &amp;
+-0 \\ k &amp; 0 &amp; -\varkappa \\ 0 &amp; -\varkappa &amp; 0
+\end{array}\right)\)</span></p>
+<p>Формулы доказаны, докажем гладкость <span
+class="math inline">\(\varkappa\)</span>. Для этого заметим, что <span
+class="math inline">\(\varkappa = -(n&#39;, b)\)</span>.</p>
+</div>
+<div id="definition-30">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\varkappa\)</span> – <em>кручение кривой</em>
+<span class="math inline">\(\gamma\)</span>.</p>
+</div>
+<h3 data-number="7.2.1"
+id="геометрический-смысл-кручения">Геометрический смысл кручения</h3>
+<blockquote>
+<p>При движении вдоль кривой скорость репера Френе определяется
+формулами Френе.</p>
+</blockquote>
+<div id="statement-10">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(\gamma\)</span> бирегулярная кривая. Тогда
+<span class="math inline">\(\gamma\)</span> – плоская <span
+class="math inline">\(\iff \,\,\,\, \varkappa = 0\)</span> (крчение –
+тождественный ноль)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow} \,\,\,\, b = b_0
+= \operatorname{conts} \implies\)</span> по формулам Френе <span
+class="math inline">\(\varkappa =0\)</span></p>
+<p><span class="math inline">\(\boxed{\Longleftarrow} \,\,\,\, b = b_0 =
+\operatorname{conts} (v(s), b_0) = 0 \,\,\,\, (\mathbf{r}&#39;, b_0) = 0
+\implies (\mathbf{r}(s), b_0) = c_0\)</span></p>
+</div>
+<blockquote>
+<p>То есть кручение – это скорость вылезания кривой из плоскости.</p>
+</blockquote>
+<h2 data-number="7.3"
+id="теорема-о-восстановлении-кривой-по-кривизне-и-кручению">Теорема о
+восстановлении кривой по кривизне и кручению</h2>
+<div id="theorem-2">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>о
+восстановлении</em>) <span class="math inline">\(k(s), \,\,\,\,
+\varkappa(s) \geqslant 0, \,\,\,\, s \in [0, L], \,\,\,\, L\)</span> –
+длина кривой.</p>
+<ol type="1">
+<li>Пусть <span class="math inline">\(k_0(s)\)</span> и <span
+class="math inline">\(\varkappa(s)\)</span> всюду гладкие функции на
+отрезке <span class="math inline">\([0, L]\)</span> и <span
+class="math inline">\(k_0 &gt; 0\)</span>. Тогда существует бирегулярная
+кривая <span class="math inline">\(\gamma\)</span>, такая что <span
+class="math inline">\(k_0\)</span> – кривизна <span
+class="math inline">\(\gamma\)</span>, <span
+class="math inline">\(\varkappa\)</span> – кручение,</li>
+<li>Пусть <span class="math inline">\(\gamma_1\)</span> и <span
+class="math inline">\(\gamma_2\)</span> – бирегулярные кривые и <span
+class="math inline">\(k_1(s) = k_2(s)\)</span> и <span
+class="math inline">\(\varkappa_1(s)= \varkappa_2(s)\)</span>. Тогда
+существует движение плоскости <span class="math inline">\(f:
+\mathbb{R}^3 \to \mathbb{R}^3\)</span>, такое что <span
+class="math inline">\(f(\gamma_1) = \gamma_2\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math display">\[\begin{cases}
+v&#39; = k_0 n, \,\,\,\, v(0) = v_0\\
+n&#39; = -k_0 v - x_0 b, \,\,\,\, n(0) = n_0\\
+b&#39; = x_0 b, \,\,\,\, b(0) = b_0
+\end{cases}\]</span></p>
+<p><span class="math inline">\(Q&#39; = QA_0\)</span></p>
+<p><span class="math inline">\(A_0 = \left(\begin{array}{ccc} 0 &amp;
+-k_0 &amp; 0 \\ k_0 &amp; 0 &amp; \varkappa_0 \\ 0 &amp; \varkappa_0
+&amp; 0 \end{array}\right)\)</span></p>
+<p>Хотим воспользоваться теоремой сущесвования и единственности решения
+для этого поставим начальные условия задачи Коши:</p>
+<p><span class="math inline">\(Q = Q_0\)</span></p>
+<p>По теореме существования и единственности существуют три
+вектор-функции <span class="math inline">\(v(s), n(s), b(s)\)</span>,
+удовлетворяющие системе.</p>
+<p><span class="math inline">\(x = \mathbf{r}(s) =
+\displaystyle\int\limits_0^s v(s_1)ds_1 +\mathbf{r}_0, \,\,\,\,
+\mathbf{r}&#39;(s) = v\)</span></p>
+<p><span class="math inline">\(\mathbf{r}&#39;&#39; = v&#39; = k_0 n,
+\,\,\,\, |\mathbf{r}&#39;&#39;| = k_0 \implies k_0\)</span> – кривизна
+<span class="math inline">\(\gamma\)</span>, <span
+class="math inline">\(n(s)\)</span> – главная нормаль, <span
+class="math inline">\(b\)</span> – бинормаль.</p>
+<p><span class="math inline">\(\varkappa_0 = -(n&#39;, b)\)</span>.</p>
+<p>Докажем пункт 2:</p>
+<p>Сдвинем начальную точку первой кривой в начальную точку второй. У
+каждой из кривых в начальной точке имеется репер Френе. Обе тройки
+ортонормированны и правильно ориентированы, поэтому существует
+единственной ортогональное преобразование (вращение), переводящее один
+репер во второй. Из условия теоремы и пункта 1. следует, что реперы
+совпадают для всех <span class="math inline">\(s\)</span> и в частности
+совпадают векторы скорости. Теорема доказана.</p>
+</div>
+<div id="definition-31">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\begin{cases}
+k = k(s)\\
+\varkappa = \varkappa(s)
+\end{cases}\)</span> – <em>натуральные уравнения</em>.</p>
+</div>
+<blockquote>
+<p>Если мы едем по кривой, то репер Френе просто вращается.</p>
+</blockquote>
+<div id="problem-0">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Доказать,
+что для любой бирегулярной кривой существует вектор <span
+class="math inline">\(w(s)\)</span>, такой что <span
+class="math inline">\(v&#39; = w\times v, \,\,\,\, n&#39; = w\times n,
+\,\,\,\, b&#39; = w\times b\)</span> (<em>вектор Дарбу</em>)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<p>Чтобы построить ортогональный базис (репер Френе) в <span
+class="math inline">\(\mathbb{R}^n\)</span> нужно к линейно независимым
+векторам <span class="math inline">\(\dot{\mathbf{r}},
+\ddot{\mathbf{r}}, \ldots, r^{(n - 1)}\)</span> ортогонализацию
+Грама-Шмидта. (многомерные формулы Френе)</p>
+<p>АААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААА</p>
+<h3 data-number="7.3.1"
+id="как-найти-v-n-b-k-varkappa-для-кривой-заданной-параметрически">Как
+найти <span class="math inline">\(v, n, b, k, \varkappa\)</span> для
+кривой заданной параметрически?</h3>
+<p>Пусть кривая задана в некоторой параметризации <span
+class="math inline">\(x = \mathbf{r}(t)\)</span>.</p>
+<p><span class="math inline">\(s(t) = \displaystyle\int\limits_{t_0}^t
+|\mathbf{\dot{r}}(t_1)|dt_1\)</span> будет неудобно считать.</p>
+<div id="theorem-3">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>В
+натуральной параметризации <span class="math inline">\(v =
+\mathbf{r}&#39;, \,\,\,\, n =
+\frac{\mathbf{r}&#39;&#39;}{|\mathbf{r}&#39;&#39;|}, \,\,\,\, b =
+v\times n, \,\,\,\, k = |\mathbf{r}&#39;&#39;|, \kappa = \frac{\langle
+\mathbf{r}&#39;, \mathbf{r}&#39;&#39;, \mathbf{r}&#39;&#39;&#39;
+\rangle}{|\mathbf{r}&#39;&#39;|^2}\)</span></p>
+<p>В произвольной параметризации <span class="math inline">\(v =
+\frac{\dot{\mathbf{r}}}{|\dot{\mathbf{r}}|}, \,\,\,\, n =
+\frac{\dot{v}}{|\dot{v}|}, \,\,\,\, b = v\times n\)</span></p>
+<p><span class="math inline">\(k = \frac{|\dot{\mathbf{r}}\times
+\ddot{\mathbf{r}}|}{|\dot{\mathbf{r}}|^2}, \kappa = \frac{\langle
+\,\,\dot{\mathbf{r}}, \ddot{\mathbf{r}},
+\dddot{\mathbf{r}}\,\,\rangle}{|\dot{\mathbf{r}}\times
+\ddot{\mathbf{r}}|^2}\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Когда <span class="math inline">\(\mathbf{r}&#39;\)</span> – это
+производная <span class="math inline">\(\mathbf{r}(s)\)</span> по <span
+class="math inline">\(s\)</span>, а <span
+class="math inline">\(\dot{\mathbf{r}}\)</span> – это по <span
+class="math inline">\(t\)</span>, то есть <span
+class="math inline">\(\mathbf{r}(s(t))\)</span>.</p>
+<p><span class="math inline">\(\dot{\mathbf{r}} = \mathbf{r}&#39;\cdot
+\frac{ds}{dt} = \mathbf{r}&#39;\cdot |\dot{\mathbf{r}}|\)</span>.</p>
+<p><span class="math inline">\(\ddot{\mathbf{r}} =
+\mathbf{r}&#39;&#39;\cdot \left(\frac{ds}{dt}\right)^2 +
+\mathbf{r}&#39;\cdot \frac{d^2s}{dt^2}\)</span>.</p>
+</div>
+<h2 data-number="7.4" id="внешняя-геометрия-поверхностей">Внешняя
+геометрия поверхностей</h2>
+<blockquote>
+<p>Внешняя геометрия определяется набором квадратичных форм</p>
+</blockquote>
+<div id="definition-32">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(M^n \subset \mathbb{R}^N\)</span> –
+<em>гиперповерхность</em>, если <span class="math inline">\(N = n +
+1\)</span>.</p>
+<blockquote>
+<p>Например, плоскость в <span
+class="math inline">\(\mathbb{R}^3\)</span></p>
+</blockquote>
+</div>
+<p>Хотим следить за вращением поверхности. В каждой точке для каждой
+кривой, проходящей через точку есть репер Френе и формулы Френе, поэтому
+хотим выбрать хорошие кривые:</p>
+<div id="definition-33">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Нормальное сечение</em> поверхности <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span> – это пересечение <span
+class="math inline">\(M\)</span> с <span
+class="math inline">\(2\)</span>-мерной плоскостью, проходящей через
+<span class="math inline">\(\mathbf{n}(P)\)</span>.</p>
+</div>
+<div id="problem-1">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Доказать,
+что в окрестности точки <span class="math inline">\(P\)</span>
+нормальное сечение – гладкая регулярная кривая. (Указание: теорема о
+неявной функции)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<p>Нормальное сечение задается касательным вектором и точкой. Если знаем
+кривизны всех нормальных сечений, то знаем как искривляется поверхность
+в окрестности точки. Пусть <span
+class="math inline">\(\tilde{k}(x)\)</span> – кривизна нормального
+сечения, проведенного в направлении <span
+class="math inline">\(X\)</span>, <span class="math inline">\(\tilde{k}
+&gt; 0\)</span>, если вектор ускорения кривой направлен в сторону
+нормали <span class="math inline">\(\mathbf{n}\)</span> и <span
+class="math inline">\(\tilde{k} &lt; 0\)</span> иначе.</p>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-6.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

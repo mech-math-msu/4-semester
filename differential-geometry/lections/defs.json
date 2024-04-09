@@ -143,5 +143,30 @@
         "keyword": "центр кривизны радиус кривизны кривизна кривой репер френе",
         "html": "<p><a href=\"лекция-6.html#definition-28\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЦентр построенной выше окружности – <em>центр кривизны</em>,</p>\n<p>Радиус построенной выше окружности – <em>радиус кривизны</em>,</p>\n<p><span class=\"math inline\">\\(\\frac1{R} = |\\mathbf{r}&#39;&#39;(s_0)| =\nk(s_0)\\)</span> – <em>кривизна кривой</em> в точке <span\nclass=\"math inline\">\\(s_0\\)</span>.</p>\n<p><span class=\"math inline\">\\(n(s_0) =\n\\frac{\\mathbf{r}&#39;&#39;(s_0)}{|\\mathbf{r}&#39;&#39;(s_0)|}\\)</span> –\nвектор нормали к <span class=\"math inline\">\\(\\gamma\\)</span> в точке\n<span class=\"math inline\">\\(s_0\\)</span>.</p>\n<p>Пара <span class=\"math inline\">\\((\\mathbf{r} = v, n)\\)</span> –\n<em>репер Френе</em> (ортогональная система координат).</p>",
         "url": "лекция-6.html#definition-28"
+    },
+    {
+        "keyword": "вектор главной нормали вектор бинормали репер френе бирегулярна",
+        "html": "<p><a href=\"лекция-7.html#definition-29\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\gamma\\)</span> – регулярная кривая в <span\nclass=\"math inline\">\\(\\mathbb{R}^3 \\,\\,\\,\\, x = \\mathbf{r}(t) \\,\\,\\,\\, x\n= (x^1, x^2, x^3)\\)</span>.</p>\n<p>На <span class=\"math inline\">\\(\\gamma\\)</span> можно ввести\nнатуральный параметр – длину дуги.</p>\n<p><span class=\"math inline\">\\(v = \\dot{\\mathbf{r}}(s), \\,\\,\\,\\, n =\n\\frac{\\mathbf{r}&#39;&#39;}{|\\mathbf{r}&#39;&#39;|}\\)</span></p>\n<p><span class=\"math inline\">\\(b = v\\times n\\)</span></p>\n<p><span class=\"math inline\">\\(n\\)</span> – <em>вектор главной\nнормали</em>,</p>\n<p><span class=\"math inline\">\\(b\\)</span> – <em>вектор\nбинормали</em>,</p>\n<p><span class=\"math inline\">\\((v, n, b)\\)</span> – <em>репер\nФрене</em>.</p>\n<p><span class=\"math inline\">\\(\\gamma\\)</span> – <em>бирегулярна</em>,\nесли <span class=\"math inline\">\\(\\mathbf{r}&#39;&#39;\\)</span>.</p>",
+        "url": "лекция-7.html#definition-29"
+    },
+    {
+        "keyword": "кручение кривой",
+        "html": "<p><a href=\"лекция-7.html#definition-30\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\varkappa\\)</span> – <em>кручение\nкривой</em> <span class=\"math inline\">\\(\\gamma\\)</span>.</p>",
+        "url": "лекция-7.html#definition-30"
+    },
+    {
+        "keyword": "натуральные уравнения",
+        "html": "<p><a href=\"лекция-7.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\begin{cases}\nk = k(s)\\\\\n\\varkappa = \\varkappa(s)\n\\end{cases}\\)</span> – <em>натуральные уравнения</em>.</p>",
+        "url": "лекция-7.html#definition-31"
+    },
+    {
+        "keyword": "гиперповерхность",
+        "html": "<p><a href=\"лекция-7.html#definition-32\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(M^n \\subset \\mathbb{R}^N\\)</span> –\n<em>гиперповерхность</em>, если <span class=\"math inline\">\\(N = n +\n1\\)</span>.</p>\n<blockquote>\n<p>Например, плоскость в <span\nclass=\"math inline\">\\(\\mathbb{R}^3\\)</span></p>\n</blockquote>",
+        "url": "лекция-7.html#definition-32"
+    },
+    {
+        "keyword": "нормальное сечение",
+        "html": "<p><a href=\"лекция-7.html#definition-33\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Нормальное сечение</em> поверхности <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span> – это пересечение <span\nclass=\"math inline\">\\(M\\)</span> с <span\nclass=\"math inline\">\\(2\\)</span>-мерной плоскостью, проходящей через\n<span class=\"math inline\">\\(\\mathbf{n}(P)\\)</span>.</p>",
+        "url": "лекция-7.html#definition-33"
     }
 ]

@@ -277,6 +277,280 @@
 
 <h1 data-number="9" id="лекция-9">Лекция 9</h1>
 <h2 data-number="9.1" id="заряды">Заряды</h2>
+<div id="definition-33">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\A\)</span> – <span
+class="math inline">\(\sigma\)</span>-алгебра с единицей <span
+class="math inline">\(X\)</span>. <span class="math inline">\(\Phi: \A
+\to \mathbb{R}\)</span> – <em>заряд</em>, если <span
+class="math inline">\(\Phi\)</span> – <span
+class="math inline">\(\sigma\)</span>-аддитивна.</p>
+<blockquote>
+<p>Для зарядов выполнены те свойства <span
+class="math inline">\(\sigma\)</span>-аддитивных мер, которые не связаны
+с неотрицательностью, например, непрерывность. В отличие от мер, у
+зарядов все значения конечны, в крайнем случае допускается бесконечность
+одного знака.</p>
+</blockquote>
+</div>
+<h3 data-number="9.1.1"
+id="положительные-и-отрицательные-множества">Положительные и
+отрицательные множества</h3>
+<div id="definition-34">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Множество <span class="math inline">\(A \in \A\)</span>
+<em>положительно</em> относительно заряда <span
+class="math inline">\(\Phi\)</span>, если <span
+class="math inline">\(\forall B \in \A, \,\,\,\, B \subset A\)</span>
+выполнено <span class="math inline">\(\Phi(B) \geqslant 0\)</span>.</p>
+<p>Множество <span class="math inline">\(A \in \A\)</span>
+<em>отрицательно</em> относительно заряда <span
+class="math inline">\(\Phi\)</span>, если <span
+class="math inline">\(\forall B \in \A, \,\,\,\, B \subset A\)</span>
+выполнено <span class="math inline">\(\Phi(B) \leqslant 0\)</span>.</p>
+</div>
+<div id="lemma-16">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Не более чем
+счетное объединение отрицательных (положительных) множеств –
+отрицательное (положительное) множество.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="lemma-17">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(A \in \A\)</span> не является положительным. Тогда
+существует отрицательное <span class="math inline">\(B \subset
+A\)</span>, такое, что <span class="math inline">\(\Phi(B) &lt;
+0\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(A\)</span> не является положительным, то
+есть <span class="math inline">\(\exists C_0 \in \A, \,\,\,\, C_0
+\subset A: \,\,\,\, \Phi(C_0) &lt; 0\)</span>. Если <span
+class="math inline">\(C_0\)</span> отрицательно, то теорема доказана.
+Иначе <span class="math inline">\(C_0\)</span> не отрицательно, то есть
+существует <span class="math inline">\(C_1 \in \A, \,\,\,\, C_1 \subset
+C_0: \,\,\,\, \Phi(C_1) \geqslant \frac1{k_1} &gt; 0\)</span> (<span
+class="math inline">\(k_i\)</span> при этом берем минимально возможное
+натуральное). Далее <span class="math inline">\(\exists C_2 \in \A,
+\,\,\,\, C_2 \subset C_0\setminus C_1: \,\,\,\, \Phi(C_2) \geqslant
+\frac1{k_2} &gt; 0, \,\,\,\, \ldots\)</span>. Пусть <span
+class="math inline">\(F_0 = C_0\setminus \left(\bigsqcup_{i =
+1}^{\infty}C_i\right)\)</span>. Дальше какие-то оценки и … <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="9.2" id="разложение-хана">Разложение Хана</h2>
+<div id="theorem-37">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>разложение Хана</em>) Пусть <span
+class="math inline">\(\Phi\)</span> – заряд на <span
+class="math inline">\(\A\)</span>. Тогда существуют отрицательное
+множество <span class="math inline">\(A_{-}\in \A\)</span> и
+положительное множество <span class="math inline">\(A_{+}\in A\)</span>,
+такие, что <span class="math inline">\(X = A_{-}\sqcup
+A_{+}\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(x_{-} = \inf\{\Phi(A), \,\,\,\, A
+\in\A, \,\,\,\, A\)</span> – отрицательное <span
+class="math inline">\(\}\)</span>. Построим последовательность вложенных
+отрицательных множеств, такую, что <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}\Phi(A_n) =
+x_{-}\)</span>. Пусть <span class="math inline">\(A_{-} = \bigcup_n
+A_n\)</span>. <a href="лекция-9.html#lemma-16">По лемме</a> <span
+class="math inline">\(A_{-}\)</span> – отрицательное. И в силу
+непрерывности снизу заряда <span class="math inline">\(\Phi(A_{-}) =
+\displaystyle \lim_{n\to \infty}\Phi(A_n) = x_{-}\)</span>.</p>
+<p>Пусть <span class="math inline">\(A_{+} := X \setminus A_{-}\)</span>
+не является положительным. Тогда <a href="лекция-9.html#lemma-17">по
+лемме</a> сущесвтует отрицательное <span class="math inline">\(B \subset
+A_{+}\)</span>, такое, что <span class="math inline">\(\Phi(B) &lt;
+0\)</span>.</p>
+<p>Имеем: <span class="math inline">\(A_{-}\sqcup B\)</span>
+отрицательное и <span class="math inline">\(\Phi(A_{-}\sqcup B) =
+\Phi(A_{-}) + \Phi(B) &lt; x_{-}\)</span>, что противоречит выбору <span
+class="math inline">\(x_{-}\)</span>. То есть <span
+class="math inline">\(A_{+}\)</span> положительное множество <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="9.3" id="разложение-жордана">Разложение Жордана</h2>
+<div id="definition-35">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\Phi\)</span> – заряд на <span
+class="math inline">\(\sigma\)</span>-алгебре <span
+class="math inline">\(\A\)</span> с единицей <span
+class="math inline">\(X\)</span>. Представление заряда в виде разности
+двух конечных <span class="math inline">\(\sigma\)</span>-аддитивных мер
+(<span class="math inline">\(\Phi = \mu_{+} - \mu_{-}\)</span>) – это
+разложение.</p>
+<p>Разложение является <em>разложением Жордана</em>, если <span
+class="math inline">\(\exists A \in \A: \,\,\,\, \mu_{-}(A) = 0\)</span>
+и <span class="math inline">\(\mu_{+}(X\setminus A) = 0\)</span>.</p>
+</div>
+<div id="theorem-38">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>разложение Жордана</em>) Пусть <span
+class="math inline">\(\Phi\)</span> – заряд на <span
+class="math inline">\(\sigma\)</span>-алгебре <span
+class="math inline">\(\A\)</span> с единицей <span
+class="math inline">\(X\)</span>. Тогда</p>
+<ol type="1">
+<li><span class="math inline">\(\mu_{+}: A \mapsto \Phi(A \cap
+A_{+})\)</span> и <span class="math inline">\(\mu_{-}: A \mapsto
+-\Phi(A\cap A_{-})\)</span> – разложение Жордана для <span
+class="math inline">\(\Phi\)</span>.</li>
+<li>Такое разложение Жордана единственно, то есть при взятии другого
+разложения Хана, разложение Жордана сохраняется.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li>В качестве <span class="math inline">\(A\)</span> из определения
+возьмем <span class="math inline">\(A_{-}\)</span>,</li>
+<li>Любое разложение Хана порождается некоторым разложением Жордана. Для
+этого возьмем <span class="math inline">\(A_{-} = A\)</span> и <span
+class="math inline">\(A_{+} = X\setminus A_{-}\)</span></li>
+</ol>
+<p>Пусть дано два разложения Хана <span
+class="math inline">\(A_{+}\sqcup A_{-} = X = A_{+}&#39;\sqcup
+A_{-}&#39;\)</span>.</p>
+<p>Тогда <span class="math inline">\(\forall A \in \A\)</span> имеем
+<span class="math inline">\(\Phi(A\cap (A_{+}\setminus A_{+}&#39;)) =
+0\)</span> и <span class="math inline">\(\Phi(A\cap (A_{+}&#39;\setminus
+A_{+})) = 0\)</span>, так как <span class="math inline">\(A\cap
+(A_{+}\setminus A_{+}&#39;) \subset A_{+}\)</span> и <span
+class="math inline">\(A\cap (A_{+}\setminus A_{+}&#39;) = (A\setminus
+A_{+}&#39;)\cap A_{+} \subset A_{-}&#39;\)</span>.</p>
+<p>То есть <span class="math inline">\(\forall A \in A\)</span> имеем
+<span class="math inline">\(\Phi(A\cap A_{+}) =
+\Phi(A\cap((A_{+}\setminus A_{+}&#39;) \cup (A_{+}\cap
+A_{+}&#39;)))=\)</span></p>
+<p><span class="math inline">\(= \Phi(A\cap (A_{+}\cap A_{+}&#39;)) =
+\Phi(A\cap (A_{+}\cap A_{+}&#39;)) + \Phi(A\cap (A_{+}&#39;\setminus
+A_{+})) = \Phi(A\cap A_{+}&#39;) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="9.3.1"
+id="абсолютная-непрерывность-заряда-относительно-меры">Абсолютная
+непрерывность заряда относительно меры</h3>
+<div id="definition-36">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Заряд
+<span class="math inline">\(\Phi\)</span> на <span
+class="math inline">\(\sigma\)</span>-алгебре <span
+class="math inline">\(\A\)</span> <em>абсолютно непрерывен
+относительно</em> меры <span class="math inline">\(\mu\)</span> на <span
+class="math inline">\(\A\)</span>, если <span
+class="math inline">\(\forall A \in \A: \,\,\,\, \mu(A) = 0\)</span>
+выполнено <span class="math inline">\(\Phi(A) = 0\)</span>.</p>
+</div>
+<div id="lemma-18">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\((X, \A, \mu)\)</span> – пространство, причем <span
+class="math inline">\(\mu\)</span> не тождественный ноль. Пусть <span
+class="math inline">\(\Phi\)</span> – мера, абсолютно непрерывная
+относительно <span class="math inline">\(\mu\)</span>. Тогда <span
+class="math inline">\(\exists n \in \mathbb{N}\)</span> и <span
+class="math inline">\(\exists A \in \A\)</span>, такие, что <span
+class="math inline">\(\mu(A) &gt; 0\)</span> и <span
+class="math inline">\(A\)</span> положительно относительно заряда <span
+class="math inline">\(\Phi_n = \Phi - \frac1n \cdot \mu\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="lemma-19">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\((X, \A, \mu)\)</span> – пространство с мерой и
+<span class="math inline">\(f\in \mathcal{L}(X)\)</span>. Тогда заряд
+<span class="math inline">\(\Phi: \A \to \mathbb{R}: A \mapsto
+\displaystyle\int\limits_{A} f(x)\mu(dx)\)</span> абсолютно непрерывен
+относительно меры <span class="math inline">\(\mu\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="9.4" id="теорема-радона-никодима">Теорема
+Радона-Никодима</h2>
+<div id="theorem-39">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>теорема Радона-Никодима</em>) Пусть <span
+class="math inline">\((X, \A, \mu)\)</span> – пространство с полной
+мерой. Заряд <span class="math inline">\(\Phi\)</span> абсолютно
+непрерывен относительно меры <span class="math inline">\(\mu
+\iff\)</span> существует <span class="math inline">\(f \in
+\mathcal{L}(X)\)</span>, такая, что <span class="math inline">\(\Phi(A)
+\equiv \displaystyle\int\limits_{A} f(x)\mu(dx)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\boxed{\Longleftarrow}\)</span> Имеем
+<span class="math inline">\(\Phi(A) \equiv \displaystyle\int\limits_{A}
+f(x)\mu(dx)\)</span>. Пусть <span class="math inline">\(\mu(A) =
+0\)</span>. Тогда <span
+class="math inline">\(\displaystyle\int\limits_{A} f(x)\mu(dx) = 0
+\,\,\,\,\blacksquare\)</span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> Пусть
+<span class="math inline">\(\Phi\)</span> – заряд, абсолютно непрерывный
+относительно меры <span class="math inline">\(\mu\)</span> и <span
+class="math inline">\(\Phi = \Phi_{+} - \Phi_{-}\)</span> его разложение
+Жордана. Меры <span class="math inline">\(\Phi_{+}\)</span> и <span
+class="math inline">\(\Phi_{-}\)</span> абсолютно непрерывны
+относительно меры <span class="math inline">\(\mu\)</span>, так как
+<span class="math inline">\(\mu\)</span> полная. Поэтому докажем
+тоеорему для случая, когда заряд является мерой, а потом вычтем.</p>
+<p>Теперь <span class="math inline">\(\Phi\)</span> – мера. Рассмотрим
+множество:</p>
+<p><span class="math display">\[K = \{f(x) \in \mathcal{L}(X): \,\,\,\,
+f(x) \geqslant 0, \,\,\,\, \displaystyle\int\limits_{A} f(x)\mu(dx)
+\leqslant \Phi(A) \,\,\,\, \forall A \in \A\}\]</span></p>
+<p>Пусть <span class="math inline">\(x = \displaystyle\sup_{f \in
+K}\displaystyle\int\limits_{X} f(x)\mu(dx)\)</span></p>
+<p>Хотим показать, что <span class="math inline">\(x =
+\displaystyle\int\limits_{X} f(x)\mu(dx)\)</span> для конкретной <span
+class="math inline">\(f \in K\)</span>.</p>
+<p>Так как это точная верхняя грань, существует последовательность <span
+class="math inline">\(f_n(x)\)</span>, такая, что <span
+class="math inline">\(x = \displaystyle \lim_{n\to
+\infty}\displaystyle\int\limits_{X} f_n(x)\mu(dx)\)</span></p>
+<p>Построим последовательность <span class="math inline">\(g_n(x) =
+\max\{f_1, \ldots, f_n\}\)</span>. Докажем, что <span
+class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, g_n(x) \in
+K\)</span>.</p>
+<p><span class="math inline">\(\forall A \in \A \,\,\,\, A =
+\bigsqcup_{k = 1}^{n} A_k\)</span>, где <span
+class="math inline">\(g_n(x) = f_k(x), \,\,\,\, x \in A_k\)</span>.
+<span class="math inline">\(A_k = \bigcap_{n = 1}^{k - 1}\{x \in A:
+\,\,\,\, f_n(x) \leqslant f_k(x)\} \cap \bigcap_{n = k + 1}^{n}\{x \in
+A: \,\,\,\, f_n(x) \leqslant f_k(x)\}\)</span> и, следовательно, <span
+class="math inline">\(A_k \in \A, \,\,\,\, \forall k\)</span>.</p>
+<p>Имеем <span class="math inline">\(\displaystyle\int\limits_{A}
+g_n(x)\mu(dx) = \displaystyle \sum_{k = 1}^{n}
+\displaystyle\int\limits_{A_k} g_n(x)\mu(dx) = \displaystyle \sum_{k =
+1}^{n} \displaystyle\int\limits_{A_k} f_k(x)\mu(dx) \leqslant
+\displaystyle \sum_{k = 1}^{n}\Phi(A_k) = \Phi(A)\)</span>. Доказали
+принадлежность <span class="math inline">\(g_n\)</span> множеству <span
+class="math inline">\(K\)</span>.</p>
+<p>Так как <span class="math inline">\(g_n(x) \geqslant f_n(x) \,\,\,\,
+\forall n \in \mathbb{N} \,\,\,\, \displaystyle \lim_{n\to \infty}g_n(x)
+= x\)</span></p>
+<p>Тогда по теореми Беппо Леви существует <span
+class="math inline">\(f(x) = \displaystyle \lim_{n\to
+\infty}g_n(x)\)</span> и <span
+class="math inline">\(\displaystyle\int\limits_{X} f(x)\mu(dx) =
+\displaystyle \lim_{n\to \infty}\displaystyle\int\limits_{X}
+g_n(x)\mu(dx)\)</span></p>
+<p>И по теореме Леви <span class="math inline">\(\forall A \in \A
+\,\,\,\, \displaystyle\int\limits_{A} f(x)\mu(dx) = \displaystyle
+\lim_{n\to \infty}\displaystyle\int\limits_{A} g_n(x)\mu(dx) \leqslant
+\Phi(A) \implies f \in K\)</span>.</p>
+<p>То есть <span class="math inline">\(\lambda: A \mapsto \Phi(A) -
+\displaystyle\int\limits_{A} f(x)\mu(dx)\)</span> неотрицателен (а
+значит мера).</p>
+<p>Осталось доказать, что <span class="math inline">\(\lambda \equiv
+0\)</span>. Почему <span class="math inline">\(\lambda\)</span>
+абсолютно непрерывна относительно <span
+class="math inline">\(\mu\)</span>? По лемме <span
+class="math inline">\(\exists \varepsilon = \frac1{n} \,\,\,\, B \in \A,
+\,\,\,\, \mu B &gt; 0\)</span>, такие, что <span
+class="math inline">\(B\)</span> положительно относительно заряда <span
+class="math inline">\(\lambda - \varepsilon \mu\)</span>.</p>
+<p>Далее рассматриваем <span class="math inline">\(h(x) = f(x) +
+\varepsilon\chi_{B}(x)\)</span> и приходим к тому, что <span
+class="math inline">\(h \in K\)</span>, но <span
+class="math inline">\(h\)</span> нарушает условие выбора супремума <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
 
 
 <nav id="sitenav">
