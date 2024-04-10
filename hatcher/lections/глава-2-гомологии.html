@@ -519,8 +519,8 @@ id="приехали-к-важному-определению-цепной-ко�
 1} \to \ldots \to C_1 \overset{\partial_1}{\to} C_0
 \overset{\partial_0}{\to} 0,\]</span></p>
 <p>где <span class="math inline">\(C_n\)</span> – абелева группа, а
-<span class="math inline">\(\partial_{n + 1}\partial_{n} = 0 \forall
-n\)</span> – <em>цепной комплекс</em>.</p>
+<span class="math inline">\(\partial_{n + 1}\partial_{n} = 0 \,\,\,\,
+\forall n\)</span> – <em>цепной комплекс</em>.</p>
 <p>Из условия <span class="math inline">\(\partial_{n + 1}\partial_{n} =
 0 \forall n\)</span> следует, что <span
 class="math inline">\(\operatorname{Img}\partial_{n + 1} \subset
@@ -589,15 +589,15 @@ class="math inline">\(\displaystyle \sum_{i}n_i \sigma_i\)</span>, где
 <span class="math inline">\(\sigma_i: \Delta^n \to X\)</span> и <span
 class="math inline">\(n_i \in \mathbb{Z}\)</span>. (а если базис
 бесконечный? и может ли он быть бесконечным?)</p>
-<p>Граничное отображение: <span class="math inline">\(\delta_n(\sigma) =
-\displaystyle \sum_{i = 1}^{n}(-1)^n \sigma_{|[v_0, \ldots, \hat{v}_i,
+<p>Граничное отображение: <span class="math inline">\(\partial_n(\sigma)
+= \displaystyle \sum_{i = 1}^{n}(-1)^n \sigma_{|[v_0, \ldots, \hat{v}_i,
 \ldots, v_n]}\)</span>.</p>
 <p>Доказательство <a
 href="глава-2-гомологии.html#statement-0">утверждения</a> применимо и к
-сингулярным симплексам, поэтому <span class="math inline">\(\delta_n
-\delta_{n + 1} = 0\)</span> и, следовательно, можем определить:</p>
-<p><span class="math inline">\(H_n(X) = \operatorname{Ker}\delta_n /
-\operatorname{Img}\delta_{n + 1}\)</span> – <span
+сингулярным симплексам, поэтому <span class="math inline">\(\partial_n
+\partial_{n + 1} = 0\)</span> и, следовательно, можем определить:</p>
+<p><span class="math inline">\(H_n(X) = \operatorname{Ker}\partial_n /
+\operatorname{Img}\partial_{n + 1}\)</span> – <span
 class="math inline">\(n\)</span>-<em>я группа гомологий</em>
 пространства <span class="math inline">\(X\)</span>.</p>
 </div>
@@ -674,24 +674,47 @@ class="math inline">\(H_n(X) = 0, \,\,\,\, n \geqslant 1\)</span>.</p>
 <span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> топологические пространства и <span
 class="math inline">\(f: X \to Y\)</span>. Определим <em>индуцированный
-гомоморфизм</em> <span class="math inline">\(f_{*}: C_n(X) \to C_n(Y):
-\sigma \mapsto f\circ \sigma\)</span>.</p>
+гомоморфизм</em> <span class="math inline">\(f_{\star}: C_n(X) \to
+C_n(Y): \sigma \mapsto f\circ \sigma\)</span>.</p>
 </div>
 <div id="lemma-1">
 <p><span class="margin-lft"><strong>Лемма: </strong></span><span
-class="math inline">\(f_{*}\circ \delta = \delta \circ
-f_{*}\)</span>.</p>
+class="math inline">\(f_{\star}\circ \partial = \partial \circ
+f_{\star}\)</span>.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
-<p>Получили диаграмму:</p>
+<p>Получили коммутативную диаграмму:</p>
 <p><span class="math display">\[\begin{CD}
-    \ldots @&gt;&gt;&gt; C_{n + 1}(X) @&gt;\delta&gt;&gt; C_n(X)
-@&gt;\delta&gt;&gt; C_{n - 1}(X) @&gt;&gt;&gt; \ldots\\
-    @VVV @Vf_{*}VV @Vf_{*}VV @Vf_{*}VV @VVV\\
-    \ldots @&gt;&gt;&gt; C_{n + 1}(Y) @&gt;\delta&gt;&gt; C_n(Y)
-@&gt;\delta&gt;&gt; C_{n - 1}(Y) @&gt;&gt;&gt; \ldots
+    \ldots @&gt;&gt;&gt; C_{n + 1}(X) @&gt;\partial&gt;&gt; C_n(X)
+@&gt;\partial&gt;&gt; C_{n - 1}(X) @&gt;&gt;&gt; \ldots\\
+    @VVV @Vf_{\star}VV @Vf_{\star}VV @Vf_{\star}VV @VVV\\
+    \ldots @&gt;&gt;&gt; C_{n + 1}(Y) @&gt;\partial&gt;&gt; C_n(Y)
+@&gt;\partial&gt;&gt; C_{n - 1}(Y) @&gt;&gt;&gt; \ldots
 \end{CD}\]</span></p>
+<div id="definition-10">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Отображение <span
+class="math inline">\(f_{\star}\)</span>, для которого диаграмма выше
+коммутативна, – <em>цепное</em> для сингулярных комплексов <span
+class="math inline">\(C(X)\)</span> и <span
+class="math inline">\(C(Y)\)</span>.</p>
+</div>
+<div id="statement-4">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Цепное
+отображение <span class="math inline">\(f_{\star}\)</span> двух
+комплексов индуцирует гомоморфизм <span
+class="math inline">\(f_{*}\)</span> групп гомологий.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="theorem-0">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если два
+отображения <span class="math inline">\(f, g: X \to Y\)</span>
+гомотопны, то <span class="math inline">\(f_{*} = g_{*}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="2.6" id="точные-последовательности-и-вырезание">Точные
+последовательности и вырезание</h2>
 
 
 <nav id="sitenav">
