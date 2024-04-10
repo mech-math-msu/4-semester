@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Семинар 9</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <style>
+                html {
+                    color: #69a197;
+                    background-color: #000000;
+                }
+                #sitenav i {
+                    color: #69a197 !important;
+                }
+                a {
+                    color: #69a197  !important;
+                }
+                a:visited {
+                    color: #69a197  !important;
+                }
+            </style>
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="семинар-8-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="10" id="семинар-9">Семинар 9</h1>
+<h2 data-number="10.1" id="пространства-l_p">Пространства <span
+class="math inline">\(L_p\)</span></h2>
+<blockquote>
+<p>Внешняя мера – это почти метрика, так как <span
+class="math inline">\(\mu^{*}(A\triangle B) \leqslant \mu^{*}(A\triangle
+C)+\mu^{*}(C\triangle B)\)</span>.</p>
+</blockquote>
+<p>Пусть <span class="math inline">\(f\)</span> – измеримая, <span
+class="math inline">\(p \geqslant 1\)</span>.</p>
+<p>Обозначим: <span class="math inline">\(||f||_p =
+(\displaystyle\int\limits_{X} |f(x)|^p\mu(dx))^{\frac1{p}}\)</span></p>
+<p>Неравенство Гёльдера: если <span class="math inline">\(p &gt; 1,
+\,\,\,\, q &gt; 1, \,\,\,\, \frac1{p} + \frac1{q} = 1, f, g\)</span> –
+измеримы и <span class="math inline">\(||f||_p &lt; \infty, \,\,\,\,
+||g||_q &lt; \infty\)</span>, то <span class="math inline">\(fg \in
+\mathcal{L}(X)\)</span> и <span
+class="math inline">\(\displaystyle\int\limits_{X} |f(x)g(x)|\mu(dx)
+\leqslant ||f||_p \cdot ||g||_q\)</span></p>
+<p>Неравенство Минковского: если <span class="math inline">\(p \geqslant
+1, \,\,\,\, f, g\)</span> измеримы и <span class="math inline">\(||f||_p
+&lt; \infty, \,\,\,\, ||g||_q &lt; \infty\)</span>, то <span
+class="math inline">\(||f + g||_p  \leqslant ||f||_p +
+||g||_q\)</span></p>
+<div id="definition-17">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(L_p(X, \A, \mu) = \{f\)</span> – измеримы <span
+class="math inline">\(, |f|^p \in \mathcal{L}(X)\} / \sim\)</span></p>
+</div>
+<div id="statement-27">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\((L_p(X, \A, \mu), ||.||_p)\)</span> –
+нормированное пространство.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<ol type="1">
+<li><span class="math inline">\(||f||_p = 0 \iff f = 0\)</span> почти
+всюду.</li>
+<li><span class="math inline">\(||\alpha f||_p =
+\left(\displaystyle\int\limits_{X} |\alpha
+f(x)|^p\mu(dx)\right)^{\frac1{p}} = |\alpha|\cdot ||f||_p\)</span></li>
+<li>Неравенство Минковского</li>
+</ol>
+</div>
+<div id="definition-18">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Нормированное пространство <em>полное</em>, если всякая
+фундаментальная последовательность имеет предел в нем.</p>
+</div>
+<div id="theorem-5">
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math inline">\(L_p(X, \A, \mu)\)</span> – полное нормированное
+пространство.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="10.1.1" id="вложения-l_p">Вложения <span
+class="math inline">\(L_p\)</span></h3>
+<div id="statement-28">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\((X, \A, \mu)\)</span> – фиксированное. <span
+class="math inline">\(1 \leqslant p_1 &lt; p_2 &lt; \infty\)</span>.</p>
+<p><span class="math inline">\(L_{p_1}\)</span> и <span
+class="math inline">\(L_{p_2}\)</span> – пространства.</p>
+<p>Тогда, если <span class="math inline">\(\mu X &lt; \infty\)</span>,
+то <span class="math inline">\(L_{p_2}(X) \subset L_{p_1}(X)\)</span> и
+<span class="math inline">\(\displaystyle\int\limits_{X}
+|f(x)|^{p_1}\mu(dx) \leqslant \left(\displaystyle\int\limits_{X}
+|f(x)|^{p_2}\mu(dx)\right)^{\frac{p_1}{p_2}}
+\left(\displaystyle\int\limits_{X}
+1\mu(dx)\right)^{1-\frac{p_1}{p_2}}\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Запишем неравенство Гёльдера для функций:</p>
+<p>Возведем в степень <span class="math inline">\(\frac1{p_1}:\)</span>
+<span class="math inline">\(||f||_{p_1} \leqslant ||f||_{p_2}\cdot (\mu
+X)^{\frac{p_2 - p_1}{p_1 \cdot p_2}}\)</span></p>
+</div>
+<div id="corollary-5">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Если
+<span class="math inline">\(||f_n - f||_{p_2} \to 0\)</span>, то <span
+class="math inline">\(||f_n - f||_{p_2} \to 0\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="10.1.2"
+id="пример-того-что-включение-пространств-l_p-строгое">Пример того, что
+включение пространств <span class="math inline">\(L_p\)</span>
+строгое</h3>
+<p><span class="math inline">\(L_{p_2}([0, 1]) \not \subset L_{p_1}([0,
+1])\)</span>, так как можем взять <span class="math inline">\(f(x) =
+\frac1{x^{\frac1{p_2}}}\)</span></p>
+<h3 data-number="10.1.3"
+id="пример-того-что-конечность-меры-существенна">Пример того, что
+конечность меры существенна</h3>
+<p><span class="math inline">\(L_{p_2}([1, +\infty)) \not \subset
+L_{p_1}([1, +\infty))\)</span>, так как можем взять <span
+class="math inline">\(f(x) = \frac1{x^{\frac1{p_1}}}\)</span></p>
+<h3 data-number="10.1.4" id="пример-функции">Пример функции</h3>
+<p><span class="math inline">\([0, 1] \,\,\,\, f(x) = \displaystyle
+\sum_{n = 1}^{\infty}k \cdot \chi_{[\frac1{2^{k+1}},
+\frac1{2^k})}(x)\)</span></p>
+<p><span class="math inline">\(\forall p \,\,\,\,
+\displaystyle\int\limits_{X} |f(x)|^p\mu(dx) = \displaystyle \sum_{n =
+1}^{\infty}\frac{k^p}{2^{k + 1}} &lt; \infty, \,\,\,\, f \in \cap_{p
+&lt; \infty}L_p([0, 1])\)</span></p>
+<p><span class="math inline">\(\forall k \in \mathbb{N} \,\,\,\, \mu\{x:
+\,\,\,\, |f(x)| &gt; k\} = \frac1{2^{k + 1}} &gt; 0, \,\,\,\, f\in
+L_{\infty}([0, 1])\)</span></p>
+<h2 data-number="10.2" id="пространство-l_infty">Пространство <span
+class="math inline">\(L_{\infty}\)</span></h2>
+<div id="definition-19">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(L_{\infty}(X, \A, \mu) = \{f: \,\,\,\, \exists c:
+\,\,\,\, \mu\{x: \,\,\,\,|f(x)| &gt; c\} = 0\}, \,\,\,\, f\)</span> –
+измеримые.</p>
+<p>Определим норму <span class="math inline">\(||f||_{\infty} = \inf\{c:
+\,\,\,\,\mu\{x: \,\,\,\, |f(x)| &gt; c\} = 0\}\)</span>, если непусто,
+иначе <span class="math inline">\([c_0, +\infty)\)</span>.</p>
+</div>
+<div id="statement-29">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>корректность определения</em>)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="statement-30">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(|f| \leqslant c_1\)</span> почти всюду,
+<span class="math inline">\(|g| \leqslant c_2\)</span> почти всюду, то
+<span class="math inline">\(|f+g| \leqslant c_1+ c_2\)</span> почти
+всюду.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="10.2.1"
+id="вложенность-пространств-l_infty">Вложенность пространств <span
+class="math inline">\(L_{\infty}\)</span></h3>
+<div id="statement-31">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(\mu X &lt; \infty\)</span>, то <span
+class="math inline">\(L_{\infty}(X) \subset \cap_{p &lt;
+\infty}L_p(X)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="10.3" id="сепарабельность">Сепарабельность</h2>
+<div id="definition-20">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Нормированное пространство <em>сепарабельно</em>, если в
+нем есть не более чем счетное всюду плотное множество.</p>
+<p>Пример: <span class="math inline">\(\mathbb{R}\)</span> и <span
+class="math inline">\(\mathbb{Q}\)</span></p>
+</div>
+<div id="statement-32">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(\forall p &lt; \infty\)</span> простые функции
+плотны в <span class="math inline">\(L_p(X)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\{f_n\}: \,\,\,\, f_n \uparrow f\)</span>
+на <span class="math inline">\(\{f \geqslant 0\}\)</span> и <span
+class="math inline">\(f_n \downarrow f\)</span> на <span
+class="math inline">\(\{f &lt; 0\} \implies |f_n - f|^p \leqslant
+|f|^p\)</span></p>
+<p><span class="math inline">\(\displaystyle\int\limits_{X} |f_n(x) -
+f|^p\mu(dx) \to 0\)</span> по теореме Лебега.</p>
+</div>
+<div id="definition-21">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\mu\)</span> – мера на <span
+class="math inline">\(\sigma\)</span>-алгебре <span
+class="math inline">\(\A, \,\,\,\, A_0 \subset \A\)</span> – <em>базис
+меры</em>, если <span class="math inline">\(\forall A \in \A \,\,\,\,
+\forall \varepsilon &gt; 0 \,\,\,\, \exists B \in A_0: \,\,\,\,
+\mu(A\triangle B) &lt; \varepsilon\)</span></p>
+<p>Пример: для меры Лебега <span class="math inline">\(R(S)\)</span> –
+базис.</p>
+<p>Пример: классическая мера на отрезке имеет счетный базис. <span
+class="math inline">\(A_0 = \{\bigsqcup_{k = 1}^n(a_k, b_k)|\,\,\,\,
+a_k, b_k \in \mathbb{Q}\}\)</span></p>
+</div>
+<div id="statement-33">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f\)</span> неотрицательная измеримая функция
+и <span class="math inline">\(\varphi_t(y) = \mu\{t\in X: \,\,\,\, f(t)
+&gt; y\}, \,\,\,\, \mu X &lt; \infty\)</span></p>
+<p>Тогда <span class="math inline">\(\displaystyle\int\limits_{X}
+|f(t)|^p\mu(dt) = (\mathcal{L}) p \displaystyle\int\limits_{0}^{+\infty}
+y^{p - 1} \varphi_f(y) dy\)</span> (классическая мера)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="10.4" id="домашняя-работа-9">Домашняя работа 9</h2>
+<div id="problem-46">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
+class="math inline">\(p_0 \in (1, +\infty)\)</span>. Построить <span
+class="math inline">\(f\in L_{p_0}(\mathbb{R}): \,\,\,\, \forall p \ne
+p_0 \,\,\,\, f\not\in L_p(\mathbb{R})\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-47">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Независимо
+от конечности <span class="math inline">\(\mu X\)</span> верно: если
+<span class="math inline">\(\forall p &lt; \infty \,\,\,\, f\in
+L_p(X)\)</span> и <span class="math inline">\(\exists c \,\,\,\, \forall
+p: \,\,\,\, ||f||_p \leqslant c\)</span>, то <span
+class="math inline">\(f\in L_{\infty}(X)\)</span> и <span
+class="math inline">\(||f||_{\infty} \leqslant C\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-48">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Если мера
+имеет счетный базис, то <span class="math inline">\(L_p(X, \A,
+\mu)\)</span> сепарабельно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-49">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
+class="math inline">\(f\)</span> неотрицательная измеримая функция и
+<span class="math inline">\(\varphi_t(y) = \mu\{t\in X: \,\,\,\, f(t)
+&gt; y\}, \,\,\,\, \mu X &lt; \infty\)</span></p>
+<p>Тогда <span class="math inline">\(\displaystyle\int\limits_{X}
+|f(t)|^p\mu(dt) = (\mathcal{L}) p \displaystyle\int\limits_{0}^{+\infty}
+y^{p - 1} \varphi_f(y) dy\)</span> (классическая мера)</p>
+<p>Доказать для простых <span class="math inline">\(f\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-50">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
+class="math inline">\(f\)</span> неотрицательная измеримая функция и
+<span class="math inline">\(\varphi_t(y) = \mu\{t\in X: \,\,\,\, f(t)
+&gt; y\}, \,\,\,\, \mu X &lt; \infty\)</span></p>
+<p>Тогда <span class="math inline">\(\displaystyle\int\limits_{X}
+|f(t)|^p\mu(dt) = (\mathcal{L}) p \displaystyle\int\limits_{0}^{+\infty}
+y^{p - 1} \varphi_f(y) dy\)</span> (классическая мера)</p>
+<p>Доказать для всех <span class="math inline">\(f\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="семинар-8-1.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

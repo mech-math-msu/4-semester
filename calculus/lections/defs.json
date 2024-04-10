@@ -103,5 +103,15 @@
         "keyword": "синус преобразования фурье",
         "html": "<p><a href=\"лекция-14.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\hat{f}_s(v) = \\frac1{2\\sqrt{\\pi}}\n\\displaystyle\\int\\limits_{-\\infty}^{+\\infty} f(t)\\sin(vt)dt\\)</span> –\n<em>синус преобразования Фурье</em>.</p>\n<p>Так как <span class=\"math inline\">\\(f\\)</span> – нечетная <span\nclass=\"math inline\">\\(\\hat{f}_s(v) = \\frac1{2\\sqrt{\\pi}}\n\\displaystyle\\int\\limits_{-\\infty}^{+\\infty} f(t)\\sin(vt)dt =\n\\frac1{\\sqrt{\\pi}} \\displaystyle\\int\\limits_{0}^{+\\infty}\nf(t)\\sin(vt)dt\\)</span></p>",
         "url": "лекция-14.html#definition-19"
+    },
+    {
+        "keyword": "свертка функций",
+        "html": "<p><a href=\"лекция-15.html#definition-21\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\forall [a, b] \\subset \\mathbb{R}\n\\,\\,\\,\\, \\varphi, \\psi \\in \\mathcal{R}[a, b]\\)</span>.</p>\n<p>(Если <span class=\"math inline\">\\(\\exists\\)</span>) <span\nclass=\"math inline\">\\(f(x) :=\n\\displaystyle\\int\\limits_{-\\infty}^{+\\infty} \\varphi(t)\\psi(x -\nt)dt\\)</span>, то <span class=\"math inline\">\\(f(x)\\)</span> –\n<em>свертка функций</em> <span class=\"math inline\">\\(\\varphi\\)</span> и\n<span class=\"math inline\">\\(\\psi\\)</span>, которая обозначается <span\nclass=\"math inline\">\\(\\varphi\\star \\psi\\)</span>.</p>\n<p>На <span class=\"math inline\">\\(\\varphi\\)</span> и <span\nclass=\"math inline\">\\(\\psi\\)</span> везде дальше в утверждениях\nдобавляются необходимые условия (их надо самим додумывать).</p>",
+        "url": "лекция-15.html#definition-21"
+    },
+    {
+        "keyword": "тета-функция",
+        "html": "<p><a href=\"лекция-15.html#definition-22\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\displaystyle \\sum_{n = 0}^{\\infty}e^{-n\nx^2}\\)</span> – <span class=\"math inline\">\\(\\theta\\)</span>-функция\n(<em>тета-функция</em>).</p>",
+        "url": "лекция-15.html#definition-22"
     }
 ]

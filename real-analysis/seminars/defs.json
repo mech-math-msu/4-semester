@@ -83,5 +83,30 @@
         "keyword": "полная вариация заряда",
         "html": "<p><a href=\"семинар-8.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Полная вариация заряда</em> – это <span class=\"math inline\">\\(|\\Phi|\n= \\Phi_{+} - \\Phi_{-}\\)</span>.</p>\n<p><span class=\"math inline\">\\(|\\Phi|(E)\\ne |\\Phi(E)|\\)</span></p>\n<p>Для <span class=\"math inline\">\\(\\Phi(E) =\n\\displaystyle\\int\\limits_{E} f(x)\\mu(dx) \\,\\,\\,\\, |\\Phi|(E) =\n\\displaystyle\\int\\limits_{E} |f(x)|\\mu(dx)\\)</span> и <span\nclass=\"math inline\">\\(\\Phi_{+}(E) = \\displaystyle\\int\\limits_{E\\cap\\{x:\nf(x) \\geqslant 0\\}} f(x)\\mu(dx)\\)</span></p>",
         "url": "семинар-8.html#definition-16"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"семинар-9.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(L_p(X, \\A, \\mu) = \\{f\\)</span> – измеримы\n<span class=\"math inline\">\\(, |f|^p \\in \\mathcal{L}(X)\\} /\n\\sim\\)</span></p>",
+        "url": "семинар-9.html#definition-17"
+    },
+    {
+        "keyword": "полное",
+        "html": "<p><a href=\"семинар-9.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНормированное пространство <em>полное</em>, если всякая фундаментальная\nпоследовательность имеет предел в нем.</p>",
+        "url": "семинар-9.html#definition-18"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"семинар-9.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(L_{\\infty}(X, \\A, \\mu) = \\{f: \\,\\,\\,\\,\n\\exists c: \\,\\,\\,\\, \\mu\\{x: \\,\\,\\,\\,|f(x)| &gt; c\\} = 0\\}, \\,\\,\\,\\,\nf\\)</span> – измеримые.</p>\n<p>Определим норму <span class=\"math inline\">\\(||f||_{\\infty} = \\inf\\{c:\n\\,\\,\\,\\,\\mu\\{x: \\,\\,\\,\\, |f(x)| &gt; c\\} = 0\\}\\)</span>, если непусто,\nиначе <span class=\"math inline\">\\([c_0, +\\infty)\\)</span>.</p>",
+        "url": "семинар-9.html#definition-19"
+    },
+    {
+        "keyword": "сепарабельно",
+        "html": "<p><a href=\"семинар-9.html#definition-20\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНормированное пространство <em>сепарабельно</em>, если в нем есть не\nболее чем счетное всюду плотное множество.</p>\n<p>Пример: <span class=\"math inline\">\\(\\mathbb{R}\\)</span> и <span\nclass=\"math inline\">\\(\\mathbb{Q}\\)</span></p>",
+        "url": "семинар-9.html#definition-20"
+    },
+    {
+        "keyword": "базис меры",
+        "html": "<p><a href=\"семинар-9.html#definition-21\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\mu\\)</span> – мера на <span\nclass=\"math inline\">\\(\\sigma\\)</span>-алгебре <span\nclass=\"math inline\">\\(\\A, \\,\\,\\,\\, A_0 \\subset \\A\\)</span> – <em>базис\nмеры</em>, если <span class=\"math inline\">\\(\\forall A \\in \\A \\,\\,\\,\\,\n\\forall \\varepsilon &gt; 0 \\,\\,\\,\\, \\exists B \\in A_0: \\,\\,\\,\\,\n\\mu(A\\triangle B) &lt; \\varepsilon\\)</span></p>\n<p>Пример: для меры Лебега <span class=\"math inline\">\\(R(S)\\)</span> –\nбазис.</p>\n<p>Пример: классическая мера на отрезке имеет счетный базис. <span\nclass=\"math inline\">\\(A_0 = \\{\\bigsqcup_{k = 1}^n(a_k, b_k)|\\,\\,\\,\\,\na_k, b_k \\in \\mathbb{Q}\\}\\)</span></p>",
+        "url": "семинар-9.html#definition-21"
     }
 ]
