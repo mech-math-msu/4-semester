@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 9</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-8.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="9" id="лекция-9">Лекция 9</h1>
+<h2 data-number="9.1" id="абстрактные-поверхности">Абстрактные
+поверхности</h2>
+<p>Хотим изучать свойства поверхностей, которые не зависят от того, куда
+поверхность поместили, поэтому перейдем к более абстрактным
+объектам.</p>
+<h3 data-number="9.1.1" id="мотивация-построения">Мотивация
+построения</h3>
+<p><strong>Пример:</strong> маятник описывается окружностью. Повесим на
+маятник еще один маятник. Тогда положение двойного маятника описывается
+двумя углами, и возникает вопрос какой объект описывается этими углами
+(и в данном случае – это тор в трехмерном пространстве), но к этой
+задаче трехмерное пространство не имеет отношения, поэтому нужна более
+абстрактная поверхность.</p>
+<p><strong>Пример:</strong> вращение твердого тела с закрепленной
+точкой. Рассмотрим декартову систему координат с началом координат в
+закрепленной точке и другую систему координат с центром в той же точке,
+но жестко связанную с телом. Теперь надо решить задачу описания движения
+одной системы относительно другой. <span class="math inline">\(M =
+SO(3)\)</span>. То есть имеем трехмерное пространство в девятимерном, но
+нам такое не надо, потому что хочется описывать в пространстве (как оно
+собственно и есть).</p>
+<p><strong>Пример:</strong> В общей теории относительности пространство
+– это пространство-время, кривизна – гравитационное поле, оно же
+метрика.</p>
+<h2 data-number="9.2" id="гладкие-многообразия">Гладкие
+многообразия</h2>
+<blockquote>
+<p>Хотим, чтобы наш абстрактный объект удовлетворял основным свойствам
+поверхностей.</p>
+</blockquote>
+<blockquote>
+<p>Главные свойства поверхностей: в окрестности каждой точки есть
+координаты и две системы координат в окрестности одной точки выражаются
+друг через друга посредством гладких функций.</p>
+</blockquote>
+<blockquote>
+<p>Нужны окрестности, значит берем топологические пространства.</p>
+</blockquote>
+<div id="definition-40">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(M\)</span> – топологическое пространство, с
+условиями:</p>
+<ol type="a">
+<li>пространство хаусдоврфово,</li>
+<li>в пространстве счетная база топологии.</li>
+</ol>
+<p><span class="math inline">\(M\)</span> – <em>топологическое</em>
+<span class="math inline">\(n\)</span>-<em>мерное многообразие</em>,
+если <span class="math inline">\(\forall P \in M \,\,\,\,
+\exists\)</span> окрестность <span class="math inline">\(U_P \in
+\tau_M\)</span> гомеоморфная открытой области в <span
+class="math inline">\(\mathbb{R}^n\)</span> (объединение <span
+class="math inline">\(n\)</span>-мерных дисков).</p>
+<p>Пара <span class="math inline">\((U_P, \varphi_P: U_P \to V_P \subset
+\mathbb{R}^n)\)</span>, где <span
+class="math inline">\(\varphi_P\)</span> – гомеоморфизм, –
+<em>карта</em> <span class="math inline">\(M\)</span>, <span
+class="math inline">\(\varphi_P\)</span> – <em>координатный
+гомеоморфизм</em>.</p>
+<p>Совокупность карт <span class="math inline">\((U_{\alpha},
+\varphi_{\alpha})\)</span>, где <span
+class="math inline">\(\bigcup_{\alpha}U_{\alpha} = M\)</span>, –
+<em>атлас</em> <span class="math inline">\(M\)</span>.</p>
+</div>
+<div id="note-6">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>У каждой
+точки есть окрестность гомеоморфная <span
+class="math inline">\(n\)</span>-мерному диску.</p>
+</div>
+<div id="definition-41">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Что
+происходит с координатами пересечения двух окрестностей с разными
+картами? Как выражаются координаты друг через друга?</p>
+<p><img src="img/upq.jpg" width="300" /></p>
+<p><span class="math inline">\(U_{PQ} = U_P \cap U_Q\)</span></p>
+<p><span class="math inline">\(V_{PQ} = \varphi_P(U_{PQ})\)</span></p>
+<p><span class="math inline">\(V_{QP} = \varphi_Q(U_{PQ})\)</span></p>
+<p>Построим отображение: <span class="math inline">\(\varphi_{PQ}:
+V_{PQ} \to V_{QP}: \varphi_{Q}\circ \varphi_{P}^{-1}\)</span>, которое
+гомеоморфизм, так как композиция гомеоморфизмов.</p>
+<p><span class="math inline">\(\varphi_{PQ}\)</span> – <em>функции
+склейки или фунцкии перехода</em>.</p>
+</div>
+<blockquote>
+<p>Проблема: при нашем определении непонятно, что такое дифференцируемая
+функция и, следовательно, что такое гладкость.</p>
+</blockquote>
+<blockquote>
+<p>Поэтому хотим наделить топологическое многообразие «гладкой
+структурой».</p>
+</blockquote>
+<div id="definition-42">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M\)</span> – <span
+class="math inline">\(n\)</span>-мерное топологическое многообразие и
+пусть <span class="math inline">\((U_{\alpha},
+\varphi_{\alpha})\)</span> – атлас <span
+class="math inline">\(M\)</span>.</p>
+<p>Атлас <em>гладкий</em>, если все функции <span
+class="math inline">\(\varphi_{\alpha}\)</span> (которые обычные функции
+от <span class="math inline">\(n\)</span> переменных в евклидовом
+пространстве) гладкие.</p>
+<p><em>Гладкая структура на многообразии</em> <span
+class="math inline">\(M\)</span> – это пара <span
+class="math inline">\(M\)</span> и фиксированный гладкий атлас.</p>
+<p>Два гладких атласа <em>эквивалентны</em>, если их объединения – это
+гладкий атлас, то есть функции склейки между картами одного и другого
+атласа все гладкие.</p>
+<p>Теперь переформулируем:</p>
+<p><em>Гладкая структура на</em> <span class="math inline">\(M\)</span>
+– класс эквивалентности гладких атласов.</p>
+</div>
+<div id="definition-43">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Гладкое</em> <span
+class="math inline">\(n\)</span>-<em>мерное многообразие</em> – это
+<span class="math inline">\(n\)</span>-мерное топологическое
+многообразие с фиксированной гладкой структурой.</p>
+</div>
+<h3 data-number="9.2.1" id="примеры-гладких-многообразий">Примеры
+гладких многообразий</h3>
+<h4 data-number="9.2.1.1" id="mathbbrn"><span
+class="math inline">\(\mathbb{R}^n\)</span></h4>
+<p>Атлас из одной карты.</p>
+<h4 data-number="9.2.1.2" id="окружность-s1-subset-mathbbr2">Окружность
+<span class="math inline">\(S^1 \subset \mathbb{R}^2\)</span></h4>
+<p><span class="math inline">\(S^1: \,\,\,\, (x^1)^2 + (x^2)^2 =
+R^2\)</span>.</p>
+<p>Атлас?</p>
+<p>Рассмотрим карты, которые определяются стереографической проекцией.
+<span class="math inline">\(U_1 = S^1\setminus N\)</span>, где <span
+class="math inline">\(N = (0, R)\)</span> северный полюс со
+стереографической проекцией из <span class="math inline">\(N\)</span> на
+прямую, проходящую через южный полюс <span class="math inline">\(S = (0,
+-R)\)</span>.</p>
+<p><span class="math inline">\(U_2 = S^1\setminus S\)</span>, где <span
+class="math inline">\(S = (0, -R)\)</span> южный полюс со
+стереографической проекцией из <span class="math inline">\(S\)</span> на
+прямую, проходящую через северный полюс <span class="math inline">\(N =
+(0, -R)\)</span>.</p>
+<p>Проверим, что атлас гладкий:</p>
+<p><span class="math inline">\(\varphi_1(U_1\cap U_2) =
+\mathbb{R}\setminus \{0\}\)</span></p>
+<p><span class="math inline">\(\varphi_2(U_1\cap U_2) =
+\mathbb{R}\setminus \{0\}\)</span></p>
+<p><span class="math inline">\(\mathbb{R}\setminus \{0\}\)</span> –
+открытое.</p>
+<p>Функции склейки:</p>
+<p><span class="math inline">\(y = \frac{4R^2}{x}\)</span> и <span
+class="math inline">\(x = \frac{4R^2}{y}\)</span> – бесконечно
+дифференцируемые, следовательно атлас гладкий.</p>
+<h4 data-number="9.2.1.3" id="n-мерная-сфера-sn-subset-mathbbrn-1"><span
+class="math inline">\(n\)</span>-мерная сфера <span
+class="math inline">\(S^n \subset \mathbb{R}^{n + 1}\)</span></h4>
+<p>тоже самое</p>
+<h4 data-number="9.2.1.4"
+id="проективная-плоскость-mathbbrp2-1">Проективная плоскость <span
+class="math inline">\(\mathbb{R}P^2\)</span></h4>
+<div id="definition-44">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Точка проективной плоскости</em> – это класс
+эквивалентности трехмерных ненулевых векторов по отношению
+эквивалентности <span class="math inline">\((x^0, x^1, x^2)\sim (\lambda
+x^0, \lambda x^1, \lambda x^2), \,\,\,\, \lambda \ne 0\)</span>.</p>
+</div>
+<p>Соорудим атлас:</p>
+<p>Будет три карты (первая координата отлична от нуля и т.д.)</p>
+<p><span class="math inline">\(U_1 \subset \mathbb{R}P^2 \,\,\,\,
+\mathbf{x}: \,\,\,\, x^0 \ne 0\)</span>.</p>
+<p>и координатный гомеоморфизм <span class="math inline">\(\varphi_1:
+(x^0, x^1, x^2)\sim (1, u^1, u^2) \,\,\,\, u^1 = \frac{x^1}{x^0}
+\,\,\,\, u^2 = \frac{x^2}{x^0}\)</span></p>
+<p><span class="math inline">\(U_2 \subset \mathbb{R}P^2 \,\,\,\,
+\mathbf{x}: \,\,\,\, x^1 \ne 0\)</span>.</p>
+<p>и координатный гомеоморфизм <span class="math inline">\(\varphi_2:
+(x^0, x^1, x^2)\sim (v^1, 1, v^2) \,\,\,\, v^1 = \frac{x^0}{x^1}
+\,\,\,\, v^2 = \frac{x^2}{x^1}\)</span></p>
+<p><span class="math inline">\(U_3 \subset \mathbb{R}P^2 \,\,\,\,
+\mathbf{x}: \,\,\,\, x^2 \ne 0\)</span>.</p>
+<p>и координатный гомеоморфизм <span class="math inline">\(\varphi_3:
+(x^0, x^1, x^2)\sim (w^1, w^2, 1) \,\,\,\, w^1 = \frac{x^0}{x^2}
+\,\,\,\, w^2 = \frac{x^1}{x^2}\)</span></p>
+<p>Проверим гладкость атласа:</p>
+<p><span class="math inline">\(U_1 \cap U_2 = \{\mathbf{x}: \,\,\,\, x^0
+\ne 0, \,\,\,\, x^1 \ne 0\}\)</span></p>
+<p><span class="math inline">\(\varphi_1(U_1 \cap U_2) =
+\mathbb{R}^2_{(u^1, u^2)} \cap \{u^1 \ne 0\}\)</span></p>
+<p><span class="math inline">\(\varphi_2(U_1 \cap U_2) =
+\mathbb{R}^2_{(v^1, v^2)} \cap \{v^1 \ne 0\}\)</span></p>
+<p>Функция склейки:</p>
+<p><span class="math inline">\(v^1 = \frac1{u^1}, \,\,\,\, v^2 =
+\frac{u^2}{u^1}\)</span> – бесконечно дифференцируемые, следовательно,
+гладкое многообразие.</p>
+<div id="definition-45">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Карта
+<em>аффинная</em>, если области <span class="math inline">\(U_P\)</span>
+– плоскости.</p>
+</div>
+<h4 data-number="9.2.1.5"
+id="конструкция-проективной-плоскости-на-сфере">Конструкция проективной
+плоскости на сфере</h4>
+<div id="definition-46">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Проективная плоскость</em> – фактортопология сферы
+по отношению эквивалентности диаметрально противоположных точек.</p>
+</div>
+<p>Для <span class="math inline">\(n\)</span>-мерной проективной
+плоскости тоже самое (это типа дз).</p>
+<blockquote>
+<p>Следующий пример к каком-то смысле для нас самый важный: оставлю его
+вам в качестве упражнения.</p>
+</blockquote>
+<h4 data-number="9.2.1.6"
+id="ввести-гладкую-структуру-на-n-мерном-подмногообразии-в-mathbbrn">Ввести
+гладкую структуру на <span class="math inline">\(n\)</span>-мерном
+подмногообразии в <span class="math inline">\(\mathbb{R}^N\)</span></h4>
+<h3 data-number="9.2.2"
+id="гладкие-функции-на-гладком-многообразии">Гладкие функции на гладком
+многообразии</h3>
+<div id="definition-47">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M\)</span> – гладкое <span
+class="math inline">\(n\)</span>-мерное многообразие и <span
+class="math inline">\(f: M \to \mathbb{R}\)</span>.</p>
+<p>Пусть <span class="math inline">\(P \in M\)</span> и <span
+class="math inline">\(U \ni P, \,\,\,\, \varphi: U \to V\)</span>,</p>
+<p><span class="math inline">\(f_{|U} \,\,\,\, \hat{f}_{U}: V \to
+\mathbb{R}\)</span></p>
+<p><span class="math inline">\(\hat{f}(x) :=
+f(\varphi^{-1}(x))\)</span></p>
+<p><span class="math inline">\(f\)</span> – <em>гладкая в окрестности
+точки</em> <span class="math inline">\(P\)</span>, если <span
+class="math inline">\(\forall\)</span> карты <span
+class="math inline">\(U \ni P\)</span> функция <span
+class="math inline">\(\hat{f}(x)\)</span> гладкая в окрестности точки
+<span class="math inline">\(\varphi(P)\)</span>.</p>
+<p><span class="math inline">\(f\)</span> – <em>гладкая всюду</em>, если
+<span class="math inline">\(f\)</span> гладкая в окрестности каждой
+точки.</p>
+</div>
+<div id="definition-48">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M^n\)</span> и <span
+class="math inline">\(M^m\)</span> <span
+class="math inline">\(n\)</span>-мерное и <span
+class="math inline">\(m\)</span>-мерное гладкие многообразия.</p>
+<p><span class="math inline">\(f: M^n \to M^m\)</span></p>
+<p><span class="math inline">\(P \in M^n, \,\,\,\, U \ni P, \,\,\,\,
+\mathbf{x} = (x^1, \ldots, x^n)\)</span></p>
+<p><span class="math inline">\(f(P) \in M^m, \,\,\,\, V \ni f(P),
+\,\,\,\, \mathbf{y} = (y^1, \ldots, y^m)\)</span></p>
+<p><span class="math inline">\(f: y^i = f^i(x^1, \ldots, x^m), \,\,\,\,
+i \in 1, \ldots, n\)</span></p>
+<p><span class="math inline">\(f\)</span> – <em>гладкое</em>, если
+каждое <span class="math inline">\(f^i(\mathbf{x})\)</span> бесконечно
+дифференцируемо.</p>
+</div>
+<div id="definition-49">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M^n\)</span> и <span
+class="math inline">\(M^m\)</span> <span
+class="math inline">\(n\)</span>-мерное и <span
+class="math inline">\(m\)</span>-мерное гладкие многообразия.</p>
+<p><span class="math inline">\(f: M^n \to M^m\)</span> –
+<em>диффеоморфизм</em>, если <span class="math inline">\(f\)</span>
+биекция и <span class="math inline">\(f, f^{-1}\)</span> гладкие.</p>
+<p>Если существует диффеоморфизм многообразий, то многообразия
+<em>диффеоморфны</em>.</p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-8.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

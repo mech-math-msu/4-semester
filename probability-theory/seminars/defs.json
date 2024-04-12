@@ -38,5 +38,15 @@
         "keyword": "независимы независимы",
         "html": "<p><a href=\"семинар-9.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСлучайные величины <span class=\"math inline\">\\(\\xi\\)</span> и <span\nclass=\"math inline\">\\(\\eta\\)</span> на пространстве <span\nclass=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span>\n<em>независимы</em>, если порожденные ими <span\nclass=\"math inline\">\\(\\sigma\\)</span>-алгебры <span\nclass=\"math inline\">\\(\\sigma_{\\xi}\\)</span> и <span\nclass=\"math inline\">\\(\\sigma_{\\eta}\\)</span> <em>независимы</em>, то\nесть <span class=\"math inline\">\\(\\forall A \\in \\sigma_{\\xi}\\)</span> и\n<span class=\"math inline\">\\(\\forall B \\in \\sigma_{\\eta} \\,\\,\\,\\,\nP(A\\cdot B) = P(A)\\cdot P(B)\\)</span> (события <span\nclass=\"math inline\">\\(A\\)</span> и <span\nclass=\"math inline\">\\(B\\)</span> независимы)</p>",
         "url": "семинар-9.html#definition-7"
+    },
+    {
+        "keyword": "функция распределения случайной величины",
+        "html": "<p><a href=\"семинар-10.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span> –\nвероятностное пространство и <span class=\"math inline\">\\(\\xi\\)</span> –\nслучайная величина на нем (измеримая функция).</p>\n<p><em>Функция распределения случайной величины</em> <span\nclass=\"math inline\">\\(\\xi\\)</span> – это <span\nclass=\"math inline\">\\(F_{\\xi}(x) = P\\{\\xi \\leqslant x\\}, \\,\\,\\,\\,\n\\forall x \\in \\mathbb{R}\\)</span> (корректно определена, так как такое\nмножество является событием по простейшим свойствам)</p>",
+        "url": "семинар-10.html#definition-8"
+    },
+    {
+        "keyword": "абсолютно непрерывна плотность распределения",
+        "html": "<p><a href=\"семинар-10.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЕсли <span class=\"math inline\">\\(\\exists f(x): \\,\\,\\,\\, F(x) =\n\\displaystyle\\int\\limits_{-\\infty}^x f(t)dt\\)</span>, то <span\nclass=\"math inline\">\\(F(x)\\)</span> <em>абсолютно непрерывна</em>, а\n<span class=\"math inline\">\\(f(t)\\)</span> – <em>плотность\nраспределения</em>.</p>",
+        "url": "семинар-10.html#definition-9"
     }
 ]

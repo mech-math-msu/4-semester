@@ -168,5 +168,85 @@
         "keyword": "нормальное сечение",
         "html": "<p><a href=\"лекция-7.html#definition-33\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Нормальное сечение</em> поверхности <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span> – это пересечение <span\nclass=\"math inline\">\\(M\\)</span> с <span\nclass=\"math inline\">\\(2\\)</span>-мерной плоскостью, проходящей через\n<span class=\"math inline\">\\(\\mathbf{n}(P)\\)</span>.</p>",
         "url": "лекция-7.html#definition-33"
+    },
+    {
+        "keyword": "кривизна нормального сечения",
+        "html": "<p><a href=\"лекция-8.html#definition-34\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНормальное сечение задается касательным вектором и точкой. Если знаем\nкривизны всех нормальных сечений, то знаем как искривляется поверхность\nв окрестности точки. Пусть <span\nclass=\"math inline\">\\(\\tilde{k}(x)\\)</span> – <em>кривизна нормального\nсечения</em>, проведенного в направлении <span\nclass=\"math inline\">\\(X\\)</span>, <span class=\"math inline\">\\(\\tilde{k}\n&gt; 0\\)</span>, если вектор ускорения кривой направлен в сторону\nнормали <span class=\"math inline\">\\(\\mathbf{n}\\)</span> и <span\nclass=\"math inline\">\\(\\tilde{k} &lt; 0\\)</span> иначе.</p>",
+        "url": "лекция-8.html#definition-34"
+    },
+    {
+        "keyword": "вторая фундаментальная форма поверхности",
+        "html": "<p><a href=\"лекция-8.html#definition-35\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(b(x)\\)</span> – <em>вторая фундаментальная\nформа поверхности</em>.</p>\n<div id=\"note-1\">\n<p>В базисе <span class=\"math inline\">\\(r_1, \\ldots, r_n \\,\\,\\,\\, b_{ij}\n= (\\mathbf{r}_{ij}, m)\\)</span></p>\n</div>\n<div id=\"note-2\">\n<p><span class=\"math inline\">\\(\\tilde{k}(x) =\n\\frac{b(X)}{g(X)}\\)</span>, где <span\nclass=\"math inline\">\\(g(X)\\)</span> – первая фундаментальная форма\n(скалярное произведение индуцированное), то есть <span\nclass=\"math inline\">\\(g(X) = |X|^2\\)</span>.</p>\n</div>",
+        "url": "лекция-8.html#definition-35"
+    },
+    {
+        "keyword": "главные кривизны главные направления",
+        "html": "<p><a href=\"лекция-8.html#definition-36\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСобственные значения второй фундаментальной формы – <em>главные\nкривизны</em> поверхности <span class=\"math inline\">\\(M\\)</span> в точке\n<span class=\"math inline\">\\(P\\)</span>.</p>\n<p>Направления <span class=\"math inline\">\\(e_j\\)</span> второй\nфундаментальной формы – <em>главные направления</em> поверхности <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span>.</p>",
+        "url": "лекция-8.html#definition-36"
+    },
+    {
+        "keyword": "гауссова кривизна средняя кривизна",
+        "html": "<p><a href=\"лекция-8.html#definition-37\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Гауссова кривизна</em> – <span class=\"math inline\">\\(K =\n\\lambda_1\\cdot\\ldots\\cdot \\lambda_n = \\frac{\\det B}{\\det G}\\)</span></p>\n<p><em>Средняя кривизна</em> – <span class=\"math inline\">\\(H = \\lambda_1\n+ \\ldots + \\lambda_n = \\operatorname{tr}(BG^{-1})\\)</span></p>\n<p>Для двумерной поверхности <span class=\"math inline\">\\(H\\)</span> и\n<span class=\"math inline\">\\(K\\)</span> – все инварианты.</p>\n<p>Гауссова кривизна не меняется при изометрии.</p>\n<p>Гауссова кривизна плоскости <span class=\"math inline\">\\(0\\)</span>,\nсферы – <span class=\"math inline\">\\(\\frac1{R^2}\\)</span>.</p>",
+        "url": "лекция-8.html#definition-37"
+    },
+    {
+        "keyword": "отклонение",
+        "html": "<p><a href=\"лекция-8.html#definition-38\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\delta(Q)\\)</span> – <em>отклонение</em>\n(расстояние со знаком от точки <span class=\"math inline\">\\(Q\\)</span> до\n<span class=\"math inline\">\\(T_P(M)\\)</span>) <span\nclass=\"math inline\">\\(Q\\)</span> от <span\nclass=\"math inline\">\\(T_Q(M)\\)</span>, <span\nclass=\"math inline\">\\(\\delta(P) = 0\\)</span>.</p>",
+        "url": "лекция-8.html#definition-38"
+    },
+    {
+        "keyword": "эллиптическая гиперболическая параболическая",
+        "html": "<p><a href=\"лекция-8.html#definition-39\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТочка <span class=\"math inline\">\\(P\\)</span> на двумерной поверхности\n<span class=\"math inline\">\\(M\\)</span> – <em>эллиптическая</em>, если\nгауссова кривизна положительна,</p>\n<p><em>гиперболическая</em>, если гауссова кривизна отрицательна,</p>\n<p><em>параболическая</em>, если гауссова кривизна равна <span\nclass=\"math inline\">\\(0\\)</span>.</p>",
+        "url": "лекция-8.html#definition-39"
+    },
+    {
+        "keyword": "топологическое мерное многообразие карта координатный гомеоморфизм атлас",
+        "html": "<p><a href=\"лекция-9.html#definition-40\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(M\\)</span> – топологическое пространство, с\nусловиями:</p>\n<ol type=\"a\">\n<li>пространство хаусдоврфово,</li>\n<li>в пространстве счетная база топологии.</li>\n</ol>\n<p><span class=\"math inline\">\\(M\\)</span> – <em>топологическое</em>\n<span class=\"math inline\">\\(n\\)</span>-<em>мерное многообразие</em>,\nесли <span class=\"math inline\">\\(\\forall P \\in M \\,\\,\\,\\,\n\\exists\\)</span> окрестность <span class=\"math inline\">\\(U_P \\in\n\\tau_M\\)</span> гомеоморфная открытой области в <span\nclass=\"math inline\">\\(\\mathbb{R}^n\\)</span> (объединение <span\nclass=\"math inline\">\\(n\\)</span>-мерных дисков).</p>\n<p>Пара <span class=\"math inline\">\\((U_P, \\varphi_P: U_P \\to V_P \\subset\n\\mathbb{R}^n)\\)</span>, где <span\nclass=\"math inline\">\\(\\varphi_P\\)</span> – гомеоморфизм, –\n<em>карта</em> <span class=\"math inline\">\\(M\\)</span>, <span\nclass=\"math inline\">\\(\\varphi_P\\)</span> – <em>координатный\nгомеоморфизм</em>.</p>\n<p>Совокупность карт <span class=\"math inline\">\\((U_{\\alpha},\n\\varphi_{\\alpha})\\)</span>, где <span\nclass=\"math inline\">\\(\\bigcup_{\\alpha}U_{\\alpha} = M\\)</span>, –\n<em>атлас</em> <span class=\"math inline\">\\(M\\)</span>.</p>",
+        "url": "лекция-9.html#definition-40"
+    },
+    {
+        "keyword": "функции склейки или фунцкии перехода",
+        "html": "<p><a href=\"лекция-9.html#definition-41\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЧто происходит с координатами пересечения двух окрестностей с разными\nкартами? Как выражаются координаты друг через друга?</p>\n<p><img src=\"img/upq.jpg\" width=\"300\" /></p>\n<p><span class=\"math inline\">\\(U_{PQ} = U_P \\cap U_Q\\)</span></p>\n<p><span class=\"math inline\">\\(V_{PQ} = \\varphi_P(U_{PQ})\\)</span></p>\n<p><span class=\"math inline\">\\(V_{QP} = \\varphi_Q(U_{PQ})\\)</span></p>\n<p>Построим отображение: <span class=\"math inline\">\\(\\varphi_{PQ}:\nV_{PQ} \\to V_{QP}: \\varphi_{Q}\\circ \\varphi_{P}^{-1}\\)</span>, которое\nгомеоморфизм, так как композиция гомеоморфизмов.</p>\n<p><span class=\"math inline\">\\(\\varphi_{PQ}\\)</span> – <em>функции\nсклейки или фунцкии перехода</em>.</p>",
+        "url": "лекция-9.html#definition-41"
+    },
+    {
+        "keyword": "гладкий гладкая структура на многообразии эквивалентны гладкая структура на",
+        "html": "<p><a href=\"лекция-9.html#definition-42\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M\\)</span> – <span\nclass=\"math inline\">\\(n\\)</span>-мерное топологическое многообразие и\nпусть <span class=\"math inline\">\\((U_{\\alpha},\n\\varphi_{\\alpha})\\)</span> – атлас <span\nclass=\"math inline\">\\(M\\)</span>.</p>\n<p>Атлас <em>гладкий</em>, если все функции <span\nclass=\"math inline\">\\(\\varphi_{\\alpha}\\)</span> (которые обычные функции\nот <span class=\"math inline\">\\(n\\)</span> переменных в евклидовом\nпространстве) гладкие.</p>\n<p><em>Гладкая структура на многообразии</em> <span\nclass=\"math inline\">\\(M\\)</span> – это пара <span\nclass=\"math inline\">\\(M\\)</span> и фиксированный гладкий атлас.</p>\n<p>Два гладких атласа <em>эквивалентны</em>, если их объединения – это\nгладкий атлас, то есть функции склейки между картами одного и другого\nатласа все гладкие.</p>\n<p>Теперь переформулируем:</p>\n<p><em>Гладкая структура на</em> <span class=\"math inline\">\\(M\\)</span>\n– класс эквивалентности гладких атласов.</p>",
+        "url": "лекция-9.html#definition-42"
+    },
+    {
+        "keyword": "гладкое мерное многообразие",
+        "html": "<p><a href=\"лекция-9.html#definition-43\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Гладкое</em> <span class=\"math inline\">\\(n\\)</span>-<em>мерное\nмногообразие</em> – это <span class=\"math inline\">\\(n\\)</span>-мерное\nтопологическое многообразие с фиксированной гладкой структурой.</p>",
+        "url": "лекция-9.html#definition-43"
+    },
+    {
+        "keyword": "точка проективной плоскости",
+        "html": "<p><a href=\"лекция-9.html#definition-44\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Точка проективной плоскости</em> – это класс эквивалентности\nтрехмерных ненулевых векторов по отношению эквивалентности <span\nclass=\"math inline\">\\((x^0, x^1, x^2)\\sim (\\lambda x^0, \\lambda x^1,\n\\lambda x^2), \\,\\,\\,\\, \\lambda \\ne 0\\)</span>.</p>",
+        "url": "лекция-9.html#definition-44"
+    },
+    {
+        "keyword": "аффинная",
+        "html": "<p><a href=\"лекция-9.html#definition-45\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКарта <em>аффинная</em>, если области <span\nclass=\"math inline\">\\(U_P\\)</span> – плоскости.</p>",
+        "url": "лекция-9.html#definition-45"
+    },
+    {
+        "keyword": "проективная плоскость",
+        "html": "<p><a href=\"лекция-9.html#definition-46\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Проективная плоскость</em> – фактортопология сферы по отношению\nэквивалентности диаметрально противоположных точек.</p>",
+        "url": "лекция-9.html#definition-46"
+    },
+    {
+        "keyword": "гладкая в окрестности точки гладкая всюду",
+        "html": "<p><a href=\"лекция-9.html#definition-47\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M\\)</span> – гладкое <span\nclass=\"math inline\">\\(n\\)</span>-мерное многообразие и <span\nclass=\"math inline\">\\(f: M \\to \\mathbb{R}\\)</span>.</p>\n<p>Пусть <span class=\"math inline\">\\(P \\in M\\)</span> и <span\nclass=\"math inline\">\\(U \\ni P, \\,\\,\\,\\, \\varphi: U \\to V\\)</span>,</p>\n<p><span class=\"math inline\">\\(f_{|U} \\,\\,\\,\\, \\hat{f}_{U}: V \\to\n\\mathbb{R}\\)</span></p>\n<p><span class=\"math inline\">\\(\\hat{f}(x) :=\nf(\\varphi^{-1}(x))\\)</span></p>\n<p><span class=\"math inline\">\\(f\\)</span> – <em>гладкая в окрестности\nточки</em> <span class=\"math inline\">\\(P\\)</span>, если <span\nclass=\"math inline\">\\(\\forall\\)</span> карты <span\nclass=\"math inline\">\\(U \\ni P\\)</span> функция <span\nclass=\"math inline\">\\(\\hat{f}(x)\\)</span> гладкая в окрестности точки\n<span class=\"math inline\">\\(\\varphi(P)\\)</span>.</p>\n<p><span class=\"math inline\">\\(f\\)</span> – <em>гладкая всюду</em>, если\n<span class=\"math inline\">\\(f\\)</span> гладкая в окрестности каждой\nточки.</p>",
+        "url": "лекция-9.html#definition-47"
+    },
+    {
+        "keyword": "гладкое",
+        "html": "<p><a href=\"лекция-9.html#definition-48\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M^n\\)</span> и <span\nclass=\"math inline\">\\(M^m\\)</span> <span\nclass=\"math inline\">\\(n\\)</span>-мерное и <span\nclass=\"math inline\">\\(m\\)</span>-мерное гладкие многообразия.</p>\n<p><span class=\"math inline\">\\(f: M^n \\to M^m\\)</span></p>\n<p><span class=\"math inline\">\\(P \\in M^n, \\,\\,\\,\\, U \\ni P, \\,\\,\\,\\,\n\\mathbf{x} = (x^1, \\ldots, x^n)\\)</span></p>\n<p><span class=\"math inline\">\\(f(P) \\in M^m, \\,\\,\\,\\, V \\ni f(P),\n\\,\\,\\,\\, \\mathbf{y} = (y^1, \\ldots, y^m)\\)</span></p>\n<p><span class=\"math inline\">\\(f: y^i = f^i(x^1, \\ldots, x^m), \\,\\,\\,\\,\ni \\in 1, \\ldots, n\\)</span></p>\n<p><span class=\"math inline\">\\(f\\)</span> – <em>гладкое</em>, если\nкаждое <span class=\"math inline\">\\(f^i(\\mathbf{x})\\)</span> бесконечно\nдифференцируемо.</p>",
+        "url": "лекция-9.html#definition-48"
+    },
+    {
+        "keyword": "диффеоморфизм диффеоморфны",
+        "html": "<p><a href=\"лекция-9.html#definition-49\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M^n\\)</span> и <span\nclass=\"math inline\">\\(M^m\\)</span> <span\nclass=\"math inline\">\\(n\\)</span>-мерное и <span\nclass=\"math inline\">\\(m\\)</span>-мерное гладкие многообразия.</p>\n<p><span class=\"math inline\">\\(f: M^n \\to M^m\\)</span> –\n<em>диффеоморфизм</em>, если <span class=\"math inline\">\\(f\\)</span>\nбиекция и <span class=\"math inline\">\\(f, f^{-1}\\)</span> гладкие.</p>\n<p>Если существует диффеоморфизм многообразий, то многообразия\n<em>диффеоморфны</em>.</p>",
+        "url": "лекция-9.html#definition-49"
     }
 ]

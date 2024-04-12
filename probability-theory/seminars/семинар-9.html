@@ -256,7 +256,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-10.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -484,21 +484,19 @@ class="math inline">\(B_1, B_2, \ldots\)</span> – две последоват�
 \displaystyle \lim_{n\to \infty}P(A_nB_n)\]</span></p>
 <p>при условии, что хотя бы один из указанных пределов существует.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p>Разобъем множества <span class="math inline">\(A_n\)</span> на
-непересекающиеся множества <span
-class="math inline">\(A_n&#39;\)</span>, такие что каждое <span
-class="math inline">\(A_n\)</span> представляется в виде объединения
-некоторых <span class="math inline">\(A_n&#39;\)</span> (<span
-class="math inline">\(A_n&#39;\)</span> «больше», чем <span
-class="math inline">\(A_n\)</span>).</p>
-<p>Аналогично <span class="math inline">\(B_n\)</span> разобъем на <span
-class="math inline">\(B_n&#39;\)</span>.</p>
-<p>Имеем <span class="math inline">\(1 = \displaystyle \lim_{n\to
-\infty}P(B_n) = \displaystyle \sum_{n =
-1}^{\infty}P(B_n&#39;)\)</span>.</p>
-<p>Пусть существует предел <span class="math inline">\(\displaystyle
-\lim_{n\to \infty}P(A_n) = \displaystyle \sum_{n =
-1}^{\infty}P(A_n&#39;)\)</span></p>
+<p><span class="math display">\[P(A_n B_n) = P(A_n) - P(B_n) - P(A_n
+\cup B_n)\]</span></p>
+<p>Докажем, что <span class="math inline">\(\displaystyle \lim_{n\to
+\infty}P(A_n \cup B_n) = 1\)</span>:</p>
+<p><span class="math inline">\(B_n \subset A_n \cup B_n \implies P(B_n)
+\leqslant P(A_n \cup B_n) \implies \displaystyle \lim_{n\to
+\infty}P(B_n) = 1 \leqslant \displaystyle \lim_{n\to \infty}P(A_n\cup
+B_n) = 1\)</span>.</p>
+<p><span class="math display">\[\displaystyle \lim_{n\to \infty}P(A_n
+B_n) = \displaystyle \lim_{n\to \infty}(P(A_n) - P(B_n) - P(A_n \cup
+B_n)) = \displaystyle \lim_{n\to \infty}P(A_n) - \displaystyle
+\lim_{n\to \infty}P(B_n) - \displaystyle \lim_{n\to \infty}P(A_n\cup
+B_n) \,\,\,\,\blacksquare\]</span></p>
 </div>
 <div id="problem-42">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -547,10 +545,11 @@ class="math inline">\(\xi\)</span> случайной величиной, есл
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
-<li></li>
 <li>нет,</li>
-<li></li>
+<li>нет,</li>
+<li>нет</li>
 </ol>
+<p>Почему нет? Потому что нет монотонности.</p>
 </div>
 <div id="problem-45">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -592,6 +591,8 @@ class="math inline">\(\eta\)</span>, определенная на этом ве
 class="math inline">\(\xi\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Борелевская сигма-алгебра на <span class="math inline">\([0, 1]
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-47">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -618,7 +619,7 @@ class="math inline">\(f(\xi)\)</span> является случайной вел
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-10.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

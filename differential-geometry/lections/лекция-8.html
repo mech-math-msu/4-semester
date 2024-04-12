@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 8</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="8" id="лекция-8">Лекция 8</h1>
+<h2 data-number="8.1" id="вторая-фндаментальная-форма">Вторая
+фндаментальная форма</h2>
+<div id="definition-34">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Нормальное сечение задается касательным вектором и
+точкой. Если знаем кривизны всех нормальных сечений, то знаем как
+искривляется поверхность в окрестности точки. Пусть <span
+class="math inline">\(\tilde{k}(x)\)</span> – <em>кривизна нормального
+сечения</em>, проведенного в направлении <span
+class="math inline">\(X\)</span>, <span class="math inline">\(\tilde{k}
+&gt; 0\)</span>, если вектор ускорения кривой направлен в сторону
+нормали <span class="math inline">\(\mathbf{n}\)</span> и <span
+class="math inline">\(\tilde{k} &lt; 0\)</span> иначе.</p>
+</div>
+<div id="statement-11">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(\tilde{k}(x)|x|^2 = b(x)\)</span> – квадратичная
+форма в <span class="math inline">\(T_P(M)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\((x^1, \ldots, x^n) \to r_1, \ldots,
+r_n\)</span></p>
+<p>Хотим <span class="math inline">\(b(x) = \displaystyle \sum_{i, j =
+1}^{n}b_{ij} X^i X^j\)</span></p>
+<p>Пусть <span class="math inline">\(\gamma\)</span> – нормальное
+сечение, <span class="math inline">\(t\)</span> – натуральный
+параметр.</p>
+<p><span class="math inline">\(X = \dot{\gamma}, \,\,\,\, x^i =
+x^i(t)\)</span></p>
+<p><span class="math inline">\(M: \,\,\,\, z =
+\mathbf{r}(x)\)</span></p>
+<p><span class="math inline">\(\gamma \in \mathbb{R}^{n + 1}, \,\,\,\, z
+= \rho(t) = \mathbf{r}(x(t))\)</span></p>
+<p><span class="math inline">\(\dot{\gamma} = \displaystyle \sum_{i =
+1}^{n} \frac{\partial \mathbf{r}}{\partial x^i}\dot{x}^i = \displaystyle
+\sum_{i = 1}^{n}\mathbf{r}_i \dot{x}^i\)</span></p>
+<p><span class="math inline">\(\ddot{\gamma} = \displaystyle \sum_{i, j
+= 1}^{n} \frac{\partial \mathbf{r}_i}{\partial x^j}\dot{x}^j\dot{x}^i +
+\displaystyle \sum_{i = 1}^{n}\mathbf{r}_i \ddot{x}^i\)</span></p>
+<p><span class="math inline">\(\tilde{k} = (\ddot{\gamma}, m) =
+\displaystyle \sum_{i,j = 1}^{n} (\mathbf{r}_{ij}, m) X^i
+X^j\)</span></p>
+<p><span class="math inline">\(\mathbf{r}_{ij} = \frac{\partial^2
+\mathbf{r}}{\partial x^i \partial x^j}(P)\)</span></p>
+</div>
+<div id="definition-35">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(b(x)\)</span> – <em>вторая фундаментальная форма
+поверхности</em>.</p>
+<div id="note-1">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>В базисе
+<span class="math inline">\(r_1, \ldots, r_n \,\,\,\, b_{ij} =
+(\mathbf{r}_{ij}, m)\)</span></p>
+</div>
+<div id="note-2">
+<p><span class="margin-lft"><strong>Замечание: </strong></span><span
+class="math inline">\(\tilde{k}(x) = \frac{b(X)}{g(X)}\)</span>, где
+<span class="math inline">\(g(X)\)</span> – первая фундаментальная форма
+(скалярное произведение индуцированное), то есть <span
+class="math inline">\(g(X) = |X|^2\)</span>.</p>
+</div>
+</div>
+<p>Пусть <span class="math inline">\(\gamma\)</span> регулярная кривая
+на поверхности <span class="math inline">\(M\)</span>. Хочу посчитать
+кривизну кривой в некоторой точке <span
+class="math inline">\(P\)</span>. Имеем: вектор нормали <span
+class="math inline">\(m\)</span>, вектор ускорения в нормальной
+параметризации <span class="math inline">\(\ddot{\gamma}\)</span>.</p>
+<div id="theorem-4">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Милье</em>) Пусть <span class="math inline">\(X =
+\dot{\gamma}\)</span>, <span class="math inline">\(\varphi\)</span> –
+угол между <span class="math inline">\(\ddot{\gamma}\)</span> и <span
+class="math inline">\(m\)</span> (<span class="math inline">\(t\)</span>
+– натуральный параметр), <span class="math inline">\(k\)</span> –
+кривизна <span class="math inline">\(\gamma\)</span>. Тогда <span
+class="math inline">\(k\cos(\varphi) = \frac{b(X)}{g(X)} =
+\tilde{k}(X)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\gamma\)</span> – кривая, <span
+class="math inline">\(t\)</span> – натуральный параметр.</p>
+<p>Введем координаты на поверхности и параметризацию <span
+class="math inline">\(\gamma: x^i = x^i(t)\)</span> и параметризацию
+поверхности <span class="math inline">\(M: \,\,\,\, z =
+\mathbf{r}(x)\)</span>.</p>
+<p>Далее выкладки как в предыдущем утверждении:</p>
+<p><span class="math inline">\(\gamma \in \mathbb{R}^{n + 1}, \,\,\,\, z
+= \rho(t) = \mathbf{r}(x(t))\)</span></p>
+<p><span class="math inline">\(\dot{\gamma} = \displaystyle \sum_{i =
+1}^{n} \frac{\partial \mathbf{r}}{\partial x^i}\dot{x}^i = \displaystyle
+\sum_{i = 1}^{n}\mathbf{r}_i \dot{x}^i\)</span></p>
+<p><span class="math inline">\(\ddot{\gamma} = \displaystyle \sum_{i, j
+= 1}^{n} \frac{\partial \mathbf{r}_i}{\partial x^j}\dot{x}^j\dot{x}^i +
+\displaystyle \sum_{i = 1}^{n}\mathbf{r}_i \ddot{x}^i\)</span></p>
+<p><span class="math inline">\(\tilde{k} = (\ddot{\gamma}, m) =
+\displaystyle \sum_{i,j = 1}^{n} (\mathbf{r}_{ij}, m) X^i
+X^j\)</span></p>
+<p>и <span class="math inline">\((\ddot{\gamma}, m) =
+|\ddot{\gamma}||m|\cos(\varphi) \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-5">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(L\)</span> – <span
+class="math inline">\(n\)</span>-мерное евклидово пространство и <span
+class="math inline">\(b\)</span> – квадратичная форма в <span
+class="math inline">\(L\)</span>. Тогда в <span
+class="math inline">\(L\)</span> существует ортонормированный базис
+<span class="math inline">\(e_1, \ldots, e_n\)</span>, такой, что
+матрица <span class="math inline">\(b\)</span> имеет вид:</p>
+<p><span class="math inline">\(\operatorname{diag}(\lambda_1, \ldots,
+\lambda_n), \,\,\,\, \lambda_i\)</span> – собственные значения,
+направления <span class="math inline">\(e_j\)</span> – главные оси.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="note-3">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Как
+посчитать <span class="math inline">\(e_i\)</span> и <span
+class="math inline">\(\lambda_i\)</span></p>
+<p>Пусть <span class="math inline">\(r_1, \ldots, r_n\)</span> – базис в
+<span class="math inline">\(L\)</span>. <span
+class="math inline">\((,)\to G \,\,\,\, g_{ij} = (r_i, r_j)\)</span></p>
+<p><span class="math inline">\(b \to B, \,\,\,\, b_{ij}\)</span></p>
+<p><span class="math inline">\(\det(B - \lambda G) = 0\)</span></p>
+<p><span class="math inline">\((B - \lambda_j G)a_j = 0\)</span></p>
+<p><span class="math inline">\(a_j\)</span> – столбец координат <span
+class="math inline">\(e_j\)</span> в <span class="math inline">\(r_1,
+\ldots, r_n\)</span></p>
+<p>Применим то что выше к поверхности <span
+class="math inline">\(G\)</span> – первая фундаментальная форма, <span
+class="math inline">\(B\)</span> – вторая фундаментальная форма.</p>
+</div>
+<h3 data-number="8.1.1"
+id="главные-кривизны-и-главные-направления">Главные кривизны и главные
+направления</h3>
+<div id="definition-36">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Собственные значения второй фундаментальной формы –
+<em>главные кривизны</em> поверхности <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span>.</p>
+<p>Направления <span class="math inline">\(e_j\)</span> второй
+фундаментальной формы – <em>главные направления</em> поверхности <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span>.</p>
+</div>
+<div id="theorem-6">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>формула Эйлера</em>) Пусть <span
+class="math inline">\(X \in T_P(M)\)</span>. Тогда <span
+class="math inline">\(\tilde{k}(X) = \displaystyle \sum_{j = 1}^{n}
+\lambda_j \cos^2(\alpha_j)\)</span>, где <span
+class="math inline">\(\lambda_j\)</span> – главные кривизны, <span
+class="math inline">\(\alpha_j\)</span> – угол между <span
+class="math inline">\(X\)</span> и <span
+class="math inline">\(e_j\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Достаточно доказывать для единичного <span
+class="math inline">\(X\)</span>.</p>
+<p>Тогда <span class="math inline">\(\tilde{X} = b(X) =\)</span>
+посчитаем ее в базисе главных направлений <span class="math inline">\(=
+\displaystyle \sum_{j = 1}^{n} \lambda (X^j)^2\)</span>, а <span
+class="math inline">\(X^j = (X, e_j) = \cos(\angle(X, e_j)) =
+\cos(\alpha_j)\)</span>, так как <span class="math inline">\(|X| =
+1\)</span> и <span class="math inline">\(|e_j| = 1
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-0">
+<p><span class="margin-lft"><strong>Следствие: </strong></span><span
+class="math inline">\(\lambda_j = \tilde{k}(e_j)\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="note-4">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Главные
+кривизны – это кривизны нормальных сечений, проведенных в главных
+направлений.</p>
+</div>
+<div id="corollary-1">
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Пусть
+<span class="math inline">\(\lambda^{+} = \max\{\lambda_1, \ldots,
+\lambda_n\}\)</span> и <span class="math inline">\(\lambda^{-} =
+\min\{\lambda_1, \ldots, \lambda_n\}\)</span>. Тогда <span
+class="math inline">\(\lambda^{+} = \max_{X \ne 0}\tilde{k}(X), \,\,\,\,
+\lambda^{-} = \min_{X \ne 0}\tilde{k}(X)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Перенумируем, так чтобы <span class="math inline">\(\lambda^{+} =
+\lambda_1\)</span>.</p>
+<p>Запишем формулу Эйлера <span class="math inline">\(\tilde{k}(X) =
+\lambda_1\cos^2(\alpha_1) + \displaystyle \sum_{j = 2}^{n} \lambda_j
+\cos^2(\alpha_j)=\)</span></p>
+<p>Подставим выражение <span class="math inline">\(\cos^2(\alpha_j) = 1
+- \displaystyle \sum_{j = 2}^{n}\cos^2(\alpha_j)\)</span> и получим:</p>
+<p><span class="math inline">\(= \lambda^{+} + \displaystyle \sum_{j =
+2}^{n}\cos^2(\alpha_j)(\lambda_j - \lambda^{+}) \leqslant \lambda^{+}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="8.1.2" id="гауссова-и-средняя-кривизна">Гауссова и
+средняя кривизна</h3>
+<div id="definition-37">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Гауссова кривизна</em> – <span
+class="math inline">\(K = \lambda_1\cdot\ldots\cdot \lambda_n =
+\frac{\det B}{\det G}\)</span></p>
+<p><em>Средняя кривизна</em> – <span class="math inline">\(H = \lambda_1
++ \ldots + \lambda_n = \operatorname{tr}(BG^{-1})\)</span></p>
+<p>Для двумерной поверхности <span class="math inline">\(H\)</span> и
+<span class="math inline">\(K\)</span> – все инварианты.</p>
+<p>Гауссова кривизна не меняется при изометрии.</p>
+<p>Гауссова кривизна плоскости <span class="math inline">\(0\)</span>,
+сферы – <span class="math inline">\(\frac1{R^2}\)</span>.</p>
+</div>
+<p>Поверхность не кривая, если она совпадает со своей касательной
+плоскостью, хотим мерить кривизну, то есть скорость удаления поверхности
+от касательной.</p>
+<div id="definition-38">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\delta(Q)\)</span> – <em>отклонение</em>
+(расстояние со знаком от точки <span class="math inline">\(Q\)</span> до
+<span class="math inline">\(T_P(M)\)</span>) <span
+class="math inline">\(Q\)</span> от <span
+class="math inline">\(T_Q(M)\)</span>, <span
+class="math inline">\(\delta(P) = 0\)</span>.</p>
+</div>
+<div id="statement-12">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Функция
+<span class="math inline">\(\delta\)</span> – гладкая функция на <span
+class="math inline">\(M\)</span>. Причем <span class="math inline">\(d_P
+\delta = 0, \,\,\,\, d^2_P \delta = b\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(P(x_0^1, \ldots,
+x_0^n)\)</span></p>
+<p>Хотим <span class="math inline">\(\frac{\partial \delta}{\partial
+x^j}(P) = 0\)</span> и <span class="math inline">\(\frac{\partial^2
+\delta}{\partial x^i \partial x^j}(P) = b_{ij}(P)\)</span></p>
+<p><span class="math inline">\(M: z = \mathbf{r}(x)\)</span></p>
+<p>Отклонение <span class="math inline">\(\delta(x) = (\mathbf{r}(x) -
+\mathbf{r}(x_0), m(x_0))\)</span> (проекция на вектор нормали)</p>
+<p>Берем производную <span class="math inline">\(\frac{\partial
+\delta}{\partial x^j} = (\frac{\partial \mathbf{r}}{\partial x^j},
+m(x_0)), \,\,\,\, \frac{\partial \delta}{\partial x^j}(x_0) =
+(\mathbf{r}_j, m(x_0)) = 0\)</span></p>
+<p>Тоже самое со второй производной <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="corollary-2">
+<span class="margin-lft"><strong>Следствие: </strong></span>
+<ol type="1">
+<li>Пусть <span class="math inline">\(b_P\)</span> знакоопределена, то
+есть все <span class="math inline">\(\lambda_j\)</span> одного знака.
+Тогда некоторая окрестность точки <span class="math inline">\(P\)</span>
+на поверхности <span class="math inline">\(M\)</span> лежит по одну
+сторону от <span class="math inline">\(T_P(M)\)</span>.</li>
+<li>Пусть <span class="math inline">\(b_P\)</span> знакопеременна, то
+есть существуют <span class="math inline">\(\lambda_j\)</span> и <span
+class="math inline">\(\lambda_k\)</span> с разными знаками. Тогда любая
+окрестность точки <span class="math inline">\(P\)</span> лежит по обе
+стороны от касательной плоскости.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="note-5">
+<p><span class="margin-lft"><strong>Замечание:
+</strong></span>Рассмотрим двумерную поверхность в трехмерном
+пространстве. Тогда, если <span class="math inline">\(b_P\)</span>
+знакоположительна, то гауссова кривизна положительна и т.д.</p>
+<div id="definition-39">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Точка
+<span class="math inline">\(P\)</span> на двумерной поверхности <span
+class="math inline">\(M\)</span> – <em>эллиптическая</em>, если гауссова
+кривизна положительна,</p>
+<p><em>гиперболическая</em>, если гауссова кривизна отрицательна,</p>
+<p><em>параболическая</em>, если гауссова кривизна равна <span
+class="math inline">\(0\)</span>.</p>
+</div>
+</div>
+<p><strong>Итог:</strong> Есть внутренняя геометрия (живем на
+поверхности и движемся по ней) и все законы в таком случае определяются
+одной структурой – первой фундаментальной формой (римановой
+метрикой).</p>
+<p>Внешняя геометрия для гиперповерхностей определяется второй
+фундаметальной формой.</p>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-7.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-9.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>
