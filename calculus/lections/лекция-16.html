@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 16</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  //loader: {load: ['[tex]/esint']},
+                  //tex: {packages: {'[+]': ['esint']}}
+                    tex: {
+                        macros: {
+                            oiint: "{\\mathop{\\vcenter{\\!\\int\\!\\!\\!\\!\\!\\!\\bigcirc\\!\\!\\!\\!\\!\\int}}\\nolimits}"
+                        }
+                    }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-15.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="16" id="лекция-16">Лекция 16</h1>
+<h2 data-number="16.1"
+id="формула-суммирования-эйлера-маклорена-многочлены-бернулли">Формула
+суммирования Эйлера-Маклорена (многочлены Бернулли)</h2>
+<p>Пусть <span class="math inline">\(f(x) \in C^1[1, +\infty) \,\,\,\,
+\forall k \in \mathbb{N}\)</span></p>
+<p>Запишем: <span class="math inline">\(\displaystyle\int\limits_k^{k +
+1} f(x)dx = \displaystyle\int\limits_k^{k + 1} f(x)d(x - k - \frac12) =
+f(x)(x - k - \frac1k)|_{k}^{k + 1} - \displaystyle\int\limits_k^{k + 1}
+f&#39;(x)\cdot(x - k - \frac12)dx=\)</span></p>
+<p><span class="math inline">\(= \frac12(f(k + 1) + f(k)) -
+\displaystyle\int\limits_k^{k + 1} f&#39;(x)(\{x\} -
+\frac12)dx\)</span>, где <span class="math inline">\(\{x\}\)</span> –
+дробная часть <span class="math inline">\(x\)</span>.</p>
+<p>Тут история развития раздваивается (можно записать ряд Фурье
+периодической функции <span class="math inline">\(\{x\} -
+\frac12\)</span> (мы этого делать не будем)) или суммируем равенства
+выше от <span class="math inline">\(1\)</span> до <span
+class="math inline">\(n - 1\)</span>:</p>
+<p><span class="math display">\[\displaystyle \sum_{k = 1}^{n - 1}:
+\,\,\,\, \displaystyle\int\limits_1^n f(x)dx = \displaystyle \sum_{k =
+1}^{n}f(k) - \frac12f(1) - \frac12f(n) - \displaystyle\int\limits_1^n
+f&#39;(x)\left(\{x\} - \frac12\right)dx \implies\]</span></p>
+<p>(формула суммирования Эйлера_маклорена в простейшем варианте)</p>
+<p><span class="math display">\[\displaystyle \sum_{k = 1}^{n}f(k) =
+\displaystyle\int\limits_1^n f(x)dx + \frac12f(1) + \frac12f(n) +
+\displaystyle\int\limits_1^n f&#39;(x)\left(\{x\} -
+\frac12\right)dx\]</span></p>
+<p><span class="math inline">\(\boxed{\operatorname{I}}\)</span> Если
+<span class="math inline">\(f&#39;(x)\)</span> монотонно стремится к
+нулю при <span class="math inline">\(x\to\infty\)</span>, то <span
+class="math inline">\(\exists \displaystyle\int\limits_{0}^{+\infty}
+f(x)\left(\{x\} - \frac12\right)dx\)</span> и тогда</p>
+<p><span class="math display">\[\displaystyle \sum_{k = 1}^{n}f(k) =
+\displaystyle\int\limits_1^n f(x)dx = \frac12f(n) + C + o(1), \,\,\,\, n
+\to \infty\]</span></p>
+<p>Забрали в константу существующий (конечный) несобственный интеграл,
+<span class="math inline">\(\frac12f(1)\)</span>.</p>
+<h3 data-number="16.1.1" id="пример">Пример</h3>
+<ol type="1">
+<li><span class="math inline">\(f(x) = \frac1{x}\)</span></li>
+</ol>
+<p><span class="math inline">\(\displaystyle \sum_{k = 1}^{n}\frac1k =
+\ln n + \gamma + o(1), \,\,\,\, n \to \infty\)</span> (<span
+class="math inline">\(\gamma\)</span> – постоянная Эйлера)</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(f(x) = \ln(x)\)</span></li>
+</ol>
+<p>Проверим, что подходит <span class="math inline">\(\frac1x \to 0,
+\,\,\,\,x \to \infty\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k = 1}^{n}\ln(k) =
+n\cdot \ln(n) - n + \frac12\ln(n) + C + o(1), \,\,\,\, n \to
+\infty\)</span></p>
+<p><span class="math inline">\(n! = C_1\cdot n^n\cdot e^{-n}\cdot
+\sqrt{n}(1 + o(1)), \,\,\,\, n \to \infty\)</span> (формула
+Стирлинга)</p>
+<p><span class="math inline">\(\boxed{\operatorname{II}}\)</span>
+Рассмотрим другие условия для <span
+class="math inline">\(f\)</span>.</p>
+<p>Введем функции:</p>
+<p><span class="math inline">\(w_1(x) = \{x\} - \frac12\)</span></p>
+<p><span class="math inline">\(w_2(x): \,\,\,\, \forall x \in (k, k + 1)
+\,\,\,\, w_2&#39;(x) = w_1(x), \,\,\,\, w_2(x) \in C(\mathbb{R}),
+\,\,\,\, w_2\)</span> – периодическая, <span
+class="math inline">\(\displaystyle\int\limits_0^1 w_2(x)dx =
+0\)</span>.</p>
+<p>На <span class="math inline">\((0, 1) \,\,\,\, w_2(x) = \frac{x^2}2 -
+\frac{x}2 + \frac1{12}\)</span></p>
+<p><span class="math inline">\(f(x) \in C^2[1, +\infty)\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k = 1}^{n}f(k) =
+\displaystyle\int\limits_1^n f(x)dx + \frac12(f(n) + f(1)) +
+f&#39;(x)\cdot w_2(x)|_1^n - \displaystyle\int\limits_1^n
+f&#39;&#39;(x)\cdot w_2(x)dx=\)</span></p>
+<p><span class="math inline">\(= \displaystyle\int\limits_1^n f(x)dx +
+\frac12(f(n) + f(1)) + \frac1{12}(f&#39;(n) - f&#39;(1)) -
+\displaystyle\int\limits_1^n f&#39;&#39;(x)w_2(x)dx\)</span></p>
+<p>Если <span class="math inline">\(f&#39;&#39;(x)\)</span> монотонно к
+нулю при <span class="math inline">\(x\to \infty\)</span>. Тогда <span
+class="math inline">\(\exists \displaystyle\int\limits_0^{\infty}
+f(x)dx\)</span> и</p>
+<p><span class="math display">\[\displaystyle \sum_{k = 1}^{n} =
+\displaystyle\int\limits_1^n f(x)dx + \frac12f(n) + \frac1{12}f&#39;(n)
++ C + o(1), \,\,\,\, n \to \infty\]</span></p>
+<h3 data-number="16.1.2" id="пример-1">Пример</h3>
+<p><span class="math inline">\(f(x) = x\cdot \ln(x), \,\,\,\,
+f&#39;&#39;(x) = \frac1{x}\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k = 1}^{n}k\cdot
+\ln(k) =\frac{n^2}2\cdot \ln(n) - \frac{n^2}4 + \frac12n\cdot \ln(n) +
+\frac1{12}\cdot \ln(n) + C + o(1), \,\,\,\, n \to +\infty\)</span></p>
+<p><span class="math inline">\(\displaystyle\int\limits_1^n x\ln(x)dx  =
+\frac{x^2}2\ln(x)|_{1}^n - \displaystyle\int\limits_1^n \frac{x}2d
+\left(\frac{x^2}2\ln(x) - \frac{x^2}4\right)|_1^n = \frac{n^2}2\cdot
+\ln(n) - \frac{n^2}4 + \frac14\)</span></p>
+<p><span class="math inline">\(\displaystyle \prod_{k =1}^{n}k^k =
+c_1\cdot n^{\frac{n^2}2}\cdot e^{-\frac{n^2}4}\cdot n^{\frac{n}2}\cdot
+n^{\frac1{12}}(1 + o(1))\)</span></p>
+<h3 data-number="16.1.3" id="формула-суммирования-в-общем-виде">Формула
+суммирования в «общем» виде</h3>
+<p>Пусть <span class="math inline">\(g(x) \in C^m[1, +\infty)\)</span> и
+<span class="math inline">\(w_m(x)\)</span> последовательные
+первообразные, которые периодические (период <span
+class="math inline">\(1\)</span>), интегрируемые и с нулевым средним, то
+есть интеграл от <span class="math inline">\(0\)</span> до <span
+class="math inline">\(1\)</span> ноль. (на отрезке <span
+class="math inline">\([0, 1]\)</span> это всегда многочлен) (вообще, это
+сплайн). Тогда</p>
+<p><span class="math display">\[\displaystyle \sum_{k = 1}^{n}f(k) =
+\displaystyle\int\limits_1^n f(x)dx + \frac12(f(n) + f(1)) +\]</span>
+<span class="math display">\[+\displaystyle \sum_{l = 1}^{m - 1}(-1)^{l
++ 1}(f^{(l)}(n) - f^{(l)}(1))w_{l + 1}(0) + (-1)^{m + 1}
+\displaystyle\int\limits_1^n f^{(m)}(x)\cdot w_m(x)dx\]</span></p>
+<h3 data-number="16.1.4" id="производящие-функции">Производящие
+функции</h3>
+<p><span class="math inline">\(A(x, t) = \displaystyle \sum_{n =
+0}^{\infty}w_n(x)\cdot t^n, \,\,\,\, x \in (0, 1), \,\,\,\, t\in (-2\pi,
+2\pi)\)</span> сходится (не доказываем).</p>
+<p><span class="math inline">\(A&#39;_x(x, t) = \displaystyle \sum_{n =
+1}^{\infty}w_{n - 1}t^n = t\cdot A\)</span></p>
+<p>Имеем <span class="math inline">\(A(x, t) = C(t)\cdot
+e^{xt}\)</span></p>
+<p>Заметим, что <span class="math inline">\(\displaystyle\int\limits_0^1
+A(x, t)dx = 1\)</span>.</p>
+<p>Проинтегрируем <span class="math inline">\(A(x, t) = C(t)\cdot
+e^{xt}\)</span>, чтобы найти константу:</p>
+<p><span class="math inline">\(1 = \displaystyle\int\limits_0^1 C(t)
+e^{xt} dx = \frac{C(t)}{t}(e^t - 1) \implies\)</span></p>
+<p><span class="math inline">\(C(t) = \frac{t}{e^t - 1}\)</span></p>
+<p><span class="math inline">\(A(x, t) = \frac{t\cdot e^{xt}}{e^t - 1} =
+\displaystyle \sum_{n = 0}^{\infty}\frac{B_n(x)}{n!}t^n\)</span></p>
+<div id="definition-23">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(B_n(x)\)</span> – <em>многочлены Бернулли</em>, а
+<span class="math inline">\(w_n = B_n(0)\)</span>.</p>
+<p><span class="math inline">\(A(x, t)\)</span> – <em>производящая
+функция</em>.</p>
+</div>
+<h2 data-number="16.2" id="что-то-чего-не-будет-на-экзамене">Что-то чего
+не будет на экзамене</h2>
+<p><span class="math inline">\(\displaystyle\int\limits_0^1
+w_{m+1}(x)\cdot w_m(x)dx = \displaystyle\int\limits_0^1 w_{m+1}(x)\cdot
+w&#39;_{m+1}(x)dx = \frac{w^2_{m + 1}(x)}2|_{0}^{1} = 0\)</span></p>
+<p>То есть многочлены ортогональны, то есть они базис в
+пространстве.</p>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-15.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

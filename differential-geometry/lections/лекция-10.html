@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 10</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="лекция-11.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="10" id="лекция-10">Лекция 10</h1>
+<h2 data-number="10.1"
+id="касательные-векторы-в-гладком-многообразии">Касательные векторы в
+гладком многообразии</h2>
+<blockquote>
+<p>Нужно определить касательные векторы. Возникает проблема: вектора
+скорости у кривой не существует, так как нет касательной плоскости.</p>
+</blockquote>
+<blockquote>
+<p>Какие свойства задают касательный вектор? Касательный вектор
+соотвествует совокупности кривых.</p>
+</blockquote>
+<div id="definition-50">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M\)</span> – <span
+class="math inline">\(n\)</span>-мерное гладкое многообразие.
+<em>Гладкая кривая</em> на <span class="math inline">\(M\)</span> – это
+гладкое отображение <span class="math inline">\(\gamma: [a, b] \to
+M\)</span>, то есть соответствие, сопоставляющие каждой точке <span
+class="math inline">\(t \in [a, b]\)</span> точку <span
+class="math inline">\(\gamma(t) \in M\)</span>, причем если <span
+class="math inline">\((x^1, \ldots, x^n)\)</span> локальные координаты в
+окрестности <span class="math inline">\(\gamma(t_0)\)</span>, то функции
+<span class="math inline">\(\gamma: x^i  = x^i(t)\)</span> бесконечно
+дифференцируемы.</p>
+</div>
+<p>Пусть на многообразии заданы точка <span
+class="math inline">\(P\)</span> и две кривые <span
+class="math inline">\(\gamma: [a, b] \to M\)</span> и <span
+class="math inline">\(\tilde{\gamma}: [\alpha, \beta] \to M\)</span> и
+<span class="math inline">\(\gamma(t_0) = P =
+\tilde{\gamma}(\tau_0)\)</span></p>
+<p>Пусть <span class="math inline">\(x = (x^1, \ldots, x^n)\)</span>
+локальные координаты в окрестности <span
+class="math inline">\(P\)</span> и <span class="math inline">\(\gamma:
+x^i = x^i(t), \,\,\,\,x^i(t_0) = x_0^i, \,\,\,\, \tilde{\gamma}: x^i =
+\tilde{x}^i(\tau), \,\,\,\,\tilde{x}^i(\tau_0) = x_0^i\)</span></p>
+<div id="definition-51">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\gamma\)</span> и <span
+class="math inline">\(\tilde{\gamma}\)</span> <em>касаются</em> в точке
+<span class="math inline">\(P\)</span>, если <span
+class="math inline">\(\frac{d}{dt}|_{t= t_0}x^i(t) =
+\frac{d}{d\tau}|_{\tau= \tau_0}\tilde{x}^i(\tau)\)</span></p>
+</div>
+<div id="statement-13">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>корректность определения</em>) Определение выше не
+зависит от выбора локальных координат.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(y = (y^1, \ldots, y^n)\)</span>
+другие локальные координаты. Тогда по определению многообразия есть
+гладкие функции склейки, то есть</p>
+<p><span class="math inline">\(\gamma: y^i = y^i(x(t))\)</span> и <span
+class="math inline">\(\tilde{\gamma}: y^i =
+y^i(\tilde{x}(\tau))\)</span></p>
+<p><span class="math inline">\(\frac{d}{dt}|_{t = t_0}y^i(x(t)) =
+\displaystyle \sum_{j = 1}^{n} \frac{\partial y^i}{\partial
+x^j}(x_0)\frac{dx^j}{dt}|_{t = t_0}\)</span></p>
+<p><span class="math inline">\(\frac{d}{dt}|_{\tau =
+\tau_0}y^i(\tilde{x}(\tau)) = \displaystyle \sum_{j = 1}^{n}
+\frac{\partial y^i}{\partial x^j}(x_0)\frac{d\tilde{x}^j}{d\tau}|_{\tau
+= \tau_0}\)</span></p>
+</div>
+<div id="definition-52">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Касательный вектор</em> к многообразию <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span> – это класс эквивалентности касающихся
+друг друга в точке <span class="math inline">\(P\)</span> гладких
+кривых.</p>
+</div>
+<p>Пусть в окрестности точки <span class="math inline">\(P\)</span>
+фиксированы координаты <span class="math inline">\(x = (x^1, \ldots,
+x^n)\)</span>. Тогда каждый вектор определеятся набором чисел
+(производные в точке). И в обратную сторону: если задан набор чисел
+<span class="math inline">\((X^1, \ldots, X^n)\)</span>, то можно
+подобрать кривую, проходящую через данную точку с нужными производными:
+<span class="math inline">\(x^i = x_0^i + tX^i, \,\,\,\, t \in [-
+\varepsilon, \varepsilon]\)</span>. То есть если зафиксирована система
+локальных координат, то существует биекция между касательными векторами
+и наборами чисел длины <span class="math inline">\(n\)</span>.</p>
+<p>Теперь пусть есть две системы:</p>
+<p><span class="math inline">\(x = (x^1, \ldots, x^n)\)</span> и <span
+class="math inline">\(y = (y^1, \ldots, y^n)\)</span></p>
+<p>Тогда у вектора в системе координат <span
+class="math inline">\(x\)</span> координаты <span
+class="math inline">\(X^1, \ldots, X^n\)</span>, а в системе <span
+class="math inline">\(y \,\,\,\, Y^1, \ldots, Y^n\)</span>, причем
+координаты <span class="math inline">\(Y\)</span> выражаются через <span
+class="math inline">\(X\)</span> следующим образом:</p>
+<p><span class="math inline">\(Y^i = \displaystyle \sum_{j = 1}^{n}
+\frac{\partial y^i}{\partial x^j}(x_0)X^j\)</span>, поэтому можем
+определить векторное пространство на множестве касательных векторов:</p>
+<div id="definition-53">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
+class="math inline">\(\tilde{X}\)</span> – касательные векторы к <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span>, пусть <span class="math inline">\(X^1,
+\ldots, X^n\)</span> и <span class="math inline">\(\tilde{X}^1, \ldots,
+\tilde{X}^n\)</span> – соответствующие им числа в системах координат
+<span class="math inline">\(x\)</span> и <span
+class="math inline">\(\tilde{x}\)</span>.</p>
+<p><em>Линейная комбинация</em> <span class="math inline">\(c_1 X + c_2
+\tilde{X}\)</span> векторов <span class="math inline">\(X\)</span> и
+<span class="math inline">\(\tilde{X}\)</span> – касательный вектор,
+задаваемый набором чисел <span class="math inline">\((c_1 X^1 + c_2
+\tilde{X}^1, \ldots, c_1 X^n + c_2 \tilde{X}^n)\)</span>.</p>
+<p>Определение линейной комбинации задает структуру векторного
+пространства на множестве касательных векторов в точке <span
+class="math inline">\(P\)</span>.</p>
+<p><strong>Обозначается:</strong> <span
+class="math inline">\(T_P(M)\)</span></p>
+<div id="note-7">
+<p><span class="margin-lft"><strong>Замечание: </strong></span>Вообще
+векторы можно ввести именно как такие наборы чисел.</p>
+</div>
+</div>
+<div id="definition-54">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Каждой
+<span class="math inline">\(\gamma\)</span> ставится в соответствие
+<span class="math inline">\([\gamma]\)</span> (касательный вектор).</p>
+<p>Этот вектор – <em>касательный к кривой</em>.</p>
+</div>
+<div id="definition-55">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Введение локальных координат задает базис в множестве
+касательных векторов: <span class="math inline">\(X_j = (0, \ldots, 1_j,
+\ldots, 0)\)</span>.</p>
+<p><span class="math inline">\(\gamma_j: \begin{cases}
+x^i = x_0^i, i\ne j\\
+x^j = x_0^j + t
+\end{cases}\)</span></p>
+<p><span class="math inline">\(\dot{\gamma}_j = X_j\)</span></p>
+<p><span class="math inline">\(\gamma_j\)</span> – <em>координатные
+линии</em>.</p>
+</div>
+<div id="definition-56">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f: M \to \mathbb{R}\)</span> – гладкая
+функция. Рассмотрим <span class="math inline">\(\gamma:[a, b] \to M,
+\,\,\,\, \gamma(t_0) = P, \,\,\,\, \dot{\gamma}(t_0) = X\)</span></p>
+<p><span class="math inline">\(\varphi(t): [a, b] \to \mathbb{R},
+\,\,\,\, \dot{\varphi}(t) = f\circ \gamma, \,\,\,\, \varphi(t) =
+f(\gamma(t))\)</span></p>
+<p><em>Производная функции</em> <span class="math inline">\(f\)</span> в
+точке <span class="math inline">\(P\)</span> <em>вдоль вектора</em>
+<span class="math inline">\(X\)</span> – <span
+class="math inline">\(\partial_X(f) = \frac{d}{dt}|_{t = t_0}
+\varphi(t)\)</span></p>
+<blockquote>
+<p>Вообще эта формула такая же как в матане. И можно взять <span
+class="math inline">\(\dot{\varphi}(t_0) = \displaystyle \sum_{i =
+1}^{n}X^i \frac{\partial f}{\partial x^i}(x_0)\)</span> в качестве
+определения.</p>
+</blockquote>
+</div>
+<div id="statement-14">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(\partial_X(f)\)</span> не зависит от выбора точки
+<span class="math inline">\(\gamma\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(\dot{\varphi}(t_0) = \displaystyle
+\sum_{i = 1}^{n}X^i \frac{\partial f}{\partial x^i}(x_0)\)</span></p>
+<p><span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<blockquote>
+<p>Гладкие функции образуют кольцо и имеем отображение <span
+class="math inline">\(f \mapsto \partial_X(f)\)</span>, которое линейно
+и удовлетворяет <em>правилу Лейбница</em>: <span
+class="math inline">\(\partial_X(fg) = f(P)\partial_X(g) +
+g(P)\partial_X(f)\)</span>.</p>
+</blockquote>
+<h2 data-number="10.2" id="дифференциал">Дифференциал</h2>
+<div id="definition-57">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M^n\)</span> и <span
+class="math inline">\(M^m\)</span> – гладкие многообразия. <span
+class="math inline">\(f: M^n \to M^m, \,\,\,\, P \in M^n, \,\,\,\, Q =
+f(P) \in M^m\)</span>.</p>
+<p>Тогда <span class="math inline">\(f(X)\)</span>, где <span
+class="math inline">\(X\)</span> касательный вектор к <span
+class="math inline">\(M\)</span> в точке <span
+class="math inline">\(P\)</span>, – это касательный вектор к кривой
+<span class="math inline">\(f\circ\gamma: [a, b] \to M^m, \,\,\,\,
+\,\,\,\, \gamma: [a, b] \to M^n, \,\,\,\, \gamma(t_0) = P, \,\,\,\,
+\dot{\gamma}(t_0) = X\)</span> в точке <span
+class="math inline">\(Q\)</span>.</p>
+<p>Это отображение – <em>дифференциал</em> <span
+class="math inline">\(d_Pf(X) = Y\)</span>.</p>
+</div>
+<div id="statement-15">
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>корректность определения</em>) полученный вектор не
+зависит от выбора <span class="math inline">\(\gamma\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math display">\[Y^j = \frac{d}{dt}|_{t = t_0} f^j(x(t))
+= \displaystyle \sum_{i = 1}^{n} \frac{\partial f^j}{\partial
+x^i}(P)X^i\]</span></p>
+</div>
+<h2 data-number="10.3"
+id="бывают-ли-абстрактные-мноогообразия-которые-не-являются-поверхностями">Бывают
+ли абстрактные мноогообразия, которые не являются поверхностями?</h2>
+<div id="definition-58">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+есть многообразия <span class="math inline">\(M^n\)</span> и <span
+class="math inline">\(Q^N\)</span>. Что значит, что одно многообразие
+внутри другого?</p>
+<p>Нужно отображение: <span class="math inline">\(f: M \to Q\)</span>.
+Но не любое отображение подходит. Какие условия нужно наложить на <span
+class="math inline">\(f\)</span>?</p>
+<p>Рассмотрим окрестность точки <span class="math inline">\(P \in
+M\)</span> с локальными координатами <span class="math inline">\(x =
+(x^1, \ldots, x^n)\)</span>. Тогда <span
+class="math inline">\(f\)</span> определеят координатные функции <span
+class="math inline">\(y^j = f^j(x^1, \ldots, x^n)\)</span>. Хотим
+регулярности (отсутстыия ядра у отображения), то есть максимальнось
+ранга матрицы Якоби.</p>
+<p>Гладкое отображение <span class="math inline">\(f: M \to Q\)</span> –
+<em>погружение</em>, если для любой точки <span
+class="math inline">\(P\)</span> из <span
+class="math inline">\(M\)</span> <span
+class="math inline">\(\operatorname{rk} d_P(f) = \dim M\)</span> или
+<span class="math inline">\(\operatorname{ker}d_pf = \{0\}\)</span>.</p>
+</div>
+<h3 data-number="10.3.1" id="примеры">Примеры</h3>
+<h4 data-number="10.3.1.1" id="m-s1-q-mathbbr2"><span
+class="math inline">\(M = S^1, \,\,\,\, Q = \mathbb{R}^2\)</span></h4>
+<p><span class="math inline">\(x = (x^1, x^2)\)</span> координаты в
+плоскости. <span class="math inline">\(\varphi \in S^1\)</span></p>
+<p><span class="math inline">\(f: S^1 \to \mathbb{R}^2 \,\,\,\,
+f(\varphi) = (\cos(\varphi), \sin(\varphi))^T\)</span></p>
+<p>Вычислим <span class="math inline">\(df\)</span>, чтобы понять, что
+<span class="math inline">\(f\)</span> погружение: <span
+class="math inline">\(df = (-\sin(\varphi),
+\cos(\varphi))^T\)</span>.</p>
+<p>Рассмотрим другое отображение: <span class="math inline">\(g(\varphi)
+= (\cos(\varphi), \sin(2 \varphi))\)</span>.</p>
+<p><span class="math inline">\(dg(\varphi) = (-\sin(\varphi), 2\cos(2
+\varphi)) \ne 0\)</span>.</p>
+<p>Образ окружности при первом погружении <span
+class="math inline">\(f\)</span> – это стандартная окружность.</p>
+<p>Образ окружности при втором погружении <span
+class="math inline">\(g\)</span> – это восьмерка.</p>
+<div id="definition-59">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Гладкое
+отображение <span class="math inline">\(f: M \to Q\)</span> –
+<em>вложение</em>, если <span class="math inline">\(f\)</span> –
+погружение и <span class="math inline">\(f\)</span> определяет
+гомеоморфизм <span class="math inline">\(M\)</span> и <span
+class="math inline">\(f(M)\)</span>.</p>
+<p>То есть во втором примере отображение не является вложением.</p>
+</div>
+<div id="problem-2">
+<p><span class="margin-lft"><strong>Задача: </strong></span>Пусть <span
+class="math inline">\(M\)</span> компактно и <span
+class="math inline">\(f: M \to Q\)</span> погружение. Доказать, что
+<span class="math inline">\(f\)</span> – вложение <span
+class="math inline">\(\iff\)</span> <span
+class="math inline">\(f\)</span> – биекция.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="10.4"
+id="каждое-ли-гладкое-многообразие-можно-вложить-в-евклидово-пространство">Каждое
+ли гладкое многообразие можно вложить в евклидово пространство?</h2>
+<h3 data-number="10.4.1"
+id="риманова-метрика-на-гладком-многообразии">Риманова метрика на
+гладком многообразии</h3>
+<div id="definition-60">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Риманова метрика на гладком многообразии</em> <span
+class="math inline">\(M\)</span> – это соответствие, сопоставляющее
+каждой точке <span class="math inline">\(P\)</span> из <span
+class="math inline">\(M\)</span> скалярное произведение в <span
+class="math inline">\(T_PM\)</span>, гладко зависящее от точки <span
+class="math inline">\(P\)</span>.</p>
+<p>Гладкость?</p>
+<p><span class="math inline">\((x^1, \ldots, x^n) \to g_{ij}(x)\)</span>
+– гладкие функции.</p>
+<p>Пара <span class="math inline">\(M\)</span> и риманова метрика <span
+class="math inline">\(g_{ij}\)</span> – <em>риманово
+многообразие</em>.</p>
+<p>Существует ли вложение, такое, что <span
+class="math inline">\(g_{ij}\)</span> переходит в индуцированную
+относительно <span class="math inline">\(\mathbb{R}^N\)</span>
+метрику.</p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="лекция-11.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

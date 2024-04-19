@@ -113,5 +113,10 @@
         "keyword": "тета-функция",
         "html": "<p><a href=\"лекция-15.html#definition-22\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\displaystyle \\sum_{n = 0}^{\\infty}e^{-n\nx^2}\\)</span> – <span class=\"math inline\">\\(\\theta\\)</span>-функция\n(<em>тета-функция</em>).</p>",
         "url": "лекция-15.html#definition-22"
+    },
+    {
+        "keyword": "многочлены бернулли производящая функция",
+        "html": "<p><a href=\"лекция-16.html#definition-23\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(B_n(x)\\)</span> – <em>многочлены\nБернулли</em>, а <span class=\"math inline\">\\(w_n = B_n(0)\\)</span>.</p>\n<p><span class=\"math inline\">\\(A(x, t)\\)</span> – <em>производящая\nфункция</em>.</p>",
+        "url": "лекция-16.html#definition-23"
     }
 ]

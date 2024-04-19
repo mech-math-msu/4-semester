@@ -248,5 +248,70 @@
         "keyword": "диффеоморфизм диффеоморфны",
         "html": "<p><a href=\"лекция-9.html#definition-49\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M^n\\)</span> и <span\nclass=\"math inline\">\\(M^m\\)</span> <span\nclass=\"math inline\">\\(n\\)</span>-мерное и <span\nclass=\"math inline\">\\(m\\)</span>-мерное гладкие многообразия.</p>\n<p><span class=\"math inline\">\\(f: M^n \\to M^m\\)</span> –\n<em>диффеоморфизм</em>, если <span class=\"math inline\">\\(f\\)</span>\nбиекция и <span class=\"math inline\">\\(f, f^{-1}\\)</span> гладкие.</p>\n<p>Если существует диффеоморфизм многообразий, то многообразия\n<em>диффеоморфны</em>.</p>",
         "url": "лекция-9.html#definition-49"
+    },
+    {
+        "keyword": "гладкая кривая",
+        "html": "<p><a href=\"лекция-10.html#definition-50\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M\\)</span> – <span\nclass=\"math inline\">\\(n\\)</span>-мерное гладкое многообразие.\n<em>Гладкая кривая</em> на <span class=\"math inline\">\\(M\\)</span> – это\nгладкое отображение <span class=\"math inline\">\\(\\gamma: [a, b] \\to\nM\\)</span>, то есть соответствие, сопоставляющие каждой точке <span\nclass=\"math inline\">\\(t \\in [a, b]\\)</span> точку <span\nclass=\"math inline\">\\(\\gamma(t) \\in M\\)</span>, причем если <span\nclass=\"math inline\">\\((x^1, \\ldots, x^n)\\)</span> локальные координаты в\nокрестности <span class=\"math inline\">\\(\\gamma(t_0)\\)</span>, то функции\n<span class=\"math inline\">\\(\\gamma: x^i  = x^i(t)\\)</span> бесконечно\nдифференцируемы.</p>",
+        "url": "лекция-10.html#definition-50"
+    },
+    {
+        "keyword": "касаются",
+        "html": "<p><a href=\"лекция-10.html#definition-51\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\gamma\\)</span> и <span\nclass=\"math inline\">\\(\\tilde{\\gamma}\\)</span> <em>касаются</em> в точке\n<span class=\"math inline\">\\(P\\)</span>, если <span\nclass=\"math inline\">\\(\\frac{d}{dt}|_{t= t_0}x^i(t) =\n\\frac{d}{d\\tau}|_{\\tau= \\tau_0}\\tilde{x}^i(\\tau)\\)</span></p>",
+        "url": "лекция-10.html#definition-51"
+    },
+    {
+        "keyword": "касательный вектор",
+        "html": "<p><a href=\"лекция-10.html#definition-52\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Касательный вектор</em> к многообразию <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span> – это класс эквивалентности касающихся\nдруг друга в точке <span class=\"math inline\">\\(P\\)</span> гладких\nкривых.</p>",
+        "url": "лекция-10.html#definition-52"
+    },
+    {
+        "keyword": "линейная комбинация",
+        "html": "<p><a href=\"лекция-10.html#definition-53\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> и <span\nclass=\"math inline\">\\(\\tilde{X}\\)</span> – касательные векторы к <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span>, пусть <span class=\"math inline\">\\(X^1,\n\\ldots, X^n\\)</span> и <span class=\"math inline\">\\(\\tilde{X}^1, \\ldots,\n\\tilde{X}^n\\)</span> – соответствующие им числа в системах координат\n<span class=\"math inline\">\\(x\\)</span> и <span\nclass=\"math inline\">\\(\\tilde{x}\\)</span>.</p>\n<p><em>Линейная комбинация</em> <span class=\"math inline\">\\(c_1 X + c_2\n\\tilde{X}\\)</span> векторов <span class=\"math inline\">\\(X\\)</span> и\n<span class=\"math inline\">\\(\\tilde{X}\\)</span> – касательный вектор,\nзадаваемый набором чисел <span class=\"math inline\">\\((c_1 X^1 + c_2\n\\tilde{X}^1, \\ldots, c_1 X^n + c_2 \\tilde{X}^n)\\)</span>.</p>\n<p>Определение линейной комбинации задает структуру векторного\nпространства на множестве касательных векторов в точке <span\nclass=\"math inline\">\\(P\\)</span>.</p>\n<p><strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(T_P(M)\\)</span></p>\n<div id=\"note-7\">\n<p>Вообще векторы можно ввести именно как такие наборы чисел.</p>\n</div>",
+        "url": "лекция-10.html#definition-53"
+    },
+    {
+        "keyword": "касательный к кривой",
+        "html": "<p><a href=\"лекция-10.html#definition-54\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКаждой <span class=\"math inline\">\\(\\gamma\\)</span> ставится в\nсоответствие <span class=\"math inline\">\\([\\gamma]\\)</span> (касательный\nвектор).</p>\n<p>Этот вектор – <em>касательный к кривой</em>.</p>",
+        "url": "лекция-10.html#definition-54"
+    },
+    {
+        "keyword": "координатные линии",
+        "html": "<p><a href=\"лекция-10.html#definition-55\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nВведение локальных координат задает базис в множестве касательных\nвекторов: <span class=\"math inline\">\\(X_j = (0, \\ldots, 1_j, \\ldots,\n0)\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\gamma_j: \\begin{cases}\nx^i = x_0^i, i\\ne j\\\\\nx^j = x_0^j + t\n\\end{cases}\\)</span></p>\n<p><span class=\"math inline\">\\(\\dot{\\gamma}_j = X_j\\)</span></p>\n<p><span class=\"math inline\">\\(\\gamma_j\\)</span> – <em>координатные\nлинии</em>.</p>",
+        "url": "лекция-10.html#definition-55"
+    },
+    {
+        "keyword": "производная функции вдоль вектора",
+        "html": "<p><a href=\"лекция-10.html#definition-56\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f: M \\to \\mathbb{R}\\)</span> – гладкая\nфункция. Рассмотрим <span class=\"math inline\">\\(\\gamma:[a, b] \\to M,\n\\,\\,\\,\\, \\gamma(t_0) = P, \\,\\,\\,\\, \\dot{\\gamma}(t_0) = X\\)</span></p>\n<p><span class=\"math inline\">\\(\\varphi(t): [a, b] \\to \\mathbb{R},\n\\,\\,\\,\\, \\dot{\\varphi}(t) = f\\circ \\gamma, \\,\\,\\,\\, \\varphi(t) =\nf(\\gamma(t))\\)</span></p>\n<p><em>Производная функции</em> <span class=\"math inline\">\\(f\\)</span> в\nточке <span class=\"math inline\">\\(P\\)</span> <em>вдоль вектора</em>\n<span class=\"math inline\">\\(X\\)</span> – <span\nclass=\"math inline\">\\(\\partial_X(f) = \\frac{d}{dt}|_{t = t_0}\n\\varphi(t)\\)</span></p>\n<blockquote>\n<p>Вообще эта формула такая же как в матане. И можно взять <span\nclass=\"math inline\">\\(\\dot{\\varphi}(t_0) = \\displaystyle \\sum_{i =\n1}^{n}X^i \\frac{\\partial f}{\\partial x^i}(x_0)\\)</span> в качестве\nопределения.</p>\n</blockquote>",
+        "url": "лекция-10.html#definition-56"
+    },
+    {
+        "keyword": "дифференциал",
+        "html": "<p><a href=\"лекция-10.html#definition-57\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(M^n\\)</span> и <span\nclass=\"math inline\">\\(M^m\\)</span> – гладкие многообразия. <span\nclass=\"math inline\">\\(f: M^n \\to M^m, \\,\\,\\,\\, P \\in M^n, \\,\\,\\,\\, Q =\nf(P) \\in M^m\\)</span>.</p>\n<p>Тогда <span class=\"math inline\">\\(f(X)\\)</span>, где <span\nclass=\"math inline\">\\(X\\)</span> касательный вектор к <span\nclass=\"math inline\">\\(M\\)</span> в точке <span\nclass=\"math inline\">\\(P\\)</span>, – это касательный вектор к кривой\n<span class=\"math inline\">\\(f\\circ\\gamma: [a, b] \\to M^m, \\,\\,\\,\\,\n\\,\\,\\,\\, \\gamma: [a, b] \\to M^n, \\,\\,\\,\\, \\gamma(t_0) = P, \\,\\,\\,\\,\n\\dot{\\gamma}(t_0) = X\\)</span> в точке <span\nclass=\"math inline\">\\(Q\\)</span>.</p>\n<p>Это отображение – <em>дифференциал</em> <span\nclass=\"math inline\">\\(d_Pf(X) = Y\\)</span>.</p>",
+        "url": "лекция-10.html#definition-57"
+    },
+    {
+        "keyword": "погружение",
+        "html": "<p><a href=\"лекция-10.html#definition-58\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть есть многообразия <span class=\"math inline\">\\(M^n\\)</span> и <span\nclass=\"math inline\">\\(Q^N\\)</span>. Что значит, что одно многообразие\nвнутри другого?</p>\n<p>Нужно отображение: <span class=\"math inline\">\\(f: M \\to Q\\)</span>.\nНо не любое отображение подходит. Какие условия нужно наложить на <span\nclass=\"math inline\">\\(f\\)</span>?</p>\n<p>Рассмотрим окрестность точки <span class=\"math inline\">\\(P \\in\nM\\)</span> с локальными координатами <span class=\"math inline\">\\(x =\n(x^1, \\ldots, x^n)\\)</span>. Тогда <span\nclass=\"math inline\">\\(f\\)</span> определеят координатные функции <span\nclass=\"math inline\">\\(y^j = f^j(x^1, \\ldots, x^n)\\)</span>. Хотим\nрегулярности (отсутстыия ядра у отображения), то есть максимальнось\nранга матрицы Якоби.</p>\n<p>Гладкое отображение <span class=\"math inline\">\\(f: M \\to Q\\)</span> –\n<em>погружение</em>, если для любой точки <span\nclass=\"math inline\">\\(P\\)</span> из <span\nclass=\"math inline\">\\(M\\)</span> <span\nclass=\"math inline\">\\(\\operatorname{rk} d_P(f) = \\dim M\\)</span> или\n<span class=\"math inline\">\\(\\operatorname{ker}d_pf = \\{0\\}\\)</span>.</p>",
+        "url": "лекция-10.html#definition-58"
+    },
+    {
+        "keyword": "вложение",
+        "html": "<p><a href=\"лекция-10.html#definition-59\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГладкое отображение <span class=\"math inline\">\\(f: M \\to Q\\)</span> –\n<em>вложение</em>, если <span class=\"math inline\">\\(f\\)</span> –\nпогружение и <span class=\"math inline\">\\(f\\)</span> определяет\nгомеоморфизм <span class=\"math inline\">\\(M\\)</span> и <span\nclass=\"math inline\">\\(f(M)\\)</span>.</p>\n<p>То есть во втором примере отображение не является вложением.</p>",
+        "url": "лекция-10.html#definition-59"
+    },
+    {
+        "keyword": "риманова метрика на гладком многообразии риманово многообразие",
+        "html": "<p><a href=\"лекция-10.html#definition-60\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Риманова метрика на гладком многообразии</em> <span\nclass=\"math inline\">\\(M\\)</span> – это соответствие, сопоставляющее\nкаждой точке <span class=\"math inline\">\\(P\\)</span> из <span\nclass=\"math inline\">\\(M\\)</span> скалярное произведение в <span\nclass=\"math inline\">\\(T_PM\\)</span>, гладко зависящее от точки <span\nclass=\"math inline\">\\(P\\)</span>.</p>\n<p>Гладкость?</p>\n<p><span class=\"math inline\">\\((x^1, \\ldots, x^n) \\to g_{ij}(x)\\)</span>\n– гладкие функции.</p>\n<p>Пара <span class=\"math inline\">\\(M\\)</span> и риманова метрика <span\nclass=\"math inline\">\\(g_{ij}\\)</span> – <em>риманово\nмногообразие</em>.</p>\n<p>Существует ли вложение, такое, что <span\nclass=\"math inline\">\\(g_{ij}\\)</span> переходит в индуцированную\nотносительно <span class=\"math inline\">\\(\\mathbb{R}^N\\)</span>\nметрику.</p>",
+        "url": "лекция-10.html#definition-60"
+    },
+    {
+        "keyword": "изометричное вложение",
+        "html": "<p><a href=\"лекция-11.html#definition-61\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\((M, g_{ij}\\)</span> – <span\nclass=\"math inline\">\\(n\\)</span>-мерное риманово многообразие.</p>\n<p><span class=\"math inline\">\\(f: M \\to \\mathbb{R}^N\\)</span>, такое,\nчто:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(f\\)</span> – вложение,</li>\n<li><span class=\"math inline\">\\(\\forall P \\in M, \\,\\,\\,\\, \\forall X, Y\n\\in T_P(M) \\,\\,\\,\\, (X, Y) = (d_Pf(X), d_Pf(Y))\\)</span>.\n(<em>изометричное вложение</em>)</li>\n</ol>",
+        "url": "лекция-11.html#definition-61"
+    },
+    {
+        "keyword": "ориентация векторного пространства ориентировано",
+        "html": "<p><a href=\"лекция-11.html#definition-62\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМожно сказать, что два базиса эквивалентны, если определитель матрицы\nперехода между ними больше нуля.</p>\n<p><em>Ориентация векторного пространства</em> задана, если выбран класс\nэквивалентности базиса.</p>\n<p><span class=\"math inline\">\\(M\\)</span> – <em>ориентировано</em>, если\nв <span class=\"math inline\">\\(\\forall P \\in M\\)</span> задана ориентация\n<span class=\"math inline\">\\(T_PM\\)</span>, причем она гладко зависит от\nточки <span class=\"math inline\">\\(P\\)</span>.</p>\n<p>Для каждой точки карты возникает базис из касательных векторов к\nкоординатным линиям, проходящим через точку. Если гладко зависит, то\nориентация этих базисов одинакова.</p>",
+        "url": "лекция-11.html#definition-62"
     }
 ]

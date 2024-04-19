@@ -183,5 +183,20 @@
         "keyword": "абсолютно непрерывен относительно",
         "html": "<p><a href=\"лекция-9.html#definition-36\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЗаряд <span class=\"math inline\">\\(\\Phi\\)</span> на <span\nclass=\"math inline\">\\(\\sigma\\)</span>-алгебре <span\nclass=\"math inline\">\\(\\A\\)</span> <em>абсолютно непрерывен\nотносительно</em> меры <span class=\"math inline\">\\(\\mu\\)</span> на <span\nclass=\"math inline\">\\(\\A\\)</span>, если <span\nclass=\"math inline\">\\(\\forall A \\in \\A: \\,\\,\\,\\, \\mu(A) = 0\\)</span>\nвыполнено <span class=\"math inline\">\\(\\Phi(A) = 0\\)</span>.</p>",
         "url": "лекция-9.html#definition-36"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"лекция-10.html#definition-37\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(V\\)</span> – векторное пространство.\nФункция <span class=\"math inline\">\\(||.||: V \\to \\mathbb{R}\\)</span> –\nнорма, если:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\forall v \\in V \\,\\,\\,\\, ||v|| \\geqslant\n0\\)</span> и <span class=\"math inline\">\\(||v|| = 0 \\iff v =\n0\\)</span></li>\n<li><span class=\"math inline\">\\(\\forall v \\in V, \\,\\,\\,\\, \\forall\n\\lambda \\in \\mathbb{R} \\,\\,\\,\\, ||\\lambda v|| = |\\lambda| \\cdot\n||v||\\)</span></li>\n<li><span class=\"math inline\">\\(\\forall u, v \\in V \\,\\,\\,\\, ||u + v||\n\\leqslant ||u|| + ||v||\\)</span></li>\n</ol>",
+        "url": "лекция-10.html#definition-37"
+    },
+    {
+        "keyword": "полное банахово",
+        "html": "<p><a href=\"лекция-10.html#definition-38\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nВекторное пространство <em>полное</em>, если любая фундаментальная\nпоследовательность в нем имеет предел.</p>\n<p>Полное нормированное пространство – <em>банахово</em>.</p>",
+        "url": "лекция-10.html#definition-38"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"лекция-10.html#definition-39\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\mathcal{L}_p(X)\\)</span> – это множество\nизмеримых функций <span class=\"math inline\">\\(f\\)</span>, таких что\n<span class=\"math inline\">\\(|f|^p \\in \\mathcal{L}(X)\\)</span>.</p>\n<p>Пусть <span class=\"math inline\">\\(L_p = \\mathcal{L}_p(X/\n\\sim\\)</span>, где <span class=\"math inline\">\\(f \\sim g\\)</span>, если\n<span class=\"math inline\">\\(f = g\\)</span> почти всюду.</p>\n<p>Из неравенства Минковского следует, что <span\nclass=\"math inline\">\\(L_p\\)</span> нормированное пространство с нормой\n<span class=\"math inline\">\\(||f||_p = \\left(\\displaystyle\\int\\limits_{X}\n|f(x)|^p\\mu(dx)\\right)^{\\frac1{p}}\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\mathcal{L}_{\\infty}(X)\\)</span> – это\nмножество измеримых, ограниченных, всюду определенных функций.</p>\n<p>Пусть <span class=\"math inline\">\\(L_{\\infty} =\n\\mathcal{L}_{\\infty}(X/ \\sim\\)</span>, где <span class=\"math inline\">\\(f\n\\sim g\\)</span>, если <span class=\"math inline\">\\(f = g\\)</span> почти\nвсюду.</p>\n<p>На <span class=\"math inline\">\\(L_{\\infty}\\)</span> норма – это <span\nclass=\"math inline\">\\(\\displaystyle\\inf_{\\tilde{f}\\sim f}\\sup_{x \\in\nX}|\\tilde{f}(x)|\\)</span></p>",
+        "url": "лекция-10.html#definition-39"
     }
 ]

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Лекция 10</title>
+    <style>
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1, h2 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+            margin-left: 0px;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        A: "{\\mathcal{A}}",
+                        B: "{\\mathcal{B}}",
+                        M: "{\\mathfrak{M}}",
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
+    </div>
+</nav>
+
+
+
+<h1 data-number="10" id="лекция-10">Лекция 10</h1>
+<h2 data-number="10.1" id="пространства-l_p">Пространства <span
+class="math inline">\(L_p\)</span></h2>
+<h3 data-number="10.1.1"
+id="неравенства-гёльдера-и-минковского">Неравенства Гёльдера и
+Минковского</h3>
+<div id="lemma-20">
+<p><span class="margin-lft"><strong>Лемма:
+</strong></span>(<em>неравенство Юнга</em>) Пусть <span
+class="math inline">\(p &gt; 1, \,\,\,\, q &gt; 1, \,\,\,\, \frac1{p} +
+\frac1{q} = 1\)</span>. Тогда <span class="math inline">\(\forall a &gt;
+0 \,\,\,\, \forall b &gt; 0 \,\,\,\, ab \leqslant \frac{a^p}{p} +
+\frac{b^q}{q}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<p><a href="../seminars/семинар-6.html#corollary-3"></a></p>
+<div id="theorem-40">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>неравенство Гёльдера</em>) Обозначим за <span
+class="math inline">\(||f||_p = \left(\displaystyle\int\limits_{X}
+|f(x)|^p\mu(dx)\right)^{\frac1{p}}\)</span> (это действительно норма, но
+пока это не доказали).</p>
+<p>Если <span class="math inline">\(p &gt; 1, \,\,\,\, q &gt; 1,
+\,\,\,\, \frac1{p} + \frac1{q} = 1, f, g\)</span> – измеримы и <span
+class="math inline">\(|f|^p, |g|^q \in \mathcal{L}(X)\)</span>, то <span
+class="math inline">\(fg \in \mathcal{L}(X)\)</span> и <span
+class="math inline">\(\displaystyle\int\limits_{X} |f(x)g(x)|\mu(dx)
+\leqslant \left(\displaystyle\int\limits_{X}
+|f(x)|^p\mu(dx)\right)^{\frac1{p}} \cdot
+\left(\displaystyle\int\limits_{X}
+|g(x)|^q\mu(dx)\right)^{\frac1{q}}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> использовать
+неравенство Юнга <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-41">
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>неравенство Минковского</em>) Пусть <span
+class="math inline">\(p \geqslant 1, \,\,\,\,f, g\)</span> измеримы
+<span class="math inline">\(|f|^p \in \mathcal{L}(X), |g|^p \in
+\mathcal{L}(X)\)</span>. Тогда <span class="math inline">\(|f + g|^p \in
+\mathcal{L}(X)\)</span> и <span
+class="math inline">\(\left(\displaystyle\int\limits_{X} |f(x) +
+g(x)|^p\mu(dx)\right)^{\frac1{p}} \leqslant
+\left(\displaystyle\int\limits_{X} |f(x)|^p\mu(dx)\right)^{\frac1{p}} +
+\left(\displaystyle\int\limits_{X}
+|g(x)|^p\mu(dx)\right)^{\frac1{p}}\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> использовать
+неравенство Гёльдера <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="10.1.2"
+id="напоминание-нормированные-пространства">Напоминание: нормированные
+пространства</h3>
+<div id="definition-37">
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(V\)</span> – векторное пространство. Функция
+<span class="math inline">\(||.||: V \to \mathbb{R}\)</span> – норма,
+если:</p>
+<ol type="1">
+<li><span class="math inline">\(\forall v \in V \,\,\,\, ||v|| \geqslant
+0\)</span> и <span class="math inline">\(||v|| = 0 \iff v =
+0\)</span></li>
+<li><span class="math inline">\(\forall v \in V, \,\,\,\, \forall
+\lambda \in \mathbb{R} \,\,\,\, ||\lambda v|| = |\lambda| \cdot
+||v||\)</span></li>
+<li><span class="math inline">\(\forall u, v \in V \,\,\,\, ||u + v||
+\leqslant ||u|| + ||v||\)</span></li>
+</ol>
+</div>
+<div id="definition-38">
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Векторное пространство <em>полное</em>, если любая
+фундаментальная последовательность в нем имеет предел.</p>
+<p>Полное нормированное пространство – <em>банахово</em>.</p>
+</div>
+<div id="definition-39">
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(\mathcal{L}_p(X)\)</span> – это множество
+измеримых функций <span class="math inline">\(f\)</span>, таких что
+<span class="math inline">\(|f|^p \in \mathcal{L}(X)\)</span>.</p>
+<p>Пусть <span class="math inline">\(L_p = \mathcal{L}_p(X/
+\sim\)</span>, где <span class="math inline">\(f \sim g\)</span>, если
+<span class="math inline">\(f = g\)</span> почти всюду.</p>
+<p>Из неравенства Минковского следует, что <span
+class="math inline">\(L_p\)</span> нормированное пространство с нормой
+<span class="math inline">\(||f||_p = \left(\displaystyle\int\limits_{X}
+|f(x)|^p\mu(dx)\right)^{\frac1{p}}\)</span>.</p>
+<p><span class="math inline">\(\mathcal{L}_{\infty}(X)\)</span> – это
+множество измеримых, ограниченных, всюду определенных функций.</p>
+<p>Пусть <span class="math inline">\(L_{\infty} =
+\mathcal{L}_{\infty}(X/ \sim\)</span>, где <span class="math inline">\(f
+\sim g\)</span>, если <span class="math inline">\(f = g\)</span> почти
+всюду.</p>
+<p>На <span class="math inline">\(L_{\infty}\)</span> норма – это <span
+class="math inline">\(\displaystyle\inf_{\tilde{f}\sim f}\sup_{x \in
+X}|\tilde{f}(x)|\)</span></p>
+</div>
+<h2 data-number="10.2" id="полнота-пространств-l_p">Полнота пространств
+<span class="math inline">\(L_p\)</span></h2>
+<div id="lemma-21">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть
+последовательность <span class="math inline">\(\{f_n\}\)</span>
+фундаментальна в <span class="math inline">\(L_1(X)\)</span>. Тогда
+существует ее подпоследовательность <span
+class="math inline">\(\{f_{n_k}\}\)</span>, сходящаяся почти всюду.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Последовательность <span class="math inline">\(\{f_n\}\)</span>
+фундаментальна, поэтому <span class="math inline">\(\forall k \in
+\mathbb{N} \,\,\,\, \exists n_k: \,\,\,\, \forall n &gt; n_k \,\,\,\,
+||f_{n_k} - f_n||_1 = \displaystyle\int\limits_{X} |f_{n_k} -
+f_n|\mu(dx) &lt; \frac1{2^k}\)</span>. В частности, <span
+class="math inline">\(||f_{n_k} - f_{n_{k +1}}||_1 \leqslant
+\frac1{2^k}\)</span></p>
+<p>Рассмотрим последовательность <span class="math inline">\(g_m(x) =
+|f_{n_1}(x)| + \displaystyle \sum_{k = 1}^{m - 1}|f_{n_k}(x) - f_{n_{k +
+1}}(x)|\)</span>. Для этой последовательности выполнены условия теоремы
+Леви, поэтому она сходится к конечному пределу, а следовательно сходится
+и ряд <span class="math inline">\(|f_{n_1}(x)| + \displaystyle \sum_{k =
+1}^{\infty}|f_{n_k}(x) - f_{n_{k + 1}}(x)|\)</span>, а также и ряд <span
+class="math inline">\(f_{n_1}(x) + \displaystyle \sum_{k =
+1}^{\infty}(f_{n_k}(x) - f_{n_{k + 1}}(x))\)</span> частичные суммы
+которого <span
+class="math inline">\(f_{n_k}\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="lemma-22">
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(\mu X &lt; \infty\)</span> и <span
+class="math inline">\(p &gt; 1\)</span>. Тогда <span
+class="math inline">\(L_1(X) \subset L_p(X)\)</span> и <span
+class="math inline">\(\exists C: \,\,\,\, ||f||_1 \leqslant C\cdot
+||f||_p\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p><span class="math inline">\(||f||_1 = \displaystyle\int\limits_{X}
+|f(x)|^1\mu(dx) = \displaystyle\int\limits_{X} |f(x)|\cdot 1\mu(dx)
+\leqslant \left(\displaystyle\int\limits_{X}
+|f(x)|^{\frac1{p}}\mu(dx)\right)^{\frac1{p}}\cdot
+\left(\displaystyle\int\limits_{X} 1^{1 - \frac1p}\mu(dx)\right)^{1 -
+\frac1{p}} = ||f||_p \cdot (\mu X)^{1 -\frac1{p}}
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-42">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\((X, \A, \mu)\)</span> – пространство с полной
+мерой и <span class="math inline">\(1 \leqslant p &lt; \infty\)</span>.
+Тогда пространство <span class="math inline">\(L_p\)</span> полное
+(банахово).</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+<p>Пусть <span class="math inline">\(\{f_n\}\)</span> – фундаментальная
+последовательность.</p>
+<p>Если <span class="math inline">\(p = 1\)</span>, то по <a
+href="лекция-10.html#lemma-21">лемме</a> найдем подпоследовательность
+<span class="math inline">\(\{f_{n_k}\}\)</span>, сходящуюся почти
+всюду.</p>
+<p>Если <span class="math inline">\(p &gt; 1\)</span> и <span
+class="math inline">\(\mu X &lt; \infty\)</span>, то по <a
+href="лекция-10.html#lemma-22">лемме</a> пространство вложено <span
+class="math inline">\(L_1(X) \subset L_p(X)\)</span> и значит <span
+class="math inline">\(\{f_{n_k}\}\)</span> сходящаяся почти всюду
+подпоследовательность в <span class="math inline">\(\{f_n\}\)</span></p>
+<p>Если <span class="math inline">\(p &gt; 1\)</span> и <span
+class="math inline">\(\mu X = \infty\)</span>, то существуют <span
+class="math inline">\(A_k: \,\,\,\, \bigsqcup_k A_k = X\)</span> и <span
+class="math inline">\(\mu A_k &lt; \infty\)</span>, поэтому <span
+class="math inline">\(\forall f \,\,\,\, \displaystyle\int\limits_{A_k}
+f(x)\mu(dx) &lt; \displaystyle\int\limits_{X} f(x)\mu(dx)\)</span>, то
+есть последовательность <span class="math inline">\(\{f_n\}\)</span>
+фундаментальна в <span class="math inline">\(A_k\)</span> и можем
+выбрать для каждого <span class="math inline">\(A_k\)</span> сходящуюся
+почти всюду подпоследовательность <span
+class="math inline">\(\{f^k_{n_m}\}\)</span> и взять диагональную
+подпоследовательность.</p>
+<p>Теперь можем доказывать для сходящейся почти всюду последовательности
+<span class="math inline">\(\{f_n\}\)</span>.</p>
+<p>Эта последовательность фундаментальна, то есть <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists N &gt;
+0: \,\,\,\, \forall n, m &gt; N \,\,\,\, \displaystyle\int\limits_{X}
+|f_m(x) - f_n(x)|^p\mu(dx) \leqslant \varepsilon^p\)</span> и
+подынтегральнеы функции неотрицательны и сходятся почти всюду к <span
+class="math inline">\(|f_m(x) - f(x)|^p\)</span>.</p>
+<p>По теореме Фату <span class="math inline">\(\forall m &gt; N\)</span>
+<span class="math inline">\(\displaystyle\int\limits_{X} |f_m(x) -
+f(x)|^p\mu(dx) \leqslant \varepsilon^p\)</span> и <span
+class="math inline">\(|f_m(x) - f(x)|^p \in \mathcal{L}(X)\)</span>, а
+значит <span class="math inline">\(||f_n - f|| &lt; \varepsilon
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav_right">
+        <span class="navlink">
+                        <a href="лекция-9.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

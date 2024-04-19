@@ -256,7 +256,7 @@
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-11.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -265,7 +265,7 @@
 
 
 <h1 data-number="9" id="семинар-10">Семинар 10</h1>
-<style>/********** Range Input Styles **********/
+<!-- <style>/********** Range Input Styles **********/
     /*Range Reset*/
     input[type="range"] {
        -webkit-appearance: none;
@@ -315,7 +315,7 @@
        width: 2rem;
        border-radius: 1rem;
     }
-</style>
+</style> -->
 <h2 data-number="9.1" id="функция-распределения">Функция
 распределения</h2>
 <div id="definition-8">
@@ -423,6 +423,8 @@ class="math inline">\([a, b]\)</span></h3>
 \frac{x - a}{b - a}, \,\,\,\, x \in [a, b]\\
 1, \,\,\,\, x &gt; b
 \end{cases}\]</span></p>
+<p><span class="math display">\[E\xi = \frac{a + b}2\]</span></p>
+<p><span class="math display">\[D\xi = \frac{(b - a)^2}{12}\]</span></p>
 <p><img src="img/uniform.png" width="300" /></p>
 <!-- <center><canvas id="main-canvas"></canvas></center>
 <center><div id="slider-div"> $a:$ <input type="range" id="slider_a" min="0" max="10" step="1" value="0.5"></div></center>
@@ -535,6 +537,8 @@ class="math inline">\(\alpha\)</span></h3>
 0, \,\,\,\, x &lt; 0\\
 1 - e^{- \alpha x}, \,\,\,\, x &gt; 0
 \end{cases}\]</span></p>
+<p><span class="math display">\[E\xi = \frac1{\lambda}\]</span></p>
+<p><span class="math display">\[D\xi = \frac1{\lambda^2}\]</span></p>
 <p><img src="img/exponential.png" width="300" /></p>
 <h3 data-number="9.2.3"
 id="нормальное-с-параметрами-mu-математическое-ожидание-или-среднее-и-sigma2-стандартное-отклонение-или-дисперсия-в-квадрате">Нормальное
@@ -547,6 +551,8 @@ id="нормальное-с-параметрами-mu-математическо
 \sigma} e^{-\frac{(x - \mu)^2}{2\cdot \sigma^2}}\]</span></p>
 <p><span class="math display">\[F_{\xi}(x) = \Phi_{\mu,
 \sigma^2}(x)\]</span></p>
+<p><span class="math display">\[E\xi = \mu\]</span></p>
+<p><span class="math display">\[D\xi = \sigma^2\]</span></p>
 <p>(не считается, см. таблицы)</p>
 <p><img src="img/normal.png" width="300" /></p>
 <h2 data-number="9.3" id="домашняя-работа-9-1">Домашняя работа 9</h2>
@@ -562,9 +568,9 @@ b\)</span> с вероятностями <span class="math inline">\(p_a, p_{a +
 <p><span class="math display">\[F_{\xi}(x) = \begin{cases}
 0, \,\,\,\, x &lt; a\\
 p_a, \,\,\,\, a \leqslant x &lt; a + 1\\
-p_a\cdot p_{a + 1}, \,\,\,\, a + 1 \leqslant x &lt; a + 2\\
+p_a + p_{a + 1}, \,\,\,\, a + 1 \leqslant x &lt; a + 2\\
 \vdots\\
-p_a\cdot\ldots\cdot p_b, \,\,\,\, b - 1 \leqslant x &lt; b + 1\\
+p_a+\ldots+ p_b, \,\,\,\, b - 1 \leqslant x &lt; b + 1\\
 1, \,\,\,\, x &gt; b + 1
 \end{cases}\]</span></p>
 </div>
@@ -580,17 +586,32 @@ class="math inline">\(F(x)\)</span> – ее функция распределе
 </ol>
 <ol type="1">
 <li><span class="math inline">\(P(\xi \leqslant x)\)</span></li>
-<li><span class="math inline">\(P(\xi \geqslant x)\)</span></li>
-<li><span class="math inline">\(P(\xi &lt; x)\)</span></li>
 <li><span class="math inline">\(P(\xi &gt; x)\)</span></li>
+<li><span class="math inline">\(P(\xi &lt; x)\)</span></li>
+<li><span class="math inline">\(P(\xi \geqslant x)\)</span></li>
 <li><span class="math inline">\(P(a \leqslant \xi &lt; b)\)</span></li>
 <li><span class="math inline">\(P(\xi = a)\)</span></li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(P(\xi \leqslant x) =
-F_{\xi}(x)\)</span></p>
-<p><span class="math inline">\(P(\xi &gt; x) = 1 -
-F_{\xi}(x)\)</span></p>
+<ol type="1">
+<li><span class="math inline">\(P(\xi \leqslant x) =
+F_{\xi}(x)\)</span></li>
+<li><span class="math inline">\(P(\xi &gt; x) = 1 -
+F_{\xi}(x)\)</span></li>
+<li>Вспомним про непрерывность снизу: если <span
+class="math inline">\(A_n \subset A_{n + 1}, \,\,\,\, A_n \in
+\mathcal{F} \forall n \in \mathbb{N}\)</span>, то <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}P(A_n) =
+P(\bigcap_{n = 1}^{\infty}A_n)\)</span>. Имеем: <span
+class="math inline">\(P(\xi &lt; x) = P(\bigcup_{n = 1}^{\infty}\{\xi
+\leqslant x - \frac1n\}) = \displaystyle \lim_{n\to \infty}P(\{\xi
+\leqslant x - \frac1n\}) = F(x - 0)\)</span></li>
+<li><span class="math inline">\(P(\xi \geqslant x) = 1 - F(x -
+0)\)</span></li>
+<li><span class="math inline">\(P(a \leqslant \xi &lt; b) = P(\xi &lt;
+b) - P(\xi &lt; a) = P(b - 0) - P(a - 0)
+\,\,\,\,\blacksquare\)</span></li>
+</ol>
 </div>
 <div id="problem-50">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -614,9 +635,19 @@ x}(\sup_{I}F_{\xi}(x) - \inf_{I} F_{\xi}(x)) = P(\{\xi = a\})
 <li>Доказать, что функция распределения может иметь не более, чем
 счетное число скачков.</li>
 </ol>
-<p><span class="margin-lft"><em>Доказательство:</em></span> <a
-href="https://mech-math-msu.github.io/4-semester/real-analysis/seminars/%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%80-2.html#problem-5">см.
-задачу (как жаль, что я ее не записала)</a></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(A_n = \{x \in \mathbb{R}: \,\,\,\, F(x) - F(x- 0)
+\geqslant \frac1n\}\)</span></p>
+<p>Пусть <span class="math inline">\(\exists k \in \mathbb{N}: \,\,\,\,
+A_k\)</span> – счетное. Тогда <span class="math inline">\(\exists
+\{x_i\}: \,\,\,\, F(\xi = x_i) = F(x_i) - F(x_i - 0) \geqslant
+\frac1k\)</span> и имеем: <span class="math inline">\(\displaystyle
+\sum_{i = 1}^{\infty}(F(x_i) - F(x_i - 0)) \geqslant \displaystyle
+\sum_{n = 1}^{\infty}\frac1n = +\infty\)</span> и <span
+class="math inline">\(\displaystyle \sum_{i = 1}^{\infty}P(\xi = x_i)
+\leqslant 1\)</span>, так как это события, следовательно, получили
+противоречие <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="problem-52">
 <span class="margin-lft"><strong>Задача: </strong></span>
@@ -647,7 +678,7 @@ t}\)</span></p>
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-11.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>
