@@ -9,7 +9,7 @@
     
     
     
-    <title>Семинар 11</title>
+    <title>Семинар 12</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -250,13 +250,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="семинар-10.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-11.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="семинар-12.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-13.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -264,145 +264,161 @@
 
 
 
-<h1 data-number="10" id="семинар-11">Семинар 11</h1>
-<h2 data-number="10.1" id="математическое-ожидание-1">Математическое
-ожидание</h2>
-<div id="definition-10">
+<h1 data-number="11" id="семинар-12">Семинар 12</h1>
+<h2 data-number="11.1"
+id="плотность-борелевской-функции-от-случайной-величины">Плотность
+борелевской функции от случайной величины</h2>
+<p>Пусть <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> –
+вероятностное пространство, <span class="math inline">\(\xi\)</span> –
+случайная величина на нем. Тогда для любой борелевской функции <span
+class="math inline">\(g(x)\)</span> функция <span
+class="math inline">\(g(\xi(x))\)</span> – случайная величина.</p>
+<h3 data-number="11.1.1" id="посчитаем-f_etax-где-eta-sinxi">Посчитаем
+<span class="math inline">\(f_{\eta}(x)\)</span>, где <span
+class="math inline">\(\eta = \sin(\xi)\)</span></h3>
+<p>Строим график!</p>
+<p><img src="img/cmf.jpg" /></p>
+<h2 data-number="11.2"
+id="характеристическая-функция-распределения">Характеристическая функция
+распределения</h2>
+<div id="definition-11">
 <p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
 <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> –
 вероятностное пространство, <span class="math inline">\(\xi\)</span> –
 случайная величина на нем.</p>
-<p><em>Математическое ожидание</em> <span
-class="math inline">\(\xi\)</span> – это <span
-class="math inline">\(E\xi = \displaystyle\int\limits_{\Omega} \xi(w)d
-P\)</span>.</p>
+<p><span class="math inline">\(\varphi_{\xi}(t) =
+E(e^{it\xi})\)</span></p>
 </div>
-<h2 data-number="10.2" id="домашняя-работа-11">Домашняя работа 11</h2>
-<div id="problem-53">
+<h3 data-number="11.2.1"
+id="свойства-характеристической-функции">Свойства характеристической
+функции</h3>
+<div id="statement-4">
+<span class="margin-lft"><strong>Утверждение: </strong></span>
+<ol type="1">
+<li>(<em>корректность определения</em>) <span
+class="math inline">\(\varphi_{\xi}(t)\)</span> определена для любого
+<span class="math inline">\(t \in \mathbb{R}\)</span></li>
+<li><span class="math inline">\(|\varphi_{\xi}(t)| \leqslant 1\)</span>
+и <span class="math inline">\(|\varphi_{\xi}(t)| = 1 \iff t =
+0\)</span></li>
+<li><span class="math inline">\(\varphi_{-\xi}(t) = \varphi_{\xi}(-t) =
+\overline{\varphi_{\xi}(t)}\)</span></li>
+<li><span class="math inline">\(\eta = a\xi + b \implies
+\varphi_{\eta}(t) = e^{it b} \varphi_{\xi}(at)\)</span></li>
+<li><span class="math inline">\(\xi \perp \eta \implies \varphi_{\xi +
+\eta}(t) = \varphi_{\xi}(t)\cdot \varphi_{\eta}(t)\)</span></li>
+<li><span class="math inline">\(\varphi_{\xi}(t)\)</span> – равномерно
+непрерывна по <span class="math inline">\(t\)</span>.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h3 data-number="11.2.2" id="почему-полезно">Почему полезно?</h3>
+<p>Потому что преобразование Фурье и матан умеет с этим работать.</p>
+<p>И</p>
+<div id="statement-5">
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(\exists E\xi^k &lt; \infty\)</span>, то
+<span class="math inline">\(\exists \varphi_{\xi}^{(k)}(t)\)</span> и
+<span class="math inline">\(i^k\cdot E\xi^k =
+\varphi^{(k)}(0)\)</span>.</p>
+<p>Если <span class="math inline">\(\exists \varphi^{(2k)}(0)\)</span>,
+то <span class="math inline">\(\exists E\xi^{2k} &lt; \infty\)</span> и
+<span class="math inline">\(-\cdot E\xi^{2k} =
+\varphi^{(2k)}(0)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="11.3" id="домашняя-работа-12">Домашняя работа 12</h2>
+<div id="problem-58">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol type="1">
-<li>Пусть <span class="math inline">\(\xi\)</span> – случайная величина
-и <span class="math inline">\(f(x) = E(\xi - x)^2\)</span>. Найдите
-точку минимума <span class="math inline">\(f(x)\)</span> и вычислите
-этот минимум.</li>
+<li>Случайная величина имеет распределение с плотностью</li>
 </ol>
+<p><span class="math display">\[f(x) = \frac1{\pi(1 + x^2)}\]</span></p>
+<p>Найти плотность распределения случайной величины <span
+class="math inline">\(\eta = \frac1{\xi}\)</span>.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(E(\xi - x)^2 =
-\displaystyle\int\limits_{\Omega} (\xi - x)^2 d P = E\xi^2 - 2x E\xi +
-x^2\)</span></p>
-<p>Минимум в точке <span class="math inline">\(-\frac{b}{2a} = -
-\frac{-2 E\xi}{2} = E\xi\)</span> и минимум равен <span
-class="math inline">\(D\xi \,\,\,\,\blacksquare\)</span></p>
 </div>
-<div id="problem-54">
+<div id="problem-59">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="2" type="1">
-<li><span class="math inline">\(f_{\xi}(x) = \frac1{\pi(x^2 +
-1)}\)</span></li>
+<li>Случайная величина имеет равномерное распределение на отрезке <span
+class="math inline">\([0, 2]\)</span>. Найдите плотность распределения
+случайной величины <span class="math inline">\(\eta = -\sqrt{\xi +
+1}\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(F(x) =
-\displaystyle\int\limits_{-\infty}^x f_{\xi}(t)dt =
-\displaystyle\int\limits_{-\infty}^x\frac1{\pi(t^2 + 1)} dt =
-\left.\frac1{\pi}\operatorname{arctg}(t)\right|_{-\infty}^x =
-\frac1{\pi}\operatorname{arctg}(x) + \frac12\)</span></p>
-<p><span class="math inline">\(\not\exists E\xi =
-\displaystyle\int\limits_{-\infty}^{+\infty} F(x)dx\)</span></p>
 </div>
-<div id="problem-55">
+<div id="problem-60">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="3" type="1">
-<li>Случайная величина <span class="math inline">\(\xi\)</span> имеет
-равномерное распределение на отрезке <span
-class="math inline">\(\left[-\frac{\pi}2, \frac{\pi}2\right]\)</span>,
-<span class="math inline">\(\eta_1 = \sin(\xi)\)</span>, <span
-class="math inline">\(\eta_2 = \cos(\xi)\)</span>. Найдите <span
-class="math inline">\(E\eta_1, E\eta_2, D\eta_1, D\eta_2\)</span> и
-коэффициент корреляции <span class="math inline">\(\eta_1\)</span> и
-<span class="math inline">\(\eta_2\)</span>.</li>
+<li>Случайная величина равномерно распределена на отрезке <span
+class="math inline">\(\left[\frac{-\pi}2, \frac{\pi}2\right]\)</span>.
+Найти плотность распределения случайной величины <span
+class="math inline">\(\eta = |\sin(\xi)|\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<div id="problem-56">
+<div id="problem-61">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="4" type="1">
-<li>Найдите коэффициент корреляции случайных величин <span
-class="math inline">\(\xi\)</span> и <span
-class="math inline">\(\xi^2\)</span>, если <span
-class="math inline">\(\xi\)</span> имеет показательное распределение с
-параметром <span class="math inline">\(\alpha\)</span>.</li>
+<li>Случайная величина имеет плотность распределения</li>
 </ol>
+<p><span class="math inline">\(f(x) =
+\frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}}, \,\,\,\, x &gt;
+0\)</span></p>
+<p>Найти плотность распределения случайной величины <span
+class="math inline">\(\eta = e^{-\xi^2}\)</span></p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(E\xi = \frac1{\alpha}, \,\,\,\, D\xi =
-\frac1{\alpha^2}\)</span></p>
-<p><span class="math inline">\(E\xi^2 =
-\displaystyle\int\limits_{-\infty}^{+\infty} x^2 \alpha e^{- \alpha} dx=
-\frac2{\alpha^2}\)</span></p>
-<p><span class="math inline">\(D\xi^2 = E\xi^4 - (E\xi^2)^2 =
-...\)</span></p>
-<p><span class="math inline">\(\operatorname{cor}(\xi, \xi^2) =
-\frac{\operatorname{cov}(\xi, \xi^2)}{\sqrt{D\xi}\cdot \sqrt{D}\xi^2} =
-\frac{E(\xi - E\xi)(\xi^2 - E\xi^2)}{\sqrt{D\xi}\cdot
-\sqrt{D}\xi^2}\)</span></p>
 </div>
-<div id="problem-57">
+<div id="problem-62">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="5" type="1">
-<li>Случайная величина <span class="math inline">\(\xi\)</span> и ее
-функция распределения <span class="math inline">\(F_{\xi}(x)\)</span>
-считаются заданными. Найдите функции распределения следующих
-величин:</li>
-</ol>
-<ol type="1">
-<li><span class="math inline">\(\eta = a\xi + b\)</span></li>
-<li><span class="math inline">\(\eta = \xi^{-1}\)</span>, если <span
-class="math inline">\(P(\xi = 0) = 0\)</span>, то есть <span
-class="math inline">\(\xi\)</span> непрерывна в нуле.</li>
-<li><span class="math inline">\(\eta = \cos(\xi)\)</span></li>
+<li>Пусть – случайная величина с непрерывной строго монотонной функцией
+распределения <span class="math inline">\(F(x)\)</span>. Доказать, что
+случайная величина <span class="math inline">\(\eta = F(\xi)\)</span>
+имеет равномерное распределение на отрезке <span
+class="math inline">\([0, 1]\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<ol type="1">
-<li><span class="math inline">\(F_{\eta}(x) = P(\eta \leqslant x) =
-P(a\xi \leqslant x - b) = \begin{cases}P(\xi \leqslant \frac{x - b}{a}),
-\,\,\,\, a &gt; 0\\P(b \leqslant x), \,\,\,\, a = 0\\P(\xi \geqslant
-\frac{x - b}a), \,\,\,\, a &lt; 0\geqslant \end{cases} =
-\begin{cases}F_{\xi}(\frac{x - b}{a}), \,\,\,\, a &gt; 0\\I_{(-\infty,
-x]}, \,\,\,\, a = 0\\1 - F_{\xi}(\frac{x - b}{a} - 0), \,\,\,\, a &lt;
-0\geqslant \end{cases}\)</span></li>
+</div>
+<div id="problem-63">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="6" type="1">
+<li>Докажите, что характеристическая функция является вещественной тогда
+и только тогда, когда она четная.</li>
 </ol>
-<h3 data-number="10.2.1"
-id="главная-идея-теории-вероятностей-если-что-то-не-получается-то-домножаем-на-omega">Главная
-идея теории вероятностей: если что-то не получается, то домножаем на
-<span class="math inline">\(\Omega\)</span></h3>
-<p><span class="math inline">\(A\cdot \Omega = A \cdot (\{\xi &lt;
-0\}\sqcup \{\xi &gt; 0\}\sqcup \{\xi = 0\})\)</span></p>
-<ol start="2" type="1">
-<li><p><span class="math inline">\(F_{\eta}(x) = P(\frac{\frac1{\xi}
-\leqslant x}) = P(\frac1{\xi} \leqslant x, \xi &lt; 0) + P(\frac1{\xi}
-\leqslant x, \xi &gt; 0) = P(1 \geqslant x\xi, \xi &lt; 0) + P(1
-\leqslant x\xi, \xi &gt; 0) = \ldots = \begin{cases}F_{\xi}(0) + 1 -
-F_{\xi}(\frac1x - 0), \,\,\,\, x &gt; 0\\F_{\xi}(0), \,\,\,\, x =
-0\\F_{\xi}(0) - F_{\xi}(\frac1x - 0)\end{cases}\)</span></p></li>
-<li><p><span class="math inline">\(\eta = \cos(\xi), \,\,\,\,
-F_{\eta}(x) = P(\cos \xi \leqslant x) = \begin{cases}1, \,\,\,\, x
-\geqslant 1\\\displaystyle \sum_{k\in
-\mathbb{Z}}F_{\xi}(-\operatorname{arccos}(x) + 2\pi (k + 1)) -
-F_{\xi}(\operatorname{arccos}(x) + 2\pi k - 0)\\0, \,\,\,\, x &lt;
--1\end{cases}\)</span></p></li>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-64">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="7" type="1">
+<li>Могут ли функции <span class="math inline">\(\sin(t), \cos(t),
+\cos^2(t), \cos(t^2), e^{-i|t|}, e^{-4t}\)</span> быть
+характеристическими функциями некоторых случайных величин? Если могут,
+укажите соответствующие распределения.</li>
 </ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<div id="problem-65">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="8" type="1">
+<li>Выразите математическое ожидание и дисперсию случайной величины
+через ее характеристическую функцию.</li>
+</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="семинар-10.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-11.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="семинар-12.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-13.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

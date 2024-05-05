@@ -9,7 +9,7 @@
     
     
     
-    <title>Семинар 11</title>
+    <title>Семинар 13</title>
     <style>
         img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
         div.sitenav { display: flex; justify-content: space-between; }
@@ -250,13 +250,13 @@
         </div>
         <div class="sitenav_right">
             <span class="navlink">
-                                <a href="семинар-10.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-12.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
                                 <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                             </span>
             <span class="navlink">
-                                <a href="семинар-12.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                                <a href="семинар-14.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                             </span>
         </div>
     </div>
@@ -264,145 +264,146 @@
 
 
 
-<h1 data-number="10" id="семинар-11">Семинар 11</h1>
-<h2 data-number="10.1" id="математическое-ожидание-1">Математическое
-ожидание</h2>
-<div id="definition-10">
-<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
-<span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> –
-вероятностное пространство, <span class="math inline">\(\xi\)</span> –
-случайная величина на нем.</p>
-<p><em>Математическое ожидание</em> <span
-class="math inline">\(\xi\)</span> – это <span
-class="math inline">\(E\xi = \displaystyle\int\limits_{\Omega} \xi(w)d
-P\)</span>.</p>
+<h1 data-number="12" id="семинар-13">Семинар 13</h1>
+<h2 data-number="12.1"
+id="теорема-единственности-распределения-задаваемого-характеристической-функцией">Теорема
+единственности распределения, задаваемого характеристической
+функцией</h2>
+<div id="theorem-5">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если
+характеристические функции распределений совпадают, то распределения
+совпадают.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<h2 data-number="10.2" id="домашняя-работа-11">Домашняя работа 11</h2>
-<div id="problem-53">
+<h2 data-number="12.2" id="формула-обращения">Формула обращения</h2>
+<div id="theorem-6">
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если <span
+class="math inline">\(\displaystyle\int\limits_{-\infty}^{+\infty}
+\varphi_{\xi}(x)dx &lt; \infty\)</span>, то <span
+class="math inline">\(f_{\xi}(x) =
+\frac1{2\pi}\displaystyle\int\limits_{-\infty}^{+\infty} e^{-itx}
+\varphi_{\xi}(t)dt\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
+</div>
+<h2 data-number="12.3"
+id="характеристические-функции-основных-распределений">Характеристические
+функции основных распределений</h2>
+<h3 data-number="12.3.1" id="распределение-пуассона-1">Распределение
+Пуассона</h3>
+<p><span class="math display">\[e^{\lambda(e^{it} - 1)}\]</span></p>
+<h3 data-number="12.3.2"
+id="геометрическое-распределение-1">Геометрическое распределение</h3>
+<p><span class="math display">\[\frac{e^{it}p}{1 - e^{it}q}\]</span></p>
+<h3 data-number="12.3.3" id="биномиальное-распределение-1">Биномиальное
+распределение</h3>
+<p><span class="math display">\[(q + e^{it}p)^n\]</span></p>
+<h3 data-number="12.3.4" id="равномерное-распределение">Равномерное
+распределение</h3>
+<p><span class="math display">\[\frac{e^{itb} - e^{ita}}{it(b -
+a)}\]</span></p>
+<h3 data-number="12.3.5"
+id="показательное-с-параметром-alpha-1">Показательное с параметром <span
+class="math inline">\(\alpha\)</span></h3>
+<p><span class="math display">\[\frac{\alpha}{\alpha - it}\]</span></p>
+<h3 data-number="12.3.6" id="нормальное-распределение">Нормальное
+распределение</h3>
+<p><span class="math display">\[e^{it\mu - \frac{t^2
+\sigma^2}2}\]</span></p>
+<h2 data-number="12.4" id="домашняя-работа-13">Домашняя работа 13</h2>
+<div id="problem-66">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol type="1">
-<li>Пусть <span class="math inline">\(\xi\)</span> – случайная величина
-и <span class="math inline">\(f(x) = E(\xi - x)^2\)</span>. Найдите
-точку минимума <span class="math inline">\(f(x)\)</span> и вычислите
-этот минимум.</li>
+<li>Доказать, что характеристическая функция четна тогда и только тогда,
+когда соответствующая функция распределения <span
+class="math inline">\(F(x)\)</span> удовлетворяет соотношению <span
+class="math inline">\(F(x) = 1 - F(-x - 0)\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(E(\xi - x)^2 =
-\displaystyle\int\limits_{\Omega} (\xi - x)^2 d P = E\xi^2 - 2x E\xi +
-x^2\)</span></p>
-<p>Минимум в точке <span class="math inline">\(-\frac{b}{2a} = -
-\frac{-2 E\xi}{2} = E\xi\)</span> и минимум равен <span
-class="math inline">\(D\xi \,\,\,\,\blacksquare\)</span></p>
+<p>Характеристическая функция четна тогда и только тогда когда она
+вещественная.</p>
+<p><span class="math inline">\(\varphi(x) = Ee^{i\xi t}\)</span></p>
 </div>
-<div id="problem-54">
+<div id="problem-67">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="2" type="1">
-<li><span class="math inline">\(f_{\xi}(x) = \frac1{\pi(x^2 +
-1)}\)</span></li>
+<li>На вероятностном пространстве <span class="math inline">\((\Omega,
+\mathcal{F}, P)\)</span>, представляющем собой отрезок <span
+class="math inline">\([0, 2]\)</span> с <span
+class="math inline">\(\sigma\)</span>-алгеброй борелевских подмножеств и
+мерой Лебега, определена случайная величина <span
+class="math inline">\(\xi(w)\)</span>. Найти ее характеристическую
+функцию, если</li>
 </ol>
+<p><span class="math display">\[\xi(w) = \begin{cases}
+2w, \,\,\,\, w \in [0, 1]\\
+3w - 1, \,\,\,\, w \in [1, 2]
+\end{cases}\]</span></p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(F(x) =
-\displaystyle\int\limits_{-\infty}^x f_{\xi}(t)dt =
-\displaystyle\int\limits_{-\infty}^x\frac1{\pi(t^2 + 1)} dt =
-\left.\frac1{\pi}\operatorname{arctg}(t)\right|_{-\infty}^x =
-\frac1{\pi}\operatorname{arctg}(x) + \frac12\)</span></p>
-<p><span class="math inline">\(\not\exists E\xi =
-\displaystyle\int\limits_{-\infty}^{+\infty} F(x)dx\)</span></p>
+<p><span class="math inline">\(P((a, b)) = \frac{b - a}2\)</span></p>
 </div>
-<div id="problem-55">
+<div id="problem-68">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="3" type="1">
-<li>Случайная величина <span class="math inline">\(\xi\)</span> имеет
-равномерное распределение на отрезке <span
-class="math inline">\(\left[-\frac{\pi}2, \frac{\pi}2\right]\)</span>,
-<span class="math inline">\(\eta_1 = \sin(\xi)\)</span>, <span
-class="math inline">\(\eta_2 = \cos(\xi)\)</span>. Найдите <span
-class="math inline">\(E\eta_1, E\eta_2, D\eta_1, D\eta_2\)</span> и
-коэффициент корреляции <span class="math inline">\(\eta_1\)</span> и
-<span class="math inline">\(\eta_2\)</span>.</li>
+<li>Найти характеристические функции случайных величин, имеющих</li>
 </ol>
+<ol type="a">
+<li>распределение Лапласа с плотностью <span class="math inline">\(f(x)
+= \frac12e^{-|x|}\)</span></li>
+</ol>
+<p>б) распределение Коши с плотностью <span class="math inline">\(f(x) =
+\frac1{\pi(1 + x^2)}\)</span></p>
+<p>Указание. Для пункта б) воспользуйтесь формулой обращения.</p>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<div id="problem-56">
+<div id="problem-69">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="4" type="1">
-<li>Найдите коэффициент корреляции случайных величин <span
-class="math inline">\(\xi\)</span> и <span
-class="math inline">\(\xi^2\)</span>, если <span
-class="math inline">\(\xi\)</span> имеет показательное распределение с
-параметром <span class="math inline">\(\alpha\)</span>.</li>
+<li>Характеристическая функция суммы двух случайных величин равна
+произведению характеристических функций слагаемых. Можно ли утверждать,
+что слагаемые независимы?</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<p><span class="math inline">\(E\xi = \frac1{\alpha}, \,\,\,\, D\xi =
-\frac1{\alpha^2}\)</span></p>
-<p><span class="math inline">\(E\xi^2 =
-\displaystyle\int\limits_{-\infty}^{+\infty} x^2 \alpha e^{- \alpha} dx=
-\frac2{\alpha^2}\)</span></p>
-<p><span class="math inline">\(D\xi^2 = E\xi^4 - (E\xi^2)^2 =
-...\)</span></p>
-<p><span class="math inline">\(\operatorname{cor}(\xi, \xi^2) =
-\frac{\operatorname{cov}(\xi, \xi^2)}{\sqrt{D\xi}\cdot \sqrt{D}\xi^2} =
-\frac{E(\xi - E\xi)(\xi^2 - E\xi^2)}{\sqrt{D\xi}\cdot
-\sqrt{D}\xi^2}\)</span></p>
+<p>Нет, нельзя. Надо взять <span class="math inline">\(\xi =
+\eta\)</span> и <span class="math inline">\(\xi\)</span> с
+распределением Коши <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
-<div id="problem-57">
+<div id="problem-70">
 <span class="margin-lft"><strong>Задача: </strong></span>
 <ol start="5" type="1">
-<li>Случайная величина <span class="math inline">\(\xi\)</span> и ее
-функция распределения <span class="math inline">\(F_{\xi}(x)\)</span>
-считаются заданными. Найдите функции распределения следующих
-величин:</li>
-</ol>
-<ol type="1">
-<li><span class="math inline">\(\eta = a\xi + b\)</span></li>
-<li><span class="math inline">\(\eta = \xi^{-1}\)</span>, если <span
-class="math inline">\(P(\xi = 0) = 0\)</span>, то есть <span
-class="math inline">\(\xi\)</span> непрерывна в нуле.</li>
-<li><span class="math inline">\(\eta = \cos(\xi)\)</span></li>
+<li>Пусть случайные величины и независимы и <span
+class="math inline">\(\varphi_{\xi}(t) = \varphi_{\eta}(t)\)</span>.
+Найдите характеристическую функцию случайной величины <span
+class="math inline">\(\xi - \eta\)</span>.</li>
 </ol>
 <p><span class="margin-lft"><em>Доказательство:</em></span></p>
-<ol type="1">
-<li><span class="math inline">\(F_{\eta}(x) = P(\eta \leqslant x) =
-P(a\xi \leqslant x - b) = \begin{cases}P(\xi \leqslant \frac{x - b}{a}),
-\,\,\,\, a &gt; 0\\P(b \leqslant x), \,\,\,\, a = 0\\P(\xi \geqslant
-\frac{x - b}a), \,\,\,\, a &lt; 0\geqslant \end{cases} =
-\begin{cases}F_{\xi}(\frac{x - b}{a}), \,\,\,\, a &gt; 0\\I_{(-\infty,
-x]}, \,\,\,\, a = 0\\1 - F_{\xi}(\frac{x - b}{a} - 0), \,\,\,\, a &lt;
-0\geqslant \end{cases}\)</span></li>
+<p><span class="math inline">\(\varphi_{\xi - \eta}(t) =
+\varphi_{\xi}(t)\cdot \varphi_{-\eta}(t) = |\varphi_{\xi}(t)|
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="problem-71">
+<span class="margin-lft"><strong>Задача: </strong></span>
+<ol start="6" type="1">
+<li>Пусть <span class="math inline">\(\eta = \mathcal{N}(\mu_1,
+\sigma_1)\)</span> и <span class="math inline">\(\xi =
+\mathcal{N}(\mu_2, \sigma_2)\)</span> независимы. Докажите, используя
+характеристические функции, что <span class="math inline">\(\xi + \eta =
+\mathcal{N}(\mu_1 + \mu_2, \sigma_1 + \sigma_2)\)</span>.</li>
 </ol>
-<h3 data-number="10.2.1"
-id="главная-идея-теории-вероятностей-если-что-то-не-получается-то-домножаем-на-omega">Главная
-идея теории вероятностей: если что-то не получается, то домножаем на
-<span class="math inline">\(\Omega\)</span></h3>
-<p><span class="math inline">\(A\cdot \Omega = A \cdot (\{\xi &lt;
-0\}\sqcup \{\xi &gt; 0\}\sqcup \{\xi = 0\})\)</span></p>
-<ol start="2" type="1">
-<li><p><span class="math inline">\(F_{\eta}(x) = P(\frac{\frac1{\xi}
-\leqslant x}) = P(\frac1{\xi} \leqslant x, \xi &lt; 0) + P(\frac1{\xi}
-\leqslant x, \xi &gt; 0) = P(1 \geqslant x\xi, \xi &lt; 0) + P(1
-\leqslant x\xi, \xi &gt; 0) = \ldots = \begin{cases}F_{\xi}(0) + 1 -
-F_{\xi}(\frac1x - 0), \,\,\,\, x &gt; 0\\F_{\xi}(0), \,\,\,\, x =
-0\\F_{\xi}(0) - F_{\xi}(\frac1x - 0)\end{cases}\)</span></p></li>
-<li><p><span class="math inline">\(\eta = \cos(\xi), \,\,\,\,
-F_{\eta}(x) = P(\cos \xi \leqslant x) = \begin{cases}1, \,\,\,\, x
-\geqslant 1\\\displaystyle \sum_{k\in
-\mathbb{Z}}F_{\xi}(-\operatorname{arccos}(x) + 2\pi (k + 1)) -
-F_{\xi}(\operatorname{arccos}(x) + 2\pi k - 0)\\0, \,\,\,\, x &lt;
--1\end{cases}\)</span></p></li>
-</ol>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
     <div class="sitenav_right">
         <span class="navlink">
-                        <a href="семинар-10.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-12.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
-                        <a href="семинар-12.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                        <a href="семинар-14.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

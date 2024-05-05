@@ -53,5 +53,10 @@
         "keyword": "математическое ожидание",
         "html": "<p><a href=\"семинар-11.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span> –\nвероятностное пространство, <span class=\"math inline\">\\(\\xi\\)</span> –\nслучайная величина на нем.</p>\n<p><em>Математическое ожидание</em> <span\nclass=\"math inline\">\\(\\xi\\)</span> – это <span\nclass=\"math inline\">\\(E\\xi = \\displaystyle\\int\\limits_{\\Omega} \\xi(w)d\nP\\)</span>.</p>",
         "url": "семинар-11.html#definition-10"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"семинар-12.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((\\Omega, \\mathcal{F}, P)\\)</span> –\nвероятностное пространство, <span class=\"math inline\">\\(\\xi\\)</span> –\nслучайная величина на нем.</p>\n<p><span class=\"math inline\">\\(\\varphi_{\\xi}(t) =\nE(e^{it\\xi})\\)</span></p>",
+        "url": "семинар-12.html#definition-11"
     }
 ]
